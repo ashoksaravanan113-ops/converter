@@ -7,6 +7,7 @@ Disallow: /uploaded-excel/
 Disallow: /uploaded-powerpoints/
 Disallow: /converted-pdfs/
 Disallow: /converted-images/
+Disallow: /converted-word-files/
 Disallow: /compressed-pdfs/
 Disallow: /compressed-images/
 Disallow: /cropped-pdfs/
