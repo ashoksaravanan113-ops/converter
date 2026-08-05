@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Image Compressor | Compress JPG, PNG & WEBP Online Free | ConvertNova</title>
+
+    <meta name="description"
+        content="Compress JPG, PNG, and WEBP images online for free with ConvertNova. Reduce image file size while maintaining high quality. Fast, secure, and no registration required.">
+
+    <meta name="author" content="ConvertNova">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://convertnovas.com/image-compressor">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="ConvertNova">
+
+    <meta property="og:title" content="Image Compressor | Compress JPG, PNG & WEBP Online Free">
+
+    <meta property="og:description"
+        content="Reduce image file size online without sacrificing quality. Compress JPG, PNG, and WEBP images quickly and securely.">
+
+    <meta property="og:url" content="https://convertnovas.com/image-compressor">
+
+    <meta property="og:image" content="https://convertnovas.com/images/og-image.png">
+
+    <meta property="og:image:alt" content="Image Compressor - ConvertNova">
+
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Image Compressor | ConvertNova">
+
+    <meta name="twitter:description"
+        content="Compress JPG, PNG, and WEBP images online for free. Fast, secure, and high-quality image compression.">
+
+    <meta name="twitter:image" content="https://convertnovas.com/images/og-image.png">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0d6efd">
+
+    <meta name="color-scheme" content="light">
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/favicon.ico}" sizes="any">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" th:href="@{/css/image-compressor.css}">
+
+    <link rel="stylesheet" th:href="@{/css/faq.css}">
+    
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image Compressor",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "url": "https://convertnovas.com/image-compressor",
+      "description": "Free online image compressor to reduce JPG, PNG, and WEBP image file sizes while maintaining quality.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com"
+      }
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
+
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="/">
+
+                <img src="/images/logo.png" alt="ConvertNova Logo" height="50" class="me-2">
+
+            </a>
+
+            <button id="darkModeBtn" class="btn btn-outline-dark">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+
+    </nav>
+
+    <!-- MAIN -->
+
+    <div class="container py-5">
+
+
+        <div class="converter-card">
+
+            <!-- TITLE -->
+
+            <h1 class="text-center">
+
+                Image Compressor
+
+            </h1>
+
+            <p class="text-center text-muted mb-4">
+                Compress JPG, PNG, and WEBP images online without losing quality. Reduce image file size quickly and
+                securely.
+
+            </p>
+
+            <!-- CONVERT PAGE -->
+
+            <div id="uploadSection">
+
+                <form id="compressForm">
+
+                    <!-- SUMMARY -->
+
+                    <div id="summaryCard" class="summary-card" style="display:none;">
+
+                        <div>
+
+                            <strong>Total Files:</strong>
+
+                            <span id="totalFiles">
+
+                                0
+
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Total Size:</strong>
+
+                            <span id="totalSize">
+
+                                0 MB
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FILE LIST -->
+
+                    <div id="fileListContainer">
+
+                    </div>
+
+                    <!-- UPLOAD AREA -->
+
+                    <div id="dropZone" class="upload-area">
+
+                        <i class="bi bi-images upload-icon"></i>
+
+                        <h3>
+
+                            Drag & Drop Images Here
+
+                        </h3>
+
+                        <p>
+
+                            JPG • PNG • WEBP
+
+                        </p>
+
+                        <input type="file" id="imageFiles" accept=".jpg,.jpeg,.png,.webp" multiple hidden>
+
+                        <p class="text-muted">
+
+                            Maximum file size:
+                            50 MB
+
+                        </p>
+
+                        <button type="button" class="btn btn-primary btn-lg"
+                            onclick="document.getElementById('imageFiles').click()">
+
+                            Choose Images
+
+                        </button>
+
+                    </div>
+
+                    <!-- COMPRESSION LEVEL -->
+
+                    <div id="settingsSection">
+                        <div class="settings-card">
+                            <label for="compressionLevel" class="form-label">
+                                Compression Level
+                            </label>
+
+                            <select id="compressionLevel" class="form-select">
+
+                                <option value="LOW">
+                                    Low Compression
+                                </option>
+
+                                <option value="MEDIUM" selected>
+                                    Medium Compression
+                                </option>
+
+                                <option value="HIGH">
+                                    High Compression
+                                </option>
+
+                            </select>
+                        </div>
+
+                        <!-- QUALITY -->
+                        <div class="settings-card mt-3">
+                            <label for="quality" class="form-label">
+                                Quality
+                            </label>
+
+                            <input type="range" id="quality" class="form-range" min="10" max="100" value="80">
+
+                            <div class="text-center">
+                                <span id="qualityValue">
+                                    80%
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- COMPRESS BUTTON -->
+
+                    <div class="text-center mt-4">
+
+                        <button id="compressBtn" type="submit" class="btn btn-primary btn-lg">
+
+                            Compress Images
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- PROGRESS -->
+
+            <div id="progressSection" class="mt-4" style="display:none;">
+
+                <div class="progress">
+
+                    <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                        role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+
+                        0%
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- RESULT PAGE -->
+
+            <div id="resultCard" class="mt-5" style="display:none;">
+
+                <div class="alert alert-success">
+
+                    <h4>
+
+                        🎉 Image Compression Completed
+
+                    </h4>
+
+                </div>
+
+                <!-- RESULT HEADER -->
+
+                <div class="result-header">
+
+                    <div class="row text-center fw-bold">
+
+                        <div class="col-md-3">
+
+                            File Name
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            Original Size
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            Compressed Size
+
+                        </div>
+
+                        <div class="col-md-1">
+
+                            Saved
+
+                        </div>
+
+                        <div class="col-md-1">
+
+                            Reduction
+
+                        </div>
+
+                        <div class="col-md-1">
+
+                            Preview
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            Download
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- COMPRESSED FILES -->
+
+                <div id="compressedFilesContainer">
+
+                </div>
+
+                <!-- RESULT SUMMARY -->
+
+                <div id="resultSummary" class="result-summary">
+
+                    Files:
+                    <span id="resultFiles">0</span>
+
+                    |
+
+                    Original:
+                    <span id="resultOriginalSize">0 MB</span>
+
+                    |
+
+                    Compressed:
+                    <span id="resultCompressedSize">0 MB</span>
+
+                    |
+
+                    Saved:
+                    <span id="resultSaved">0 MB</span>
+
+                    |
+
+                    Reduction:
+                    <span id="resultReduction">0%</span>
+
+                </div>
+
+                <!-- COMPRESS MORE -->
+
+                <div class="text-center mt-4">
+
+                    <button id="compressMoreBtn" type="button" class="btn btn-secondary btn-lg">
+
+                        Compress More
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- PREVIEW MODAL -->
+
+    <div class="modal fade" id="imagePreviewModal">
+
+
+        <div class="modal-dialog modal-xl">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5>
+
+                        Image Preview
+
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <img id="previewImage" class="img-fluid" alt="Preview Image">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FAQ Section -->
+
+    <section class="faq-section">
+
+        <div class="container">
+
+            <h2 class="text-center mb-5">
+
+                Frequently Asked Questions
+
+            </h2>
+
+            <div class="accordion" id="faqAccordion">
+
+                <!-- FAQ 1 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingOne">
+
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                            Is the Image Compressor free to use?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            Yes. ConvertNova lets you compress JPG, PNG, and WEBP images online completely free without
+                            creating an account.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 2 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingTwo">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                            Which image formats are supported?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            The Image Compressor supports JPG, JPEG, PNG, and WEBP image formats.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 3 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingThree">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+
+                            Will image quality be affected?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            ConvertNova compresses images while maintaining the best possible quality. The compression
+                            level helps reduce file size without significant visual loss.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 4 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingFour">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+
+                            Are my uploaded images secure?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            Yes. Your images are processed securely and automatically deleted after the compression
+                            process is completed.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 5 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingFive">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+
+                            Do I need to install any software?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            No. The Image Compressor works entirely in your web browser, so no software installation is
+                            required.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+     FOOTER
+=================================== -->
+
+    <footer class="footer-section">
+
+        <div class="footer-card">
+
+            <div class="row">
+
+                <!-- Logo -->
+
+                <div class="col-lg-3">
+
+                    <img src="/images/logo-white.png" class="footer-logo" alt="ConvertNova Logo">
+
+                    <p class="footer-desc">
+
+                        Your all-in-one free online file converter.
+                        Fast, secure and easy to use.
+
+                    </p>
+
+                    <div class="footer-social">
+
+                        <a href="#">
+                            <img src="/images/icons/facebook.png" alt="Facebook">
+                        </a>
+
+                        <a href="#">
+                            <img src="/images/icons/twitter.png" alt="Twitter">
+                        </a>
+
+                        <a href="#">
+                            <img src="/images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+
+                        <a href="#">
+                            <img src="/images/icons/youtube.png" alt="YouTube">
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Popular Tools -->
+
+                <div class="col-lg-2">
+
+                    <h5>Popular Tools</h5>
+
+                    <ul>
+
+                        <li><a href="/pdf-merger">PDF Merge</a></li>
+                        <li><a href="/pdf-splitter">PDF Split</a></li>
+                        <li><a href="/pdf-compressor">PDF Compress</a></li>
+                        <li><a href="/image-to-pdf">Image to PDF</a></li>
+                        <li><a href="/pdf-to-word">PDF to Word</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Categories -->
+
+                <div class="col-lg-2">
+
+                    <h5>Categories</h5>
+
+                    <ul>
+
+                        <li><a href="/pdf-tools">PDF Tools</a></li>
+                        <li><a href="/image-tools">Image Tools</a></li>
+                        <li><a href="/office-tools">Office Tools</a></li>
+                        <li><a href="/security-tools">Security Tools</a></li>
+                        <li><a href="/all-tools">All Tools</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Company -->
+
+                <div class="col-lg-2">
+
+                    <h5>Company</h5>
+
+                    <ul>
+
+                        <li><a href="/about-us">About Us</a></li>
+                        <li><a href="/contact-us">Contact Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-and-conditions">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Newsletter -->
+
+                <div class="col-lg-3">
+
+                    <h5>Stay Updated</h5>
+
+                    <p>
+                        Subscribe to get tips and updates.
+                    </p>
+                    <input type="email" id="footerEmail" class="form-control footer-input"
+                        placeholder="Enter your email">
+
+                    <small id="emailError" class="text-danger">
+                    </small>
+
+                    <button type="button" class="btn footer-btn" id="subscribeBtn">
+
+                        Subscribe
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 ConvertNova. All rights reserved.
+            </div>
+
+            <div>
+                Made with ❤️ for everyone
+            </div>
+
+        </div>
+    </footer>
+
+    <script th:src="@{/js/image-compressor.js}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/common-validation.js"></script>
+
+</body>
+
+</html>

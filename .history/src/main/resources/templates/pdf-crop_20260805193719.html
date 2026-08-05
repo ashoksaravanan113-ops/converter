@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Crop PDF Pages Online Free | PDF Crop Tool | ConvertNova</title>
+
+    <meta name="description"
+        content="Crop PDF pages online for free with ConvertNova. Remove unwanted margins and adjust page size quickly while preserving document quality. Secure, fast, and no registration required.">
+
+    <meta name="author" content="ConvertNova">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://convertnovas.com/pdf-crop">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="ConvertNova">
+
+    <meta property="og:title" content="Crop PDF Pages Online Free | PDF Crop Tool">
+
+    <meta property="og:description"
+        content="Crop PDF pages, remove unwanted margins, and adjust page dimensions online with ConvertNova.">
+
+    <meta property="og:url" content="https://convertnovas.com/pdf-crop">
+
+    <meta property="og:image" content="https://convertnovas.com/images/og-image.png">
+
+    <meta property="og:image:alt" content="PDF Crop Tool - ConvertNova">
+
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Crop PDF Pages Online Free | ConvertNova">
+
+    <meta name="twitter:description"
+        content="Crop PDF pages online, remove white margins, and adjust page size for free. Fast, secure, and easy to use.">
+
+    <meta name="twitter:image" content="https://convertnovas.com/images/og-image.png">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0d6efd">
+
+    <meta name="color-scheme" content="light">
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/favicon.ico}" sizes="any">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" th:href="@{/css/pdf-crop.css}">
+
+    <link rel="stylesheet" th:href="@{/css/faq.css}">
+
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PDF Crop Tool",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "url": "https://convertnovas.com/pdf-crop",
+      "description": "Free online PDF crop tool to crop PDF pages, remove white margins, and adjust page size while maintaining document quality.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com"
+      }
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="/">
+
+                <img src="/images/logo.png" alt="ConvertNova Logo" height="50" class="me-2">
+
+            </a>
+
+            <button id="darkModeBtn" class="btn btn-outline-dark">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+    </nav>
+
+    <div class="container py-5">
+
+        <div class="converter-card">
+
+            <h1 class="text-center">
+
+                PDF Crop
+
+            </h1>
+
+            <p class="text-center text-muted mb-4">
+
+                Crop PDF pages online to remove unwanted margins and content. Fast, secure, and free PDF cropping.
+
+            </p>
+
+            <form id="pdfCropForm">
+
+                <div id="uploadSection">
+
+                    <!-- SUMMARY -->
+
+                    <div id="summaryCard" class="summary-card" style="display:none;">
+
+                        <div>
+
+                            <strong>Total Files:</strong>
+
+                            <span id="totalFiles">0</span>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Total Size:</strong>
+
+                            <span id="totalSize">0 MB</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FILE LIST -->
+
+                    <div id="fileListContainer">
+
+                    </div>
+
+                    <!-- UPLOAD -->
+
+                    <div id="dropZone" class="upload-area">
+
+                        <i class="bi bi-crop upload-icon"></i>
+
+                        <h3>
+
+                            Drag & Drop PDF Files Here
+
+                        </h3>
+
+                        <p>
+
+                            PDF Files Only
+
+                        </p>
+
+                        <input type="file" id="pdfFiles" accept=".pdf" multiple hidden>
+
+                        <p class="text-muted">
+
+                            Maximum file size:
+                            50 MB
+
+                        </p>
+
+                        <button type="button" class="btn btn-primary btn-lg"
+                            onclick="document.getElementById('pdfFiles').click()">
+
+                            Choose PDF Files
+
+                        </button>
+
+                    </div>
+
+                    <!-- CROP AMOUNT -->
+                    <!-- SETTINGS -->
+                    <div id="settingsSection" class="settings-card">
+
+                        <div class="tool-section">
+
+                            <h4>Crop Amount</h4>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="cropSmall" name="cropAmount"
+                                    value="SMALL" title="Small Crop">
+
+                                <label class="form-check-label" for="cropSmall">
+                                    Small Crop
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="cropMedium" name="cropAmount"
+                                    value="MEDIUM" checked title="Medium Crop">
+
+                                <label class="form-check-label" for="cropMedium">
+                                    Medium Crop
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="cropLarge" name="cropAmount"
+                                    value="LARGE" title="Large Crop">
+
+                                <label class="form-check-label" for="cropLarge">
+                                    Large Crop
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="tool-section">
+
+                            <h4>Apply Crop To</h4>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="applyAll" name="applyTo" value="ALL"
+                                    checked title="Apply crop to all pages">
+
+                                <label class="form-check-label" for="applyAll">
+                                    All Pages
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="applyFirst" name="applyTo"
+                                    value="FIRST" title="Apply crop to first page only">
+
+                                <label class="form-check-label" for="applyFirst">
+                                    First Page Only
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTON -->
+
+                    <div class="text-center mt-4">
+
+                        <button id="cropBtn" type="submit" class="btn btn-primary btn-lg">
+
+                            Crop PDF
+
+                        </button>
+
+                    </div>
+
+                    <!-- PROGRESS -->
+
+                    <div id="progressSection" class="mt-4" style="display:none;">
+
+                        <div class="progress">
+
+                            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                                style="width:0%;">
+
+                                0%
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <div id="resultCard" class="mt-5" style="display:none;">
+
+                <div class="alert alert-success">
+
+                    <h4>
+
+                        🎉 PDF Cropping Completed
+
+                    </h4>
+
+                </div>
+
+                <div class="result-header">
+
+                    <div class="row fw-bold text-center">
+
+                        <div class="col-md-4">
+
+                            File Name
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            Pages
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            Crop
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            Preview
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            Download
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="croppedFilesContainer">
+
+                </div>
+
+                <div class="result-summary">
+
+                    Files:
+                    <span id="resultFiles">0</span>
+
+                    |
+
+                    Cropped Successfully:
+                    <span id="resultSuccess">0</span>
+
+                </div>
+
+                <div class="text-center mt-4">
+
+                    <button id="cropMoreBtn" type="button" class="btn btn-secondary btn-lg">
+
+                        Crop More
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="pdfPreviewModal">
+
+        <div class="modal-dialog modal-xl">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5>
+
+                        PDF Preview
+
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close">
+                    </button>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body p-0">
+
+                    <iframe id="previewFrame" width="100%" height="700" style="border:none;">
+
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FAQ Section -->
+
+    <section class="faq-section">
+
+        <div class="container">
+
+            <h2 class="text-center mb-5">
+
+                Frequently Asked Questions
+
+            </h2>
+
+            <div class="accordion" id="faqAccordion">
+
+                <!-- FAQ 1 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingOne">
+
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                            Is the PDF Crop tool free to use?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            Yes. ConvertNova allows you to crop PDF pages online completely free without registration.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 2 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingTwo">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                            What can I crop from a PDF?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            You can remove unwanted margins, white space, headers, footers, and other unnecessary areas
+                            from your PDF pages.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 3 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingThree">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+
+                            Will cropping affect the quality of my PDF?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            No. Cropping only changes the visible area of the PDF page and does not reduce the quality
+                            of your document.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 4 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingFour">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+
+                            Are my PDF files secure?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            Yes. Your PDF files are processed securely and are automatically deleted after the cropping
+                            process is completed.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 5 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header" id="headingFive">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+
+                            Do I need to install any software?
+
+                        </button>
+
+                    </h3>
+
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            No. ConvertNova works entirely in your browser, allowing you to crop PDF files without
+                            installing any software.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+     FOOTER
+=================================== -->
+
+    <footer class="footer-section">
+
+        <div class="footer-card">
+
+            <div class="row">
+
+                <!-- Logo -->
+
+                <div class="col-lg-3">
+
+                    <img src="/images/logo-white.png" class="footer-logo" alt="ConvertNova Logo">
+
+                    <p class="footer-desc">
+
+                        Your all-in-one free online file converter.
+                        Fast, secure and easy to use.
+
+                    </p>
+
+                    <div class="footer-social">
+
+                        <a href="#">
+                            <img src="/images/icons/facebook.png" alt="Facebook">
+                        </a>
+
+                        <a href="#">
+                            <img src="/images/icons/twitter.png" alt="Twitter">
+                        </a>
+
+                        <a href="#">
+                            <img src="/images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+
+                        <a href="#">
+                            <img src="/images/icons/youtube.png" alt="YouTube">
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Popular Tools -->
+
+                <div class="col-lg-2">
+
+                    <h5>Popular Tools</h5>
+
+                    <ul>
+
+                        <li><a href="/pdf-merger">PDF Merge</a></li>
+                        <li><a href="/pdf-splitter">PDF Split</a></li>
+                        <li><a href="/pdf-compressor">PDF Compress</a></li>
+                        <li><a href="/image-to-pdf">Image to PDF</a></li>
+                        <li><a href="/pdf-to-word">PDF to Word</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Categories -->
+
+                <div class="col-lg-2">
+
+                    <h5>Categories</h5>
+
+                    <ul>
+
+                        <li><a href="/pdf-tools">PDF Tools</a></li>
+                        <li><a href="/image-tools">Image Tools</a></li>
+                        <li><a href="/office-tools">Office Tools</a></li>
+                        <li><a href="/security-tools">Security Tools</a></li>
+                        <li><a href="/all-tools">All Tools</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Company -->
+
+                <div class="col-lg-2">
+
+                    <h5>Company</h5>
+
+                    <ul>
+
+                        <li><a href="/about-us">About Us</a></li>
+                        <li><a href="/contact-us">Contact Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-and-conditions">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Newsletter -->
+
+                <div class="col-lg-3">
+
+                    <h5>Stay Updated</h5>
+
+                    <p>
+                        Subscribe to get tips and updates.
+                    </p>
+                    <input type="email" id="footerEmail" class="form-control footer-input"
+                        placeholder="Enter your email">
+
+                    <small id="emailError" class="text-danger">
+                    </small>
+
+                    <button type="button" class="btn footer-btn" id="subscribeBtn">
+
+                        Subscribe
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 ConvertNova. All rights reserved.
+            </div>
+
+            <div>
+                Made with ❤️ for everyone
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script th:src="@{/js/pdf-crop.js}"></script>
+
+    <script src="/js/common-validation.js"></script>
+
+</body>
+
+</html>
