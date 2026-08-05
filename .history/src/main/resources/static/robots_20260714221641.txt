@@ -22,4 +22,4 @@ Disallow: /unlocked-pdfs/
 Disallow: /watermarked-pdfs/
 Disallow: /extracted-text/
 
-Sitemap: https://convertnovas.com/sitemap.xml
+Sitemap: https://www.converternova.com/sitemap.xml
