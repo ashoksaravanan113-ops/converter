@@ -21,3 +21,13 @@ uploaded-excel/
 uploaded-pdfs/
 uploaded-powerpoints/
 watermarked-pdfs/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code Local History
+.history/
+
+# Logs
+*.log
