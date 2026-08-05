@@ -78,28 +78,28 @@
         <priority>0.50</priority>
     </url>
 
-    <!-- ================= BLOG CATEGORIES ================= -->
+    <!-- ================= blogsection CATEGORIES ================= -->
 
     <url>
-        <loc>https://convertnovas.com/blog/pdf</loc>
+        <loc>https://convertnovas.com/blogsection/pdf</loc>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/blog/image</loc>
+        <loc>https://convertnovas.com/blogsection/image</loc>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/blog/office</loc>
+        <loc>https://convertnovas.com/blogsection/office</loc>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/blog/security</loc>
+        <loc>https://convertnovas.com/blogsection/security</loc>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -226,7 +226,7 @@
         <priority>0.90</priority>
     </url>
 
-    <!-- ================= BLOG GUIDES ================= -->
+    <!-- ================= blogsection GUIDES ================= -->
 
     <url>
         <loc>https://convertnovas.com/excel-to-pdf-guide</loc>
