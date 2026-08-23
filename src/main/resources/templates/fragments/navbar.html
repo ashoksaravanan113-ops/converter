@@ -1,14 +1,13 @@
 <nav class="navbar navbar-expand-lg fixed-top custom-navbar"
-     th:fragment="navbar">
+     th:fragment="navbar"
+     id="mainNavbar">
 
     <div class="container">
 
         <a class="navbar-brand" href="/">
-
             <img src="/images/logo.png"
                  alt="ConvertNova Logo"
                  class="logo">
-
         </a>
 
         <button type="button"
@@ -18,59 +17,94 @@
                 aria-controls="navMenu"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
-
             <span class="navbar-toggler-icon"></span>
-
         </button>
 
-        <div class="collapse navbar-collapse"
-             id="navMenu">
+        <div class="collapse navbar-collapse" id="navMenu">
 
             <ul class="navbar-nav mx-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/">
+                        Home
+                    </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/tools">All Tools</a>
+                <!-- Tools -->
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       id="toolsDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Tools
+                    </a>
+
+                    <ul class="dropdown-menu"
+                        aria-labelledby="toolsDropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="/tools">
+                                📁 All Tools
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/pdf-tools">
+                                📄 PDF Tools
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/image-tools">
+                                🖼️ Image Tools
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/office-tools">
+                                📊 Office Tools
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/security-tools">
+                                🔒 Security Tools
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
 
+                <!-- Blog -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/pdf-tools">PDF Tools</a>
+                    <a class="nav-link"
+                       href="/blogsection/blog">
+                        Blog
+                    </a>
                 </li>
 
+                <!-- Contact -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/image-tools">Image Tools</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/office-tools">Office Tools</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/security-tools">Security Tools</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/blogsection/blog">Blog</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact-us">Contact</a>
+                    <a class="nav-link"
+                       href="/contact-us">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
 
             <a href="/tools"
                class="btn start-btn">
-
                 Start Converting
-
             </a>
 
         </div>
-
     </div>
-
 </nav>

@@ -1,1310 +1,424 @@
 /* ===================================
-   GLOBAL
+   PDF TOOLS PAGE — RESET
+   (loads independently — needs its own base reset)
 =================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f8fafc;
-    color: #111827;
-    overflow-x: hidden;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-a {
-    text-decoration: none;
-}
-
-.container {
-    max-width: 1320px;
-}
-
-.section-title {
-    font-size: 36px;
-    font-weight: 800;
-    color: #0f172a;
-}
-
-.popular-card,
-.category-card,
-.tool-pill,
-.quick-card,
-.stats-wrapper,
-.footer-card {
-    box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
+img{
+    max-width:100%;
+    display:block;
 }
 
 /* ===================================
-   NAVBAR
+   TOKENS
+   (same palette as home.css / navbar.css / tools.css)
 =================================== */
 
-.custom-navbar {
+:root{
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --accent:#7c3aed;
+    --ink:#0f172a;
+    --body-text:#334155;
+    --muted:#64748b;
+    --bg:#ffffff;
+    --bg-soft:#f8fafc;
+    --border:#e5e7eb;
 
-    height: 86px;
-    background: white;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, .04);
-    padding:
-        12px 0;
+    --radius-sm:12px;
+    --radius-md:20px;
+    --radius-lg:28px;
+
+    --shadow-sm:0 5px 15px rgba(15,23,42,.05);
+    --shadow-md:0 10px 30px rgba(15,23,42,.08);
+    --shadow-lg:0 20px 50px rgba(15,23,42,.10);
+
+    --ease:cubic-bezier(.22,1,.36,1);
+    --gradient-brand:linear-gradient(135deg,var(--primary),var(--accent));
+
+    /* soft badge tints for tool-icon color variants */
+    --tint-green-bg:#e6f9ee;   --tint-green-fg:#16a34a;
+    --tint-orange-bg:#fff1e6;  --tint-orange-fg:#ea580c;
+    --tint-blue-bg:#e8f0ff;    --tint-blue-fg:#2563eb;
+    --tint-purple-bg:#f2ecff;  --tint-purple-fg:#7c3aed;
+    --tint-red-bg:#fde8e8;     --tint-red-fg:#dc2626;
+    --tint-cyan-bg:#e3f8fb;    --tint-cyan-fg:#0891b2;
+    --tint-yellow-bg:#fef7e0;  --tint-yellow-fg:#ca8a04;
 }
-
-.logo {
-
-    height: 58px;
-}
-
-.nav-link {
-
-    color: #334155 !important;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    margin:
-        0 10px;
-}
-
-.nav-link.active {
-
-    color: #2563eb !important;
-}
-
-.nav-link:hover {
-
-    color: #2563eb !important;
-}
-
-.popular-card:hover,
-.category-card:hover,
-.tool-pill:hover {
-    transform: translateY(-5px);
-    transition: .3s;
-}
-
-.start-btn {
-
-    background:
-        linear-gradient(135deg,
-            #2563eb,
-            #7c3aed);
-
-    color: white !important;
-
-    border: none;
-
-    border-radius: 14px;
-
-    padding:
-        13px 24px;
-
-    font-weight: 700;
-}
-
 
 /* ===================================
-   PDF HERO
+   HERO
 =================================== */
 
-.pdf-hero {
-
-    padding: 120px 0 40px;
-
+.pdf-hero{
+    padding:64px 0 44px;
+    text-align:center;
     background:
-        linear-gradient(180deg,
-            #f8fbff,
-            #ffffff);
+        radial-gradient(650px 380px at 85% -10%, rgba(124,58,237,.08), transparent 60%),
+        radial-gradient(750px 440px at 5% 0%, rgba(37,99,235,.08), transparent 55%),
+        #f8fbff;
 }
 
-.pdf-hero h1 {
-
-    font-size: 72px;
-
-    font-weight: 800;
-
-    color: #0f172a;
-
-    margin-bottom: 15px;
+.hero-content{
+    max-width:640px;
+    margin:0 auto;
 }
 
-.pdf-hero p {
+.pdf-hero h1{
+    font-size:48px;
+    font-weight:800;
+    color:var(--ink);
+    letter-spacing:-.02em;
+    margin-bottom:14px;
+}
 
-    font-size: 20px;
-
-    color: #64748b;
+.pdf-hero p{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
 }
 
 /* ===================================
    SEARCH
 =================================== */
 
-.search-section {
-
-    padding: 20px 0 30px;
+.search-section{
+    padding:26px 0 30px;
 }
 
-.search-wrapper {
-
-    max-width: 900px;
-
-    margin: auto;
-
-    display: flex;
-
-    gap: 15px;
+.search-wrapper{
+    max-width:640px;
+    margin:0 auto;
+    display:flex;
+    gap:12px;
 }
 
-.search-box {
-
-    flex: 1;
-
-    height: 70px;
-
-    background: white;
-
-    border-radius: 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 0 25px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, .05);
+.search-box{
+    flex:1;
+    position:relative;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:var(--shadow-sm);
+    transition:border-color .2s var(--ease),box-shadow .2s var(--ease);
 }
 
-.search-box i {
-
-    font-size: 22px;
-
-    color: #94a3b8;
-
-    margin-right: 12px;
+.search-box:focus-within{
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
 }
 
-.search-box input {
-
-    width: 100%;
-
-    border: none;
-
-    outline: none;
-
-    font-size: 16px;
+.search-box i{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--muted);
+    font-size:17px;
+    pointer-events:none;
 }
 
-.search-btn {
+.search-box input{
+    width:100%;
+    height:54px;
+    border:none;
+    outline:none;
+    background:transparent;
+    border-radius:14px;
+    padding:0 18px 0 50px;
+    font-size:15.5px;
+    color:var(--ink);
+}
 
-    width: 160px;
+.search-box input::placeholder{
+    color:var(--muted);
+}
 
-    border: none;
+.search-btn{
+    height:54px;
+    padding:0 28px;
+    border:none;
+    border-radius:14px;
+    background:var(--gradient-brand);
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+}
 
-    border-radius: 20px;
-
-    background:
-        linear-gradient(135deg,
-            #2563eb,
-            #7c3aed);
-
-    color: white;
-
-    font-weight: 700;
+.search-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(37,99,235,.3);
 }
 
 /* ===================================
-   FILTERS
+   CATEGORY FILTERS
 =================================== */
 
-.filter-section {
-
-    padding-bottom: 35px;
+.filter-section{
+    padding:0 0 40px;
 }
 
-.category-filter {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
+.category-filter{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
 }
 
-.filter-btn {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 14px 24px;
-
-    background: white;
-
-    border-radius: 50px;
-
-    color: #475569;
-
-    text-decoration: none;
-
-    font-weight: 600;
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, .05);
+.filter-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    color:var(--body-text);
+    font-weight:600;
+    font-size:14.5px;
+    padding:11px 22px;
+    border-radius:999px;
+    box-shadow:var(--shadow-sm);
+    transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);
 }
 
-.filter-btn.active {
+.filter-btn i{
+    font-size:15px;
+}
 
-    background:
-        linear-gradient(135deg,
-            #2563eb,
-            #7c3aed);
+.filter-btn:hover{
+    transform:translateY(-2px);
+    border-color:var(--primary);
+    color:var(--primary);
+}
 
-    color: white;
+.filter-btn.active{
+    background:var(--gradient-brand);
+    border-color:transparent;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(37,99,235,.28);
 }
 
 /* ===================================
-   STATS
+   PDF TOOLS GRID
 =================================== */
 
-.stats-section {
-
-    padding-bottom: 50px;
+.pdf-tools-section{
+    padding:10px 0 70px;
 }
 
-.stats-wrapper {
-
-    background: white;
-
-    border-radius: 24px;
-
-    padding: 35px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 30px;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
-
-}
-.stat-item {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
+.pdf-tool-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:26px 22px;
+    box-shadow:var(--shadow-sm);
+    transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
 }
 
-.stat-item img {
-
-    width: 60px;
+.pdf-tool-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-md);
+    border-color:transparent;
 }
 
-.stat-item h3 {
-
-    font-size: 32px;
-
-    color: black;
-
-    font-weight: 800;
-
-    margin: 0;
+.pdf-tool-card .tool-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:16px;
+    transition:transform .3s var(--ease);
 }
 
-.stat-item p {
-
-    margin: 0;
-
-    color: #475569;
+.pdf-tool-card:hover .tool-icon{
+    transform:scale(1.08) rotate(-2deg);
 }
 
-.stat-divider {
+.pdf-tool-card .tool-icon img{
+    width:26px;
+    height:26px;
+    object-fit:contain;
+}
 
-    width: 1px;
+.tool-icon.green{ background:var(--tint-green-bg); }
+.tool-icon.orange{ background:var(--tint-orange-bg); }
+.tool-icon.blue{ background:var(--tint-blue-bg); }
+.tool-icon.purple{ background:var(--tint-purple-bg); }
+.tool-icon.red{ background:var(--tint-red-bg); }
+.tool-icon.cyan{ background:var(--tint-cyan-bg); }
+.tool-icon.yellow{ background:var(--tint-yellow-bg); }
 
-    height: 70px;
+.pdf-tool-card h4{
+    font-size:17px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:8px;
+}
 
-    background: #e2e8f0;
+.pdf-tool-card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:16px;
+    flex-grow:1;
+}
+
+.pdf-tool-card span{
+    font-weight:700;
+    color:var(--primary);
+    font-size:14px;
+    transition:transform .2s var(--ease);
+    display:inline-block;
+}
+
+.pdf-tool-card:hover span{
+    transform:translateX(4px);
 }
 
 /* ===================================
-   TOOL CARDS
+   FEATURES STRIP
 =================================== */
 
-.pdf-tools-section {
-
-    padding-bottom: 70px;
+.feature-section{
+    padding:10px 0 70px;
+    background:var(--bg-soft);
 }
 
-.pdf-tool-card {
-
-    display: block;
-
-    background: white;
-
-    border-radius: 24px;
-
-    padding: 30px;
-
-    min-height: 250px;
-
-    text-decoration: none;
-
-    color: #111827;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, .05);
-
-    transition: .3s;
+.feature-wrapper{
+    background:var(--bg);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-md);
+    padding:40px 30px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.pdf-tool-card:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, .08);
+.feature-box{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    flex:1;
 }
 
-.tool-icon {
-
-    width: 70px;
-
-    height: 70px;
-
-    border-radius: 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-bottom: 25px;
+.feature-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
 }
 
-.tool-icon img {
-
-    width: 36px;
+.feature-icon img{
+    width:26px;
+    height:26px;
+    object-fit:contain;
 }
 
+.feature-icon.blue{ background:var(--tint-blue-bg); }
+.feature-icon.purple{ background:var(--tint-purple-bg); }
+.feature-icon.green{ background:var(--tint-green-bg); }
 
-
-.orange {
-    background: #fff1e6;
+.feature-box h4{
+    font-size:16.5px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:6px;
 }
 
-
-
-.red {
-    background: #ffe8ea;
+.feature-box p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.65;
 }
 
-.cyan {
-    background: #e7fbfb;
-}
-
-.yellow {
-    background: #fff6df;
-}
-
-.pdf-tool-card h4 {
-
-    font-size: 30px;
-
-    font-weight: 700;
-
-    margin-bottom: 12px;
-}
-
-.pdf-tool-card p {
-
-    color: #64748b;
-
-    line-height: 1.8;
-
-    min-height: 80px;
-}
-
-.pdf-tool-card span {
-
-    color: #2563eb;
-
-    font-weight: 700;
+.feature-divider{
+    width:1px;
+    align-self:stretch;
+    background:var(--border);
 }
 
 /* ===================================
-   FEATURES
+   RESPONSIVE — TABLET (max-width:991px)
 =================================== */
 
-.feature-section {
+@media (max-width:991px){
 
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+    .pdf-hero h1{ font-size:38px; }
+    .pdf-hero p{ font-size:16.5px; }
 
-.feature-wrapper {
-
-    background: white;
-
-    border-radius: 24px;
-
-    padding: 10px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, .05);
-}
-
-.feature-box {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    flex: 1;
-
-    padding-left: 15px;
-}
-
-.feature-icon {
-
-    width: 60px;
-
-    height: 60px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.feature-icon img {
-
-    width: 80px;
-}
-
-.feature-divider {
-
-    width: 1px;
-
-    height: 120px;
-
-    background: #e2e8f0;
-}
-
-.feature-box h4 {
-
-    font-size: 22px;
-
-    font-weight: 700;
-}
-
-.feature-box p {
-
-    color: #64748b;
-
-    line-height: 1.8;
+    .feature-wrapper{ flex-direction:column; }
+    .feature-divider{ width:100%; height:1px; }
 }
 
 /* ===================================
-   FOOTER
+   RESPONSIVE — MOBILE (max-width:767px)
 =================================== */
 
-.footer-section {
+@media (max-width:767px){
 
-    padding: 15px 0 0 0;
-}
+    .pdf-hero{ padding:46px 0 32px; }
+    .pdf-hero h1{ font-size:30px; }
+    .pdf-hero p{ font-size:15px; }
 
-.footer-card {
+    .search-wrapper{ flex-direction:column; }
+    .search-btn{ width:100%; }
 
-    background: white;
+    .category-filter{ gap:8px; }
+    .filter-btn{ font-size:13.5px; padding:9px 16px; }
 
+    .pdf-tool-card{ padding:20px 16px; }
 
-    padding: 40px 40px 30px 40px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, .05);
-}
-
-.footer-logo {
-
-    height: 60px;
-
-    margin-bottom: 20px;
-}
-
-.footer-desc {
-
-    color: #64748b;
-
-    line-height: 1.8;
-}
-
-.footer-social {
-
-    display: flex;
-
-    gap: 12px;
-
-    margin-top: 20px;
-}
-
-.footer-social img {
-
-    width: 42px;
-    height: 42px;
-}
-
-.footer-section h5 {
-
-    font-weight: 700;
-
-    margin-bottom: 20px;
-}
-
-.footer-section ul {
-
-    list-style: none;
-
-    padding: 0;
-}
-
-.footer-section ul li {
-
-    margin-bottom: 12px;
-}
-
-.footer-section ul li a {
-
-    color: #334155;
-}
-
-.footer-input {
-
-    height: 50px;
-
-    border-radius: 12px;
-}
-
-.footer-btn {
-
-    margin-top: 12px;
-
-    width: 100%;
-
-    height: 50px;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(135deg,
-            #2563eb,
-            #7c3aed);
-
-    border: none;
-
-    color: white;
-
-    font-weight: 700;
-}
-
-.footer-bottom {
-
-    margin-top: 0px;
-
-    background:
-        linear-gradient(135deg,
-            #2563eb,
-            #4f46e5);
-
-    color: white;
-
-    padding: 16px 30px 16px 30px;
-
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
+    .feature-wrapper{ padding:26px 20px; }
 }
 
 /* ===================================
-TABLET (768px - 991px)
+   RESPONSIVE — SMALL MOBILE (max-width:480px)
 =================================== */
 
-@media (max-width:991px) {
+@media (max-width:480px){
 
+    .pdf-hero h1{ font-size:26px; }
 
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+    .search-box i{ left:16px; font-size:15px; }
+    .search-box input{ padding-left:42px; }
 
-    .pdf-hero {
-        text-align: center;
-    }
-
-    .pdf-hero h1 {
-        font-size: 52px;
-    }
-
-    .pdf-hero p {
-        font-size: 18px;
-    }
-
-    .stats-card {
-        flex-wrap: wrap;
-        gap: 25px;
-        justify-content: center;
-    }
-
-    .stat-divider {
-        display: none;
-    }
-
-    .feature-wrapper {
-        flex-wrap: wrap;
-    }
-
-    .feature-box {
-        width: 50%;
-        padding: 20px;
-    }
-
-
+    .pdf-tool-card h4{ font-size:16px; }
+    .pdf-tool-card p{ font-size:13px; }
 }
 
 /* ===================================
-MOBILE (320px - 767px)
+   ACCESSIBILITY
 =================================== */
 
-@media (max-width:767px) {
-
-
-    /* Hide Stats */
-    .stats-section {
-        display: none;
-    }
-
-    /* Hero */
-    .pdf-hero {
-        padding: 90px 0 20px;
-        text-align: center;
-    }
-
-    .pdf-hero h1 {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    .pdf-hero p {
-        font-size: 15px;
-    }
-
-    /* Search */
-    .search-wrapper {
-        flex-direction: column;
-    }
-
-    .search-box {
-        height: 58px;
-    }
-
-    .search-btn {
-        width: 100%;
-        height: 58px;
-    }
-
-    /* Filter */
-    .category-filter {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 5px;
-    }
-
-    .filter-btn {
-        white-space: nowrap;
-        font-size: 13px;
-        padding: 10px 16px;
-    }
-
-    /* PDF Tool Cards */
-    .pdf-tool-card {
-        min-height: 140px;
-        padding: 15px;
-        border-radius: 18px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .tool-icon {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 10px;
-    }
-
-    .tool-icon img {
-        width: 28px;
-    }
-
-    .pdf-tool-card h4 {
-        font-size: 16px;
-        margin: 0;
-    }
-
-    .pdf-tool-card p,
-    .pdf-tool-card span {
-        display: none;
-    }
-
-    /* 2 Cards Per Row */
-    .pdf-tools-section .col-lg-3,
-    .pdf-tools-section .col-md-4,
-    .pdf-tools-section .col-sm-6,
-    .pdf-tools-section .col-6 {
-        width: 50%;
-        margin-bottom: 15px;
-    }
-
-    /* Features */
-    .feature-wrapper {
-        background: transparent;
-        box-shadow: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .feature-divider {
-        display: none;
-    }
-
-    .feature-box {
-        width: calc(50% - 6px);
-        background: white;
-        border-radius: 16px;
-        padding: 15px 10px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .feature-icon {
-        width: 45px;
-        height: 45px;
-        margin-bottom: 8px;
-    }
-
-    .feature-icon img {
-        width: 45px;
-    }
-
-    .feature-box h4 {
-        font-size: 15px;
-        margin: 0;
-    }
-
-    .feature-box p {
-        display: none;
-    }
-
-    /* Footer */
-    .footer-card {
-        padding: 20px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-        padding: 15px;
-    }
-
-
+.filter-btn:focus-visible,
+.pdf-tool-card:focus-visible,
+.search-box input:focus-visible,
+.search-btn:focus-visible{
+    outline:2px solid var(--primary);
+    outline-offset:2px;
 }
 
-/* ===================================
-SMALL MOBILE (320px - 480px)
-=================================== */
-
-@media (max-width:480px) {
-
-
-    .pdf-hero h1 {
-        font-size: 30px;
+@media (prefers-reduced-motion:reduce){
+    *{
+        transition:none !important;
+        animation:none !important;
     }
-
-    .pdf-hero p {
-        font-size: 14px;
-    }
-
-    .pdf-tool-card {
-        min-height: 125px;
-        padding: 12px;
-    }
-
-    .tool-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-    .tool-icon img {
-        width: 24px;
-    }
-
-    .pdf-tool-card h4 {
-        font-size: 14px;
-    }
-
-    .feature-box {
-        padding: 12px 8px;
-    }
-
-    .feature-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .feature-box h4 {
-        font-size: 14px;
-    }
-
-    .filter-btn {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-
-
-}
-
-/* ===================================
-TABLET (768px - 991px)
-=================================== */
-
-@media (max-width:991px) {
-
-
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .pdf-hero {
-        text-align: center;
-    }
-
-    .pdf-hero h1 {
-        font-size: 52px;
-    }
-
-    .pdf-hero p {
-        font-size: 18px;
-    }
-
-    .stats-card {
-        flex-wrap: wrap;
-        gap: 25px;
-        justify-content: center;
-    }
-
-    .stat-divider {
-        display: none;
-    }
-
-    .feature-wrapper {
-        flex-wrap: wrap;
-    }
-
-    .feature-box {
-        width: 50%;
-        padding: 20px;
-    }
-
-    /* ==========================
-   TABLET NAVBAR
-========================== */
-
-    .custom-navbar {
-
-        height: auto;
-
-    }
-
-    .navbar-collapse {
-
-        background: #ffffff;
-
-        margin-top: 12px;
-
-        padding: 20px;
-
-        border-radius: 16px;
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
-
-    }
-
-    .navbar-nav {
-
-        text-align: center;
-
-    }
-
-    .navbar-nav .nav-item {
-
-        margin: 8px 0;
-
-    }
-
-    .start-btn {
-
-        display: block;
-
-        width: 100%;
-
-        margin-top: 15px;
-
-    }
-
-
-}
-
-/* ===================================
-MOBILE (320px - 767px)
-=================================== */
-
-@media (max-width:767px) {
-
-
-    .stats-section {
-        display: none;
-    }
-
-    .pdf-hero {
-        padding: 90px 0 20px;
-        text-align: center;
-    }
-
-    .pdf-hero h1 {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    .pdf-hero p {
-        font-size: 15px;
-    }
-
-    .search-wrapper {
-        flex-direction: column;
-    }
-
-    .search-box {
-        height: 58px;
-    }
-
-    .search-btn {
-        width: 100%;
-        height: 58px;
-    }
-
-    .category-filter {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 5px;
-    }
-
-    .filter-btn {
-        white-space: nowrap;
-        font-size: 13px;
-        padding: 10px 16px;
-    }
-
-    /* Tool Cards */
-
-    .pdf-tool-card {
-        min-height: 140px;
-        padding: 15px;
-        border-radius: 18px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .tool-icon {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 10px;
-    }
-
-    .tool-icon img {
-        width: 28px;
-    }
-
-    .pdf-tool-card h4 {
-        font-size: 16px;
-        margin: 0;
-    }
-
-    .pdf-tool-card p,
-    .pdf-tool-card span {
-        display: none;
-    }
-
-    /* 2 Cards Per Row */
-
-    .pdf-tools-section .col-lg-3,
-    .image-tools-section .col-lg-3,
-    .office-tools-section .col-lg-3,
-    .security-tools-section .col-lg-3,
-    .pdf-tools-section .col-md-6,
-    .image-tools-section .col-md-6,
-    .office-tools-section .col-md-6,
-    .security-tools-section .col-md-6 {
-        width: 50%;
-        margin-bottom: 15px;
-    }
-
-    /* Features */
-
-    .feature-wrapper {
-        background: transparent;
-        box-shadow: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .feature-divider {
-        display: none;
-    }
-
-    .feature-box {
-        width: calc(50% - 6px);
-        background: white;
-        border-radius: 16px;
-        padding: 15px 10px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .feature-icon {
-        width: 45px;
-        height: 45px;
-        margin-bottom: 8px;
-    }
-
-    .feature-icon img {
-        width: 45px;
-    }
-
-    .feature-box h4 {
-        font-size: 15px;
-        margin: 0;
-    }
-
-    .feature-box p {
-        display: none;
-    }
-
-    .footer-card {
-        padding: 20px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-        padding: 15px;
-    }
-
-    /* ==========================
-   MOBILE NAVBAR
-========================== */
-
-    .custom-navbar {
-
-        height: auto;
-
-        padding: 10px 0;
-
-    }
-
-    .navbar-collapse {
-
-        background: #ffffff;
-
-        margin-top: 12px;
-
-        padding: 20px;
-
-        border-radius: 16px;
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
-
-    }
-
-    .navbar-nav {
-
-        text-align: center;
-
-    }
-
-    .navbar-nav .nav-item {
-
-        margin: 8px 0;
-
-    }
-
-    .start-btn {
-
-        display: block;
-
-        width: 100%;
-
-        margin-top: 15px;
-
-    }
-
-
-}
-
-/* ===================================
-SMALL MOBILE (320px - 480px)
-=================================== */
-
-@media (max-width:480px) {
-
-
-    .pdf-hero h1 {
-        font-size: 30px;
-    }
-
-    .pdf-hero p {
-        font-size: 14px;
-    }
-
-    .pdf-tool-card {
-        min-height: 125px;
-        padding: 12px;
-    }
-
-    .tool-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-    .tool-icon img {
-        width: 24px;
-    }
-
-    .pdf-tool-card h4 {
-        font-size: 14px;
-    }
-
-    .feature-box {
-        padding: 12px 8px;
-    }
-
-    .feature-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .feature-box h4 {
-        font-size: 14px;
-    }
-
-    .filter-btn {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-
-    /* ==========================
-   TABLET NAVBAR
-========================== */
-
-    .custom-navbar {
-
-        height: auto;
-
-    }
-
-    .navbar-collapse {
-
-        background: #ffffff;
-
-        margin-top: 12px;
-
-        padding: 20px;
-
-        border-radius: 16px;
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
-
-    }
-
-    .navbar-nav {
-
-        text-align: center;
-
-    }
-
-    .navbar-nav .nav-item {
-
-        margin: 8px 0;
-
-    }
-
-    .start-btn {
-
-        display: block;
-
-        width: 100%;
-
-        margin-top: 15px;
-
-    }
-
-
 }

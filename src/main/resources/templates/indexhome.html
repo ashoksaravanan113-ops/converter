@@ -1,20 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
+    <!-- =====================================================
+         BASIC META
+    ====================================================== -->
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary SEO -->
-    <title>ConvertNova | Free Online File Converter for PDF, Images & Office Documents</title>
-
-    <meta name="description"
-          content="ConvertNova offers free online file conversion tools for PDF, Word, Excel, PowerPoint, JPG, PNG, WEBP, and more. Fast, secure, high-quality conversions with no registration required.">
 
     <meta name="author"
           content="ConvertNova">
@@ -22,22 +19,42 @@
     <meta name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Canonical -->
+    <!-- =====================================================
+         PRIMARY SEO
+    ====================================================== -->
+
+    <title>
+        Free Online File Converter | PDF, Image & Office Tools | ConvertNova
+    </title>
+
+    <meta name="description"
+          content="Convert PDF, Word, Excel, PowerPoint, and image files online with ConvertNova. Free tools to convert, compress, merge, split, resize, and manage your files.">
+
+    <!-- =====================================================
+         CANONICAL
+    ====================================================== -->
+
     <link rel="canonical"
           href="https://convertnovas.com/">
 
-    <!-- Open Graph -->
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
+
     <meta property="og:type"
           content="website">
 
     <meta property="og:site_name"
           content="ConvertNova">
 
+    <meta property="og:locale"
+          content="en_US">
+
     <meta property="og:title"
-          content="ConvertNova | Free Online File Converter">
+          content="Free Online File Converter | ConvertNova">
 
     <meta property="og:description"
-          content="Convert PDF, Word, Excel, PowerPoint, JPG, PNG, WEBP, and more with free online tools. Fast, secure, and easy to use.">
+          content="Convert PDF, Word, Excel, PowerPoint, and image files online with free and easy-to-use ConvertNova tools.">
 
     <meta property="og:url"
           content="https://convertnovas.com/">
@@ -45,73 +62,186 @@
     <meta property="og:image"
           content="https://convertnovas.com/images/og-image.png">
 
+    <meta property="og:image:type"
+          content="image/png">
+
+    <meta property="og:image:width"
+          content="1200">
+
+    <meta property="og:image:height"
+          content="630">
+
     <meta property="og:image:alt"
-          content="ConvertNova Free Online File Converter">
+          content="ConvertNova Free Online File Conversion Tools">
 
-    <meta property="og:locale"
-          content="en_US">
+    <!-- =====================================================
+         TWITTER / X
+    ====================================================== -->
 
-    <!-- Twitter / X -->
     <meta name="twitter:card"
           content="summary_large_image">
 
     <meta name="twitter:title"
-          content="ConvertNova | Free Online File Converter">
+          content="Free Online File Converter | ConvertNova">
 
     <meta name="twitter:description"
-          content="Free online PDF, Image, and Office document conversion tools. Fast, secure, and easy to use.">
+          content="Convert PDF, Word, Excel, PowerPoint, and image files online with ConvertNova.">
 
     <meta name="twitter:image"
           content="https://convertnovas.com/images/og-image.png">
 
-    <!-- Theme -->
+    <meta name="twitter:image:alt"
+          content="ConvertNova Free Online File Conversion Tools">
+
+    <!-- =====================================================
+         THEME
+    ====================================================== -->
+
     <meta name="theme-color"
-          content="#0d6efd">
+          content="#2f56ff">
 
     <meta name="color-scheme"
           content="light">
 
-    <!-- Favicon -->
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
     <link rel="icon"
           th:href="@{/favicon.ico}"
           sizes="any">
 
-    <!-- Fonts -->
+    <link rel="apple-touch-icon"
+          th:href="@{/images/apple-touch-icon.png}">
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet">
 
-    <!-- Bootstrap -->
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- =====================================================
+         WEBSITE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          th:href="@{/css/navbar.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/footer.css}">
+
     <link rel="stylesheet"
           th:href="@{/css/homepage.css}">
 
-    <!-- Structured Data -->
+    <!-- =====================================================
+         ORGANIZATION STRUCTURED DATA
+    ====================================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://convertnovas.com/#organization",
+      "name": "ConvertNova",
+      "url": "https://convertnovas.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/logo.png"
+      }
+    }
+    </script>
+
+    <!-- =====================================================
+         WEBSITE STRUCTURED DATA
+    ====================================================== -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://convertnovas.com/#website",
       "name": "ConvertNova",
       "url": "https://convertnovas.com/",
-      "description": "Free online file converter for PDF, images, and Office documents.",
+      "description": "Free online file conversion tools for PDF, images, and Office documents.",
       "publisher": {
-        "@type": "Organization",
-        "name": "ConvertNova",
-        "url": "https://convertnovas.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://convertnovas.com/images/logo.png"
-        }
+        "@id": "https://convertnovas.com/#organization"
       },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://convertnovas.com/search?query={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "inLanguage": "en"
     }
     </script>
+
+    <!-- =====================================================
+         TOOL COLLECTION
+         Keep this synchronized with your actual tools.
+    ====================================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://convertnovas.com/#tools",
+      "name": "ConvertNova File Conversion Tools",
+      "url": "https://convertnovas.com/tools",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PDF Merger",
+          "url": "https://convertnovas.com/pdf-merger"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Splitter",
+          "url": "https://convertnovas.com/pdf-splitter"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDF Compressor",
+          "url": "https://convertnovas.com/pdf-compressor"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Word to PDF Converter",
+          "url": "https://convertnovas.com/word-to-pdf"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Excel to PDF Converter",
+          "url": "https://convertnovas.com/excel-to-pdf"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Image to PDF Converter",
+          "url": "https://convertnovas.com/image-to-pdf"
+        }
+      ]
+    }
+    </script>
+
+    <!-- =====================================================
+         ANALYTICS
+    ====================================================== -->
 
     <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
 
@@ -121,108 +251,7 @@
 <!-- =========================
      NAVBAR
 ========================= -->
-
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
-
-    <div class="container">
-
-        <a class="navbar-brand" href="/">
-
-            <img src="/images/logo.png"
-                 alt="ConvertNova Logo"
-                 class="logo">
-
-        </a>
-
-        <button type="button"
-                class="navbar-toggler"
-                data-bs-toggle="collapse"
-                data-bs-target="#navMenu"
-                aria-controls="navMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse"
-             id="navMenu">
-
-            <ul class="navbar-nav mx-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link active"
-                       href="/">
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/tools">
-                        All Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/pdf-tools">
-                        PDF Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/image-tools">
-                        Image Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/office-tools">
-                        Office Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/security-tools">
-                        Security Tools
-                    </a>
-                </li>
-
-                <!-- BLOG MENU -->
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/blogsection/blog">
-                        Blog
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/contact-us">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-            <a href="/tools"
-               class="btn start-btn">
-
-                Start Converting
-
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>
+<th:block th:replace="~{fragments/navbar :: navbar}"></th:block>
     <!-- =========================
      HERO
 ========================= -->
@@ -412,7 +441,7 @@
 
                         <div class="text-center mt-3">
 
-                            <a href="/all-tools" class="more-link">
+                            <a href="/tools" class="more-link">
 
                                 And many more conversions...
 
@@ -984,146 +1013,11 @@
     <!-- ===================================
      FOOTER
 =================================== -->
-
-    <footer class="footer-section">
-
-        <div class="footer-card">
-
-            <div class="row">
-
-                <!-- Logo -->
-
-                <div class="col-lg-3">
-
-                    <img src="/images/logo.png" class="footer-logo" alt="ConvertNova Logo">
-
-                    <p class="footer-desc">
-
-                        Your all-in-one free online file converter.
-                        Fast, secure and easy to use.
-
-                    </p>
-
-                    <div class="footer-social">
-
-                        <a href="#">
-                            <img src="/images/icons/facebook.png" alt="Facebook">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/twitter.png" alt="Twitter">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/linkedin.png" alt="LinkedIn">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/youtube.png" alt="YouTube">
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- Popular Tools -->
-
-                <div class="col-lg-2">
-
-                    <h5>Popular Tools</h5>
-
-                    <ul>
-
-                        <li><a href="/pdf-merger">PDF Merge</a></li>
-                        <li><a href="/pdf-splitter">PDF Split</a></li>
-                        <li><a href="/pdf-compressor">PDF Compress</a></li>
-                        <li><a href="/image-to-pdf">Image to PDF</a></li>
-                        <li><a href="/pdf-to-word">PDF to Word</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Categories -->
-
-                <div class="col-lg-2">
-
-                    <h5>Categories</h5>
-
-                    <ul>
-
-                        <li><a href="/pdf-tools">PDF Tools</a></li>
-                        <li><a href="/image-tools">Image Tools</a></li>
-                        <li><a href="/office-tools">Office Tools</a></li>
-                        <li><a href="/security-tools">Security Tools</a></li>
-                        <li><a href="/all-tools">All Tools</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Company -->
-
-                <div class="col-lg-2">
-
-                    <h5>Company</h5>
-
-                    <ul>
-
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/blogsection/blog">Blog</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-and-conditions">Terms of Service</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Newsletter -->
-
-                <div class="col-lg-3">
-
-                    <h5>Stay Updated</h5>
-
-                    <p>
-                        Subscribe to get tips and updates.
-                    </p>
-                    <input type="email" id="footerEmail" class="form-control footer-input"
-                        placeholder="Enter your email">
-
-                    <small id="emailError" class="text-danger">
-                    </small>
-
-                    <button type="button" class="btn footer-btn" id="subscribeBtn">
-
-                        Subscribe
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Bottom Bar -->
-
-        <div class="footer-bottom">
-
-            <div>
-                © 2026 ConvertNova. All rights reserved.
-            </div>
-
-            <div>
-                Made with ❤️ for everyone
-            </div>
-
-        </div>
-    </footer>
+    <th:block th:replace="~{fragments/footer :: footer}"></th:block>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/navbar.js"></script>
 
     <script src="/js/homepage.js"></script>
 

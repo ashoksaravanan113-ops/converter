@@ -1,220 +1,495 @@
 /* ===================================
-   NAVBAR
+   CONVERTNOVA NAVBAR
+   Fully Responsive
+=================================== */
+
+:root{
+    --nav-accent:#2f56ff;
+    --nav-accent-2:#7c3aed;
+    --nav-accent-dark:#1f3fd6;
+    --nav-text:#1f2937;
+    --nav-muted:#6b7280;
+    --nav-border:#e5e7eb;
+    --nav-gradient:linear-gradient(135deg,var(--nav-accent),var(--nav-accent-2));
+}
+
+/* ===================================
+   BASE NAVBAR
 =================================== */
 
 .custom-navbar{
-
     background:#ffffff;
-
     box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-    padding:12px 0;
-
-    transition:.3s;
-
+    padding:14px 0;
+    position:sticky;
+    top:0;
+    z-index:1050;
+    transition:padding .3s ease,box-shadow .3s ease;
 }
+
+.custom-navbar.scrolled{
+    padding:9px 0;
+    box-shadow:0 8px 26px rgba(0,0,0,.12);
+}
+
+.custom-navbar .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+}
+
+/* ===================================
+   LOGO LOCKUP
+=================================== */
+
+.navbar-brand{
+    display:flex;
+    align-items:center;
+    margin-right:0;
+}
+
+/* Logo is a single flat image (icon + wordmark + tagline baked in).
+   Size by height only so width scales naturally — never force a
+   fixed width/height pair on a non-square source image. */
 
 .logo{
-
-    width:170px;
-
+    height:56px;
+    width:auto;
+    display:block;
+    flex-shrink:0;
+    transition:height .3s ease;
 }
 
+.custom-navbar.scrolled .logo{
+    height:46px;
+}
+
+/* ===================================
+   NAVIGATION
+=================================== */
+
 .navbar-nav{
-
+    display:flex;
+    align-items:center;
     gap:10px;
-
+    margin:0 auto;
 }
 
 .nav-link{
-
-    color:#1f2937;
-
+    position:relative;
+    color:var(--nav-text);
     font-weight:600;
-
     font-size:16px;
+    padding:8px 12px !important;
+    transition:color .25s ease;
+    white-space:nowrap;
+}
 
-    transition:.3s;
+/* Underline */
 
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:12px;
+    bottom:2px;
+    width:0;
+    height:2px;
+    border-radius:2px;
+    background:var(--nav-accent);
+    transition:width .25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+    width:calc(100% - 24px);
 }
 
 .nav-link:hover,
 .nav-link.active{
-
-    color:#0d6efd;
-
+    color:var(--nav-accent);
 }
 
+/* ===================================
+   ACCESSIBILITY
+=================================== */
+
+.nav-link:focus-visible,
+.dropdown-item:focus-visible,
+.start-btn:focus-visible{
+    outline:2px solid var(--nav-accent);
+    outline-offset:2px;
+    border-radius:6px;
+}
+
+/* ===================================
+   TOOLS DROPDOWN
+=================================== */
+
+.dropdown-menu{
+    border:1px solid var(--nav-border);
+    border-radius:14px;
+    box-shadow:0 12px 32px rgba(0,0,0,.12);
+    padding:10px;
+    margin-top:10px;
+    min-width:210px;
+}
+
+.dropdown-item{
+    border-radius:8px;
+    padding:10px 14px;
+    font-weight:500;
+    color:var(--nav-text);
+    transition:background .2s ease,color .2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus{
+    background:#eef2ff;
+    color:var(--nav-accent);
+}
+
+.dropdown-toggle::after{
+    vertical-align:2px;
+    margin-left:5px;
+}
+
+/* ===================================
+   START CONVERTING BUTTON
+=================================== */
+
 .start-btn{
-
-    background:#0d6efd;
-
-    color:#ffffff;
-
-    padding:10px 22px;
-
+    background:var(--nav-gradient);
+    color:#ffffff !important;
+    padding:11px 24px;
     border-radius:10px;
-
-    font-weight:600;
-
-    transition:.3s;
-
+    font-weight:700;
+    font-size:15px;
+    border:none;
+    white-space:nowrap;
+    box-shadow:0 6px 16px rgba(47,86,255,.25);
+    transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
 }
 
 .start-btn:hover{
-
-    background:#0b5ed7;
-
-    color:#ffffff;
-
+    color:#ffffff !important;
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(47,86,255,.35);
+    filter:brightness(1.05);
 }
 
+.start-btn:active{
+    transform:translateY(0);
+}
+
+/* ===================================
+   HAMBURGER
+=================================== */
+
 .navbar-toggler{
-
-    border:none;
-
+    border:1px solid var(--nav-border);
+    border-radius:8px;
+    padding:7px 9px;
     box-shadow:none !important;
-
 }
 
 .navbar-toggler:focus{
+    box-shadow:0 0 0 3px rgba(47,86,255,.15) !important;
+}
 
-    box-shadow:none;
-
+.navbar-toggler-icon{
+    width:1.25em;
+    height:1.25em;
 }
 
 /* ===================================
    TABLET
+   992px and below
 =================================== */
 
 @media (max-width:991.98px){
 
     .custom-navbar{
-
         padding:10px 0;
+    }
 
+    .custom-navbar .container{
+        max-width:100%;
+        padding-left:18px;
+        padding-right:18px;
     }
 
     .logo{
-
-        width:155px;
-
+        height:48px;
     }
 
+    .custom-navbar.scrolled .logo{
+        height:42px;
+    }
+
+    /* Mobile/Tablet menu */
+
     .navbar-collapse{
-
+        margin-top:14px;
+        padding:18px;
         background:#ffffff;
-
-        margin-top:15px;
-
-        padding:20px;
-
+        border:1px solid var(--nav-border);
         border-radius:15px;
-
-        box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+        box-shadow:0 12px 35px rgba(0,0,0,.10);
     }
 
     .navbar-nav{
+        width:100%;
+        gap:3px;
+        align-items:stretch;
+        margin:0;
+    }
 
-        gap:5px;
-
-        text-align:center;
-
+    .nav-item{
+        width:100%;
     }
 
     .nav-link{
-
-        padding:12px 0;
-
+        display:block;
+        width:100%;
+        text-align:center;
+        font-size:16px;
+        padding:12px 10px !important;
+        border-radius:8px;
     }
+
+    .nav-link:hover{
+        background:#f5f7ff;
+    }
+
+    /* Center underline */
+
+    .nav-link::after{
+        left:50%;
+        transform:translateX(-50%);
+        bottom:5px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after{
+        width:45px;
+    }
+
+    /* Dropdown */
+
+    .dropdown-menu{
+        position:static !important;
+        width:100%;
+        min-width:0;
+        margin:5px 0 8px;
+        text-align:center;
+        border:none;
+        border-radius:10px;
+        background:#f7f8fc;
+        box-shadow:none;
+    }
+
+    .dropdown-item{
+        padding:11px 12px;
+    }
+
+    /* CTA */
 
     .start-btn{
-
+        display:block;
         width:100%;
-
         margin-top:15px;
-
+        padding:12px;
+        text-align:center;
     }
-
 }
 
 /* ===================================
    MOBILE
+   768px and below
 =================================== */
 
 @media (max-width:767.98px){
 
     .custom-navbar{
-
         padding:8px 0;
+    }
 
+    .custom-navbar .container{
+        padding-left:14px;
+        padding-right:14px;
     }
 
     .logo{
+        height:42px;
+    }
 
-        width:140px;
-
+    .custom-navbar.scrolled .logo{
+        height:38px;
     }
 
     .navbar-collapse{
-
-        padding:18px;
-
+        margin-top:10px;
+        padding:15px;
+        border-radius:13px;
     }
 
     .nav-link{
-
         font-size:15px;
+        padding:11px 8px !important;
+    }
 
-        padding:11px 0;
-
+    .dropdown-item{
+        font-size:14px;
+        padding:10px;
     }
 
     .start-btn{
-
-        width:100%;
-
-        padding:12px;
-
         font-size:15px;
-
+        padding:11px;
     }
-
 }
 
 /* ===================================
    SMALL MOBILE
+   576px and below
 =================================== */
 
-@media (max-width:480px){
+@media (max-width:575.98px){
+
+    .custom-navbar{
+        padding:7px 0;
+    }
+
+    .custom-navbar .container{
+        padding-left:12px;
+        padding-right:12px;
+    }
 
     .logo{
+        height:38px;
+    }
 
-        width:125px;
+    .custom-navbar.scrolled .logo{
+        height:34px;
+    }
 
+    .navbar-toggler{
+        padding:6px 8px;
+        border-radius:7px;
+    }
+
+    .navbar-toggler-icon{
+        width:1.15em;
+        height:1.15em;
     }
 
     .navbar-collapse{
-
-        padding:15px;
-
+        margin-top:9px;
+        padding:12px;
     }
 
     .nav-link{
-
         font-size:14px;
+        padding:10px 6px !important;
+    }
 
-        padding:10px 0;
-
+    .dropdown-item{
+        font-size:13px;
+        padding:9px;
     }
 
     .start-btn{
-
         font-size:14px;
-
         padding:10px;
+        border-radius:9px;
+    }
+}
 
+/* ===================================
+   EXTRA SMALL PHONES
+   400px and below
+=================================== */
+
+@media (max-width:400px){
+
+    .logo{
+        height:34px;
     }
 
+    .custom-navbar.scrolled .logo{
+        height:30px;
+    }
+
+    .navbar-toggler{
+        padding:5px 7px;
+    }
+
+    .navbar-collapse{
+        padding:10px;
+    }
+
+    .nav-link{
+        font-size:13px;
+        padding:9px 5px !important;
+    }
+
+    .dropdown-item{
+        font-size:12.5px;
+        padding:8px;
+    }
+
+    .start-btn{
+        font-size:13px;
+        padding:9px;
+    }
+}
+
+/* ===================================
+   VERY SMALL PHONES
+   350px and below
+=================================== */
+
+@media (max-width:350px){
+
+    .logo{
+        height:30px;
+    }
+
+    .custom-navbar.scrolled .logo{
+        height:27px;
+    }
+
+    .custom-navbar .container{
+        padding-left:9px;
+        padding-right:9px;
+    }
+
+    .navbar-collapse{
+        padding:8px;
+    }
+
+    .nav-link{
+        font-size:12.5px;
+    }
+
+    .start-btn{
+        font-size:12.5px;
+    }
+}
+
+/* ===================================
+   REDUCE MOTION
+=================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .custom-navbar,
+    .logo,
+    .nav-link,
+    .nav-link::after,
+    .dropdown-item,
+    .start-btn{
+        transition:none;
+    }
 }

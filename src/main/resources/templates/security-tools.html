@@ -3,192 +3,245 @@
 
 <head>
 
+    <!-- =========================================
+         BASIC META
+    ========================================== -->
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary SEO -->
-    <title>Security Tools | Free PDF Security Tools Online | ConvertNova</title>
-
-    <meta name="description"
-        content="Use ConvertNova's free online security tools to protect PDF files with passwords, unlock PDFs, add watermarks, and secure your documents quickly, safely, and without registration.">
 
     <meta name="author" content="ConvertNova">
 
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://convertnovas.com/security-tools">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Open Graph -->
+
+    <!-- =========================================
+         PRIMARY SEO
+    ========================================== -->
+
+    <title>
+        Free Office Tools Online – Word, Excel & PowerPoint Converter | ConvertNova
+    </title>
+
+    <meta name="description"
+        content="Use ConvertNova's free online Office tools to convert Word, Excel and PowerPoint files to PDF and PDF files to editable Office formats. Fast, simple and easy to use.">
+
+
+    <!-- =========================================
+         CANONICAL
+    ========================================== -->
+
+    <link rel="canonical" href="https://convertnovas.com/office-tools">
+
+
+    <!-- =========================================
+         LANGUAGE
+    ========================================== -->
+
+    <link rel="alternate" hreflang="en" href="https://convertnovas.com/office-tools">
+
+
+    <!-- =========================================
+         OPEN GRAPH
+    ========================================== -->
+
     <meta property="og:type" content="website">
 
     <meta property="og:site_name" content="ConvertNova">
 
-    <meta property="og:title" content="Security Tools | Free PDF Security Tools Online">
+    <meta property="og:title" content="Free Office Tools Online – Word, Excel & PowerPoint Converter">
 
     <meta property="og:description"
-        content="Protect, unlock, and watermark PDF documents online with ConvertNova's free security tools.">
+        content="Convert Word, Excel and PowerPoint files to and from PDF online with ConvertNova's free Office tools.">
 
-    <meta property="og:url" content="https://convertnovas.com/security-tools">
+    <meta property="og:url" content="https://convertnovas.com/office-tools">
 
     <meta property="og:image" content="https://convertnovas.com/images/og-image.png">
 
-    <meta property="og:image:alt" content="ConvertNova Security Tools">
+    <meta property="og:image:alt" content="ConvertNova Free Office Tools">
+
+    <meta property="og:image:width" content="1200">
+
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:image:type" content="image/png">
 
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+
+    <!-- =========================================
+         TWITTER / X
+    ========================================== -->
+
     <meta name="twitter:card" content="summary_large_image">
 
-    <meta name="twitter:title" content="Security Tools | ConvertNova">
+    <meta name="twitter:title" content="Free Office Tools Online | ConvertNova">
 
     <meta name="twitter:description"
-        content="Free online PDF security tools to protect, unlock, and watermark PDF documents.">
+        content="Free online tools to convert Word, Excel and PowerPoint files to and from PDF.">
 
     <meta name="twitter:image" content="https://convertnovas.com/images/og-image.png">
 
-    <!-- Theme -->
+    <meta name="twitter:image:alt" content="ConvertNova Free Office Tools">
+
+
+    <!-- =========================================
+         THEME
+    ========================================== -->
+
     <meta name="theme-color" content="#0d6efd">
 
     <meta name="color-scheme" content="light">
 
-    <!-- Favicon -->
+
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
     <link rel="icon" th:href="@{/favicon.ico}" sizes="any">
 
-    <!-- CSS -->
+
+    <!-- =========================================
+         BOOTSTRAP
+    ========================================== -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- =========================================
+         BOOTSTRAP ICONS
+    ========================================== -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+
+    <!-- =========================================
+         NAVBAR CSS
+    ========================================== -->
+
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+
+    <!-- =========================================
+         FOOTER CSS
+    ========================================== -->
+
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+
+    <!-- =========================================
+         PAGE CSS
+         KEEP PDF-TOOLS.CSS
+    ========================================== -->
+
     <link rel="stylesheet" th:href="@{/css/pdf-tools.css}">
 
-    <!-- Structured Data -->
+
+    <!-- =========================================
+         STRUCTURED DATA — WEBSITE
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://convertnovas.com/#website",
+      "url": "https://convertnovas.com/",
+      "name": "ConvertNova",
+      "description": "Free online file conversion, PDF, image and Office tools.",
+      "publisher": {
+        "@id": "https://convertnovas.com/#organization"
+      }
+    }
+    </script>
+
+
+    <!-- =========================================
+         STRUCTURED DATA — ORGANIZATION
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://convertnovas.com/#organization",
+      "name": "ConvertNova",
+      "url": "https://convertnovas.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/logo.png"
+      }
+    }
+    </script>
+
+
+    <!-- =========================================
+         STRUCTURED DATA — COLLECTION PAGE
+    ========================================== -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Security Tools",
-      "url": "https://convertnovas.com/security-tools",
-      "description": "Collection of free online PDF security tools including password protection, PDF unlocking, watermarking, and document security utilities.",
+      "@id": "https://convertnovas.com/office-tools#webpage",
+      "url": "https://convertnovas.com/office-tools",
+      "name": "Free Office Tools Online",
+      "description": "Free online Office tools for converting Word, Excel and PowerPoint files to PDF and converting PDF files to Office formats.",
+      "isPartOf": {
+        "@id": "https://convertnovas.com/#website"
+      },
       "publisher": {
-        "@type": "Organization",
-        "name": "ConvertNova",
-        "url": "https://convertnovas.com"
-      }
+        "@id": "https://convertnovas.com/#organization"
+      },
+      "inLanguage": "en"
     }
     </script>
+
+
+    <!-- =========================================
+         STRUCTURED DATA — BREADCRUMBS
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://convertnovas.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Office Tools",
+          "item": "https://convertnovas.com/office-tools"
+        }
+      ]
+    }
+    </script>
+
+
+    <!-- =========================================
+         ANALYTICS
+    ========================================== -->
 
     <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
 
 </head>
 
 <body>
-<!-- =========================
+    <!-- =========================
      NAVBAR
 ========================= -->
 
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <th:block th:replace="~{fragments/navbar :: navbar}"></th:block>
 
-    <div class="container">
-
-        <a class="navbar-brand" href="/">
-
-            <img src="/images/logo.png"
-                 alt="ConvertNova Logo"
-                 class="logo">
-
-        </a>
-
-        <button type="button"
-                class="navbar-toggler"
-                data-bs-toggle="collapse"
-                data-bs-target="#navMenu"
-                aria-controls="navMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse"
-             id="navMenu">
-
-            <ul class="navbar-nav mx-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/">
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/tools">
-                        All Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/pdf-tools">
-                        PDF Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/image-tools">
-                        Image Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/office-tools">
-                        Office Tools
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active"
-                       href="/security-tools">
-                        Security Tools
-                    </a>
-                </li>
-
-                <!-- BLOG MENU -->
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/blogsection/blog">
-                        Blog
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="/contact-us">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-            <a href="/tools"
-               class="btn start-btn">
-
-                Start Converting
-
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>
     <!-- ==========================================
      HERO SECTION
 ========================================== -->
@@ -297,77 +350,6 @@
                     Security Tools
 
                 </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     STATS SECTION
-========================================== -->
-    <section class="stats-section">
-
-        <div class="container">
-
-            <div class="stats-wrapper">
-
-                <div class="stat-item">
-
-                    <img src="/images/icons/files-converted.png" alt="Files Converted Statistics Icon">
-
-                    <div>
-
-                        <h3>1M+</h3>
-
-                        <p>Files Converted</p>
-
-                    </div>
-
-                </div>
-
-                <div class="stat-item">
-
-                    <img src="/images/icons/tools.png" alt="File Conversion Tools Icon">
-
-                    <div>
-
-                        <h3>20+</h3>
-
-                        <p>Conversion Tools</p>
-
-                    </div>
-
-                </div>
-
-                <div class="stat-item">
-
-                    <img src="/images/icons/security.png" alt="Website Uptime and Reliability Icon">
-
-                    <div>
-
-                        <h3>99.9%</h3>
-
-                        <p>Uptime</p>
-
-                    </div>
-
-                </div>
-
-                <div class="stat-item">
-
-                    <img src="/images/icons/lock.png" alt="Secure File Processing Icon">
-
-                    <div>
-
-                        <h3>100%</h3>
-
-                        <p>Secure Processing</p>
-
-                    </div>
-
-                </div>
 
             </div>
 
@@ -495,7 +477,7 @@
         </div>
 
     </section>
-    
+
     <!-- ==========================================
      FEATURES SECTION
 ========================================== -->
@@ -611,141 +593,17 @@
     </section>
 
 
-    <footer class="footer-section">
+    <!-- ==========================================
+     FOOTER
+=========================== -->
 
-        <div class="footer-card">
-
-            <div class="row">
-
-                <!-- Logo -->
-
-                <div class="col-lg-3">
-
-                    <img src="/images/logo.png" class="footer-logo" alt="ConvertNova Logo">
-
-                    <p class="footer-desc">
-
-                        Your all-in-one free online file converter.
-                        Fast, secure and easy to use.
-
-                    </p>
-
-                    <div class="footer-social">
-
-                        <a href="#">
-                            <img src="/images/icons/facebook.png" alt="ConvertNova Facebook">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/twitter.png" alt="ConvertNova X (Twitter)">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/linkedin.png" alt="ConvertNova LinkedIn">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/youtube.png" alt="ConvertNova YouTube">
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- Popular Tools -->
-
-                <div class="col-lg-2">
-
-                    <h5>Popular Tools</h5>
-
-                    <ul>
-
-                        <li><a href="/pdf-merger">PDF Merge</a></li>
-                        <li><a href="/pdf-splitter">PDF Split</a></li>
-                        <li><a href="/pdf-compressor">PDF Compress</a></li>
-                        <li><a href="/image-to-pdf">Image to PDF</a></li>
-                        <li><a href="/pdf-to-word">PDF to Word</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Categories -->
-
-                <div class="col-lg-2">
-
-                    <h5>Categories</h5>
-
-                    <ul>
-
-                        <li><a href="/pdf-tools">PDF Tools</a></li>
-                        <li><a href="/image-tools">Image Tools</a></li>
-                        <li><a href="/office-tools">Office Tools</a></li>
-                        <li><a href="/security-tools">Security Tools</a></li>
-                        <li><a href="/all-tools">All Tools</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Company -->
-
-                <div class="col-lg-2">
-
-                    <h5>Company</h5>
-
-                    <ul>
-
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-and-conditions">Terms of Service</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Newsletter -->
-
-                <div class="col-lg-3">
-
-                    <h5>Stay Updated</h5>
-
-                    <p>
-                        Subscribe to get tips and updates.
-                    </p>
-
-                    <input type="email" class="form-control footer-input" placeholder="Enter your email">
-
-                    <button class="btn footer-btn">
-                        Subscribe
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Bottom Bar -->
-
-        <div class="footer-bottom">
-
-            <div>
-                © 2026 ConvertNova. All rights reserved.
-            </div>
-
-            <div>
-                Made with ❤️ for everyone
-            </div>
-
-
-
-        </div>
-
-    </footer>
+    <th:block th:replace="~{fragments/footer :: footer}"></th:block>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/navbar.js"></script>
+
+    <script src="/js/homepage.js"></script>
 
 </body>
 
