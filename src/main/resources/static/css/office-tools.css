@@ -1,44 +1,52 @@
 /* =========================================================
-   CONVERTNOVA PDF TOOLS
+   CONVERTNOVA — OFFICE TOOLS
+   Dedicated category-page stylesheet
+   Same visual system as PDF Tools.
+   Only page-specific PDF names are converted to Office names.
+   Shared layout classes remain unchanged intentionally.
+========================================================= */
+
+/* =========================================================
+   CONVERTNOVA OFFICE TOOLS
    Category Page
 ========================================================= */
 
 :root{
-    --pdf-primary:#2563eb;
-    --pdf-primary-dark:#1d4ed8;
-    --pdf-accent:#7c3aed;
+    --office-primary:#2563eb;
+    --office-primary-dark:#1d4ed8;
+    --office-accent:#7c3aed;
 
-    --pdf-ink:#0f172a;
-    --pdf-text:#334155;
-    --pdf-muted:#64748b;
+    --office-ink:#0f172a;
+    --office-text:#334155;
+    --office-muted:#64748b;
 
-    --pdf-bg:#ffffff;
-    --pdf-soft:#f8fafc;
-    --pdf-soft-blue:#f5f8ff;
+    --office-bg:#ffffff;
+    --office-soft:#f8fafc;
+    --office-soft-blue:#f5f8ff;
 
-    --pdf-border:#e2e8f0;
+    --office-border:#e2e8f0;
 
-    --pdf-radius-sm:12px;
-    --pdf-radius-md:18px;
-    --pdf-radius-lg:26px;
+    --office-radius-sm:12px;
+    --office-radius-md:18px;
+    --office-radius-lg:26px;
 
-    --pdf-shadow-sm:
+    --office-shadow-sm:
         0 4px 14px rgba(15,23,42,.05);
 
-    --pdf-shadow-md:
+    --office-shadow-md:
         0 12px 30px rgba(15,23,42,.08);
 
-    --pdf-shadow-lg:
+    --office-shadow-lg:
         0 20px 50px rgba(15,23,42,.10);
 
-    --pdf-gradient:
+    --office-gradient:
         linear-gradient(
             135deg,
-            var(--pdf-primary),
-            var(--pdf-accent)
+            var(--office-primary),
+            var(--office-accent)
         );
 
-    --pdf-ease:
+    --office-ease:
         cubic-bezier(.22,1,.36,1);
 }
 
@@ -47,22 +55,22 @@
    RESET
 ========================================================= */
 
-.pdf-hero *,
+.office-hero *,
 .search-section *,
 .filter-section *,
-.pdf-tools-section *,
-.pdf-info-section *,
-.pdf-use-section *,
-.pdf-workflow-section *,
-.pdf-tips-section *,
+.office-tools-section *,
+.office-info-section *,
+.office-use-section *,
+.office-workflow-section *,
+.office-tips-section *,
 .related-section *,
 .feature-section *{
     box-sizing:border-box;
 }
 
-.pdf-tools-section a,
-.pdf-info-section a,
-.pdf-use-section a,
+.office-tools-section a,
+.office-info-section a,
+.office-use-section a,
 .related-section a{
     text-decoration:none;
 }
@@ -72,7 +80,7 @@
    HERO
 ========================================================= */
 
-.pdf-hero{
+.office-hero{
     padding:72px 0 54px;
     text-align:center;
 
@@ -87,7 +95,7 @@
             rgba(37,99,235,.10),
             transparent 60%
         ),
-        var(--pdf-soft-blue);
+        var(--office-soft-blue);
 }
 
 .hero-content{
@@ -108,18 +116,18 @@
 
     background:#ffffff;
 
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     font-size:13px;
     font-weight:700;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--office-shadow-sm);
 }
 
-.pdf-hero h1{
+.office-hero h1{
     margin:0 0 16px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:48px;
     line-height:1.1;
@@ -128,11 +136,11 @@
     letter-spacing:-.035em;
 }
 
-.pdf-hero p{
+.office-hero p{
     max-width:680px;
     margin:0 auto;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:18px;
     line-height:1.75;
@@ -145,7 +153,7 @@
 
 .search-section{
     padding:28px 0 20px;
-    background:var(--pdf-bg);
+    background:var(--office-bg);
 }
 
 .search-wrapper{
@@ -162,10 +170,10 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--office-border);
     border-radius:14px;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--office-shadow-sm);
 
     transition:
         border-color .2s ease,
@@ -173,7 +181,7 @@
 }
 
 .search-box:focus-within{
-    border-color:var(--pdf-primary);
+    border-color:var(--office-primary);
 
     box-shadow:
         0 0 0 4px rgba(37,99,235,.10);
@@ -187,7 +195,7 @@
 
     transform:translateY(-50%);
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     pointer-events:none;
 }
@@ -205,7 +213,7 @@
 
     border-radius:14px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:15px;
 }
@@ -222,7 +230,7 @@
     border:0;
     border-radius:14px;
 
-    background:var(--pdf-gradient);
+    background:var(--office-gradient);
 
     color:#ffffff;
 
@@ -235,8 +243,8 @@
         0 7px 18px rgba(37,99,235,.20);
 
     transition:
-        transform .2s var(--pdf-ease),
-        box-shadow .2s var(--pdf-ease);
+        transform .2s var(--office-ease),
+        box-shadow .2s var(--office-ease);
 }
 
 .search-btn:hover{
@@ -257,7 +265,7 @@
 
 .filter-section{
     padding:8px 0 44px;
-    background:var(--pdf-bg);
+    background:var(--office-bg);
 }
 
 .category-filter{
@@ -275,27 +283,27 @@
 
     padding:10px 18px;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--office-border);
     border-radius:999px;
 
     background:#ffffff;
 
-    color:var(--pdf-text);
+    color:var(--office-text);
 
     font-size:14px;
     font-weight:650;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--office-shadow-sm);
 
     transition:
         color .2s ease,
         border-color .2s ease,
         background .2s ease,
-        transform .2s var(--pdf-ease);
+        transform .2s var(--office-ease);
 }
 
 .filter-btn:hover{
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     border-color:#b9c9ff;
 
@@ -309,7 +317,7 @@
 
     border-color:transparent;
 
-    background:var(--pdf-gradient);
+    background:var(--office-gradient);
 
     box-shadow:
         0 7px 18px rgba(37,99,235,.22);
@@ -332,7 +340,7 @@
 
     margin-bottom:9px;
 
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     font-size:12px;
     font-weight:800;
@@ -347,7 +355,7 @@
 .workflow-content h2{
     margin:0 0 12px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:32px;
     line-height:1.2;
@@ -360,7 +368,7 @@
 .section-heading p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:16px;
     line-height:1.7;
@@ -368,16 +376,16 @@
 
 
 /* =========================================================
-   PDF TOOLS
+   OFFICE TOOLS
 ========================================================= */
 
-.pdf-tools-section{
+.office-tools-section{
     padding:18px 0 78px;
 
     background:#ffffff;
 }
 
-.pdf-tool-card{
+.office-tool-card{
     display:flex;
     flex-direction:column;
 
@@ -386,30 +394,30 @@
 
     padding:24px 22px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--office-border);
+    border-radius:var(--office-radius-md);
 
     background:#ffffff;
 
     color:inherit;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--office-shadow-sm);
 
     transition:
-        transform .28s var(--pdf-ease),
-        box-shadow .28s var(--pdf-ease),
+        transform .28s var(--office-ease),
+        box-shadow .28s var(--office-ease),
         border-color .28s ease;
 }
 
-.pdf-tool-card:hover{
+.office-tool-card:hover{
     transform:translateY(-6px);
 
     border-color:#d3dcf8;
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--office-shadow-md);
 }
 
-.pdf-tool-card:focus-visible{
+.office-tool-card:focus-visible{
     outline:3px solid rgba(37,99,235,.25);
     outline-offset:3px;
 }
@@ -427,10 +435,10 @@
     border-radius:14px;
 
     transition:
-        transform .28s var(--pdf-ease);
+        transform .28s var(--office-ease);
 }
 
-.pdf-tool-card:hover .tool-icon{
+.office-tool-card:hover .tool-icon{
     transform:scale(1.06);
 }
 
@@ -469,10 +477,10 @@
     background:#fff7dc;
 }
 
-.pdf-tool-card h3{
+.office-tool-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:17px;
     line-height:1.35;
@@ -480,10 +488,10 @@
     font-weight:750;
 }
 
-.pdf-tool-card p{
+.office-tool-card p{
     margin:0 0 18px;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:14px;
     line-height:1.65;
@@ -491,12 +499,12 @@
     flex-grow:1;
 }
 
-.pdf-tool-card > span{
+.office-tool-card > span{
     display:inline-flex;
     align-items:center;
     gap:6px;
 
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     font-size:14px;
     font-weight:750;
@@ -505,7 +513,7 @@
         gap .2s ease;
 }
 
-.pdf-tool-card:hover > span{
+.office-tool-card:hover > span{
     gap:9px;
 }
 
@@ -514,10 +522,10 @@
    CATEGORY INFORMATION
 ========================================================= */
 
-.pdf-info-section{
+.office-info-section{
     padding:76px 0;
 
-    background:var(--pdf-soft);
+    background:var(--office-soft);
 }
 
 .content-card{
@@ -528,10 +536,10 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--office-border);
+    border-radius:var(--office-radius-lg);
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--office-shadow-sm);
 }
 
 .content-heading{
@@ -541,7 +549,7 @@
 .content-card p{
     margin:0 0 16px;
 
-    color:var(--pdf-text);
+    color:var(--office-text);
 
     font-size:15.5px;
     line-height:1.8;
@@ -556,7 +564,7 @@
    USE CASE SECTION
 ========================================================= */
 
-.pdf-use-section{
+.office-use-section{
     padding:78px 0;
 
     background:#ffffff;
@@ -567,22 +575,22 @@
 
     padding:27px 24px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--office-border);
+    border-radius:var(--office-radius-md);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--office-shadow-sm);
 
     transition:
-        transform .25s var(--pdf-ease),
+        transform .25s var(--office-ease),
         box-shadow .25s ease;
 }
 
 .use-card:hover{
     transform:translateY(-4px);
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--office-shadow-md);
 }
 
 .use-number{
@@ -599,7 +607,7 @@
 
     background:#eef3ff;
 
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     font-size:12px;
     font-weight:800;
@@ -608,7 +616,7 @@
 .use-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:18px;
     font-weight:750;
@@ -617,14 +625,14 @@
 .use-card p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:14.5px;
     line-height:1.7;
 }
 
 .use-card a{
-    color:var(--pdf-primary);
+    color:var(--office-primary);
     font-weight:700;
 }
 
@@ -637,10 +645,10 @@
    WORKFLOW
 ========================================================= */
 
-.pdf-workflow-section{
+.office-workflow-section{
     padding:78px 0;
 
-    background:var(--pdf-soft);
+    background:var(--office-soft);
 }
 
 .workflow-card{
@@ -656,10 +664,10 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--office-border);
+    border-radius:var(--office-radius-lg);
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--office-shadow-md);
 }
 
 .workflow-content h2{
@@ -667,7 +675,7 @@
 }
 
 .workflow-content > p{
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     line-height:1.7;
 }
@@ -696,7 +704,7 @@
 
     border-radius:50%;
 
-    background:var(--pdf-gradient);
+    background:var(--office-gradient);
 
     color:#ffffff;
 
@@ -707,7 +715,7 @@
 .workflow-step h3{
     margin:0 0 4px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:16px;
     font-weight:750;
@@ -716,7 +724,7 @@
 .workflow-step p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:14px;
     line-height:1.6;
@@ -727,7 +735,7 @@
    TIPS
 ========================================================= */
 
-.pdf-tips-section{
+.office-tips-section{
     padding:78px 0;
 
     background:#ffffff;
@@ -745,22 +753,22 @@
 .tip-card{
     padding:25px 22px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--office-border);
+    border-radius:var(--office-radius-md);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--office-shadow-sm);
 
     transition:
-        transform .25s var(--pdf-ease),
+        transform .25s var(--office-ease),
         box-shadow .25s ease;
 }
 
 .tip-card:hover{
     transform:translateY(-4px);
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--office-shadow-md);
 }
 
 .tip-card > i{
@@ -777,7 +785,7 @@
 
     background:#eef3ff;
 
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     font-size:20px;
 }
@@ -785,7 +793,7 @@
 .tip-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:17px;
     font-weight:750;
@@ -794,7 +802,7 @@
 .tip-card p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:14px;
     line-height:1.7;
@@ -820,7 +828,7 @@
 
     padding:38px 42px;
 
-    border-radius:var(--pdf-radius-lg);
+    border-radius:var(--office-radius-lg);
 
     background:
         linear-gradient(
@@ -841,7 +849,7 @@
 
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     line-height:1.7;
 }
@@ -863,12 +871,12 @@
 
     padding:9px 13px;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--office-border);
     border-radius:10px;
 
     background:#ffffff;
 
-    color:var(--pdf-text);
+    color:var(--office-text);
 
     font-size:13px;
     font-weight:650;
@@ -880,7 +888,7 @@
 }
 
 .related-links a:hover{
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     border-color:#bdccf8;
 
@@ -904,12 +912,12 @@
 
     padding:32px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--office-border);
+    border-radius:var(--office-radius-lg);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--office-shadow-md);
 }
 
 .feature-box{
@@ -958,7 +966,7 @@
 .feature-box h3{
     margin:0 0 5px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:16px;
     font-weight:750;
@@ -967,7 +975,7 @@
 .feature-box p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:13.5px;
     line-height:1.6;
@@ -976,7 +984,7 @@
 .feature-divider{
     width:1px;
 
-    background:var(--pdf-border);
+    background:var(--office-border);
 }
 
 
@@ -996,7 +1004,7 @@
     border:1px dashed #cbd5e1;
     border-radius:18px;
 
-    background:var(--pdf-soft);
+    background:var(--office-soft);
 }
 
 .no-tools-message i{
@@ -1004,7 +1012,7 @@
 
     margin-bottom:10px;
 
-    color:var(--pdf-primary);
+    color:var(--office-primary);
 
     font-size:28px;
 }
@@ -1012,7 +1020,7 @@
 .no-tools-message h3{
     margin:0 0 7px;
 
-    color:var(--pdf-ink);
+    color:var(--office-ink);
 
     font-size:18px;
 }
@@ -1020,7 +1028,7 @@
 .no-tools-message p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--office-muted);
 
     font-size:14px;
 }
@@ -1032,11 +1040,11 @@
 
 @media (max-width:991.98px){
 
-    .pdf-hero{
+    .office-hero{
         padding:60px 0 45px;
     }
 
-    .pdf-hero h1{
+    .office-hero h1{
         font-size:40px;
     }
 
@@ -1079,16 +1087,16 @@
 
 @media (max-width:767.98px){
 
-    .pdf-hero{
+    .office-hero{
         padding:48px 0 36px;
     }
 
-    .pdf-hero h1{
+    .office-hero h1{
         font-size:31px;
         letter-spacing:-.025em;
     }
 
-    .pdf-hero p{
+    .office-hero p{
         font-size:15px;
         line-height:1.65;
     }
@@ -1132,14 +1140,14 @@
         font-size:27px;
     }
 
-    .pdf-tools-section,
-    .pdf-use-section,
-    .pdf-workflow-section,
-    .pdf-tips-section{
+    .office-tools-section,
+    .office-use-section,
+    .office-workflow-section,
+    .office-tips-section{
         padding:55px 0;
     }
 
-    .pdf-tool-card{
+    .office-tool-card{
         min-height:225px;
         padding:21px 19px;
     }
@@ -1197,11 +1205,11 @@
 
 @media (max-width:480px){
 
-    .pdf-hero h1{
+    .office-hero h1{
         font-size:27px;
     }
 
-    .pdf-hero p{
+    .office-hero p{
         font-size:14px;
     }
 
@@ -1216,15 +1224,15 @@
         padding:8px 12px;
     }
 
-    .pdf-tool-card{
+    .office-tool-card{
         min-height:215px;
     }
 
-    .pdf-tool-card h3{
+    .office-tool-card h3{
         font-size:16px;
     }
 
-    .pdf-tool-card p{
+    .office-tool-card p{
         font-size:13.5px;
     }
 
@@ -1239,7 +1247,7 @@
    ACCESSIBILITY
 ========================================================= */
 
-.pdf-tool-card:focus-visible,
+.office-tool-card:focus-visible,
 .filter-btn:focus-visible,
 .search-btn:focus-visible,
 .search-box input:focus-visible,

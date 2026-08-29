@@ -137,7 +137,7 @@
          KEEP PDF-TOOLS.CSS
     ========================================== -->
 
-    <link rel="stylesheet" th:href="@{/css/pdf-tools.css}">
+    <link rel="stylesheet" th:href="@{/css/security-tools.css}">
 
 
     <!-- =========================================
@@ -236,351 +236,994 @@
 </head>
 
 <body>
-    <!-- =========================
-     NAVBAR
-========================= -->
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
 
     <th:block th:replace="~{fragments/navbar :: navbar}"></th:block>
 
-    <!-- ==========================================
-     HERO SECTION
-========================================== -->
 
-    <section class="pdf-hero">
+    <main>
 
-        <div class="container">
+        <!-- =========================================
+             HERO
+        ========================================== -->
 
-            <div class="hero-content text-center">
+        <section class="security-hero">
 
-                <h1>
+            <div class="container">
 
-                    Security Tools
+                <div class="hero-content">
 
-                </h1>
+                    <span class="page-eyebrow">
 
-                <p>
+                        <i class="bi bi-shield-lock"></i>
 
-                    Convert Word, Excel and PowerPoint
-                    files into PDF documents instantly.
+                        Free Online Security Tools
 
-                </p>
+                    </span>
+
+                    <h1>
+
+                        Free Security Tools Online
+
+                    </h1>
+
+                    <p>
+
+                        Protect, unlock and watermark PDF documents
+                        with simple browser-based security tools.
+                        Choose the tool you need and get started
+                        directly from your browser.
+
+                    </p>
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- ==========================================
-     SEARCH SECTION
-========================================== -->
+        <!-- =========================================
+             SEARCH
+        ========================================== -->
 
-    <section class="search-section">
+        <section
+            class="search-section"
+            aria-label="Search security tools">
 
-        <div class="container">
+            <div class="container">
 
-            <div class="search-wrapper">
+                <div class="search-wrapper">
 
-                <div class="search-box">
+                    <div class="search-box">
+
+                        <i
+                            class="bi bi-search"
+                            aria-hidden="true"></i>
+
+                        <input
+                            type="search"
+                            id="securityToolSearch"
+                            placeholder="Search security tools..."
+                            aria-label="Search security tools">
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="search-btn"
+                        id="securitySearchButton">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CATEGORY NAVIGATION
+        ========================================== -->
+
+        <section
+            class="filter-section"
+            aria-label="Tool categories">
+
+            <div class="container">
+
+                <div class="category-filter">
+
+                    <a
+                        href="/tools"
+                        class="filter-btn">
+
+                        <i class="bi bi-grid"></i>
+
+                        All Tools
+
+                    </a>
+
+                    <a
+                        href="/pdf-tools"
+                        class="filter-btn">
+
+                        <i class="bi bi-file-earmark-pdf"></i>
+
+                        PDF Tools
+
+                    </a>
+
+                    <a
+                        href="/image-tools"
+                        class="filter-btn">
+
+                        <i class="bi bi-image"></i>
+
+                        Image Tools
+
+                    </a>
+
+                    <a
+                        href="/office-tools"
+                        class="filter-btn">
+
+                        <i class="bi bi-file-earmark-word"></i>
+
+                        Office Tools
+
+                    </a>
+
+                    <a
+                        href="/security-tools"
+                        class="filter-btn active"
+                        aria-current="page">
+
+                        <i class="bi bi-shield-lock"></i>
+
+                        Security Tools
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SECURITY TOOLKIT
+        ========================================== -->
+
+        <section
+            class="security-tools-section"
+            id="security-tools">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+
+                        SECURITY TOOLKIT
+
+                    </span>
+
+                    <h2>
+
+                        Choose a Security Tool
+
+                    </h2>
+
+                    <p>
+
+                        Select the PDF security tool you need.
+                        Each tool is designed for a specific
+                        document protection task and can be used
+                        directly from your browser.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="row g-4"
+                    id="securityToolsGrid">
+
+
+                    <!-- =================================
+                         PDF UNLOCKER
+                    ================================== -->
+
+                    <div
+                        class="col-lg-4 col-md-6 tool-item"
+                        data-tool-name="pdf unlocker unlock password remove password protection">
+
+                        <a
+                            href="/pdf-unlocker"
+                            class="security-tool-card">
+
+                            <div class="tool-icon green">
+
+                                <img
+                                    src="/images/icons/unlock.png"
+                                    alt="PDF Unlocker"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+
+                                PDF Unlocker
+
+                            </h3>
+
+                            <p>
+
+                                Remove password protection from
+                                supported PDF documents when you
+                                have the required permission.
+
+                            </p>
+
+                            <span>
+
+                                Open Tool
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PDF PROTECTOR
+                    ================================== -->
+
+                    <div
+                        class="col-lg-4 col-md-6 tool-item"
+                        data-tool-name="pdf protector protect password secure pdf">
+
+                        <a
+                            href="/pdf-protector"
+                            class="security-tool-card">
+
+                            <div class="tool-icon purple">
+
+                                <img
+                                    src="/images/icons/protect.png"
+                                    alt="PDF Protector"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+
+                                PDF Protector
+
+                            </h3>
+
+                            <p>
+
+                                Add password protection to PDF
+                                documents to help control access
+                                to supported files.
+
+                            </p>
+
+                            <span>
+
+                                Open Tool
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PDF WATERMARK
+                    ================================== -->
+
+                    <div
+                        class="col-lg-4 col-md-6 tool-item"
+                        data-tool-name="pdf watermark watermark text image protect branding">
+
+                        <a
+                            href="/pdf-watermark"
+                            class="security-tool-card">
+
+                            <div class="tool-icon blue">
+
+                                <img
+                                    src="/images/icons/watermark.png"
+                                    alt="PDF Watermark"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+
+                                PDF Watermark
+
+                            </h3>
+
+                            <p>
+
+                                Add text or image watermarks to
+                                supported PDF documents for
+                                identification or branding.
+
+                            </p>
+
+                            <span>
+
+                                Open Tool
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+                <div
+                    id="noSecurityTools"
+                    class="no-tools-message"
+                    hidden>
 
                     <i class="bi bi-search"></i>
 
-                    <input type="text" placeholder="Search PDF tools...">
+                    <h3>
+
+                        No security tool found
+
+                    </h3>
+
+                    <p>
+
+                        Try another search term such as unlock,
+                        protect or watermark.
+
+                    </p>
 
                 </div>
 
-                <button class="search-btn">
-
-                    Search
-
-                </button>
-
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- ==========================================
-     CATEGORY FILTERS
-========================================== -->
+        <!-- =========================================
+             ABOUT SECURITY TOOLS
+        ========================================== -->
 
-    <section class="filter-section">
+        <section class="security-info-section">
 
-        <div class="container">
+            <div class="container">
 
-            <div class="category-filter">
+                <div class="content-card">
 
-                <a href="/tools" class="filter-btn ">
+                    <div class="content-heading">
 
-                    <i class="bi bi-grid"></i>
+                        <span class="section-label">
 
-                    All Tools
-
-                </a>
-
-                <a href="/pdf-tools" class="filter-btn ">
-
-                    <i class="bi bi-file-earmark-pdf"></i>
-
-                    PDF Tools
-
-                </a>
-
-                <a href="/image-tools" class="filter-btn ">
-
-                    <i class="bi bi-image"></i>
-
-                    Image Tools
-
-                </a>
-
-                <a href="/office-tools" class="filter-btn ">
-
-                    <i class="bi bi-file-earmark-word"></i>
-
-                    Office Tools
-
-                </a>
-
-                <a href="/security-tools" class="filter-btn active">
-
-                    <i class="bi bi-shield-lock"></i>
-
-                    Security Tools
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     SECURITY TOOLS GRID
-========================================== -->
-
-    <section class="security-tools-section">
-
-        <div class="container">
-
-            <div class="row g-4">
-
-                <!-- PDF Unlocker -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-unlocker" class="pdf-tool-card">
-
-                        <div class="tool-icon green">
-
-                            <img src="/images/icons/unlock.png" alt="PDF Unlocker Tool Icon">
-
-                        </div>
-
-                        <h4>
-
-                            PDF Unlocker
-
-                        </h4>
-
-                        <p>
-
-                            Remove password
-                            protection from PDFs.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
+                            ABOUT SECURITY TOOLS
 
                         </span>
 
-                    </a>
+                        <h2>
 
-                </div>
+                            What Can You Do With These Security Tools?
 
-                <!-- PDF Protector -->
+                        </h2>
 
-                <div class="col-lg-3 col-md-6">
+                    </div>
 
-                    <a href="/pdf-protector" class="pdf-tool-card">
+                    <p>
 
-                        <div class="tool-icon purple">
+                        PDF documents are often used for reports,
+                        applications, business documents and files
+                        that need to be shared in a consistent format.
+                        In some situations, you may also need to
+                        protect a PDF, remove protection from a file
+                        you are authorized to access, or add a visible
+                        watermark.
 
-                            <img src="/images/icons/protect.png" alt="PDF Protector Tool Icon">
+                    </p>
 
-                        </div>
+                    <p>
 
-                        <h4>
+                        ConvertNova provides separate browser-based
+                        tools for common PDF security tasks. You can
+                        protect supported PDF documents with a password,
+                        unlock supported documents when you have the
+                        necessary permission, or add text and image
+                        watermarks.
 
-                            PDF Protector
+                    </p>
 
-                        </h4>
+                    <p>
 
-                        <p>
+                        Keeping each operation as a separate tool makes
+                        it easier to select the exact PDF security task
+                        you need without searching through unrelated
+                        document tools.
 
-                            Add password protection
-                            to PDF documents.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- PDF Watermark -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-watermark" class="pdf-tool-card">
-
-                        <div class="tool-icon blue">
-
-                            <img src="/images/icons/watermark.png" alt="PDF Watermark Tool Icon">
-
-                        </div>
-
-                        <h4>
-
-                            PDF Watermark
-
-                        </h4>
-
-                        <p>
-
-                            Add text or image
-                            watermarks to PDFs.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
+                    </p>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- ==========================================
-     FEATURES SECTION
+        <!-- =========================================
+             QUICK GUIDE
+        ========================================== -->
+
+        <section class="security-use-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+
+                        QUICK GUIDE
+
+                    </span>
+
+                    <h2>
+
+                        Which Security Tool Should You Use?
+
+                    </h2>
+
+                    <p>
+
+                        Choose the tool according to the PDF security
+                        task you want to complete.
+
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">01</div>
+
+                            <h3>
+
+                                Unlock a PDF
+
+                            </h3>
+
+                            <p>
+
+                                Use
+                                <a href="/pdf-unlocker">
+                                    PDF Unlocker
+                                </a>
+                                when you need to remove protection
+                                from a supported PDF that you are
+                                authorized to access.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">02</div>
+
+                            <h3>
+
+                                Protect a PDF
+
+                            </h3>
+
+                            <p>
+
+                                Use
+                                <a href="/pdf-protector">
+                                    PDF Protector
+                                </a>
+                                when you want to add password
+                                protection to a supported PDF.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">03</div>
+
+                            <h3>
+
+                                Add a PDF watermark
+
+                            </h3>
+
+                            <p>
+
+                                Use
+                                <a href="/pdf-watermark">
+                                    PDF Watermark
+                                </a>
+                                when you want to place text or an
+                                image over PDF pages.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">04</div>
+
+                            <h3>
+
+                                Identify a document
+
+                            </h3>
+
+                            <p>
+
+                                A visible watermark can help indicate
+                                ownership, document status, branding
+                                or other information on a PDF.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">05</div>
+
+                            <h3>
+
+                                Control document access
+
+                            </h3>
+
+                            <p>
+
+                                Password protection can provide an
+                                additional access-control layer for
+                                supported PDF documents.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">06</div>
+
+                            <h3>
+
+                                Prepare a protected PDF
+
+                            </h3>
+
+                            <p>
+
+                                Review the document first, then choose
+                                the appropriate protection or watermark
+                                operation before sharing the final file.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             WORKFLOW
+        ========================================== -->
+
+        <section class="security-workflow-section">
+
+            <div class="container">
+
+                <div class="workflow-card">
+
+                    <div class="workflow-content">
+
+                        <span class="section-label">
+
+                            SIMPLE WORKFLOW
+
+                        </span>
+
+                        <h2>
+
+                            How to Use a Security Tool
+
+                        </h2>
+
+                        <p>
+
+                            Complete a PDF security task in a few
+                            straightforward steps.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-steps">
+
+                        <div class="workflow-step">
+
+                            <span>1</span>
+
+                            <div>
+
+                                <h3>
+
+                                    Choose a tool
+
+                                </h3>
+
+                                <p>
+
+                                    Select Unlocker, Protector or
+                                    Watermark based on your task.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-step">
+
+                            <span>2</span>
+
+                            <div>
+
+                                <h3>
+
+                                    Upload your PDF
+
+                                </h3>
+
+                                <p>
+
+                                    Add the supported PDF document
+                                    required by the selected tool.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-step">
+
+                            <span>3</span>
+
+                            <div>
+
+                                <h3>
+
+                                    Apply the security operation
+
+                                </h3>
+
+                                <p>
+
+                                    Follow the selected tool's
+                                    instructions and start processing.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-step">
+
+                            <span>4</span>
+
+                            <div>
+
+                                <h3>
+
+                                    Download the result
+
+                                </h3>
+
+                                <p>
+
+                                    Review the processed PDF and
+                                download the resulting document.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- =========================================
+     SECURITY TIPS
 ========================================== -->
 
-    <section class="feature-section">
+<section class="security-tips-section">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="feature-wrapper">
+        <div class="section-heading">
 
-                <!-- Secure -->
+            <span class="section-label">
 
-                <div class="feature-box">
+                SECURITY TIPS
 
-                    <div class="feature-icon blue">
+            </span>
 
-                        <img src="/images/icons/secure.png" alt="Security">
+            <h2>
 
-                    </div>
+                Tips for Working With Protected PDFs
+
+            </h2>
+
+            <p>
+
+                A few simple practices can help you work more
+                safely and effectively with PDF documents.
+
+            </p>
+
+        </div>
+
+
+        <div class="tips-grid">
+
+
+            <!-- Protection -->
+
+            <article class="tip-card">
+
+                <i class="bi bi-shield-check"></i>
+
+                <h3>
+
+                    Use Protection Appropriately
+
+                </h3>
+
+                <p>
+
+                    Protect documents when access control is
+                    appropriate for the information they contain.
+
+                </p>
+
+            </article>
+
+
+            <!-- Password -->
+
+            <article class="tip-card">
+
+                <i class="bi bi-key"></i>
+
+                <h3>
+
+                    Keep Passwords Secure
+
+                </h3>
+
+                <p>
+
+                    Use a password you can securely manage and
+                    avoid sharing document passwords unnecessarily.
+
+                </p>
+
+            </article>
+
+
+            <!-- Authorized Unlock -->
+
+            <article class="tip-card">
+
+                <i class="bi bi-person-check"></i>
+
+                <h3>
+
+                    Unlock Only Authorized Files
+
+                </h3>
+
+                <p>
+
+                    Only remove protection from documents
+                    when you have the necessary permission
+                    to access or modify them.
+
+                </p>
+
+            </article>
+
+
+            <!-- Watermark -->
+
+            <article class="tip-card">
+
+                <i class="bi bi-droplet"></i>
+
+                <h3>
+
+                    Review Watermarks
+
+                </h3>
+
+                <p>
+
+                    Check the watermark position, readability
+                    and appearance before sharing the final PDF.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =========================================
+             RELATED TOOLS
+        ========================================== -->
+
+        <section class="related-section">
+
+            <div class="container">
+
+                <div class="related-card">
 
                     <div>
 
-                        <h4>
+                        <span class="section-label">
 
-                            Secure Processing
+                            EXPLORE MORE
 
-                        </h4>
+                        </span>
+
+                        <h2>
+
+                            Need Another Type of Tool?
+
+                        </h2>
 
                         <p>
 
-                            Your files are automatically
-                            deleted after processing.
-                            100% secure & private.
+                            Explore ConvertNova's other tool categories
+                            for document, image and office tasks.
 
                         </p>
 
                     </div>
 
-                </div>
 
-                <!-- Divider -->
+                    <div class="related-links">
 
-                <div class="feature-divider"></div>
+                        <a href="/tools">
 
-                <!-- Fast -->
+                            <i class="bi bi-grid"></i>
 
-                <div class="feature-box">
+                            All Tools
 
-                    <div class="feature-icon purple">
+                        </a>
 
-                        <img src="/images/icons/fast.png" alt="Fast">
+                        <a href="/pdf-tools">
 
-                    </div>
+                            <i class="bi bi-file-earmark-pdf"></i>
 
-                    <div>
+                            PDF Tools
 
-                        <h4>
+                        </a>
 
-                            Fast Conversion
+                        <a href="/image-tools">
 
-                        </h4>
+                            <i class="bi bi-image"></i>
 
-                        <p>
+                            Image Tools
 
-                            Our tools are optimized for
-                            speed and process files
-                            within seconds.
+                        </a>
 
-                        </p>
+                        <a href="/office-tools">
 
-                    </div>
+                            <i class="bi bi-file-earmark-word"></i>
 
-                </div>
+                            Office Tools
 
-                <!-- Divider -->
+                        </a>
 
-                <div class="feature-divider"></div>
+                        <a href="/blogsection/blog">
 
-                <!-- Mobile -->
+                            <i class="bi bi-journal-text"></i>
 
-                <div class="feature-box">
+                            Guides & Articles
 
-                    <div class="feature-icon green">
-
-                        <img src="/images/icons/mobile.png" alt="Mobile">
-
-                    </div>
-
-                    <div>
-
-                        <h4>
-
-                            Mobile Friendly
-
-                        </h4>
-
-                        <p>
-
-                            Works perfectly on Desktop,
-                            Tablet and Mobile devices.
-                            Anywhere, anytime.
-
-                        </p>
+                        </a>
 
                     </div>
 
@@ -588,14 +1231,177 @@
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- ==========================================
-     FOOTER
-=========================== -->
+        <!-- =========================================
+             FEATURES
+        ========================================== -->
+
+        <section class="feature-section">
+
+            <div class="container">
+
+                <div class="feature-wrapper">
+
+
+                    <div class="feature-box">
+
+                        <div class="feature-icon blue">
+
+                            <img
+                                src="/images/icons/secure.png"
+                                alt="Secure PDF processing"
+                                loading="lazy">
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Secure Processing
+
+                            </h4>
+
+                            <p>
+
+                                Your files are automatically deleted
+                                after processing.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-divider"></div>
+
+
+                    <div class="feature-box">
+
+                        <div class="feature-icon purple">
+
+                            <img
+                                src="/images/icons/fast.png"
+                                alt="Fast PDF security processing"
+                                loading="lazy">
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Fast Processing
+
+                            </h4>
+
+                            <p>
+
+                                Security tools are designed to process
+                                supported PDF files quickly.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-divider"></div>
+
+
+                    <div class="feature-box">
+
+                        <div class="feature-icon green">
+
+                            <img
+                                src="/images/icons/mobile.png"
+                                alt="Mobile friendly PDF security tools"
+                                loading="lazy">
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Mobile Friendly
+
+                            </h4>
+
+                            <p>
+
+                                Works across desktop, tablet and
+                                mobile devices.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FAQ STRUCTURED DATA
+        ========================================== -->
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What security tools are available?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The Security Tools category includes PDF Unlocker, PDF Protector and PDF Watermark tools."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I remove a password from a PDF?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The PDF Unlocker is designed for supported PDF documents when you have the necessary permission to access the file."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How can I protect a PDF?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Use the PDF Protector to add password protection to a supported PDF document."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I add a watermark to a PDF?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. The PDF Watermark tool can add text or image watermarks to supported PDF documents."
+                    }
+                }
+            ]
+        }
+        </script>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <th:block th:replace="~{fragments/footer :: footer}"></th:block>
 

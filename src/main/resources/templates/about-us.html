@@ -1,84 +1,163 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
 
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary SEO -->
-    <title>About ConvertNova | Free Online File Conversion Tools</title>
+    <!-- =========================================
+         PRIMARY SEO
+    ========================================== -->
+
+    <title>About ConvertNova – Free & Secure Online File Tools</title>
 
     <meta name="description"
-        content="Learn about ConvertNova, our mission, and our commitment to providing fast, secure, and free online file conversion tools for PDF, Word, Excel, PowerPoint, images, and more.">
+        content="Learn about ConvertNova, our mission, and how we provide free, fast, and secure online tools for converting, compressing, editing, and managing PDF, Word, Excel, PowerPoint, and image files.">
 
     <meta name="author" content="ConvertNova">
 
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Canonical -->
+    <meta name="googlebot"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- =========================================
+         CANONICAL
+    ========================================== -->
+
     <link rel="canonical" href="https://convertnovas.com/about-us">
 
-    <!-- Open Graph -->
+    <!-- =========================================
+         OPEN GRAPH
+    ========================================== -->
+
     <meta property="og:type" content="website">
 
     <meta property="og:site_name" content="ConvertNova">
 
-    <meta property="og:title" content="About ConvertNova | Free Online File Conversion Tools">
+    <meta property="og:title"
+        content="About ConvertNova – Free & Secure Online File Tools">
 
     <meta property="og:description"
-        content="Learn about ConvertNova and our mission to provide fast, secure, and free online file conversion tools for PDF, Word, Excel, PowerPoint, images, and more.">
+        content="Discover ConvertNova's mission to make file conversion, compression, editing, and document management simple, fast, secure, and free.">
 
-    <meta property="og:url" content="https://convertnovas.com/about-us">
+    <meta property="og:url"
+        content="https://convertnovas.com/about-us">
 
-    <meta property="og:image" content="https://convertnovas.com/images/og-image.png">
+    <meta property="og:image"
+        content="https://convertnovas.com/images/og-image.png">
 
-    <meta property="og:image:alt" content="ConvertNova - Free Online File Conversion Tools">
+    <meta property="og:image:alt"
+        content="ConvertNova – Free Online File Conversion and Document Tools">
 
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+    <!-- =========================================
+         TWITTER / X
+    ========================================== -->
+
     <meta name="twitter:card" content="summary_large_image">
 
-    <meta name="twitter:title" content="About ConvertNova | Free Online File Conversion Tools">
+    <meta name="twitter:title"
+        content="About ConvertNova – Free & Secure Online File Tools">
 
     <meta name="twitter:description"
-        content="Learn about ConvertNova and our mission to provide fast, secure, and free online file conversion tools.">
+        content="Learn about ConvertNova and our mission to provide free, fast, and secure online file conversion and document tools.">
 
-    <meta name="twitter:image" content="https://convertnovas.com/images/og-image.png">
+    <meta name="twitter:image"
+        content="https://convertnovas.com/images/og-image.png">
 
-    <!-- Theme -->
+    <meta name="twitter:image:alt"
+        content="ConvertNova – Free Online File Tools">
+
+    <!-- =========================================
+         THEME
+    ========================================== -->
+
     <meta name="theme-color" content="#0d6efd">
 
     <meta name="color-scheme" content="light">
 
-    <!-- Favicon -->
-    <link rel="icon" th:href="@{/favicon.ico}" sizes="any">
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
 
-    <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon"
+        th:href="@{/favicon.ico}"
+        sizes="any">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="apple-touch-icon"
+        th:href="@{/images/apple-touch-icon.png}">
 
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <!-- =========================================
+         CSS
+    ========================================== -->
 
-    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-     <link rel="stylesheet" th:href="@{/css/page.css}">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Structured Data -->
+    <link
+        rel="stylesheet"
+        th:href="@{/css/footer.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/navbar.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/about.css}">
+
+    <!-- =========================================
+         STRUCTURED DATA — ABOUT PAGE
+    ========================================== -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "name": "About ConvertNova",
+
+      "@id": "https://convertnovas.com/about-us#aboutpage",
+
       "url": "https://convertnovas.com/about-us",
-      "description": "Learn about ConvertNova and our mission to provide free online file conversion tools.",
+
+      "name": "About ConvertNova",
+
+      "headline": "About ConvertNova – Free & Secure Online File Tools",
+
+      "description": "Learn about ConvertNova, our mission, and how we provide free, fast, and secure online tools for converting, compressing, editing, and managing digital files.",
+
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://convertnovas.com/#website",
+        "url": "https://convertnovas.com/",
+        "name": "ConvertNova"
+      },
+
+      "about": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://convertnovas.com/images/logo.png"
+        }
+      },
+
       "publisher": {
         "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
         "name": "ConvertNova",
-        "url": "https://convertnovas.com",
+        "url": "https://convertnovas.com/",
         "logo": {
           "@type": "ImageObject",
           "url": "https://convertnovas.com/images/logo.png"
@@ -87,221 +166,152 @@
     }
     </script>
 
+    <!-- =========================================
+         WEBSITE STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+
+      "@id": "https://convertnovas.com/#website",
+
+      "url": "https://convertnovas.com/",
+
+      "name": "ConvertNova",
+
+      "description": "Free online tools for converting, compressing, editing, and managing PDF, document, and image files.",
+
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization"
+      }
+    }
+    </script>
+
+    <!-- =========================================
+         ORGANIZATION STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+
+      "@id": "https://convertnovas.com/#organization",
+
+      "name": "ConvertNova",
+
+      "url": "https://convertnovas.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/logo.png"
+      }
+    }
+    </script>
+
+    <!-- =========================================
+         ANALYTICS
+    ========================================== -->
+
     <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
 
 </head>
 
+
 <body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
 
     <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-    <section class="tools-hero" style="margin-top: 80px;">
 
-        <div class="container text-center">
+    <main>
 
-            <h1>
+        <!-- =========================================
+             HERO SECTION
+        ========================================== -->
 
-                About ConvertNova
+        <section class="about-hero">
 
-            </h1>
+            <div class="container text-center">
 
-            <p>
+                <span class="about-eyebrow">
 
-                Free Online File Conversion Tools
-                For Everyone.
+                    ABOUT CONVERTNOVA
 
-            </p>
+                </span>
 
-        </div>
+                <h1>
 
-    </section>
+                    About ConvertNova
 
-    <section class="container py-5">
+                </h1>
 
-        <div class="row justify-content-center">
+                <p>
 
-            <div class="col-lg-10">
+                    Simple, practical online tools for working
+                    with documents, images and everyday files.
 
-                <div class="card border-0 shadow-sm p-5">
+                </p>
 
-                    <h2 class="mb-4">
+            </div>
 
-                        Our Mission
+        </section>
+
+
+        <!-- =========================================
+             INTRODUCTION
+        ========================================== -->
+
+        <section class="about-intro-section">
+
+            <div class="container">
+
+                <div class="about-content-card">
+
+                    <span class="section-label">
+
+                        WHO WE ARE
+
+                    </span>
+
+                    <h2>
+
+                        Making Everyday File Tasks Simpler
 
                     </h2>
 
                     <p>
 
-                        ConvertNova was created to make
-                        file conversion simple, fast and accessible
-                        to everyone. Our goal is to provide
-                        high-quality online tools that help users
-                        convert, manage and optimize their files
-                        without installing software.
+                        ConvertNova is an online platform that provides
+                        browser-based tools for common document and image
+                        tasks. Our goal is to make everyday file
+                        operations easier to understand and simpler to
+                        complete without requiring users to install
+                        additional desktop software.
 
                     </p>
 
                     <p>
 
-                        Whether you need to merge PDFs,
-                        compress images, convert Word documents,
-                        create PDFs from Excel files or perform
-                        other file conversions, ConvertNova
-                        provides easy-to-use tools that work
-                        directly in your browser.
+                        From converting documents and working with PDFs
+                        to processing images and managing file-related
+                        tasks, ConvertNova brings useful tools together
+                        in one place.
 
                     </p>
 
-                    <hr>
-
-                    <h2 class="mb-4">
-
-                        What We Offer
-
-                    </h2>
-
-                    <ul>
-
-                        <li>
-                            PDF Conversion Tools
-                        </li>
-
-                        <li>
-                            PDF Editing Utilities
-                        </li>
-
-                        <li>
-                            Image Conversion Tools
-                        </li>
-
-                        <li>
-                            Office Document Converters
-                        </li>
-
-                        <li>
-                            PDF Security Tools
-                        </li>
-
-                        <li>
-                            Fast Browser-Based Processing
-                        </li>
-
-                    </ul>
-
-                    <hr>
-
-                    <h2 class="mb-4">
-
-                        Why Choose ConvertNova?
-
-                    </h2>
-
-                    <div class="row g-4">
-
-                        <div class="col-md-6">
-
-                            <div class="feature-card">
-
-                                <i class="bi bi-lightning-charge"></i>
-
-                                <h5>
-
-                                    Fast Processing
-
-                                </h5>
-
-                                <p>
-
-                                    Convert files within seconds.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="feature-card">
-
-                                <i class="bi bi-shield-check"></i>
-
-                                <h5>
-
-                                    Secure
-
-                                </h5>
-
-                                <p>
-
-                                    Your files are processed securely.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="feature-card">
-
-                                <i class="bi bi-phone"></i>
-
-                                <h5>
-
-                                    Mobile Friendly
-
-                                </h5>
-
-                                <p>
-
-                                    Works on all devices.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="feature-card">
-
-                                <i class="bi bi-cash"></i>
-
-                                <h5>
-
-                                    Free To Use
-
-                                </h5>
-
-                                <p>
-
-                                    No registration required.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <hr>
-
-                    <h2 class="mb-4">
-
-                        Our Vision
-
-                    </h2>
-
                     <p>
 
-                        We aim to become a trusted platform
-                        for online file management and conversion,
-                        helping users save time and work more
-                        efficiently with their documents and images.
+                        We focus on creating straightforward tools with
+                        clear instructions so users can choose the
+                        operation they need and complete it with as
+                        little unnecessary complexity as possible.
 
                     </p>
 
@@ -309,15 +319,1027 @@
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+
+        <!-- =========================================
+             OUR MISSION
+        ========================================== -->
+
+        <section class="about-mission-section">
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-6">
+
+                        <span class="section-label">
+
+                            OUR MISSION
+
+                        </span>
+
+                        <h2>
+
+                            Simple Tools That Save Time
+
+                        </h2>
+
+                        <p>
+
+                            Our mission is to provide accessible online
+                            file tools that help people complete common
+                            document and image tasks more efficiently.
+
+                        </p>
+
+                        <p>
+
+                            We aim to keep our tools straightforward,
+                            provide useful information about each
+                            operation and make the experience convenient
+                            across desktop, tablet and mobile devices.
+
+                        </p>
+
+                        <p>
+
+                            Instead of requiring users to search for
+                            separate software for every small file task,
+                            ConvertNova brings multiple useful utilities
+                            together on one platform.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="mission-highlight">
+
+                            <div class="mission-icon">
+
+                                <i class="bi bi-bullseye"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Our Goal
+
+                            </h3>
+
+                            <p>
+
+                                Make common file conversion and
+                                document-management tasks easier,
+                                clearer and more accessible online.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             WHAT WE OFFER
+        ========================================== -->
+
+        <section class="about-offer-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+
+                        WHAT WE OFFER
+
+                    </span>
+
+                    <h2>
+
+                        Tools for Common File Tasks
+
+                    </h2>
+
+                    <p>
+
+                        ConvertNova brings different categories of
+                        file utilities together so you can find the
+                        appropriate tool more easily.
+
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- PDF -->
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/pdf-tools"
+                            class="about-feature-card">
+
+                            <div class="about-feature-icon blue">
+
+                                <i class="bi bi-file-earmark-pdf"></i>
+
+                            </div>
+
+                            <h3>
+
+                                PDF Tools
+
+                            </h3>
+
+                            <p>
+
+                                Tools for common PDF conversion,
+                                editing and document-related tasks.
+
+                            </p>
+
+                            <span>
+
+                                Explore PDF Tools
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- IMAGE -->
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/image-tools"
+                            class="about-feature-card">
+
+                            <div class="about-feature-icon purple">
+
+                                <i class="bi bi-image"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Image Tools
+
+                            </h3>
+
+                            <p>
+
+                                Utilities for common image conversion
+                                and image-processing tasks.
+
+                            </p>
+
+                            <span>
+
+                                Explore Image Tools
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- OFFICE -->
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/office-tools"
+                            class="about-feature-card">
+
+                            <div class="about-feature-icon green">
+
+                                <i class="bi bi-file-earmark-word"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Office Tools
+
+                            </h3>
+
+                            <p>
+
+                                Tools for working with common
+                                Word, Excel and PowerPoint files.
+
+                            </p>
+
+                            <span>
+
+                                Explore Office Tools
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/security-tools"
+                            class="about-feature-card">
+
+                            <div class="about-feature-icon orange">
+
+                                <i class="bi bi-shield-lock"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Security Tools
+
+                            </h3>
+
+                            <p>
+
+                                Tools for supported PDF protection,
+                                unlocking and watermarking tasks.
+
+                            </p>
+
+                            <span>
+
+                                Explore Security Tools
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             HOW IT WORKS
+        ========================================== -->
+
+        <section class="about-how-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+
+                        HOW IT WORKS
+
+                    </span>
+
+                    <h2>
+
+                        Using ConvertNova Is Simple
+
+                    </h2>
+
+                    <p>
+
+                        Most tools follow a straightforward process
+                        designed to make common file tasks easier.
+
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-step-card">
+
+                            <div class="step-number">
+
+                                01
+
+                            </div>
+
+                            <i class="bi bi-search"></i>
+
+                            <h3>
+
+                                Choose a Tool
+
+                            </h3>
+
+                            <p>
+
+                                Find the tool that matches the file
+                                operation you want to perform.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-step-card">
+
+                            <div class="step-number">
+
+                                02
+
+                            </div>
+
+                            <i class="bi bi-cloud-arrow-up"></i>
+
+                            <h3>
+
+                                Add Your File
+
+                            </h3>
+
+                            <p>
+
+                                Upload a supported file according to
+                                the requirements of the selected tool.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-step-card">
+
+                            <div class="step-number">
+
+                                03
+
+                            </div>
+
+                            <i class="bi bi-gear"></i>
+
+                            <h3>
+
+                                Process
+
+                            </h3>
+
+                            <p>
+
+                                Start the selected operation and allow
+                                the tool to process the file.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-step-card">
+
+                            <div class="step-number">
+
+                                04
+
+                            </div>
+
+                            <i class="bi bi-download"></i>
+
+                            <h3>
+
+                                Get the Result
+
+                            </h3>
+
+                            <p>
+
+                                Review the processed file and download
+                                the result when the tool provides it.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             WHY CHOOSE US
+        ========================================== -->
+
+        <section class="about-benefits-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+
+                        WHY CONVERTNOVA
+
+                    </span>
+
+                    <h2>
+
+                        Designed Around a Simple User Experience
+
+                    </h2>
+
+                    <p>
+
+                        We focus on making file-related tasks
+                        straightforward and accessible.
+
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-benefit-card">
+
+                            <i class="bi bi-lightning-charge"></i>
+
+                            <h3>
+
+                                Simple Workflow
+
+                            </h3>
+
+                            <p>
+
+                                Tools are organized around specific
+                                file tasks so users can find the
+                                appropriate operation more easily.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-benefit-card">
+
+                            <i class="bi bi-layout-text-window"></i>
+
+                            <h3>
+
+                                Clear Instructions
+
+                            </h3>
+
+                            <p>
+
+                                Tool pages provide information about
+                                what each utility is designed to do
+                                and how to use it.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-benefit-card">
+
+                            <i class="bi bi-phone"></i>
+
+                            <h3>
+
+                                Mobile Friendly
+
+                            </h3>
+
+                            <p>
+
+                                The website is designed to work across
+                                desktop, tablet and mobile screen sizes.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="about-benefit-card">
+
+                            <i class="bi bi-grid"></i>
+
+                            <h3>
+
+                                Multiple Categories
+
+                            </h3>
+
+                            <p>
+
+                                PDF, image, office and security tools
+                                are organized into separate categories.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FILE PRIVACY & HANDLING
+        ========================================== -->
+
+        <section class="about-privacy-section">
+
+            <div class="container">
+
+                <div class="about-content-card privacy-card">
+
+                    <span class="section-label">
+
+                        FILE PRIVACY & HANDLING
+
+                    </span>
+
+                    <h2>
+
+                        Your Files and Privacy Matter
+
+                    </h2>
+
+                    <p>
+
+                        File-conversion services can involve documents
+                        and images that users may consider private.
+                        For that reason, users should understand how a
+                        particular tool handles uploaded files.
+
+                    </p>
+
+                    <p>
+
+                        ConvertNova aims to provide a straightforward
+                        file-processing experience and to handle files
+                        according to the processing and privacy practices
+                        applicable to the service.
+
+                    </p>
+
+                    <p>
+
+                        For complete information about how information
+                        and uploaded files are handled, please review
+                        our
+                        <a href="/privacy-policy">
+
+                            Privacy Policy
+
+                        </a>.
+
+                    </p>
+
+                    <div class="privacy-note">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        <p>
+
+                            Please avoid uploading sensitive or
+                            confidential files unless you are comfortable
+                            with the processing practices described by
+                            the relevant tool and our Privacy Policy.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TRANSPARENCY
+        ========================================== -->
+
+        <section class="about-transparency-section">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-9">
+
+                        <div class="transparency-card text-center">
+
+                            <span class="section-label">
+
+                                OUR APPROACH
+
+                            </span>
+
+                            <h2>
+
+                                Useful Tools, Clear Information
+
+                            </h2>
+
+                            <p>
+
+                                We believe a useful file tool should
+                                clearly explain what it does, what type
+                                of file it supports and what users can
+                                expect from the process.
+
+                            </p>
+
+                            <p>
+
+                                ConvertNova is designed around this
+                                principle. We continue to improve the
+                                website by refining existing tools,
+                                improving instructions and adding useful
+                                file utilities where they can provide
+                                practical value.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             OUR VISION
+        ========================================== -->
+
+        <section class="about-vision-section">
+
+            <div class="container">
+
+                <div class="about-content-card">
+
+                    <span class="section-label">
+
+                        OUR VISION
+
+                    </span>
+
+                    <h2>
+
+                        Building a Useful File-Tools Platform
+
+                    </h2>
+
+                    <p>
+
+                        Our vision is to build ConvertNova into a
+                        dependable destination for everyday online
+                        file conversion and document-related tasks.
+
+                    </p>
+
+                    <p>
+
+                        As the platform grows, our focus will remain
+                        on practical tools, understandable instructions,
+                        accessible design and a straightforward user
+                        experience.
+
+                    </p>
+
+                    <p>
+
+                        We want ConvertNova to be a place where users
+                        can quickly find the right tool for a common
+                        file task without unnecessary complexity.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CONTACT / IMPORTANT LINKS
+        ========================================== -->
+
+        <section class="about-links-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+
+                        INFORMATION & SUPPORT
+
+                    </span>
+
+                    <h2>
+
+                        Need More Information?
+
+                    </h2>
+
+                    <p>
+
+                        Visit the pages below to learn more about
+                        ConvertNova and how the website operates.
+
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4 justify-content-center">
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/contact-us"
+                            class="about-link-card">
+
+                            <i class="bi bi-envelope"></i>
+
+                            <h3>
+
+                                Contact Us
+
+                            </h3>
+
+                            <p>
+
+                                Get in touch with the ConvertNova team.
+
+                            </p>
+
+                            <span>
+
+                                Contact
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/privacy-policy"
+                            class="about-link-card">
+
+                            <i class="bi bi-shield-check"></i>
+
+                            <h3>
+
+                                Privacy Policy
+
+                            </h3>
+
+                            <p>
+
+                                Learn how information and files are
+                                handled.
+
+                            </p>
+
+                            <span>
+
+                                Read Policy
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/terms-and-conditions"
+                            class="about-link-card">
+
+                            <i class="bi bi-file-text"></i>
+
+                            <h3>
+
+                                Terms of Service
+
+                            </h3>
+
+                            <p>
+
+                                Review the terms that apply to using
+                                ConvertNova.
+
+                            </p>
+
+                            <span>
+
+                                Read Terms
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <a
+                            href="/disclaimer"
+                            class="about-link-card">
+
+                            <i class="bi bi-info-circle"></i>
+
+                            <h3>
+
+                                Disclaimer
+
+                            </h3>
+
+                            <p>
+
+                                Learn about the limitations and
+                                responsibilities related to the service.
+
+                            </p>
+
+                            <span>
+
+                                Read Disclaimer
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FINAL CTA
+        ========================================== -->
+
+        <section class="about-final-section">
+
+            <div class="container">
+
+                <div class="about-final-card text-center">
+
+                    <span class="section-label">
+
+                        GET STARTED
+
+                    </span>
+
+                    <h2>
+
+                        Find the Tool You Need
+
+                    </h2>
+
+                    <p>
+
+                        Explore the available ConvertNova tools and
+                        choose the one that matches your file task.
+
+                    </p>
+
+                    <a
+                        href="/tools"
+                        class="about-primary-btn">
+
+                        Explore All Tools
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <div th:replace="~{fragments/footer :: footer}"></div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="/js/email-valid.js"></script>
+
+    <script src="/js/navbar.js"></script>
+
+    <script src="/js/homepage.js"></script>
 
 </body>
 

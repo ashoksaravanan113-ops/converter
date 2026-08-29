@@ -1,70 +1,210 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary SEO -->
+    <!-- =========================================
+         PRIMARY SEO
+    ========================================== -->
 
-    <title>Disclaimer | ConvertNova</title>
-
-    <meta name="title" content="Disclaimer | ConvertNova">
+    <title>Disclaimer – ConvertNova</title>
 
     <meta name="description"
-        content="Read the ConvertNova Disclaimer to understand the terms, limitations, and responsibilities related to using our free online file conversion tools.">
+          content="Read the ConvertNova Disclaimer to understand the limitations, responsibilities, and important information regarding the use of our online file conversion and document tools.">
 
-    <meta name="keywords"
-        content="ConvertNova Disclaimer, file converter disclaimer, online converter disclaimer, PDF converter disclaimer">
+    <meta name="author"
+          content="ConvertNova">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <meta name="author" content="ConvertNova">
+    <meta name="googlebot"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <link rel="canonical" href="https://convertnovas.com/disclaimer">
+    <!-- =========================================
+         CANONICAL
+    ========================================== -->
 
-    <!-- Open Graph -->
+    <link rel="canonical"
+          href="https://convertnovas.com/disclaimer">
 
-    <meta property="og:type" content="website">
+    <!-- =========================================
+         OPEN GRAPH
+    ========================================== -->
 
-    <meta property="og:title" content="Disclaimer | ConvertNova">
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:site_name"
+          content="ConvertNova">
+
+    <meta property="og:title"
+          content="Disclaimer – ConvertNova">
 
     <meta property="og:description"
-        content="Read the official Disclaimer for ConvertNova and learn about the limitations and use of our online file conversion services.">
+          content="Review the ConvertNova Disclaimer to understand the limitations, responsibilities, and important information related to our online file tools and services.">
 
-    <meta property="og:url" content="https://convertnovas.com/disclaimer">
+    <meta property="og:url"
+          content="https://convertnovas.com/disclaimer">
 
-    <meta property="og:image" content="https://convertnovas.com/images/og-image.png">
+    <meta property="og:image"
+          content="https://convertnovas.com/images/og-image.png">
 
-    <meta property="og:site_name" content="ConvertNova">
+    <meta property="og:image:alt"
+          content="ConvertNova Disclaimer">
 
-    <!-- Twitter -->
+    <meta property="og:locale"
+          content="en_US">
 
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- =========================================
+         TWITTER / X
+    ========================================== -->
 
-    <meta name="twitter:title" content="Disclaimer | ConvertNova">
+    <meta name="twitter:card"
+          content="summary_large_image">
 
-    <meta name="twitter:description" content="Read the official Disclaimer for ConvertNova.">
+    <meta name="twitter:title"
+          content="Disclaimer – ConvertNova">
 
-    <meta name="twitter:image" content="https://convertnovas.com/images/og-image.png">
+    <meta name="twitter:description"
+          content="Read the ConvertNova Disclaimer and learn about the limitations and responsibilities associated with using our online file tools.">
 
-    <!-- Favicon -->
+    <meta name="twitter:image"
+          content="https://convertnovas.com/images/og-image.png">
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="twitter:image:alt"
+          content="ConvertNova Disclaimer">
 
-    <!-- Bootstrap -->
+    <!-- =========================================
+         THEME
+    ========================================== -->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="theme-color"
+          content="#0d6efd">
 
-    <!-- CSS -->
+    <meta name="color-scheme"
+          content="light">
 
-    <link rel="stylesheet" th:href="@{/css/page.css}">
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
 
+    <link rel="icon"
+          th:href="@{/favicon.ico}"
+          sizes="any">
 
-    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="apple-touch-icon"
+          th:href="@{/images/apple-touch-icon.png}">
 
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <!-- =========================================
+         BOOTSTRAP
+    ========================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- =========================================
+         BOOTSTRAP ICONS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- =========================================
+         SITE CSS
+    ========================================== -->
+
+    <link rel="stylesheet"
+          th:href="@{/css/disclaimer.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/navbar.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/footer.css}">
+
+    <!-- =========================================
+         STRUCTURED DATA — DISCLAIMER PAGE
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+
+      "@id": "https://convertnovas.com/disclaimer#webpage",
+
+      "url": "https://convertnovas.com/disclaimer",
+
+      "name": "Disclaimer – ConvertNova",
+
+      "headline": "Disclaimer – ConvertNova",
+
+      "description": "The ConvertNova Disclaimer explains important limitations, responsibilities, and information regarding the use of the website and its online file tools and services.",
+
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://convertnovas.com/#website",
+        "url": "https://convertnovas.com/",
+        "name": "ConvertNova"
+      },
+
+      "about": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://convertnovas.com/images/logo.png"
+        }
+      },
+
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://convertnovas.com/images/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- =========================================
+         ORGANIZATION STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+
+      "@id": "https://convertnovas.com/#organization",
+
+      "name": "ConvertNova",
+
+      "url": "https://convertnovas.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/logo.png"
+      }
+    }
+    </script>
+
+    <!-- =========================================
+         ANALYTICS
+    ========================================== -->
 
     <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
 
@@ -72,135 +212,660 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
     <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-    <!-- Disclaimer -->
 
-    <section class="container py-5 mt-5">
+    <!-- =========================
+         DISCLAIMER HERO
+    ========================= -->
 
-        <h1 class="mb-4">
+    <section class="tools-hero disclaimer-hero">
 
-            Disclaimer
+        <div class="container text-center">
 
-        </h1>
+            <h1>
 
-        <p>
+                Disclaimer
 
-            Last Updated: July 2026
+            </h1>
 
-        </p>
+            <p>
 
-        <hr>
+                Important information about using
+                ConvertNova and its online tools.
 
-        <h2>
+            </p>
 
-            General Information
+            <span class="disclaimer-updated">
 
-        </h2>
+                Last Updated: August 2026
 
-        <p>
+            </span>
 
-            ConvertNova provides free online file conversion tools for personal
-            and business use. While we strive to ensure accurate and reliable
-            conversions, we do not guarantee that every conversion will be
-            error-free or suitable for every purpose.
-
-        </p>
-
-        <h2>
-
-            No Professional Advice
-
-        </h2>
-
-        <p>
-
-            The information available on this website is provided for general
-            informational purposes only. It should not be considered legal,
-            financial, or professional advice.
-
-        </p>
-
-        <h2>
-
-            File Accuracy
-
-        </h2>
-
-        <p>
-
-            Users are responsible for reviewing converted files before using
-            them. ConvertNova is not responsible for any data loss, formatting
-            changes, or document errors that may occur during file conversion.
-
-        </p>
-
-        <h2>
-
-            Third-Party Services
-
-        </h2>
-
-        <p>
-
-            Our website may contain links to third-party websites or services.
-            We are not responsible for the content, privacy practices, or
-            availability of those external websites.
-
-        </p>
-
-        <h2>
-
-            Limitation of Liability
-
-        </h2>
-
-        <p>
-
-            ConvertNova and its owners shall not be liable for any direct,
-            indirect, incidental, or consequential damages resulting from the
-            use of this website or its services.
-
-        </p>
-
-        <h2>
-
-            Changes to This Disclaimer
-
-        </h2>
-
-        <p>
-
-            We may update this Disclaimer at any time without prior notice.
-            Continued use of the website after changes indicates acceptance of
-            the updated Disclaimer.
-
-        </p>
-
-        <h2>
-
-            Contact Us
-
-        </h2>
-
-        <p>
-
-            If you have any questions regarding this Disclaimer, please visit
-            our <a href="/contact-us">Contact Us</a> page.
-
-        </p>
+        </div>
 
     </section>
 
-    <!-- Footer -->
+
+    <!-- =========================
+         DISCLAIMER CONTENT
+    ========================= -->
+
+    <section class="disclaimer-section">
+
+        <div class="container">
+
+            <div class="disclaimer-layout">
+
+
+                <!-- =========================
+                     MAIN CONTENT
+                ========================= -->
+
+                <main class="disclaimer-card">
+
+
+                    <!-- 1 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            01
+
+                        </span>
+
+                        <h2>
+
+                            General Information
+
+                        </h2>
+
+                        <p>
+
+                            ConvertNova provides free online file conversion,
+                            document processing and file management tools for
+                            general personal and business use.
+
+                        </p>
+
+                        <p>
+
+                            The information and services provided through
+                            ConvertNova are intended to make common file
+                            processing tasks easier and more convenient.
+                            While we make reasonable efforts to keep our tools
+                            accurate and functional, we do not guarantee that
+                            every result will be error-free or suitable for
+                            every specific purpose.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 2 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            02
+
+                        </span>
+
+                        <h2>
+
+                            File Conversion Results
+
+                        </h2>
+
+                        <p>
+
+                            File conversions may sometimes result in changes
+                            to formatting, layout, fonts, images, metadata,
+                            formulas or other document elements depending on
+                            the file type and conversion method used.
+
+                        </p>
+
+                        <p>
+
+                            Users should review the converted file carefully
+                            before relying on it, publishing it, submitting
+                            it, printing it or sharing it with others.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 3 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            03
+
+                        </span>
+
+                        <h2>
+
+                            User Responsibility
+
+                        </h2>
+
+                        <p>
+
+                            You are responsible for ensuring that you have the
+                            necessary rights, permissions and authority to
+                            upload and process any files through ConvertNova.
+
+                        </p>
+
+                        <p>
+
+                            You are also responsible for maintaining your own
+                            copies of important files and verifying the output
+                            produced by our tools before using it for important
+                            purposes.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 4 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            04
+
+                        </span>
+
+                        <h2>
+
+                            No Guarantee of Availability
+
+                        </h2>
+
+                        <p>
+
+                            We aim to keep ConvertNova available and
+                            functional, but we do not guarantee uninterrupted,
+                            continuous or error-free access to the website or
+                            any individual tool.
+
+                        </p>
+
+                        <p>
+
+                            Tools may occasionally be unavailable because of
+                            maintenance, technical problems, updates,
+                            infrastructure issues or circumstances beyond
+                            our reasonable control.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 5 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            05
+
+                        </span>
+
+                        <h2>
+
+                            No Professional Advice
+
+                        </h2>
+
+                        <p>
+
+                            Information provided on ConvertNova is for general
+                            informational and educational purposes only.
+
+                        </p>
+
+                        <p>
+
+                            Nothing on this website should be interpreted as
+                            legal, financial, tax, medical or other
+                            professional advice. Where professional advice is
+                            required, users should consult an appropriately
+                            qualified professional.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 6 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            06
+
+                        </span>
+
+                        <h2>
+
+                            Data and File Responsibility
+
+                        </h2>
+
+                        <p>
+
+                            Users should avoid uploading highly sensitive,
+                            confidential or critical information unless they
+                            are comfortable with the way the relevant tool
+                            processes files.
+
+                        </p>
+
+                        <p>
+
+                            Users should maintain appropriate backups of
+                            important files. ConvertNova cannot guarantee that
+                            a file will always be recoverable if a technical
+                            problem occurs during processing.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 7 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            07
+
+                        </span>
+
+                        <h2>
+
+                            Third-Party Services and Links
+
+                        </h2>
+
+                        <p>
+
+                            ConvertNova may use third-party services to support
+                            website functionality, analytics, advertising,
+                            security, hosting or other operations.
+
+                        </p>
+
+                        <p>
+
+                            The website may also contain links to external
+                            websites. We do not control those third-party
+                            websites and are not responsible for their content,
+                            availability, policies or practices.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 8 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            08
+
+                        </span>
+
+                        <h2>
+
+                            Advertising
+
+                        </h2>
+
+                        <p>
+
+                            ConvertNova may display advertisements provided by
+                            third-party advertising partners.
+
+                        </p>
+
+                        <p>
+
+                            Advertisements may be selected or delivered by
+                            advertising providers based on factors such as
+                            website content, user preferences, approximate
+                            location, browsing activity or other information
+                            permitted under applicable privacy settings and
+                            laws.
+
+                        </p>
+
+                        <p>
+
+                            ConvertNova does not necessarily endorse the
+                            products, services or claims presented in
+                            third-party advertisements.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 9 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            09
+
+                        </span>
+
+                        <h2>
+
+                            External Products and Services
+
+                        </h2>
+
+                        <p>
+
+                            References to third-party products, services,
+                            websites or companies do not constitute a
+                            guarantee, endorsement or recommendation unless
+                            explicitly stated.
+
+                        </p>
+
+                        <p>
+
+                            Users should review the applicable terms, privacy
+                            policies and other information provided by those
+                            third parties before using their services.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 10 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            10
+
+                        </span>
+
+                        <h2>
+
+                            Limitation of Liability
+
+                        </h2>
+
+                        <p>
+
+                            To the extent permitted by applicable law,
+                            ConvertNova and its owners, operators and
+                            contributors shall not be responsible for losses,
+                            damages, data loss, business interruption or other
+                            consequences arising from the use of the website
+                            or its tools.
+
+                        </p>
+
+                        <p>
+
+                            This includes, where permitted by law, issues
+                            resulting from conversion errors, formatting
+                            changes, service interruptions, technical failures
+                            or reliance on information provided through the
+                            website.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 11 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            11
+
+                        </span>
+
+                        <h2>
+
+                            Intellectual Property
+
+                        </h2>
+
+                        <p>
+
+                            ConvertNova's website content, branding, design,
+                            logos, text and other original materials are
+                            protected by applicable intellectual property
+                            laws unless otherwise stated.
+
+                        </p>
+
+                        <p>
+
+                            Users remain responsible for ensuring that files
+                            they upload or process do not violate the
+                            intellectual property or other rights of third
+                            parties.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 12 -->
+
+                    <article class="disclaimer-block">
+
+                        <span class="disclaimer-number">
+
+                            12
+
+                        </span>
+
+                        <h2>
+
+                            Changes to This Disclaimer
+
+                        </h2>
+
+                        <p>
+
+                            We may update this Disclaimer from time to time
+                            to reflect changes to our services, website
+                            functionality, legal requirements or business
+                            practices.
+
+                        </p>
+
+                        <p>
+
+                            The updated version will be published on this page
+                            with a revised "Last Updated" date.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- 13 -->
+
+                    <article class="disclaimer-block disclaimer-contact">
+
+                        <span class="disclaimer-number">
+
+                            13
+
+                        </span>
+
+                        <h2>
+
+                            Contact Us
+
+                        </h2>
+
+                        <p>
+
+                            If you have questions about this Disclaimer or
+                            the use of ConvertNova, please contact us through
+                            our Contact Us page.
+
+                        </p>
+
+                        <a href="/contact-us"
+                           class="disclaimer-contact-btn">
+
+                            Contact Us
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </article>
+
+
+                </main>
+
+
+                <!-- =========================
+                     SIDEBAR
+                ========================= -->
+
+                <aside class="disclaimer-sidebar">
+
+
+                    <div class="disclaimer-sidebar-card">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        <h3>
+
+                            About This Disclaimer
+
+                        </h3>
+
+                        <p>
+
+                            This page explains important information about
+                            ConvertNova's tools, content and services.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="disclaimer-sidebar-card">
+
+                        <i class="bi bi-link-45deg"></i>
+
+                        <h3>
+
+                            Related Policies
+
+                        </h3>
+
+                        <a href="/privacy-policy">
+
+                            <i class="bi bi-shield-check"></i>
+
+                            Privacy Policy
+
+                        </a>
+
+                        <a href="/terms-and-conditions">
+
+                            <i class="bi bi-file-earmark-text"></i>
+
+                            Terms & Conditions
+
+                        </a>
+
+                        <a href="/contact-us">
+
+                            <i class="bi bi-envelope"></i>
+
+                            Contact Us
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="disclaimer-sidebar-card">
+
+                        <i class="bi bi-shield-check"></i>
+
+                        <h3>
+
+                            Use Responsibly
+
+                        </h3>
+
+                        <p>
+
+                            Always review important converted files and keep
+                            backups of information you cannot afford to lose.
+
+                        </p>
+
+                    </div>
+
+
+                </aside>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <div th:replace="~{fragments/footer :: footer}"></div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="/js/email-valid.js"></script>
+
+    <script src="/js/navbar.js"></script>
+
+    <script src="/js/homepage.js"></script>
 
 </body>
 

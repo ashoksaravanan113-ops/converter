@@ -1,70 +1,70 @@
 /* =========================================================
-   CONVERTNOVA PDF TOOLS
-   Category Page
+   CONVERTNOVAS IMAGE TOOLS
+   Category Page Stylesheet
+   Full standalone CSS
 ========================================================= */
 
 :root{
-    --pdf-primary:#2563eb;
-    --pdf-primary-dark:#1d4ed8;
-    --pdf-accent:#7c3aed;
+    --image-primary:#2563eb;
+    --image-primary-dark:#1d4ed8;
+    --image-accent:#7c3aed;
 
-    --pdf-ink:#0f172a;
-    --pdf-text:#334155;
-    --pdf-muted:#64748b;
+    --image-ink:#0f172a;
+    --image-text:#334155;
+    --image-muted:#64748b;
 
-    --pdf-bg:#ffffff;
-    --pdf-soft:#f8fafc;
-    --pdf-soft-blue:#f5f8ff;
+    --image-bg:#ffffff;
+    --image-soft:#f8fafc;
+    --image-soft-blue:#f5f8ff;
 
-    --pdf-border:#e2e8f0;
+    --image-border:#e2e8f0;
 
-    --pdf-radius-sm:12px;
-    --pdf-radius-md:18px;
-    --pdf-radius-lg:26px;
+    --image-radius-sm:12px;
+    --image-radius-md:18px;
+    --image-radius-lg:26px;
 
-    --pdf-shadow-sm:
+    --image-shadow-sm:
         0 4px 14px rgba(15,23,42,.05);
 
-    --pdf-shadow-md:
+    --image-shadow-md:
         0 12px 30px rgba(15,23,42,.08);
 
-    --pdf-shadow-lg:
+    --image-shadow-lg:
         0 20px 50px rgba(15,23,42,.10);
 
-    --pdf-gradient:
+    --image-gradient:
         linear-gradient(
             135deg,
-            var(--pdf-primary),
-            var(--pdf-accent)
+            var(--image-primary),
+            var(--image-accent)
         );
 
-    --pdf-ease:
+    --image-ease:
         cubic-bezier(.22,1,.36,1);
 }
 
 
 /* =========================================================
-   RESET
+   BASE / RESET
 ========================================================= */
 
-.pdf-hero *,
-.search-section *,
-.filter-section *,
-.pdf-tools-section *,
-.pdf-info-section *,
-.pdf-use-section *,
-.pdf-workflow-section *,
-.pdf-tips-section *,
-.related-section *,
-.feature-section *{
+.image-tools-page *,
+.image-tools-page *::before,
+.image-tools-page *::after{
     box-sizing:border-box;
 }
 
-.pdf-tools-section a,
-.pdf-info-section a,
-.pdf-use-section a,
-.related-section a{
+.image-tools-page a{
     text-decoration:none;
+}
+
+.image-tools-page img{
+    max-width:100%;
+}
+
+.image-tools-page button,
+.image-tools-page input{
+    font:inherit;
 }
 
 
@@ -87,7 +87,7 @@
             rgba(37,99,235,.10),
             transparent 60%
         ),
-        var(--pdf-soft-blue);
+        var(--image-soft-blue);
 }
 
 .hero-content{
@@ -107,19 +107,18 @@
     border-radius:999px;
 
     background:#ffffff;
-
-    color:var(--pdf-primary);
+    color:var(--image-primary);
 
     font-size:13px;
     font-weight:700;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--image-shadow-sm);
 }
 
 .pdf-hero h1{
     margin:0 0 16px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:48px;
     line-height:1.1;
@@ -132,7 +131,7 @@
     max-width:680px;
     margin:0 auto;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     font-size:18px;
     line-height:1.75;
@@ -145,7 +144,7 @@
 
 .search-section{
     padding:28px 0 20px;
-    background:var(--pdf-bg);
+    background:var(--image-bg);
 }
 
 .search-wrapper{
@@ -162,10 +161,10 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--image-border);
     border-radius:14px;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--image-shadow-sm);
 
     transition:
         border-color .2s ease,
@@ -173,7 +172,7 @@
 }
 
 .search-box:focus-within{
-    border-color:var(--pdf-primary);
+    border-color:var(--image-primary);
 
     box-shadow:
         0 0 0 4px rgba(37,99,235,.10);
@@ -187,7 +186,7 @@
 
     transform:translateY(-50%);
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     pointer-events:none;
 }
@@ -205,7 +204,7 @@
 
     border-radius:14px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:15px;
 }
@@ -222,8 +221,7 @@
     border:0;
     border-radius:14px;
 
-    background:var(--pdf-gradient);
-
+    background:var(--image-gradient);
     color:#ffffff;
 
     font-size:15px;
@@ -235,8 +233,8 @@
         0 7px 18px rgba(37,99,235,.20);
 
     transition:
-        transform .2s var(--pdf-ease),
-        box-shadow .2s var(--pdf-ease);
+        transform .2s var(--image-ease),
+        box-shadow .2s var(--image-ease);
 }
 
 .search-btn:hover{
@@ -257,7 +255,7 @@
 
 .filter-section{
     padding:8px 0 44px;
-    background:var(--pdf-bg);
+    background:var(--image-bg);
 }
 
 .category-filter{
@@ -275,30 +273,27 @@
 
     padding:10px 18px;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--image-border);
     border-radius:999px;
 
     background:#ffffff;
-
-    color:var(--pdf-text);
+    color:var(--image-text);
 
     font-size:14px;
     font-weight:650;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--image-shadow-sm);
 
     transition:
         color .2s ease,
         border-color .2s ease,
         background .2s ease,
-        transform .2s var(--pdf-ease);
+        transform .2s var(--image-ease);
 }
 
 .filter-btn:hover{
-    color:var(--pdf-primary);
-
+    color:var(--image-primary);
     border-color:#b9c9ff;
-
     background:#f8faff;
 
     transform:translateY(-1px);
@@ -306,10 +301,9 @@
 
 .filter-btn.active{
     color:#ffffff;
-
     border-color:transparent;
 
-    background:var(--pdf-gradient);
+    background:var(--image-gradient);
 
     box-shadow:
         0 7px 18px rgba(37,99,235,.22);
@@ -317,63 +311,13 @@
 
 
 /* =========================================================
-   SECTION HEADING
+   IMAGE TOOLS GRID
+   Existing HTML uses .pdf-tool-card.
+   Keep that class so the current tool display remains intact.
 ========================================================= */
 
-.section-heading{
-    max-width:720px;
-    margin:0 auto 38px;
-
-    text-align:center;
-}
-
-.section-label{
-    display:inline-block;
-
-    margin-bottom:9px;
-
-    color:var(--pdf-primary);
-
-    font-size:12px;
-    font-weight:800;
-
-    letter-spacing:.12em;
-    text-transform:uppercase;
-}
-
-.section-heading h2,
-.content-heading h2,
-.related-card h2,
-.workflow-content h2{
-    margin:0 0 12px;
-
-    color:var(--pdf-ink);
-
-    font-size:32px;
-    line-height:1.2;
-
-    font-weight:800;
-
-    letter-spacing:-.025em;
-}
-
-.section-heading p{
-    margin:0;
-
-    color:var(--pdf-muted);
-
-    font-size:16px;
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   PDF TOOLS
-========================================================= */
-
-.pdf-tools-section{
+.image-tools-section{
     padding:18px 0 78px;
-
     background:#ffffff;
 }
 
@@ -386,18 +330,17 @@
 
     padding:24px 22px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--image-border);
+    border-radius:var(--image-radius-md);
 
     background:#ffffff;
-
     color:inherit;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--image-shadow-sm);
 
     transition:
-        transform .28s var(--pdf-ease),
-        box-shadow .28s var(--pdf-ease),
+        transform .28s var(--image-ease),
+        box-shadow .28s var(--image-ease),
         border-color .28s ease;
 }
 
@@ -406,7 +349,7 @@
 
     border-color:#d3dcf8;
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--image-shadow-md);
 }
 
 .pdf-tool-card:focus-visible{
@@ -427,7 +370,7 @@
     border-radius:14px;
 
     transition:
-        transform .28s var(--pdf-ease);
+        transform .28s var(--image-ease);
 }
 
 .pdf-tool-card:hover .tool-icon{
@@ -469,10 +412,12 @@
     background:#fff7dc;
 }
 
-.pdf-tool-card h3{
+/* Supports both current h4 cards and future h3 cards. */
+.pdf-tool-card h3,
+.pdf-tool-card h4{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:17px;
     line-height:1.35;
@@ -483,7 +428,7 @@
 .pdf-tool-card p{
     margin:0 0 18px;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     font-size:14px;
     line-height:1.65;
@@ -496,7 +441,7 @@
     align-items:center;
     gap:6px;
 
-    color:var(--pdf-primary);
+    color:var(--image-primary);
 
     font-size:14px;
     font-weight:750;
@@ -511,13 +456,134 @@
 
 
 /* =========================================================
-   CATEGORY INFORMATION
+   IMAGE TOOLS CONTENT
+   Designed for the additional category content.
+========================================================= */
+
+.image-tools-content{
+    padding:76px 0 78px;
+    background:var(--image-soft);
+}
+
+.image-tools-intro,
+.image-tools-guide,
+.image-tools-howto,
+.image-tools-faq,
+.image-tools-related{
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+
+    padding:40px 44px;
+
+    background:#ffffff;
+
+    border:1px solid var(--image-border);
+    border-radius:var(--image-radius-lg);
+
+    box-shadow:var(--image-shadow-sm);
+}
+
+.image-tools-guide,
+.image-tools-howto,
+.image-tools-faq{
+    margin-top:24px;
+}
+
+.image-tools-related{
+    margin-top:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f9ff,
+            #faf8ff
+        );
+}
+
+.image-tools-content h2{
+    margin:0 0 18px;
+
+    color:var(--image-ink);
+
+    font-size:32px;
+    line-height:1.2;
+
+    font-weight:800;
+    letter-spacing:-.025em;
+}
+
+.image-tools-content h3{
+    margin:24px 0 8px;
+
+    color:var(--image-ink);
+
+    font-size:18px;
+    line-height:1.4;
+
+    font-weight:750;
+}
+
+.image-tools-content h3:first-of-type{
+    margin-top:0;
+}
+
+.image-tools-content p{
+    margin:0 0 16px;
+
+    color:var(--image-text);
+
+    font-size:15.5px;
+    line-height:1.8;
+}
+
+.image-tools-content p:last-child{
+    margin-bottom:0;
+}
+
+.image-tools-content a{
+    color:var(--image-primary);
+    font-weight:700;
+}
+
+.image-tools-content a:hover{
+    text-decoration:underline;
+}
+
+.image-tools-howto ol{
+    margin:0;
+    padding-left:24px;
+}
+
+.image-tools-howto li{
+    margin:0 0 12px;
+
+    color:var(--image-text);
+
+    font-size:15px;
+    line-height:1.7;
+}
+
+.image-tools-howto li:last-child{
+    margin-bottom:0;
+}
+
+.image-tools-faq h3{
+    padding-top:2px;
+}
+
+.image-tools-faq h3 + p{
+    margin-bottom:4px;
+}
+
+
+/* =========================================================
+   CATEGORY INFORMATION / OPTIONAL SHARED CLASSES
 ========================================================= */
 
 .pdf-info-section{
     padding:76px 0;
-
-    background:var(--pdf-soft);
+    background:var(--image-soft);
 }
 
 .content-card{
@@ -528,20 +594,32 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--image-border);
+    border-radius:var(--image-radius-lg);
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--image-shadow-sm);
 }
 
 .content-heading{
     margin-bottom:22px;
 }
 
+.content-heading h2{
+    margin:0 0 12px;
+
+    color:var(--image-ink);
+
+    font-size:32px;
+    line-height:1.2;
+
+    font-weight:800;
+    letter-spacing:-.025em;
+}
+
 .content-card p{
     margin:0 0 16px;
 
-    color:var(--pdf-text);
+    color:var(--image-text);
 
     font-size:15.5px;
     line-height:1.8;
@@ -553,12 +631,11 @@
 
 
 /* =========================================================
-   USE CASE SECTION
+   USE CASES
 ========================================================= */
 
 .pdf-use-section{
     padding:78px 0;
-
     background:#ffffff;
 }
 
@@ -567,22 +644,21 @@
 
     padding:27px 24px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--image-border);
+    border-radius:var(--image-radius-md);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--image-shadow-sm);
 
     transition:
-        transform .25s var(--pdf-ease),
+        transform .25s var(--image-ease),
         box-shadow .25s ease;
 }
 
 .use-card:hover{
     transform:translateY(-4px);
-
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--image-shadow-md);
 }
 
 .use-number{
@@ -598,8 +674,7 @@
     border-radius:10px;
 
     background:#eef3ff;
-
-    color:var(--pdf-primary);
+    color:var(--image-primary);
 
     font-size:12px;
     font-weight:800;
@@ -608,7 +683,7 @@
 .use-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:18px;
     font-weight:750;
@@ -617,19 +692,15 @@
 .use-card p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     font-size:14.5px;
     line-height:1.7;
 }
 
 .use-card a{
-    color:var(--pdf-primary);
+    color:var(--image-primary);
     font-weight:700;
-}
-
-.use-card a:hover{
-    text-decoration:underline;
 }
 
 
@@ -639,8 +710,7 @@
 
 .pdf-workflow-section{
     padding:78px 0;
-
-    background:var(--pdf-soft);
+    background:var(--image-soft);
 }
 
 .workflow-card{
@@ -656,19 +726,26 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--image-border);
+    border-radius:var(--image-radius-lg);
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--image-shadow-md);
 }
 
 .workflow-content h2{
-    margin-bottom:14px;
+    margin:0 0 14px;
+
+    color:var(--image-ink);
+
+    font-size:32px;
+    line-height:1.2;
+
+    font-weight:800;
+    letter-spacing:-.025em;
 }
 
 .workflow-content > p{
-    color:var(--pdf-muted);
-
+    color:var(--image-muted);
     line-height:1.7;
 }
 
@@ -696,8 +773,7 @@
 
     border-radius:50%;
 
-    background:var(--pdf-gradient);
-
+    background:var(--image-gradient);
     color:#ffffff;
 
     font-size:13px;
@@ -707,7 +783,7 @@
 .workflow-step h3{
     margin:0 0 4px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:16px;
     font-weight:750;
@@ -716,7 +792,7 @@
 .workflow-step p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     font-size:14px;
     line-height:1.6;
@@ -729,38 +805,33 @@
 
 .pdf-tips-section{
     padding:78px 0;
-
     background:#ffffff;
 }
 
 .tips-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
 .tip-card{
     padding:25px 22px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--image-border);
+    border-radius:var(--image-radius-md);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--image-shadow-sm);
 
     transition:
-        transform .25s var(--pdf-ease),
+        transform .25s var(--image-ease),
         box-shadow .25s ease;
 }
 
 .tip-card:hover{
     transform:translateY(-4px);
-
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--image-shadow-md);
 }
 
 .tip-card > i{
@@ -776,8 +847,7 @@
     border-radius:12px;
 
     background:#eef3ff;
-
-    color:var(--pdf-primary);
+    color:var(--image-primary);
 
     font-size:20px;
 }
@@ -785,7 +855,7 @@
 .tip-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:17px;
     font-weight:750;
@@ -794,7 +864,7 @@
 .tip-card p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     font-size:14px;
     line-height:1.7;
@@ -807,7 +877,6 @@
 
 .related-section{
     padding:0 0 78px;
-
     background:#ffffff;
 }
 
@@ -820,7 +889,7 @@
 
     padding:38px 42px;
 
-    border-radius:var(--pdf-radius-lg);
+    border-radius:var(--image-radius-lg);
 
     background:
         linear-gradient(
@@ -833,7 +902,14 @@
 }
 
 .related-card h2{
+    margin:0 0 12px;
+
+    color:var(--image-ink);
+
     font-size:27px;
+    line-height:1.25;
+
+    font-weight:800;
 }
 
 .related-card p{
@@ -841,7 +917,7 @@
 
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     line-height:1.7;
 }
@@ -863,12 +939,11 @@
 
     padding:9px 13px;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--image-border);
     border-radius:10px;
 
     background:#ffffff;
-
-    color:var(--pdf-text);
+    color:var(--image-text);
 
     font-size:13px;
     font-weight:650;
@@ -880,8 +955,7 @@
 }
 
 .related-links a:hover{
-    color:var(--pdf-primary);
-
+    color:var(--image-primary);
     border-color:#bdccf8;
 
     transform:translateY(-2px);
@@ -894,7 +968,6 @@
 
 .feature-section{
     padding:0 0 70px;
-
     background:#ffffff;
 }
 
@@ -904,12 +977,12 @@
 
     padding:32px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--image-border);
+    border-radius:var(--image-radius-lg);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--image-shadow-md);
 }
 
 .feature-box{
@@ -955,10 +1028,11 @@
     background:#e8f8ef;
 }
 
-.feature-box h3{
+.feature-box h3,
+.feature-box h4{
     margin:0 0 5px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:16px;
     font-weight:750;
@@ -967,7 +1041,7 @@
 .feature-box p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     font-size:13.5px;
     line-height:1.6;
@@ -975,8 +1049,7 @@
 
 .feature-divider{
     width:1px;
-
-    background:var(--pdf-border);
+    background:var(--image-border);
 }
 
 
@@ -996,7 +1069,7 @@
     border:1px dashed #cbd5e1;
     border-radius:18px;
 
-    background:var(--pdf-soft);
+    background:var(--image-soft);
 }
 
 .no-tools-message i{
@@ -1004,7 +1077,7 @@
 
     margin-bottom:10px;
 
-    color:var(--pdf-primary);
+    color:var(--image-primary);
 
     font-size:28px;
 }
@@ -1012,7 +1085,7 @@
 .no-tools-message h3{
     margin:0 0 7px;
 
-    color:var(--pdf-ink);
+    color:var(--image-ink);
 
     font-size:18px;
 }
@@ -1020,7 +1093,7 @@
 .no-tools-message p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--image-muted);
 
     font-size:14px;
 }
@@ -1046,8 +1119,7 @@
     }
 
     .tips-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .related-card{
@@ -1070,6 +1142,13 @@
         height:1px;
     }
 
+    .image-tools-intro,
+    .image-tools-guide,
+    .image-tools-howto,
+    .image-tools-faq,
+    .image-tools-related{
+        padding:36px 34px;
+    }
 }
 
 
@@ -1122,20 +1201,11 @@
         font-size:13px;
     }
 
-    .section-heading{
-        margin-bottom:28px;
-    }
-
-    .section-heading h2,
-    .content-heading h2,
-    .workflow-content h2{
-        font-size:27px;
-    }
-
     .pdf-tools-section,
     .pdf-use-section,
     .pdf-workflow-section,
-    .pdf-tips-section{
+    .pdf-tips-section,
+    .image-tools-content{
         padding:55px 0;
     }
 
@@ -1188,6 +1258,27 @@
         padding:5px 0;
     }
 
+    .image-tools-intro,
+    .image-tools-guide,
+    .image-tools-howto,
+    .image-tools-faq,
+    .image-tools-related{
+        padding:28px 22px;
+        border-radius:20px;
+    }
+
+    .image-tools-content h2{
+        font-size:27px;
+    }
+
+    .image-tools-content h3{
+        font-size:17px;
+    }
+
+    .image-tools-content p,
+    .image-tools-howto li{
+        font-size:14.5px;
+    }
 }
 
 
@@ -1205,12 +1296,6 @@
         font-size:14px;
     }
 
-    .section-heading h2,
-    .content-heading h2,
-    .workflow-content h2{
-        font-size:24px;
-    }
-
     .filter-btn{
         font-size:12.5px;
         padding:8px 12px;
@@ -1220,7 +1305,8 @@
         min-height:215px;
     }
 
-    .pdf-tool-card h3{
+    .pdf-tool-card h3,
+    .pdf-tool-card h4{
         font-size:16px;
     }
 
@@ -1232,6 +1318,26 @@
         font-size:12.5px;
     }
 
+    .image-tools-content{
+        padding:45px 0;
+    }
+
+    .image-tools-intro,
+    .image-tools-guide,
+    .image-tools-howto,
+    .image-tools-faq,
+    .image-tools-related{
+        padding:24px 18px;
+        border-radius:18px;
+    }
+
+    .image-tools-content h2{
+        font-size:24px;
+    }
+
+    .image-tools-content h3{
+        font-size:16px;
+    }
 }
 
 
@@ -1243,7 +1349,8 @@
 .filter-btn:focus-visible,
 .search-btn:focus-visible,
 .search-box input:focus-visible,
-.related-links a:focus-visible{
+.related-links a:focus-visible,
+.image-tools-content a:focus-visible{
     outline:3px solid rgba(37,99,235,.25);
     outline-offset:3px;
 }

@@ -203,611 +203,986 @@
 
 </head>
 <body>
-<!-- =========================
-     NAVBAR
-========================= -->
 
-<th:block th:replace="~{fragments/navbar :: navbar}"></th:block>
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
 
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-<!-- ==========================================
-     HERO SECTION
-========================================== -->
 
-    <section class="tools-hero">
+    <main>
 
-        <div class="container">
+        <!-- =================================================
+             HERO
+        ================================================== -->
 
-            <div class="hero-content text-center">
+        <section class="tools-hero py-5">
+            <div class="container">
 
-                <div class="hero-badge">
+                <div class="row justify-content-center text-center">
 
-                    ⚡ 20+ Powerful File Conversion Tools
+                    <div class="col-lg-9">
 
-                </div>
-
-                <h1>
-
-                    Convert Files Faster
-                    <span>Than Ever</span>
-
-                </h1>
-
-                <p>
-
-                    Convert PDF, Images, Word, Excel,
-                    PowerPoint and more with our secure
-                    and lightning-fast online tools.
-
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#all-tools" class="btn hero-btn">
-
-                        Start Converting →
-
-                    </a>
-
-                    <a href="#popular-tools" class="btn browse-btn">
-
-                        Browse Popular Tools
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     SEARCH SECTION
-========================================== -->
-
-    <section class="search-section">
-
-        <div class="container">
-
-            <div class="search-wrapper">
-
-                <i class="bi bi-search"></i>
-
-                <input type="text" id="toolSearch" placeholder="Search conversion tools...">
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     CATEGORY FILTERS
-========================================== -->
-    <section class="filter-section">
-
-        <div class="container">
-
-            <div class="category-filter">
-
-                <button class="filter-btn active" onclick="window.location.href='tools.html'">
-
-                    All Tools
-
-                </button>
-
-                <button class="filter-btn" onclick="window.location.href='/pdf-tools'">
-
-                    PDF Tools
-
-                </button>
-
-                <button class="filter-btn" onclick="window.location.href='/image-tools'">
-
-                    Image Tools
-
-                </button>
-
-                <button class="filter-btn" onclick="window.location.href='/office-tools'">
-
-                    Office Tools
-
-                </button>
-
-                <button class="filter-btn" onclick="window.location.href='/security-tools'">
-
-                    Security Tools
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     POPULAR TOOLS TITLE
-========================================== -->
-
-    <section id="popular-tools" class="popular-tools-header">
-
-        <div class="container text-center">
-
-            <h2>
-
-                🔥 Most Popular Conversion Tools
-
-            </h2>
-
-            <p>
-
-                Start with our most frequently used
-                conversion tools.
-
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     POPULAR TOOLS GRID
-========================================== -->
-
-    <section class="popular-tools-section" id="all-tools">
-
-        <div class="container">
-
-            <div class="row g-4">
-
-                <!-- CARD 1 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/image-to-pdf" class="tool-card">
-
-                        <img src="/images/icons/image.png" class="tool-icon" alt="Image to PDF Converter Icon">
-
-                        <h4>Image to PDF</h4>
-
-                        <p>
-                            Convert JPG, PNG and WEBP
-                            images into PDF files.
-                        </p>
-
-                        <span>
-                            Open Tool →
+                        <span class="badge rounded-pill bg-primary-subtle text-primary px-3 py-2 mb-3">
+                            Free Online File Tools
                         </span>
 
-                    </a>
-
-                </div>
-
-                <!-- CARD 2 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-to-image" class="tool-card">
-
-                        <img src="/images/icons/pdf.png" class="tool-icon" alt="PDF to Image Converter Icon">
-
-                        <h4>PDF to Image</h4>
-
-                        <p>
-                            Convert PDF pages into
-                            high-quality images.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 3 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-merger" class="tool-card">
-
-                        <img src="/images/icons/merge.png" class="tool-icon" alt="PDF Merger Tool Icon">
-
-                        <h4>PDF Merge</h4>
-
-                        <p>
-                            Combine multiple PDF
-                            files into one.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 4 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-splitter" class="tool-card">
-
-                        <img src="/images/icons/split.png" class="tool-icon" alt="PDF Splitter Tool Icon">
-
-                        <h4>PDF Split</h4>
-
-                        <p>
-                            Split large PDF files
-                            into smaller files.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 5 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-compressor" class="tool-card">
-
-                        <img src="/images/icons/compress.png" class="tool-icon" alt="PDF Compressor Tool Icon">
-
-                        <h4>PDF Compress</h4>
-
-                        <p>
-                            Reduce PDF file size
-                            without losing quality.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 6 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/word-to-pdf" class="tool-card">
-
-                        <img src="/images/icons/word.png" class="tool-icon" alt="Word to PDF Converter Icon">
-
-                        <h4>Word to PDF</h4>
-
-                        <p>
-                            Convert DOCX files
-                            into PDF format.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 7 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/excel-to-pdf" class="tool-card">
-                        <img src="/images/icons/excel.png" class="tool-icon" alt="Excel to PDF Converter Icon">
-
-                        <h4>Excel to PDF</h4>
-
-                        <p>
-                            Convert spreadsheets
-                            into PDF documents.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 8 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/powerpoint-to-pdf" class="tool-card">
-                        <img src="/images/icons/powerpoint.png" class="tool-icon"
-                            alt="PowerPoint to PDF Converter Icon">
-
-                        <h4>PPT to PDF</h4>
-
-                        <p>
-                            Convert presentations
-                            into PDF format.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 9 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/image-compressor" class="tool-card">
-
-                        <img src="/images/icons/image-compressor.png" class="tool-icon"
-                            alt="Image Compressor Tool Icon">
-
-                        <h4>Image Compressor</h4>
-
-                        <p>
-                            Compress images while
-                            maintaining quality.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 10 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/image-resizer" class="tool-card">
-
-                        <img src="/images/icons/image-resizer.png" class="tool-icon" alt="Image Resizer Tool Icon">
-
-                        <h4>Image Resizer</h4>
-
-                        <p>
-                            Resize images instantly
-                            for web and mobile.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 11 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-unlocker" class="tool-card">
-
-                        <img src="/images/icons/unlock.png" class="tool-icon" alt="PDF Unlocker Tool Icon">
-
-
-                        <h4>PDF Unlocker</h4>
-
-                        <p>
-                            Remove PDF password
-                            restrictions securely.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- CARD 12 -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-protector" class="tool-card">
-
-                        <img src="/images/icons/protect.png" class="tool-icon" alt="PDF Protector Tool Icon">
-
-                        <h4>PDF Protector</h4>
-
-                        <p>
-                            Add password protection
-                            to PDF files.
-                        </p>
-
-                        <span>
-                            Open Tool →
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     REQUEST TOOL CTA
-========================================== -->
-
-    <section class="request-tool-section">
-
-        <div class="container">
-
-            <div class="request-card">
-
-                <div class="row align-items-center">
-
-                    <div class="col-lg-8">
-
-                        <h2>
-
-                            Can't Find The Tool You Need?
-
-                        </h2>
-
-                        <p>
-
-                            We're constantly adding new
-                            conversion tools. Tell us what
-                            you need and we'll prioritize it.
-
+                        <h1 class="display-5 fw-bold mb-3">
+                            Free Online File Conversion & Utility Tools
+                        </h1>
+
+                        <p class="lead text-muted mb-0">
+                            Convert, compress, merge, split, resize, and manage
+                            your files online with simple tools from ConvertNova.
+                            Choose a tool below to get started.
                         </p>
 
                     </div>
 
-                    <div class="col-lg-4 text-lg-end">
+                </div>
 
-                        <a href="/contact-us" class="btn request-btn">
+            </div>
+        </section>
 
-                            Request A Tool →
 
+        <!-- =================================================
+             QUICK CATEGORY NAVIGATION
+        ================================================== -->
+
+        <section class="tools-category-nav py-3 border-bottom">
+            <div class="container">
+
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+
+                    <a href="pdf-tools"
+                       class="btn btn-outline-primary btn-sm">
+                        PDF Tools
+                    </a>
+
+                    <a href="image-tools"
+                       class="btn btn-outline-primary btn-sm">
+                        Image Tools
+                    </a>
+
+                    <a href="office-tools"
+                       class="btn btn-outline-primary btn-sm">
+                        Office Tools
+                    </a>
+
+                    <a href="security-tools"
+                       class="btn btn-outline-primary btn-sm">
+                        Security Tools
+                    </a>
+
+                    <a href="blogsection/blog"
+                       class="btn btn-outline-secondary btn-sm">
+                        Guides
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             ALL TOOLS INTRODUCTION
+        ================================================== -->
+
+        <section class="tools-introduction py-5">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-9">
+
+                        <h2 class="fw-bold mb-3 text-center">
+                            Find the Right Tool for Your File
+                        </h2>
+
+                        <p class="text-muted">
+                            ConvertNova brings common file-management tasks
+                            together in one place. Instead of searching for a
+                            separate service for every task, you can choose a
+                            tool based on the type of file you are working
+                            with and the result you need.
+                        </p>
+
+                        <p class="text-muted mb-0">
+                            Our tools are organized into PDF, image, Office,
+                            and security categories. Each category contains
+                            tools designed for specific tasks such as file
+                            conversion, compression, document organization,
+                            image optimization, and PDF protection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PDF TOOLS
+        ================================================== -->
+
+        <section id="pdf-tools" class="tools-category py-5">
+
+            <div class="container">
+
+                <div class="row align-items-center mb-4">
+
+                    <div class="col-lg-8">
+
+                        <span class="text-primary fw-semibold">
+                            PDF
+                        </span>
+
+                        <h2 class="fw-bold mt-1 mb-2">
+                            PDF Tools
+                        </h2>
+
+                        <p class="text-muted mb-0">
+                            Work with PDF documents using tools for
+                            conversion, organization, compression,
+                            editing, and everyday document management.
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+
+                        <a href="/pdf-tools"
+                           class="btn btn-primary">
+                            View All PDF Tools
                         </a>
 
                     </div>
 
                 </div>
 
+
+                <div class="row g-4">
+
+                    <!-- PDF Tool -->
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-pdf"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Merge PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Combine multiple PDF files into one
+                                organized document.
+                            </p>
+
+                            <a href="/pdf-merger"
+                               class="tool-link">
+                                Merge PDFs
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-scissors"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Split PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Separate pages or sections from a PDF
+                                into smaller documents.
+                            </p>
+
+                            <a href="/pdf-splitter"
+                               class="tool-link">
+                                Split PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-zip"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Compress PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Reduce PDF file size while keeping the
+                                document practical to use and share.
+                            </p>
+
+                            <a href="/pdf-compressor"
+                               class="tool-link">
+                                Compress PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-word"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                PDF to Word
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert supported PDF documents into
+                                editable Word files.
+                            </p>
+
+                            <a href="/pdf-to-word"
+                               class="tool-link">
+                                Convert to Word
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-image"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                PDF to Image
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert PDF pages into commonly used
+                                image formats.
+                            </p>
+
+                            <a href="/pdf-to-image"
+                               class="tool-link">
+                                Convert to Image
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                More PDF Tools
+                            </h3>
+
+                            <p class="text-muted">
+                                Explore additional tools for editing,
+                                organizing, converting, and managing PDFs.
+                            </p>
+
+                            <a href="/pdf-tools"
+                               class="tool-link">
+                                Explore PDF Tools
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- ==========================================
-     WHY CHOOSE US
-========================================== -->
+        <!-- =================================================
+             IMAGE TOOLS
+        ================================================== -->
 
-    <section class="features-section">
+        <section id="image-tools"
+                 class="tools-category tools-category-alt py-5">
 
-        <div class="container">
+            <div class="container">
 
-            <div class="text-center mb-5">
+                <div class="row align-items-center mb-4">
 
-                <h2 class="section-title">
+                    <div class="col-lg-8">
 
-                    Why Choose ConvertNova?
+                        <span class="text-primary fw-semibold">
+                            IMAGES
+                        </span>
 
-                </h2>
+                        <h2 class="fw-bold mt-1 mb-2">
+                            Image Tools
+                        </h2>
 
-                <p class="section-subtitle">
+                        <p class="text-muted mb-0">
+                            Resize, compress, convert, and prepare images
+                            for websites, documents, social media, and
+                            everyday use.
+                        </p>
 
-                    Fast, secure and easy file conversion
-                    for everyone.
+                    </div>
 
-                </p>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+
+                        <a href="/image-tools"
+                           class="btn btn-primary">
+                            View All Image Tools
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Image Resizer
+                            </h3>
+
+                            <p class="text-muted">
+                                Change image dimensions for websites,
+                                documents, and other digital uses.
+                            </p>
+
+                            <a href="/image-resizer"
+                               class="tool-link">
+                                Resize Image
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-zip"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Image Compressor
+                            </h3>
+
+                            <p class="text-muted">
+                                Reduce image file size to make images
+                                easier to store and share.
+                            </p>
+
+                            <a href="/image-compressor"
+                               class="tool-link">
+                                Compress Image
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Image Converter
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert supported images between common
+                                image formats.
+                            </p>
+
+                            <a href="/jpg-to-png-converter"
+                               class="tool-link">
+                                Convert Image
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-filetype-jpg"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                PNG to JPG
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert PNG images into JPG format when
+                                a smaller or widely supported format is
+                                needed.
+                            </p>
+
+                            <a href="/jpg-png-converter"
+                               class="tool-link">
+                                PNG to JPG
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-filetype-png"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                JPG to PNG
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert JPG images to PNG format for
+                                supported transparency and image workflows.
+                            </p>
+
+                            <a href="/jpg-to-png-converter"
+                               class="tool-link">
+                                JPG to PNG
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-grid"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                More Image Tools
+                            </h3>
+
+                            <p class="text-muted">
+                                Explore additional image conversion,
+                                resizing, and optimization tools.
+                            </p>
+
+                            <a href="/image-tools"
+                               class="tool-link">
+                                Explore Image Tools
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="row g-4">
+        </section>
 
-                <div class="col-lg-3 col-md-6">
 
-                    <div class="feature-card">
+        <!-- =================================================
+             OFFICE TOOLS
+        ================================================== -->
 
-                        <img src="/images/icons/security.png" class="feature-icon" alt="Security">
+        <section id="office-tools"
+                 class="tools-category py-5">
 
-                        <h4>
+            <div class="container">
 
-                            Secure Processing
+                <div class="row align-items-center mb-4">
 
-                        </h4>
+                    <div class="col-lg-8">
 
-                        <p>
+                        <span class="text-primary fw-semibold">
+                            OFFICE
+                        </span>
 
-                            Files are processed securely
-                            and automatically removed.
+                        <h2 class="fw-bold mt-1 mb-2">
+                            Office & Document Tools
+                        </h2>
 
+                        <p class="text-muted mb-0">
+                            Convert and manage common Word, Excel,
+                            PowerPoint, and document formats for everyday
+                            office workflows.
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+
+                        <a href="/office-tools"
+                           class="btn btn-primary">
+                            View All Office Tools
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-word"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Word to PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert supported Word documents into
+                                PDF files for sharing and distribution.
+                            </p>
+
+                            <a href="/word-to-pdf"
+                               class="tool-link">
+                                Word to PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-excel"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Excel to PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert supported Excel spreadsheets into
+                                PDF documents.
+                            </p>
+
+                            <a href="/excel-to-pdf"
+                               class="tool-link">
+                                Excel to PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-ppt"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                PowerPoint to PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Convert supported PowerPoint presentations
+                                into PDF format.
+                            </p>
+
+                            <a href="/powerpoint-to-pdf"
+                               class="tool-link">
+                                PowerPoint to PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-pdf"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                PDF to Word
+                            </h3>
+
+                            <p class="text-muted">
+                                Turn supported PDF documents into editable
+                                Word files.
+                            </p>
+
+                            <a href="/pdf-to-word"
+                               class="tool-link">
+                                PDF to Word
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Document Tools
+                            </h3>
+
+                            <p class="text-muted">
+                                Explore additional document conversion
+                                tools for common office formats.
+                            </p>
+
+                            <a href="/office-tools"
+                               class="tool-link">
+                                Explore Office Tools
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECURITY TOOLS
+        ================================================== -->
+
+        <section id="security-tools"
+                 class="tools-category tools-category-alt py-5">
+
+            <div class="container">
+
+                <div class="row align-items-center mb-4">
+
+                    <div class="col-lg-8">
+
+                        <span class="text-primary fw-semibold">
+                            SECURITY
+                        </span>
+
+                        <h2 class="fw-bold mt-1 mb-2">
+                            PDF Security & Protection Tools
+                        </h2>
+
+                        <p class="text-muted mb-0">
+                            Manage common PDF security tasks such as
+                            password protection, unlocking, and watermarking.
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+
+                        <a href="/security-tools"
+                           class="btn btn-primary">
+                            View Security Tools
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-lock"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Protect PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Add password protection to supported PDF
+                                documents.
+                            </p>
+
+                            <a href="/pdf-protector"
+                               class="tool-link">
+                                Protect PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-unlock"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Unlock PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Remove supported PDF restrictions when
+                                you have the necessary authorization.
+                            </p>
+
+                            <a href="/pdf-unlocker"
+                               class="tool-link">
+                                Unlock PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-4">
+
+                        <div class="tool-card h-100">
+
+                            <div class="tool-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+
+                            <h3 class="h5 fw-bold">
+                                Watermark PDF
+                            </h3>
+
+                            <p class="text-muted">
+                                Add a visible watermark to supported PDF
+                                documents.
+                            </p>
+
+                            <a href="/pdf-watermark"
+                               class="tool-link">
+                                Watermark PDF
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HOW TO CHOOSE
+        ================================================== -->
+
+        <section class="tools-guide py-5">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-9 text-center">
+
+                        <h2 class="fw-bold mb-3">
+                            Which ConvertNova Tool Should You Use?
+                        </h2>
+
+                        <p class="text-muted mb-4">
+                            Start by identifying the type of file you have
+                            and the result you want. This makes it easier to
+                            choose the right tool without trying several
+                            unrelated options.
                         </p>
 
                     </div>
 
                 </div>
 
-                <div class="col-lg-3 col-md-6">
 
-                    <div class="feature-card">
+                <div class="row g-4">
 
-                        <img src="/images/icons/tools.png" class="feature-icon" alt="Tools">
+                    <div class="col-md-4">
 
-                        <h4>
+                        <div class="guide-card h-100">
 
-                            Powerful Tools
+                            <h3 class="h5 fw-bold">
+                                Working with PDFs?
+                            </h3>
 
-                        </h4>
+                            <p class="text-muted">
+                                Use PDF tools when you need to combine,
+                                separate, compress, convert, or organize
+                                PDF documents.
+                            </p>
 
-                        <p>
+                            <a href="/pdf-tools">
+                                Explore PDF Tools
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
 
-                            Access PDF, Image and Office
-                            conversion tools in one place.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-
-                    <div class="feature-card">
-
-                        <img src="/images/icons/files-converted.png" class="feature-icon" alt="Files-Converter">
-
-                        <h4>
-
-                            Fast Conversion
-
-                        </h4>
-
-                        <p>
-
-                            Convert files in seconds with
-                            optimized performance.
-
-                        </p>
+                        </div>
 
                     </div>
 
-                </div>
 
-                <div class="col-lg-3 col-md-6">
+                    <div class="col-md-4">
 
-                    <div class="feature-card">
+                        <div class="guide-card h-100">
 
-                        <img src="/images/icons/lock.png" class="feature-icon" alt="Lock">
+                            <h3 class="h5 fw-bold">
+                                Working with Images?
+                            </h3>
 
-                        <h4>
+                            <p class="text-muted">
+                                Choose image tools when you need to resize,
+                                compress, or convert an image into another
+                                supported format.
+                            </p>
 
-                            Privacy First
+                            <a href="/image-tools">
+                                Explore Image Tools
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
 
-                        </h4>
+                        </div>
 
-                        <p>
+                    </div>
 
-                            Your uploaded files remain
-                            private and protected.
 
-                        </p>
+                    <div class="col-md-4">
+
+                        <div class="guide-card h-100">
+
+                            <h3 class="h5 fw-bold">
+                                Working with Documents?
+                            </h3>
+
+                            <p class="text-muted">
+                                Office tools are useful when converting
+                                Word, Excel, PowerPoint, and other supported
+                                document formats.
+                            </p>
+
+                            <a href="/office-tools">
+                                Explore Office Tools
+                                <i class="bi bi-arrow-right"></i>
+
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -815,64 +1190,270 @@
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- ==========================================
-     NEWSLETTER
-========================================== -->
+        <!-- =================================================
+             TIPS / INFORMATION
+        ================================================== -->
 
-    <section class="newsletter-section">
+        <section class="tools-information py-5">
 
-        <div class="container">
+            <div class="container">
 
-            <div class="newsletter-card text-center">
+                <div class="row justify-content-center">
 
-                <h2>
+                    <div class="col-lg-9">
 
-                    Stay Updated
+                        <h2 class="fw-bold mb-4">
+                            Tips for Better File Conversion
+                        </h2>
 
-                </h2>
+                        <div class="info-block">
 
-                <p>
+                            <h3 class="h5 fw-bold">
+                                Check the original file first
+                            </h3>
 
-                    Get updates about new tools and
-                    conversion features.
+                            <p class="text-muted">
+                                Before converting a file, make sure the
+                                original document opens correctly and contains
+                                the information you expect. Keeping an
+                                original copy gives you a reliable backup if
+                                the converted version needs to be recreated.
+                            </p>
 
-                </p>
+                        </div>
 
-                <div class="newsletter-form">
 
-                    <input type="email" placeholder="Enter your email">
+                        <div class="info-block">
 
-                    <button>
+                            <h3 class="h5 fw-bold">
+                                Choose the output format carefully
+                            </h3>
 
-                        Subscribe
+                            <p class="text-muted">
+                                Different formats are useful for different
+                                purposes. PDF is commonly used for sharing
+                                fixed-layout documents, while editable office
+                                formats are more appropriate when the content
+                                needs further changes.
+                            </p>
 
-                    </button>
+                        </div>
+
+
+                        <div class="info-block">
+
+                            <h3 class="h5 fw-bold">
+                                Review the converted file
+                            </h3>
+
+                            <p class="text-muted">
+                                After conversion, open the resulting file and
+                                check important text, images, page layout,
+                                tables, and formatting. Conversion results can
+                                vary depending on the structure and features
+                                contained in the original file.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-block">
+
+                            <h3 class="h5 fw-bold">
+                                Keep sensitive files in mind
+                            </h3>
+
+                            <p class="text-muted mb-0">
+                                Before uploading a document, consider whether
+                                it contains confidential or sensitive
+                                information. Review ConvertNova's privacy
+                                information and the relevant tool's behavior
+                                before processing important files.
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     FOOTER
-========================================== -->
+        </section>
 
 
-   
-    <th:block th:replace="~{fragments/footer :: footer}"></th:block>
+        <!-- =================================================
+             GUIDES
+        ================================================== -->
+
+        <section id="guides" class="tools-guides py-5">
+
+            <div class="container">
+
+                <div class="row align-items-center mb-4">
+
+                    <div class="col-lg-8">
+
+                        <span class="text-primary fw-semibold">
+                            LEARN
+                        </span>
+
+                        <h2 class="fw-bold mt-1 mb-2">
+                            Conversion Guides & Tutorials
+                        </h2>
+
+                        <p class="text-muted mb-0">
+                            Learn how common file conversions work and
+                            discover practical tips for preparing and
+                            managing your files.
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+
+                        <a href="/blogsection/blog"
+                           class="btn btn-outline-primary">
+                            Visit ConvertNova Blog
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+
+                        <article class="guide-card h-100">
+
+                            <h3 class="h5 fw-bold">
+                                PDF Conversion Guides
+                            </h3>
+
+                            <p class="text-muted">
+                                Learn about PDF merging, splitting,
+                                compression, conversion, and document
+                                organization.
+                            </p>
+
+                            <a href="/blogsection/pdf">
+                                Read PDF Guides
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <article class="guide-card h-100">
+
+                            <h3 class="h5 fw-bold">
+                                Image Conversion Guides
+                            </h3>
+
+                            <p class="text-muted">
+                                Learn about image formats, resizing,
+                                compression, and common image conversion
+                                workflows.
+                            </p>
+
+                            <a href="/blogsection/image">
+                                Read Image Guides
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <article class="guide-card h-100">
+
+                            <h3 class="h5 fw-bold">
+                                Office Conversion Guides
+                            </h3>
+
+                            <p class="text-muted">
+                                Find practical information about Word,
+                                Excel, PowerPoint, PDF, and document
+                                conversion.
+                            </p>
+
+                            <a href="/blogsection/office">
+                                Read Office Guides
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FINAL CTA
+        ================================================== -->
+
+        <section class="tools-cta py-5">
+
+            <div class="container">
+
+                <div class="cta-box text-center">
+
+                    <h2 class="fw-bold mb-3">
+                        Ready to Convert Your File?
+                    </h2>
+
+                    <p class="mb-4">
+                        Choose a tool and start working with your file.
+                        ConvertNova provides simple online tools for common
+                        PDF, image, and document tasks.
+                    </p>
+
+                    <a href="/tools"
+                       class="btn btn-light btn-lg px-4">
+                        Explore All Tools
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+
+    <!-- Bootstrap JS -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="/js/navbar.js"></script>
 
     <script src="/js/homepage.js"></script>
+
 
 </body>
 

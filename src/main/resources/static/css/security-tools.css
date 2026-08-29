@@ -1,44 +1,54 @@
 /* =========================================================
-   CONVERTNOVA PDF TOOLS
+   CONVERTNOVA — SECURITY TOOLS
+   Dedicated category-page stylesheet
+   Same design system as PDF Tools CSS.
+
+   Conversion:
+   PDF-specific names -> Security-specific names.
+   Shared layout classes remain unchanged.
+========================================================= */
+
+/* =========================================================
+   CONVERTNOVA SECURITY TOOLS
    Category Page
 ========================================================= */
 
 :root{
-    --pdf-primary:#2563eb;
-    --pdf-primary-dark:#1d4ed8;
-    --pdf-accent:#7c3aed;
+    --security-primary:#2563eb;
+    --security-primary-dark:#1d4ed8;
+    --security-accent:#7c3aed;
 
-    --pdf-ink:#0f172a;
-    --pdf-text:#334155;
-    --pdf-muted:#64748b;
+    --security-ink:#0f172a;
+    --security-text:#334155;
+    --security-muted:#64748b;
 
-    --pdf-bg:#ffffff;
-    --pdf-soft:#f8fafc;
-    --pdf-soft-blue:#f5f8ff;
+    --security-bg:#ffffff;
+    --security-soft:#f8fafc;
+    --security-soft-blue:#f5f8ff;
 
-    --pdf-border:#e2e8f0;
+    --security-border:#e2e8f0;
 
-    --pdf-radius-sm:12px;
-    --pdf-radius-md:18px;
-    --pdf-radius-lg:26px;
+    --security-radius-sm:12px;
+    --security-radius-md:18px;
+    --security-radius-lg:26px;
 
-    --pdf-shadow-sm:
+    --security-shadow-sm:
         0 4px 14px rgba(15,23,42,.05);
 
-    --pdf-shadow-md:
+    --security-shadow-md:
         0 12px 30px rgba(15,23,42,.08);
 
-    --pdf-shadow-lg:
+    --security-shadow-lg:
         0 20px 50px rgba(15,23,42,.10);
 
-    --pdf-gradient:
+    --security-gradient:
         linear-gradient(
             135deg,
-            var(--pdf-primary),
-            var(--pdf-accent)
+            var(--security-primary),
+            var(--security-accent)
         );
 
-    --pdf-ease:
+    --security-ease:
         cubic-bezier(.22,1,.36,1);
 }
 
@@ -47,22 +57,22 @@
    RESET
 ========================================================= */
 
-.pdf-hero *,
+.security-hero *,
 .search-section *,
 .filter-section *,
-.pdf-tools-section *,
-.pdf-info-section *,
-.pdf-use-section *,
-.pdf-workflow-section *,
-.pdf-tips-section *,
+.security-tools-section *,
+.security-info-section *,
+.security-use-section *,
+.security-workflow-section *,
+.security-tips-section *,
 .related-section *,
 .feature-section *{
     box-sizing:border-box;
 }
 
-.pdf-tools-section a,
-.pdf-info-section a,
-.pdf-use-section a,
+.security-tools-section a,
+.security-info-section a,
+.security-use-section a,
 .related-section a{
     text-decoration:none;
 }
@@ -72,7 +82,7 @@
    HERO
 ========================================================= */
 
-.pdf-hero{
+.security-hero{
     padding:72px 0 54px;
     text-align:center;
 
@@ -87,7 +97,7 @@
             rgba(37,99,235,.10),
             transparent 60%
         ),
-        var(--pdf-soft-blue);
+        var(--security-soft-blue);
 }
 
 .hero-content{
@@ -108,18 +118,18 @@
 
     background:#ffffff;
 
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     font-size:13px;
     font-weight:700;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--security-shadow-sm);
 }
 
-.pdf-hero h1{
+.security-hero h1{
     margin:0 0 16px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:48px;
     line-height:1.1;
@@ -128,11 +138,11 @@
     letter-spacing:-.035em;
 }
 
-.pdf-hero p{
+.security-hero p{
     max-width:680px;
     margin:0 auto;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:18px;
     line-height:1.75;
@@ -145,7 +155,7 @@
 
 .search-section{
     padding:28px 0 20px;
-    background:var(--pdf-bg);
+    background:var(--security-bg);
 }
 
 .search-wrapper{
@@ -162,10 +172,10 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--security-border);
     border-radius:14px;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--security-shadow-sm);
 
     transition:
         border-color .2s ease,
@@ -173,7 +183,7 @@
 }
 
 .search-box:focus-within{
-    border-color:var(--pdf-primary);
+    border-color:var(--security-primary);
 
     box-shadow:
         0 0 0 4px rgba(37,99,235,.10);
@@ -187,7 +197,7 @@
 
     transform:translateY(-50%);
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     pointer-events:none;
 }
@@ -205,7 +215,7 @@
 
     border-radius:14px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:15px;
 }
@@ -222,7 +232,7 @@
     border:0;
     border-radius:14px;
 
-    background:var(--pdf-gradient);
+    background:var(--security-gradient);
 
     color:#ffffff;
 
@@ -235,8 +245,8 @@
         0 7px 18px rgba(37,99,235,.20);
 
     transition:
-        transform .2s var(--pdf-ease),
-        box-shadow .2s var(--pdf-ease);
+        transform .2s var(--security-ease),
+        box-shadow .2s var(--security-ease);
 }
 
 .search-btn:hover{
@@ -257,7 +267,7 @@
 
 .filter-section{
     padding:8px 0 44px;
-    background:var(--pdf-bg);
+    background:var(--security-bg);
 }
 
 .category-filter{
@@ -275,27 +285,27 @@
 
     padding:10px 18px;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--security-border);
     border-radius:999px;
 
     background:#ffffff;
 
-    color:var(--pdf-text);
+    color:var(--security-text);
 
     font-size:14px;
     font-weight:650;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--security-shadow-sm);
 
     transition:
         color .2s ease,
         border-color .2s ease,
         background .2s ease,
-        transform .2s var(--pdf-ease);
+        transform .2s var(--security-ease);
 }
 
 .filter-btn:hover{
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     border-color:#b9c9ff;
 
@@ -309,7 +319,7 @@
 
     border-color:transparent;
 
-    background:var(--pdf-gradient);
+    background:var(--security-gradient);
 
     box-shadow:
         0 7px 18px rgba(37,99,235,.22);
@@ -332,7 +342,7 @@
 
     margin-bottom:9px;
 
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     font-size:12px;
     font-weight:800;
@@ -347,7 +357,7 @@
 .workflow-content h2{
     margin:0 0 12px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:32px;
     line-height:1.2;
@@ -360,7 +370,7 @@
 .section-heading p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:16px;
     line-height:1.7;
@@ -368,16 +378,16 @@
 
 
 /* =========================================================
-   PDF TOOLS
+   SECURITY TOOLS
 ========================================================= */
 
-.pdf-tools-section{
+.security-tools-section{
     padding:18px 0 78px;
 
     background:#ffffff;
 }
 
-.pdf-tool-card{
+.security-tool-card{
     display:flex;
     flex-direction:column;
 
@@ -386,30 +396,30 @@
 
     padding:24px 22px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--security-border);
+    border-radius:var(--security-radius-md);
 
     background:#ffffff;
 
     color:inherit;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--security-shadow-sm);
 
     transition:
-        transform .28s var(--pdf-ease),
-        box-shadow .28s var(--pdf-ease),
+        transform .28s var(--security-ease),
+        box-shadow .28s var(--security-ease),
         border-color .28s ease;
 }
 
-.pdf-tool-card:hover{
+.security-tool-card:hover{
     transform:translateY(-6px);
 
     border-color:#d3dcf8;
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--security-shadow-md);
 }
 
-.pdf-tool-card:focus-visible{
+.security-tool-card:focus-visible{
     outline:3px solid rgba(37,99,235,.25);
     outline-offset:3px;
 }
@@ -427,10 +437,10 @@
     border-radius:14px;
 
     transition:
-        transform .28s var(--pdf-ease);
+        transform .28s var(--security-ease);
 }
 
-.pdf-tool-card:hover .tool-icon{
+.security-tool-card:hover .tool-icon{
     transform:scale(1.06);
 }
 
@@ -469,10 +479,10 @@
     background:#fff7dc;
 }
 
-.pdf-tool-card h3{
+.security-tool-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:17px;
     line-height:1.35;
@@ -480,10 +490,10 @@
     font-weight:750;
 }
 
-.pdf-tool-card p{
+.security-tool-card p{
     margin:0 0 18px;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:14px;
     line-height:1.65;
@@ -491,12 +501,12 @@
     flex-grow:1;
 }
 
-.pdf-tool-card > span{
+.security-tool-card > span{
     display:inline-flex;
     align-items:center;
     gap:6px;
 
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     font-size:14px;
     font-weight:750;
@@ -505,7 +515,7 @@
         gap .2s ease;
 }
 
-.pdf-tool-card:hover > span{
+.security-tool-card:hover > span{
     gap:9px;
 }
 
@@ -514,10 +524,10 @@
    CATEGORY INFORMATION
 ========================================================= */
 
-.pdf-info-section{
+.security-info-section{
     padding:76px 0;
 
-    background:var(--pdf-soft);
+    background:var(--security-soft);
 }
 
 .content-card{
@@ -528,10 +538,10 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--security-border);
+    border-radius:var(--security-radius-lg);
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--security-shadow-sm);
 }
 
 .content-heading{
@@ -541,7 +551,7 @@
 .content-card p{
     margin:0 0 16px;
 
-    color:var(--pdf-text);
+    color:var(--security-text);
 
     font-size:15.5px;
     line-height:1.8;
@@ -556,7 +566,7 @@
    USE CASE SECTION
 ========================================================= */
 
-.pdf-use-section{
+.security-use-section{
     padding:78px 0;
 
     background:#ffffff;
@@ -567,22 +577,22 @@
 
     padding:27px 24px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--security-border);
+    border-radius:var(--security-radius-md);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--security-shadow-sm);
 
     transition:
-        transform .25s var(--pdf-ease),
+        transform .25s var(--security-ease),
         box-shadow .25s ease;
 }
 
 .use-card:hover{
     transform:translateY(-4px);
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--security-shadow-md);
 }
 
 .use-number{
@@ -599,7 +609,7 @@
 
     background:#eef3ff;
 
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     font-size:12px;
     font-weight:800;
@@ -608,7 +618,7 @@
 .use-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:18px;
     font-weight:750;
@@ -617,14 +627,14 @@
 .use-card p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:14.5px;
     line-height:1.7;
 }
 
 .use-card a{
-    color:var(--pdf-primary);
+    color:var(--security-primary);
     font-weight:700;
 }
 
@@ -637,10 +647,10 @@
    WORKFLOW
 ========================================================= */
 
-.pdf-workflow-section{
+.security-workflow-section{
     padding:78px 0;
 
-    background:var(--pdf-soft);
+    background:var(--security-soft);
 }
 
 .workflow-card{
@@ -656,10 +666,10 @@
 
     background:#ffffff;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--security-border);
+    border-radius:var(--security-radius-lg);
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--security-shadow-md);
 }
 
 .workflow-content h2{
@@ -667,7 +677,7 @@
 }
 
 .workflow-content > p{
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     line-height:1.7;
 }
@@ -696,7 +706,7 @@
 
     border-radius:50%;
 
-    background:var(--pdf-gradient);
+    background:var(--security-gradient);
 
     color:#ffffff;
 
@@ -707,7 +717,7 @@
 .workflow-step h3{
     margin:0 0 4px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:16px;
     font-weight:750;
@@ -716,7 +726,7 @@
 .workflow-step p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:14px;
     line-height:1.6;
@@ -727,7 +737,7 @@
    TIPS
 ========================================================= */
 
-.pdf-tips-section{
+.security-tips-section{
     padding:78px 0;
 
     background:#ffffff;
@@ -745,22 +755,22 @@
 .tip-card{
     padding:25px 22px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-md);
+    border:1px solid var(--security-border);
+    border-radius:var(--security-radius-md);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-sm);
+    box-shadow:var(--security-shadow-sm);
 
     transition:
-        transform .25s var(--pdf-ease),
+        transform .25s var(--security-ease),
         box-shadow .25s ease;
 }
 
 .tip-card:hover{
     transform:translateY(-4px);
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--security-shadow-md);
 }
 
 .tip-card > i{
@@ -777,7 +787,7 @@
 
     background:#eef3ff;
 
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     font-size:20px;
 }
@@ -785,7 +795,7 @@
 .tip-card h3{
     margin:0 0 9px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:17px;
     font-weight:750;
@@ -794,7 +804,7 @@
 .tip-card p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:14px;
     line-height:1.7;
@@ -820,7 +830,7 @@
 
     padding:38px 42px;
 
-    border-radius:var(--pdf-radius-lg);
+    border-radius:var(--security-radius-lg);
 
     background:
         linear-gradient(
@@ -841,7 +851,7 @@
 
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     line-height:1.7;
 }
@@ -863,12 +873,12 @@
 
     padding:9px 13px;
 
-    border:1px solid var(--pdf-border);
+    border:1px solid var(--security-border);
     border-radius:10px;
 
     background:#ffffff;
 
-    color:var(--pdf-text);
+    color:var(--security-text);
 
     font-size:13px;
     font-weight:650;
@@ -880,7 +890,7 @@
 }
 
 .related-links a:hover{
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     border-color:#bdccf8;
 
@@ -904,12 +914,12 @@
 
     padding:32px;
 
-    border:1px solid var(--pdf-border);
-    border-radius:var(--pdf-radius-lg);
+    border:1px solid var(--security-border);
+    border-radius:var(--security-radius-lg);
 
     background:#ffffff;
 
-    box-shadow:var(--pdf-shadow-md);
+    box-shadow:var(--security-shadow-md);
 }
 
 .feature-box{
@@ -958,7 +968,7 @@
 .feature-box h3{
     margin:0 0 5px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:16px;
     font-weight:750;
@@ -967,7 +977,7 @@
 .feature-box p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:13.5px;
     line-height:1.6;
@@ -976,7 +986,7 @@
 .feature-divider{
     width:1px;
 
-    background:var(--pdf-border);
+    background:var(--security-border);
 }
 
 
@@ -996,7 +1006,7 @@
     border:1px dashed #cbd5e1;
     border-radius:18px;
 
-    background:var(--pdf-soft);
+    background:var(--security-soft);
 }
 
 .no-tools-message i{
@@ -1004,7 +1014,7 @@
 
     margin-bottom:10px;
 
-    color:var(--pdf-primary);
+    color:var(--security-primary);
 
     font-size:28px;
 }
@@ -1012,7 +1022,7 @@
 .no-tools-message h3{
     margin:0 0 7px;
 
-    color:var(--pdf-ink);
+    color:var(--security-ink);
 
     font-size:18px;
 }
@@ -1020,7 +1030,7 @@
 .no-tools-message p{
     margin:0;
 
-    color:var(--pdf-muted);
+    color:var(--security-muted);
 
     font-size:14px;
 }
@@ -1032,11 +1042,11 @@
 
 @media (max-width:991.98px){
 
-    .pdf-hero{
+    .security-hero{
         padding:60px 0 45px;
     }
 
-    .pdf-hero h1{
+    .security-hero h1{
         font-size:40px;
     }
 
@@ -1079,16 +1089,16 @@
 
 @media (max-width:767.98px){
 
-    .pdf-hero{
+    .security-hero{
         padding:48px 0 36px;
     }
 
-    .pdf-hero h1{
+    .security-hero h1{
         font-size:31px;
         letter-spacing:-.025em;
     }
 
-    .pdf-hero p{
+    .security-hero p{
         font-size:15px;
         line-height:1.65;
     }
@@ -1132,14 +1142,14 @@
         font-size:27px;
     }
 
-    .pdf-tools-section,
-    .pdf-use-section,
-    .pdf-workflow-section,
-    .pdf-tips-section{
+    .security-tools-section,
+    .security-use-section,
+    .security-workflow-section,
+    .security-tips-section{
         padding:55px 0;
     }
 
-    .pdf-tool-card{
+    .security-tool-card{
         min-height:225px;
         padding:21px 19px;
     }
@@ -1197,11 +1207,11 @@
 
 @media (max-width:480px){
 
-    .pdf-hero h1{
+    .security-hero h1{
         font-size:27px;
     }
 
-    .pdf-hero p{
+    .security-hero p{
         font-size:14px;
     }
 
@@ -1216,15 +1226,15 @@
         padding:8px 12px;
     }
 
-    .pdf-tool-card{
+    .security-tool-card{
         min-height:215px;
     }
 
-    .pdf-tool-card h3{
+    .security-tool-card h3{
         font-size:16px;
     }
 
-    .pdf-tool-card p{
+    .security-tool-card p{
         font-size:13.5px;
     }
 
@@ -1239,7 +1249,7 @@
    ACCESSIBILITY
 ========================================================= */
 
-.pdf-tool-card:focus-visible,
+.security-tool-card:focus-visible,
 .filter-btn:focus-visible,
 .search-btn:focus-visible,
 .search-box input:focus-visible,

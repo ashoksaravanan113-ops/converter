@@ -1,0 +1,813 @@
+/* =========================================================
+   CONVERTNOVA — DISCLAIMER PAGE
+========================================================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.disclaimer-hero,
+.disclaimer-section {
+
+    box-sizing: border-box;
+
+}
+
+.disclaimer-hero *,
+.disclaimer-section * {
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   DISCLAIMER HERO
+========================================================= */
+
+.disclaimer-hero {
+
+    position: relative;
+
+    margin-top: 80px;
+
+    padding: 85px 0 75px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            650px 350px at 85% -10%,
+            rgba(124, 58, 237, 0.10),
+            transparent 65%
+        ),
+        radial-gradient(
+            700px 350px at 5% 0%,
+            rgba(37, 99, 235, 0.10),
+            transparent 65%
+        ),
+        #f8fafc;
+
+}
+
+
+.disclaimer-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+
+    height: 320px;
+
+    top: -180px;
+
+    left: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.05);
+
+    pointer-events: none;
+
+}
+
+
+.disclaimer-hero .container {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.disclaimer-hero h1 {
+
+    margin: 0 0 16px;
+
+    color: #111827;
+
+    font-size: clamp(38px, 5vw, 56px);
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.03em;
+
+}
+
+
+.disclaimer-hero p {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+.disclaimer-updated {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    padding: 7px 13px;
+
+    border: 1px solid rgba(37, 99, 235, 0.12);
+
+    border-radius: 999px;
+
+    background: rgba(37, 99, 235, 0.06);
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   MAIN DISCLAIMER SECTION
+========================================================= */
+
+.disclaimer-section {
+
+    padding: 80px 0 95px;
+
+    background: #f8fafc;
+
+}
+
+
+.disclaimer-layout {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 300px;
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    align-items: start;
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT CARD
+========================================================= */
+
+.disclaimer-card {
+
+    width: 100%;
+
+    padding: 48px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.05);
+
+}
+
+
+/* =========================================================
+   DISCLAIMER BLOCKS
+========================================================= */
+
+.disclaimer-block {
+
+    position: relative;
+
+    padding-bottom: 42px;
+
+    margin-bottom: 42px;
+
+    border-bottom: 1px solid #edf0f4;
+
+}
+
+
+.disclaimer-block:last-child {
+
+    padding-bottom: 0;
+
+    margin-bottom: 0;
+
+    border-bottom: none;
+
+}
+
+
+.disclaimer-number {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 38px;
+
+    height: 26px;
+
+    margin-bottom: 13px;
+
+    padding: 0 9px;
+
+    border-radius: 7px;
+
+    background: rgba(37, 99, 235, 0.08);
+
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+
+}
+
+
+.disclaimer-block h2 {
+
+    margin: 0 0 16px;
+
+    color: #111827;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    line-height: 1.3;
+
+}
+
+
+.disclaimer-block p {
+
+    margin: 0 0 14px;
+
+    color: #475569;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+}
+
+
+.disclaimer-block p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   CONTACT BLOCK
+========================================================= */
+
+.disclaimer-contact {
+
+    padding: 30px;
+
+    border: 1px solid rgba(37, 99, 235, 0.12);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.045),
+            rgba(124, 58, 237, 0.035)
+        );
+
+}
+
+
+.disclaimer-contact .disclaimer-number {
+
+    margin-bottom: 15px;
+
+}
+
+
+.disclaimer-contact-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    padding: 12px 21px;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.disclaimer-contact-btn:hover {
+
+    background: #1d4ed8;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(37, 99, 235, 0.23);
+
+}
+
+
+.disclaimer-contact-btn i {
+
+    transition: transform 0.2s ease;
+
+}
+
+
+.disclaimer-contact-btn:hover i {
+
+    transform: translateX(4px);
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.disclaimer-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+    position: sticky;
+
+    top: 100px;
+
+}
+
+
+.disclaimer-sidebar-card {
+
+    padding: 28px 25px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.04);
+
+}
+
+
+.disclaimer-sidebar-card > i {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    margin-bottom: 17px;
+
+    border-radius: 13px;
+
+    background: rgba(37, 99, 235, 0.09);
+
+    color: #2563eb;
+
+    font-size: 20px;
+
+}
+
+
+.disclaimer-sidebar-card h3 {
+
+    margin: 0 0 11px;
+
+    color: #111827;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+
+}
+
+
+.disclaimer-sidebar-card p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
+
+.disclaimer-sidebar-card a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border-top: 1px solid #edf0f4;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+
+}
+
+
+.disclaimer-sidebar-card a:first-of-type {
+
+    margin-top: 8px;
+
+}
+
+
+.disclaimer-sidebar-card a:hover {
+
+    padding-left: 4px;
+
+    color: #2563eb;
+
+}
+
+
+.disclaimer-sidebar-card a i {
+
+    width: 20px;
+
+    color: #2563eb;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   DESKTOP CONTENT WIDTH
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .disclaimer-card {
+
+        padding: 52px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .disclaimer-hero {
+
+        padding: 70px 0 60px;
+
+    }
+
+
+    .disclaimer-section {
+
+        padding: 60px 0 70px;
+
+    }
+
+
+    .disclaimer-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .disclaimer-sidebar {
+
+        position: static;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .disclaimer-card {
+
+        padding: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .disclaimer-hero {
+
+        margin-top: 70px;
+
+        padding: 58px 0 50px;
+
+    }
+
+
+    .disclaimer-hero h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .disclaimer-hero p {
+
+        font-size: 16px;
+
+    }
+
+
+    .disclaimer-section {
+
+        padding: 50px 0 60px;
+
+    }
+
+
+    .disclaimer-card {
+
+        padding: 30px 22px;
+
+        border-radius: 17px;
+
+    }
+
+
+    .disclaimer-block {
+
+        padding-bottom: 34px;
+
+        margin-bottom: 34px;
+
+    }
+
+
+    .disclaimer-block h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .disclaimer-block p {
+
+        font-size: 14.5px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .disclaimer-sidebar {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .disclaimer-sidebar-card {
+
+        padding: 25px 22px;
+
+    }
+
+
+    .disclaimer-contact {
+
+        padding: 25px 21px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .disclaimer-hero {
+
+        margin-top: 65px;
+
+        padding: 50px 0 43px;
+
+    }
+
+
+    .disclaimer-hero h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .disclaimer-hero p {
+
+        font-size: 15px;
+
+    }
+
+
+    .disclaimer-updated {
+
+        font-size: 11px;
+
+    }
+
+
+    .disclaimer-section {
+
+        padding: 42px 0 52px;
+
+    }
+
+
+    .disclaimer-card {
+
+        padding: 26px 18px;
+
+    }
+
+
+    .disclaimer-block h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .disclaimer-block p {
+
+        font-size: 14px;
+
+    }
+
+
+    .disclaimer-number {
+
+        min-width: 36px;
+
+        height: 25px;
+
+        font-size: 10px;
+
+    }
+
+
+    .disclaimer-contact {
+
+        padding: 22px 17px;
+
+    }
+
+
+    .disclaimer-contact-btn {
+
+        width: 100%;
+
+    }
+
+
+    .disclaimer-sidebar-card {
+
+        padding: 23px 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.disclaimer-contact-btn:focus-visible,
+.disclaimer-sidebar-card a:focus-visible {
+
+    outline: 3px solid rgba(37, 99, 235, 0.30);
+
+    outline-offset: 3px;
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .disclaimer-contact-btn,
+    .disclaimer-sidebar-card a,
+    .disclaimer-contact-btn i {
+
+        transition: none;
+
+    }
+
+}

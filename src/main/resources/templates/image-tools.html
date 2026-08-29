@@ -122,7 +122,7 @@
          PAGE CSS
     ========================================== -->
 
-   <link rel="stylesheet" th:href="@{/css/pdf-tools.css}">
+   <link rel="stylesheet" th:href="@{/css/image-tools.css}">
 
 
     <!-- =========================================
@@ -236,458 +236,967 @@
 
 <body>
 
-
-
-
-    <!-- =========================
-     NAVBAR
-========================= -->
-
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
     <th:block th:replace="~{fragments/navbar :: navbar}"></th:block>
 
-    <!-- ==========================================
-     HERO SECTION
-========================================== -->
 
-    <section class="pdf-hero">
+    <!-- =========================================
+         IMAGE TOOLS PAGE
+    ========================================== -->
+    <main>
 
-        <div class="container">
+        <!-- =========================================
+             HERO
+        ========================================== -->
+        <section class="pdf-hero">
 
-            <div class="hero-content text-center">
+            <div class="container">
 
-                <h1>
+                <div class="hero-content">
 
-                    Image Tools
+                    <span class="page-eyebrow">
+                        <i class="bi bi-image"></i>
+                        Free Online Image Tools
+                    </span>
 
-                </h1>
+                    <h1>
+                        Free Image Tools Online
+                    </h1>
 
-                <p>
+                    <p>
+                        Resize, compress, convert and manage your images
+                        online with simple browser-based tools. Choose
+                        an image tool below to get started.
+                    </p>
 
-                    Resize, Compress, Convert,
-                    Optimize and edit images online.
-
-                </p>
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- ==========================================
-     SEARCH SECTION
-========================================== -->
+        <!-- =========================================
+             SEARCH
+        ========================================== -->
+        <section class="search-section" aria-label="Search image tools">
 
-    <section class="search-section">
+            <div class="container">
 
-        <div class="container">
+                <div class="search-wrapper">
 
-            <div class="search-wrapper">
+                    <div class="search-box">
 
-                <div class="search-box">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+
+                        <input
+                            type="search"
+                            id="imageToolSearch"
+                            placeholder="Search image tools..."
+                            aria-label="Search image tools">
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="search-btn"
+                        id="imageSearchButton">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CATEGORY NAVIGATION
+        ========================================== -->
+        <section class="filter-section" aria-label="Tool categories">
+
+            <div class="container">
+
+                <div class="category-filter">
+
+                    <a href="/tools" class="filter-btn">
+
+                        <i class="bi bi-grid"></i>
+
+                        All Tools
+
+                    </a>
+
+                    <a href="/pdf-tools" class="filter-btn">
+
+                        <i class="bi bi-file-earmark-pdf"></i>
+
+                        PDF Tools
+
+                    </a>
+
+                    <a
+                        href="/image-tools"
+                        class="filter-btn active"
+                        aria-current="page">
+
+                        <i class="bi bi-image"></i>
+
+                        Image Tools
+
+                    </a>
+
+                    <a href="/office-tools" class="filter-btn">
+
+                        <i class="bi bi-file-earmark-word"></i>
+
+                        Office Tools
+
+                    </a>
+
+                    <a href="/security-tools" class="filter-btn">
+
+                        <i class="bi bi-shield-lock"></i>
+
+                        Security Tools
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             IMAGE TOOLS
+        ========================================== -->
+        <section class="image-tools-section" id="image-tools">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        IMAGE TOOLKIT
+                    </span>
+
+                    <h2>
+                        Choose an Image Tool
+                    </h2>
+
+                    <p>
+                        Select the image tool you need. Each tool is
+                        designed for a specific image task and can be
+                        used directly from your browser.
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4" id="imageToolsGrid">
+
+
+                    <!-- Image Compressor -->
+                    <div
+                        class="col-lg-3 col-md-6 tool-item"
+                        data-tool-name="image compress compressor reduce size optimize">
+
+                        <a
+                            href="/image-compressor"
+                            class="pdf-tool-card">
+
+                            <div class="tool-icon green">
+
+                                <img
+                                    src="/images/icons/image-compressor.png"
+                                    alt="Image Compressor Tool Icon"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+                                Image Compressor
+                            </h3>
+
+                            <p>
+                                Reduce image file size while keeping
+                                the image suitable for everyday use.
+                            </p>
+
+                            <span>
+                                Open Tool
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Image Resizer -->
+                    <div
+                        class="col-lg-3 col-md-6 tool-item"
+                        data-tool-name="image resize resizer dimensions size">
+
+                        <a
+                            href="/image-resizer"
+                            class="pdf-tool-card">
+
+                            <div class="tool-icon blue">
+
+                                <img
+                                    src="/images/icons/image-resizer.png"
+                                    alt="Image Resizer Tool Icon"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+                                Image Resizer
+                            </h3>
+
+                            <p>
+                                Resize images to suitable dimensions
+                                for websites, documents and social media.
+                            </p>
+
+                            <span>
+                                Open Tool
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- JPG to PNG -->
+                    <div
+                        class="col-lg-3 col-md-6 tool-item"
+                        data-tool-name="jpg png jpg to png image format converter">
+
+                        <a
+                            href="/jpg-png-converter"
+                            class="pdf-tool-card">
+
+                            <div class="tool-icon orange">
+
+                                <img
+                                    src="/images/icons/image-format.png"
+                                    alt="JPG to PNG Converter Icon"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+                                JPG → PNG
+                            </h3>
+
+                            <p>
+                                Convert JPG images into PNG format
+                                when you need a different image format.
+                            </p>
+
+                            <span>
+                                Open Tool
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- PNG to JPG -->
+                    <div
+                        class="col-lg-3 col-md-6 tool-item"
+                        data-tool-name="png jpg png to jpg image format converter">
+
+                        <a
+                            href="/jpg-png-converter"
+                            class="pdf-tool-card">
+
+                            <div class="tool-icon purple">
+
+                                <img
+                                    src="/images/icons/image-format.png"
+                                    alt="PNG to JPG Converter Icon"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+                                PNG → JPG
+                            </h3>
+
+                            <p>
+                                Convert PNG images into JPG format
+                                for compatible and compact image files.
+                            </p>
+
+                            <span>
+                                Open Tool
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Image to PDF -->
+                    <div
+                        class="col-lg-3 col-md-6 tool-item"
+                        data-tool-name="image pdf image to pdf converter">
+
+                        <a
+                            href="/image-to-pdf"
+                            class="pdf-tool-card">
+
+                            <div class="tool-icon green">
+
+                                <img
+                                    src="/images/icons/image.png"
+                                    alt="Image to PDF Converter Icon"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+                                Image → PDF
+                            </h3>
+
+                            <p>
+                                Convert images into PDF documents
+                                for sharing, storage or printing.
+                            </p>
+
+                            <span>
+                                Open Tool
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- PDF to Image -->
+                    <div
+                        class="col-lg-3 col-md-6 tool-item"
+                        data-tool-name="pdf image pdf to image jpg png converter">
+
+                        <a
+                            href="/pdf-to-image"
+                            class="pdf-tool-card">
+
+                            <div class="tool-icon orange">
+
+                                <img
+                                    src="/images/icons/pdf.png"
+                                    alt="PDF to Image Converter Icon"
+                                    loading="lazy">
+
+                            </div>
+
+                            <h3>
+                                PDF → Image
+                            </h3>
+
+                            <p>
+                                Convert PDF pages into image files
+                                for easier viewing or reuse.
+                            </p>
+
+                            <span>
+                                Open Tool
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- No search result -->
+                <div
+                    id="noImageTools"
+                    class="no-tools-message"
+                    hidden>
 
                     <i class="bi bi-search"></i>
 
-                    <input type="text" placeholder="Search PDF tools...">
-
-                </div>
-
-                <button class="search-btn">
-
-                    Search
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-     CATEGORY FILTERS
-========================================== -->
-
-    <section class="filter-section">
-
-        <div class="container">
-
-            <div class="category-filter">
-
-                <a href="/tools" class="filter-btn ">
-
-                    <i class="bi bi-grid"></i>
-
-                    All Tools
-
-                </a>
-
-                <a href="/pdf-tools" class="filter-btn ">
-
-                    <i class="bi bi-file-earmark-pdf"></i>
-
-                    PDF Tools
-
-                </a>
-
-                <a href="/image-tools" class="filter-btn active">
-
-                    <i class="bi bi-image"></i>
-
-                    Image Tools
-
-                </a>
-
-                <a href="/office-tools" class="filter-btn">
-
-                    <i class="bi bi-file-earmark-word"></i>
-
-                    Office Tools
-
-                </a>
-
-                <a href="/security-tools" class="filter-btn">
-
-                    <i class="bi bi-shield-lock"></i>
-
-                    Security Tools
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-<!-- ==========================================
-     IMAGE TOOLS GRID
-========================================== -->
-
-    <section class="image-tools-section">
-
-        <div class="container">
-
-            <div class="row g-4">
-
-                <!-- Image Compressor -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/image-compressor" class="pdf-tool-card">
-
-                        <div class="tool-icon green">
-
-                            <img src="/images/icons/image-compressor.png" alt="Image Compressor Tool Icon">
-
-                        </div>
-
-                        <h4>
-
-                            Image Compressor
-
-                        </h4>
-
-                        <p>
-
-                            Reduce image size
-                            without losing quality.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- Image Resizer -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/image-resizer" class="pdf-tool-card">
-
-                        <div class="tool-icon blue">
-
-                            <img src="/images/icons/image-resizer.png" alt="Image Resizer Tool Icon">
-
-                        </div>
-
-                        <h4>
-
-                            Image Resizer
-
-                        </h4>
-
-                        <p>
-
-                            Resize images for web,
-                            mobile and social media.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- JPG to PNG -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/jpg-png-converter" class="pdf-tool-card">
-
-                        <div class="tool-icon orange">
-
-                            <img src="/images/icons/image-format.png" alt="JPG to PNG Converter Icon">
-
-                        </div>
-
-                        <h4>
-
-                            JPG → PNG
-
-                        </h4>
-
-                        <p>
-
-                            Convert JPG images
-                            into PNG format.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- PNG to JPG -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/jpg-png-converter" class="pdf-tool-card">
-
-                        <div class="tool-icon purple">
-
-                            <img src="/images/icons/image-format.png" alt="PNG to JPG Converter Icon">
-
-                        </div>
-
-                        <h4>
-
-                            PNG → JPG
-
-                        </h4>
-
-                        <p>
-
-                            Convert PNG images
-                            into JPG format.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- Image to PDF -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/image-to-pdf" class="pdf-tool-card">
-
-                        <div class="tool-icon green">
-
-                            <img src="/images/icons/image.png" alt="Image to PDF Converter Icon">
-
-                        </div>
-
-                        <h4>
-
-                            Image → PDF
-
-                        </h4>
-
-                        <p>
-
-                            Convert images into
-                            PDF documents.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
-
-                </div>
-
-                <!-- PDF to Image -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <a href="/pdf-to-image" class="pdf-tool-card">
-
-                        <div class="tool-icon orange">
-
-                            <img src="/images/icons/pdf.png" alt="PDF to Image Converter Iconf">
-
-                        </div>
-
-                        <h4>
-
-                            PDF → Image
-
-                        </h4>
-
-                        <p>
-
-                            Convert PDF pages
-                            into image files.
-
-                        </p>
-
-                        <span>
-
-                            Open Tool →
-
-                        </span>
-
-                    </a>
+                    <h3>
+                        No image tool found
+                    </h3>
+
+                    <p>
+                        Try another search term such as compress,
+                        resize, JPG, PNG or PDF.
+                    </p>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
-    <!-- ==========================================
-     FEATURES SECTION
-========================================== -->
 
-    <section class="feature-section">
+        <!-- =========================================
+             CATEGORY EXPLANATION
+        ========================================== -->
+        <section class="pdf-info-section">
 
-        <div class="container">
+            <div class="container">
 
-            <div class="feature-wrapper">
+                <div class="content-card">
 
-                <!-- Secure -->
+                    <div class="content-heading">
 
-                <div class="feature-box">
+                        <span class="section-label">
+                            ABOUT IMAGE TOOLS
+                        </span>
 
-                    <div class="feature-icon blue">
-
-                        <img src="/images/icons/secure.png" alt="Security">
+                        <h2>
+                            What Can You Do With These Image Tools?
+                        </h2>
 
                     </div>
+
+                    <p>
+                        Images are used across websites, documents,
+                        presentations, applications and social media.
+                        Depending on where an image will be used, you may
+                        need to change its dimensions, reduce its file size
+                        or convert it to another format.
+                    </p>
+
+                    <p>
+                        ConvertNova provides browser-based image tools for
+                        several common tasks. You can compress images,
+                        resize images, convert JPG and PNG files, create
+                        PDF documents from images and convert PDF pages
+                        into image files.
+                    </p>
+
+                    <p>
+                        Each tool is focused on a specific operation so
+                        you can choose the task you need without opening
+                        a full image-editing application.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             HOW TO CHOOSE A TOOL
+        ========================================== -->
+        <section class="pdf-use-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        QUICK GUIDE
+                    </span>
+
+                    <h2>
+                        Which Image Tool Should You Use?
+                    </h2>
+
+                    <p>
+                        Choose the tool based on the image task
+                        you want to complete.
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- 01 -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">
+                                01
+                            </div>
+
+                            <h3>
+                                Reduce image file size
+                            </h3>
+
+                            <p>
+                                Use
+                                <a href="/image-compressor">
+                                    Image Compressor
+                                </a>
+                                when an image is larger than necessary
+                                for uploading, sharing or storing.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 02 -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">
+                                02
+                            </div>
+
+                            <h3>
+                                Change image dimensions
+                            </h3>
+
+                            <p>
+                                Use
+                                <a href="/image-resizer">
+                                    Image Resizer
+                                </a>
+                                when you need a specific width or height
+                                for a website, document or social platform.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 03 -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">
+                                03
+                            </div>
+
+                            <h3>
+                                Convert JPG to PNG
+                            </h3>
+
+                            <p>
+                                Use the
+                                <a href="/jpg-png-converter">
+                                    JPG / PNG Converter
+                                </a>
+                                when you need to change a JPG image
+                                into PNG format.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 04 -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">
+                                04
+                            </div>
+
+                            <h3>
+                                Convert PNG to JPG
+                            </h3>
+
+                            <p>
+                                Use the
+                                <a href="/jpg-png-converter">
+                                    JPG / PNG Converter
+                                </a>
+                                when a PNG image needs to be converted
+                                into JPG format.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 05 -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">
+                                05
+                            </div>
+
+                            <h3>
+                                Create a PDF from images
+                            </h3>
+
+                            <p>
+                                Use
+                                <a href="/image-to-pdf">
+                                    Image to PDF
+                                </a>
+                                when one or more images need to be
+                                combined into a PDF document.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 06 -->
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="use-card">
+
+                            <div class="use-number">
+                                06
+                            </div>
+
+                            <h3>
+                                Convert PDF pages to images
+                            </h3>
+
+                            <p>
+                                Use
+                                <a href="/pdf-to-image">
+                                    PDF to Image
+                                </a>
+                                when you need image files from pages
+                                in a PDF document.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             IMAGE WORKFLOW
+        ========================================== -->
+        <section class="pdf-workflow-section">
+
+            <div class="container">
+
+                <div class="workflow-card">
+
+                    <div class="workflow-content">
+
+                        <span class="section-label">
+                            SIMPLE WORKFLOW
+                        </span>
+
+                        <h2>
+                            How to Use an Image Tool
+                        </h2>
+
+                        <p>
+                            Most image tasks can be completed in a few
+                            straightforward steps.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-steps">
+
+
+                        <div class="workflow-step">
+
+                            <span>
+                                1
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Choose a tool
+                                </h3>
+
+                                <p>
+                                    Select the image operation you need
+                                    from the tools above.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-step">
+
+                            <span>
+                                2
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Upload your file
+                                </h3>
+
+                                <p>
+                                    Add the image or supported document
+                                    required by the selected tool.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-step">
+
+                            <span>
+                                3
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Choose the available settings
+                                </h3>
+
+                                <p>
+                                    Adjust the available image dimensions,
+                                    format or processing options.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-step">
+
+                            <span>
+                                4
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Download the result
+                                </h3>
+
+                                <p>
+                                    Review the processed file and download
+                                    it when the operation is complete.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             USEFUL TIPS
+        ========================================== -->
+        <section class="pdf-tips-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        IMAGE TIPS
+                    </span>
+
+                    <h2>
+                        Tips for Working With Images
+                    </h2>
+
+                    <p>
+                        A few simple checks can help you get better
+                        results from common image-processing tasks.
+                    </p>
+
+                </div>
+
+
+                <div class="tips-grid">
+
+
+                    <article class="tip-card">
+
+                        <i class="bi bi-image"></i>
+
+                        <h3>
+                            Keep the original
+                        </h3>
+
+                        <p>
+                            Keep a copy of the original image before
+                            compressing, resizing or converting it so
+                            you can return to the source when needed.
+                        </p>
+
+                    </article>
+
+
+                    <article class="tip-card">
+
+                        <i class="bi bi-arrows-angle-contract"></i>
+
+                        <h3>
+                            Choose suitable dimensions
+                        </h3>
+
+                        <p>
+                            Resize images to the dimensions required by
+                            the destination instead of using unnecessarily
+                            large files.
+                        </p>
+
+                    </article>
+
+
+                    <article class="tip-card">
+
+                        <i class="bi bi-file-earmark-arrow-down"></i>
+
+                        <h3>
+                            Check file size
+                        </h3>
+
+                        <p>
+                            If an image is difficult to upload or share,
+                            consider compressing it before sending or
+                            publishing the file.
+                        </p>
+
+                    </article>
+
+
+                    <article class="tip-card">
+
+                        <i class="bi bi-check2-circle"></i>
+
+                        <h3>
+                            Review the result
+                        </h3>
+
+                        <p>
+                            Open the processed image and check its
+                            dimensions, format, appearance and file size
+                            before using it elsewhere.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             RELATED TOOLS
+        ========================================== -->
+        <section class="related-section">
+
+            <div class="container">
+
+                <div class="related-card">
 
                     <div>
 
-                        <h4>
+                        <span class="section-label">
+                            EXPLORE MORE
+                        </span>
 
-                            Secure Processing
-
-                        </h4>
+                        <h2>
+                            Need Another Type of Tool?
+                        </h2>
 
                         <p>
-
-                            Your files are automatically
-                            deleted after processing.
-                            100% secure & private.
-
+                            Explore other ConvertNova categories for
+                            PDF, office and security-related tasks.
                         </p>
 
                     </div>
 
-                </div>
 
-                <!-- Divider -->
+                    <div class="related-links">
 
-                <div class="feature-divider"></div>
+                        <a href="/tools">
 
-                <!-- Fast -->
+                            <i class="bi bi-grid"></i>
 
-                <div class="feature-box">
+                            All Tools
 
-                    <div class="feature-icon purple">
+                        </a>
 
-                        <img src="/images/icons/fast.png" alt="Fast">
+                        <a href="/pdf-tools">
 
-                    </div>
+                            <i class="bi bi-file-earmark-pdf"></i>
 
-                    <div>
+                            PDF Tools
 
-                        <h4>
+                        </a>
 
-                            Fast Conversion
+                        <a href="/office-tools">
 
-                        </h4>
+                            <i class="bi bi-file-earmark-word"></i>
 
-                        <p>
+                            Office Tools
 
-                            Our tools are optimized for
-                            speed and process files
-                            within seconds.
+                        </a>
 
-                        </p>
+                        <a href="/security-tools">
 
-                    </div>
+                            <i class="bi bi-shield-lock"></i>
 
-                </div>
+                            Security Tools
 
-                <!-- Divider -->
+                        </a>
 
-                <div class="feature-divider"></div>
+                        <a href="/blogsection/blog">
 
-                <!-- Mobile -->
+                            <i class="bi bi-journal-text"></i>
 
-                <div class="feature-box">
+                            Guides & Articles
 
-                    <div class="feature-icon green">
-
-                        <img src="/images/icons/mobile.png" alt="Mobile">
-
-                    </div>
-
-                    <div>
-
-                        <h4>
-
-                            Mobile Friendly
-
-                        </h4>
-
-                        <p>
-
-                            Works perfectly on Desktop,
-                            Tablet and Mobile devices.
-                            Anywhere, anytime.
-
-                        </p>
+                        </a>
 
                     </div>
 
@@ -695,9 +1204,163 @@
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+
+        <!-- =========================================
+             FEATURES
+        ========================================== -->
+        <section class="feature-section">
+
+            <div class="container">
+
+                <div class="feature-wrapper">
+
+
+                    <!-- Secure -->
+                    <div class="feature-box">
+
+                        <div class="feature-icon blue">
+
+                            <img
+                                src="/images/icons/secure.png"
+                                alt="Secure image processing"
+                                loading="lazy">
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Secure Processing
+                            </h4>
+
+                            <p>
+                                Your files are automatically deleted
+                                after processing.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Divider -->
+                    <div class="feature-divider"></div>
+
+
+                    <!-- Fast -->
+                    <div class="feature-box">
+
+                        <div class="feature-icon purple">
+
+                            <img
+                                src="/images/icons/fast.png"
+                                alt="Fast image processing"
+                                loading="lazy">
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Fast Processing
+                            </h4>
+
+                            <p>
+                                Image tasks are designed to process
+                                files quickly and efficiently.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Divider -->
+                    <div class="feature-divider"></div>
+
+
+                    <!-- Mobile -->
+                    <div class="feature-box">
+
+                        <div class="feature-icon green">
+
+                            <img
+                                src="/images/icons/mobile.png"
+                                alt="Mobile friendly image tools"
+                                loading="lazy">
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Mobile Friendly
+                            </h4>
+
+                            <p>
+                                Works across desktop, tablet and
+                                mobile devices.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FAQ STRUCTURED DATA
+    ========================================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What image tasks can I do with these tools?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can compress images, resize images, convert JPG and PNG files, create PDF documents from images and convert PDF pages into image files."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which tool should I use to reduce an image file size?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the Image Compressor when you need to reduce the file size of an image."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which tool should I use to change image dimensions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the Image Resizer when you need to change the width or height of an image."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I convert JPG and PNG images?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The JPG / PNG Converter can be used for JPG to PNG and PNG to JPG conversions."
+                }
+            }
+        ]
+    }
+    </script>
 
 
     <th:block th:replace="~{fragments/footer :: footer}"></th:block>
