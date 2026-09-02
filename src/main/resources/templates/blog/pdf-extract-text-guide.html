@@ -1,36 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
+    <!-- ==========================================
+         BASIC DOCUMENT META
+    ========================================== -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>PDF Extract Text Guide – Extract Text from PDF Online | ConvertNova</title>
+
+    <!-- ==========================================
+         PRIMARY SEO
+    ========================================== -->
+
+    <title>
+        PDF Extract Text Guide – Extract Text from PDF Online | ConvertNova
+    </title>
 
     <meta name="description"
-          content="Learn how to extract text from PDF documents online with ConvertNova. Convert PDF content into editable text quickly while preserving accuracy, making it easy to copy, edit, and reuse information.">
+          content="Learn how to extract text from PDF documents online with ConvertNova. Extract editable text from PDF files quickly and accurately for easy copying, editing, and reuse.">
 
-    <meta name="keywords"
-          content="PDF Extract Text, Extract Text from PDF, PDF to Text, PDF Text Extractor, OCR PDF, Convert PDF to Text, Online PDF Text Extractor, Free PDF Tool, ConvertNova">
+    <meta name="author"
+          content="ConvertNova">
 
-    <meta name="author" content="ConvertNova">
+    <meta name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <meta name="robots" content="index, follow">
+    <meta name="googlebot"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+
+    <!-- ==========================================
+         CANONICAL
+    ========================================== -->
 
     <link rel="canonical"
           href="https://convertnovas.com/pdf-extract-text-guide">
 
-    <!-- Open Graph -->
 
-    <meta property="og:type" content="article">
+    <!-- ==========================================
+         OPEN GRAPH
+    ========================================== -->
+
+    <meta property="og:type"
+          content="article">
+
+    <meta property="og:site_name"
+          content="ConvertNova">
 
     <meta property="og:title"
-          content="PDF Extract Text Guide – Extract Text from PDF Online">
+          content="PDF Extract Text Guide – Extract Text from PDF Online | ConvertNova">
 
     <meta property="og:description"
-          content="Extract text from PDF documents online quickly and accurately using ConvertNova's free PDF Extract Text tool.">
+          content="Learn how to extract editable text from PDF documents online with ConvertNova's PDF Extract Text tool.">
 
     <meta property="og:url"
           content="https://convertnovas.com/pdf-extract-text-guide">
@@ -38,84 +64,517 @@
     <meta property="og:image"
           content="https://convertnovas.com/images/blog/pdf-extract-text-guide.html.png">
 
-    <meta property="og:site_name"
-          content="ConvertNova">
-
-    <!-- Twitter -->
-
-    <meta name="twitter:card" content="summary_large_image">
-
-    <meta name="twitter:title"
+    <meta property="og:image:alt"
           content="PDF Extract Text Guide – Extract Text from PDF Online">
 
+    <meta property="og:locale"
+          content="en_US">
+
+
+    <!-- ==========================================
+         TWITTER / X
+    ========================================== -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="PDF Extract Text Guide – Extract Text from PDF Online | ConvertNova">
+
     <meta name="twitter:description"
-          content="Extract editable text from PDF files online for free with ConvertNova while maintaining high accuracy.">
+          content="Learn how to extract editable text from PDF files online quickly and accurately with ConvertNova.">
 
     <meta name="twitter:image"
           content="https://convertnovas.com/images/blog/pdf-extract-text-guide.html.png">
 
-    <!-- Favicon -->
+    <meta name="twitter:image:alt"
+          content="PDF Extract Text Guide – Extract Text from PDF Online">
+
+
+    <!-- ==========================================
+         THEME
+    ========================================== -->
+
+    <meta name="theme-color"
+          content="#0d6efd">
+
+    <meta name="color-scheme"
+          content="light">
+
+
+    <!-- ==========================================
+         FAVICON
+    ========================================== -->
 
     <link rel="icon"
           type="image/x-icon"
           href="/favicon.ico">
 
-    <!-- Bootstrap -->
+    <link rel="apple-touch-icon"
+          href="/images/apple-touch-icon.png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-          rel="stylesheet">
 
-    <!-- Blog CSS -->
-   
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <!-- ==========================================
+         BOOTSTRAP
+    ========================================== -->
 
-    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-    <link rel="stylesheet" th:href="@{/css/blog-articles.css}">
 
-    <link rel="stylesheet" th:href="@{/css/faq.css}">
+    <!-- ==========================================
+         SITE / BLOG CSS
+    ========================================== -->
 
+    <link
+        rel="stylesheet"
+        th:href="@{/css/style.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/navbar.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/footer.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/blog-articles.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/faq.css}">
+
+
+    <!-- ==========================================
+         STRUCTURED DATA — ARTICLE
+    ========================================== -->
 
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "PDF Text Extraction Guide – Extract Text from PDF Online",
-  "description": "Learn how to extract editable text from PDF files online quickly and securely.",
-  "author": {
-    "@type": "Organization",
-    "name": "ConvertNova"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ConvertNova",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://convertnovas.com/images/logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://convertnovas.com/pdf-extract-text-guide"
-  },
-  "image": "https://convertnovas.com/images/blog/pdf-extract-text-guide.html.png"
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
 
-<th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
+      "@id": "https://convertnovas.com/pdf-extract-text-guide#article",
+
+      "headline": "PDF Extract Text Guide – Extract Text from PDF Online | ConvertNova",
+
+      "description": "Learn how to extract editable text from PDF documents online with ConvertNova.",
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/blog/pdf-extract-text-guide.html.png"
+      },
+
+      "author": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com/"
+      },
+
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://convertnovas.com/images/logo.png"
+        }
+      },
+
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://convertnovas.com/pdf-extract-text-guide"
+      }
+    }
+    </script>
+
+
+    <!-- ==========================================
+         WEBSITE STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+
+      "@id": "https://convertnovas.com/#website",
+
+      "url": "https://convertnovas.com/",
+
+      "name": "ConvertNova",
+
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization"
+      }
+    }
+    </script>
+
+
+    <!-- ==========================================
+         ORGANIZATION STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+
+      "@id": "https://convertnovas.com/#organization",
+
+      "name": "ConvertNova",
+
+      "url": "https://convertnovas.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/logo.png"
+      }
+    }
+    </script>
+
+
+    <!-- ==========================================
+         ANALYTICS
+    ========================================== -->
+
+    <th:block
+        th:replace="~{fragments/analytics :: analytics}">
+    </th:block>
 
 </head>
 
 <body>
 
+    <!-- Navbar -->
     <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-    
 
+    <!-- =========================================
+         MAIN ARTICLE
+    ========================================== -->
+
+    <main class="container blog-article">
+
+        <article>
+
+            <!-- Article Header -->
+            <header class="article-header">
+
+                <p class="article-category">
+                    PDF Guides
+                </p>
+
+                <h1>
+                    How to Crop PDF Pages Online
+                </h1>
+
+                <p class="article-intro">
+                    Learn how to crop PDF pages online, remove unwanted
+                    margins and white space, and focus on the important
+                    content in your documents with ConvertNova.
+                </p>
+
+            </header>
+
+
+            <!-- Table of Contents -->
+            <nav class="article-toc" aria-label="Table of contents">
+
+                <h2>In This Guide</h2>
+
+                <ul>
+                    <li>
+                        <a href="#what-is-pdf-cropping">
+                            What Is PDF Cropping?
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#why-crop-pdf">
+                            Why Crop a PDF?
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#how-to-crop-pdf">
+                            How to Crop a PDF Online
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#benefits">
+                            Benefits of Cropping PDF Pages
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#tips">
+                            Tips for Cropping PDFs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#faq">
+                            Frequently Asked Questions
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <!-- What Is PDF Cropping -->
+            <section id="what-is-pdf-cropping">
+
+                <h2>What Is PDF Cropping?</h2>
+
+                <p>
+                    PDF cropping changes the visible page area of a PDF
+                    document by removing unwanted margins, empty space,
+                    or areas that are not needed. It can help make documents
+                    cleaner and easier to read.
+                </p>
+
+                <p>
+                    Cropping is useful for scanned documents, presentations,
+                    worksheets, reports, forms, and other PDF files where
+                    unnecessary page space needs to be removed.
+                </p>
+
+            </section>
+
+
+            <!-- Why Crop PDF -->
+            <section id="why-crop-pdf">
+
+                <h2>Why Crop a PDF?</h2>
+
+                <p>
+                    You may want to crop a PDF when pages contain excessive
+                    white space, unwanted borders, or content that distracts
+                    from the main document.
+                </p>
+
+                <ul>
+                    <li>Remove unwanted page margins</li>
+                    <li>Reduce unnecessary white space</li>
+                    <li>Improve document presentation</li>
+                    <li>Focus attention on important content</li>
+                    <li>Prepare pages for printing or sharing</li>
+                </ul>
+
+            </section>
+
+
+            <!-- CTA -->
+            <section class="article-tool-cta">
+
+                <h2>Crop Your PDF Online</h2>
+
+                <p>
+                    Use ConvertNova's online PDF Crop tool to crop your
+                    PDF pages quickly and easily.
+                </p>
+
+                <a href="/pdf-crop"
+                   class="btn btn-primary">
+                    Crop PDF Online
+                </a>
+
+            </section>
+
+
+            <!-- How To -->
+            <section id="how-to-crop-pdf">
+
+                <h2>How to Crop a PDF Online</h2>
+
+                <p>
+                    Follow these simple steps to crop your PDF pages:
+                </p>
+
+                <ol>
+                    <li>
+                        Open the ConvertNova PDF Crop tool.
+                    </li>
+
+                    <li>
+                        Upload your PDF file.
+                    </li>
+
+                    <li>
+                        Select the page area you want to keep.
+                    </li>
+
+                    <li>
+                        Adjust the crop area as needed.
+                    </li>
+
+                    <li>
+                        Apply the crop and process the document.
+                    </li>
+
+                    <li>
+                        Download the cropped PDF.
+                    </li>
+                </ol>
+
+            </section>
+
+
+            <!-- Benefits -->
+            <section id="benefits">
+
+                <h2>Benefits of Cropping PDF Pages</h2>
+
+                <h3>Remove Unwanted Margins</h3>
+
+                <p>
+                    Cropping can remove excessive margins around the
+                    important content of a document.
+                </p>
+
+                <h3>Improve Document Layout</h3>
+
+                <p>
+                    A cleaner page layout can make documents easier to
+                    read, present, and print.
+                </p>
+
+                <h3>Focus on Important Content</h3>
+
+                <p>
+                    Cropping allows you to remove unnecessary areas and
+                    keep attention on the information that matters.
+                </p>
+
+            </section>
+
+
+            <!-- Tips -->
+            <section id="tips">
+
+                <h2>Tips for Cropping PDFs</h2>
+
+                <ul>
+                    <li>Keep all important text inside the crop area.</li>
+                    <li>Check every page before downloading.</li>
+                    <li>Avoid cropping signatures or important page numbers.</li>
+                    <li>Preview the result before sharing the document.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- Related Tools -->
+            <section class="related-tools">
+
+                <h2>Related PDF Tools</h2>
+
+                <ul>
+
+                    <li>
+                        <a href="/pdf-compressor">
+                            Compress PDF
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pdf-merger">
+                            Merge PDF
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pdf-splitter">
+                            Split PDF
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pdf-rotator">
+                            Rotate PDF
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pdf-extract-pages">
+                            Extract PDF Pages
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- FAQ -->
+            <section id="faq">
+
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Can I crop a PDF online?</h3>
+
+                <p>
+                    Yes. You can use an online PDF cropping tool to remove
+                    unwanted margins and areas from PDF pages.
+                </p>
+
+                <h3>Will cropping reduce PDF quality?</h3>
+
+                <p>
+                    Cropping normally changes the visible page area rather
+                    than reducing the quality of the original content.
+                </p>
+
+                <h3>Can I crop multiple PDF pages?</h3>
+
+                <p>
+                    This depends on the PDF cropping tool and its supported
+                    features. Check the tool interface for available
+                    multi-page options.
+                </p>
+
+            </section>
+
+
+            <!-- Final CTA -->
+            <section class="article-final-cta">
+
+                <h2>Crop Your PDF Pages Online</h2>
+
+                <p>
+                    Remove unwanted margins and clean up your PDF pages
+                    with ConvertNova's online PDF Crop tool.
+                </p>
+
+                <a href="/pdf-crop"
+                   class="btn btn-primary">
+                    Crop PDF Online
+                </a>
+
+            </section>
+
+        </article>
+
+    </main>
+
+
+    <!-- Footer -->
     <div th:replace="~{fragments/footer :: footer}"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
-
 </html>

@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT META
+    ====================================================== -->
 
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <!-- =========================================
-         PRIMARY SEO
-    ========================================== -->
 
-    <title>ConvertNova Blog – PDF, Image & File Conversion Guides</title>
+    <!-- =====================================================
+         PRIMARY SEO
+    ====================================================== -->
+
+    <title>
+        ConvertNova Blog – PDF, Image &amp; File Conversion Guides
+    </title>
 
     <meta name="description"
-          content="Explore ConvertNova guides, tutorials, and tips for PDF, image, Word, Excel, PowerPoint, and file conversion. Learn how to convert, compress, merge, split, resize, and manage files online.">
+          content="Explore ConvertNova guides, tutorials, and practical tips for PDF, image, Word, Excel, PowerPoint, and file conversion. Learn how to convert, compress, merge, split, resize, edit, and manage files online.">
 
     <meta name="author"
           content="ConvertNova">
@@ -26,16 +33,18 @@
     <meta name="googlebot"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- =========================================
+
+    <!-- =====================================================
          CANONICAL
-    ========================================== -->
+    ====================================================== -->
 
     <link rel="canonical"
           href="https://convertnovas.com/blog">
 
-    <!-- =========================================
+
+    <!-- =====================================================
          OPEN GRAPH
-    ========================================== -->
+    ====================================================== -->
 
     <meta property="og:type"
           content="website">
@@ -44,10 +53,10 @@
           content="ConvertNova">
 
     <meta property="og:title"
-          content="ConvertNova Blog – PDF, Image & File Conversion Guides">
+          content="ConvertNova Blog – PDF, Image &amp; File Conversion Guides">
 
     <meta property="og:description"
-          content="Discover helpful guides, tutorials, and practical tips for converting, compressing, merging, splitting, resizing, and managing PDF, image, and office files.">
+          content="Discover practical guides and tutorials for converting, compressing, merging, splitting, resizing, editing, and managing PDF, image, Office, and other files.">
 
     <meta property="og:url"
           content="https://convertnovas.com/blog">
@@ -56,20 +65,21 @@
           content="https://convertnovas.com/images/og-image.png">
 
     <meta property="og:image:alt"
-          content="ConvertNova Blog – File Conversion Guides and Tutorials">
+          content="ConvertNova Blog – PDF, Image and File Conversion Guides">
 
     <meta property="og:locale"
           content="en_US">
 
-    <!-- =========================================
+
+    <!-- =====================================================
          TWITTER / X
-    ========================================== -->
+    ====================================================== -->
 
     <meta name="twitter:card"
           content="summary_large_image">
 
     <meta name="twitter:title"
-          content="ConvertNova Blog – PDF, Image & File Conversion Guides">
+          content="ConvertNova Blog – PDF, Image &amp; File Conversion Guides">
 
     <meta name="twitter:description"
           content="Read practical guides and tutorials for PDF, image, Word, Excel, PowerPoint, and online file conversion tools.">
@@ -78,11 +88,12 @@
           content="https://convertnovas.com/images/og-image.png">
 
     <meta name="twitter:image:alt"
-          content="ConvertNova Blog">
+          content="ConvertNova Blog – File Conversion Guides">
 
-    <!-- =========================================
-         THEME
-    ========================================== -->
+
+    <!-- =====================================================
+         THEME / BROWSER
+    ====================================================== -->
 
     <meta name="theme-color"
           content="#0d6efd">
@@ -90,9 +101,10 @@
     <meta name="color-scheme"
           content="light">
 
-    <!-- =========================================
+
+    <!-- =====================================================
          FAVICON
-    ========================================== -->
+    ====================================================== -->
 
     <link rel="icon"
           type="image/x-icon"
@@ -101,9 +113,21 @@
     <link rel="apple-touch-icon"
           href="/images/apple-touch-icon.png">
 
-    <!-- =========================================
+
+    <!-- =====================================================
+         PERFORMANCE HINTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://cdn.jsdelivr.net">
+
+    <link rel="dns-prefetch"
+          href="//cdn.jsdelivr.net">
+
+
+    <!-- =====================================================
          BOOTSTRAP
-    ========================================== -->
+    ====================================================== -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -113,9 +137,10 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- =========================================
-         SITE CSS
-    ========================================== -->
+
+    <!-- =====================================================
+         CONVERTNOVA SITE CSS
+    ====================================================== -->
 
     <link rel="stylesheet"
           th:href="@{/css/style.css}">
@@ -129,9 +154,10 @@
     <link rel="stylesheet"
           th:href="@{/css/navbar.css}">
 
-    <!-- =========================================
+
+    <!-- =====================================================
          STRUCTURED DATA — BLOG
-    ========================================== -->
+    ====================================================== -->
 
     <script type="application/ld+json">
     {
@@ -147,6 +173,8 @@
       "headline": "ConvertNova Blog – PDF, Image & File Conversion Guides",
 
       "description": "Guides, tutorials, and practical information about PDF, image, document, and file conversion tools.",
+
+      "inLanguage": "en",
 
       "isPartOf": {
         "@type": "WebSite",
@@ -168,9 +196,10 @@
     }
     </script>
 
-    <!-- =========================================
-         WEBSITE STRUCTURED DATA
-    ========================================== -->
+
+    <!-- =====================================================
+         STRUCTURED DATA — WEBSITE
+    ====================================================== -->
 
     <script type="application/ld+json">
     {
@@ -185,6 +214,8 @@
 
       "description": "Free online tools for converting, compressing, editing, and managing PDF, document, and image files.",
 
+      "inLanguage": "en",
+
       "publisher": {
         "@type": "Organization",
         "@id": "https://convertnovas.com/#organization"
@@ -192,9 +223,10 @@
     }
     </script>
 
-    <!-- =========================================
-         ORGANIZATION STRUCTURED DATA
-    ========================================== -->
+
+    <!-- =====================================================
+         STRUCTURED DATA — ORGANIZATION
+    ====================================================== -->
 
     <script type="application/ld+json">
     {
@@ -214,9 +246,10 @@
     }
     </script>
 
-    <!-- =========================================
+
+    <!-- =====================================================
          ANALYTICS
-    ========================================== -->
+    ====================================================== -->
 
     <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
 
@@ -227,77 +260,67 @@
     <!-- =====================================================
          NAVBAR
     ====================================================== -->
-
     <div th:replace="~{fragments/navbar :: navbar}"></div>
 
+    <main id="main-content">
 
-    <!-- =====================================================
-         MAIN CONTENT
-    ====================================================== -->
-
-    <main>
-
+        <!-- =================================================
+             BREADCRUMB
+        ================================================== -->
+        <nav class="container py-3" aria-label="Breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog & Guides</li>
+            </ol>
+        </nav>
 
         <!-- =================================================
              BLOG HERO
         ================================================== -->
-
         <section class="blog-hero">
-
             <div class="container text-center">
+                <span class="section-label">CONVERTNOVA GUIDES</span>
 
-                <span class="section-label">
-                    CONVERTNOVA GUIDES
-                </span>
+                <h1>File Conversion & PDF Guides</h1>
 
-                <h1>
-                    ConvertNova Blog
-                </h1>
-
-                <p>
-                    Learn how to convert, compress, resize and manage
-                    PDF, image and Office files with practical guides,
-                    tutorials and helpful tips.
+                <p class="lead">
+                    Practical guides for converting, compressing, resizing, editing,
+                    protecting and managing PDF, image and Office files online.
                 </p>
 
+                <p class="mb-0">
+                    Learn what each file format is best for, how common conversion
+                    tasks work, what to check before processing a file, and how to
+                    choose the right ConvertNova tool for the job.
+                </p>
+
+                <div class="blog-hero-meta" aria-label="Guide library highlights">
+                    <span><i class="bi bi-file-earmark-text" aria-hidden="true"></i> PDF &amp; document guides</span>
+                    <span><i class="bi bi-image" aria-hidden="true"></i> Image conversion guides</span>
+                    <span><i class="bi bi-shield-check" aria-hidden="true"></i> Security &amp; file handling</span>
+                </div>
             </div>
-
         </section>
-
 
         <!-- =================================================
              SEARCH
         ================================================== -->
-
         <section class="blog-search" aria-label="Search blog articles">
-
             <div class="container">
-
                 <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form class="blog-search-form"
+                              role="search"
+                              onsubmit="return false;"
+                              aria-describedby="blogSearchStatus">
 
-                    <div class="col-lg-7">
-
-                        <form
-                            class="blog-search-form"
-                            role="search"
-                            onsubmit="return false;">
-
-                            <label
-                                for="blogSearch"
-                                class="visually-hidden">
-
-                                Search articles
-
+                            <label for="blogSearch" class="visually-hidden">
+                                Search ConvertNova guides
                             </label>
 
                             <div class="input-group">
-
-                                <span
-                                    class="input-group-text"
-                                    aria-hidden="true">
-
+                                <span class="input-group-text" aria-hidden="true">
                                     <i class="bi bi-search"></i>
-
                                 </span>
 
                                 <input
@@ -305,1075 +328,1246 @@
                                     class="form-control"
                                     id="blogSearch"
                                     name="q"
-                                    placeholder="Search articles..."
+                                    placeholder="Search PDF, image, Office or security guides..."
                                     autocomplete="off"
-                                    aria-label="Search articles">
+                                    aria-label="Search ConvertNova guides">
 
+                                <button type="button"
+                                        class="btn btn-primary"
+                                        id="clearBlogSearch"
+                                        aria-label="Clear search"
+                                        hidden>
+                                    Clear
+                                </button>
                             </div>
 
+                            <p class="small text-muted mt-2 mb-0" id="blogSearchStatus" aria-live="polite">
+                                Search our practical file guides by topic or task.
+                            </p>
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- =================================================
              CATEGORY NAVIGATION
         ================================================== -->
-
-        <nav
-            class="blog-filter"
-            aria-label="Blog categories">
-
+        <nav class="blog-filter" aria-label="Blog categories">
             <div class="container">
-
                 <div class="blog-category-list">
 
-                    <a
-                        href="/blogsection/blog"
-                        class="btn btn-primary"
-                        aria-current="page">
+                    <button type="button"
+                            class="btn btn-primary"
+                            aria-pressed="true"
+                            data-category-filter="all">
+                        All Guides
+                    </button>
 
-                        All
+                    <button type="button"
+                            class="btn btn-outline-primary"
+                            aria-pressed="false"
+                            data-category-filter="pdf">
+                        PDF Guides
+                    </button>
 
-                    </a>
+                    <button type="button"
+                            class="btn btn-outline-primary"
+                            aria-pressed="false"
+                            data-category-filter="image">
+                        Image Guides
+                    </button>
 
-                    <a
-                        href="/blogsection/pdf"
-                        class="btn btn-outline-primary">
+                    <button type="button"
+                            class="btn btn-outline-primary"
+                            aria-pressed="false"
+                            data-category-filter="office">
+                        Office Guides
+                    </button>
 
-                        PDF
-
-                    </a>
-
-                    <a
-                        href="/blogsection/image"
-                        class="btn btn-outline-primary">
-
-                        Image
-
-                    </a>
-
-                    <a
-                        href="/blogsection/office"
-                        class="btn btn-outline-primary">
-
-                        Office
-
-                    </a>
-
-                    <a
-                        href="/blogsection/security"
-                        class="btn btn-outline-primary">
-
-                        Security
-
-                    </a>
+                    <button type="button"
+                            class="btn btn-outline-primary"
+                            aria-pressed="false"
+                            data-category-filter="security">
+                        Security Guides
+                    </button>
 
                 </div>
-
             </div>
-
         </nav>
 
-
         <!-- =================================================
-             INTRODUCTION
+             INTRODUCTION / CATEGORY CONTENT
         ================================================== -->
-
-        <section class="blog-intro">
-
+        <section class="blog-intro" aria-labelledby="guide-overview-heading">
             <div class="container">
 
                 <div class="section-heading">
+                    <span class="section-label">FILE CONVERSION GUIDES</span>
 
-                    <span class="section-label">
-                        FILE CONVERSION GUIDES
-                    </span>
-
-                    <h2>
-                        Helpful Guides for Working With Your Files
+                    <h2 id="guide-overview-heading">
+                        Practical Guides for Working With Your Files
                     </h2>
 
                     <p>
-                        Explore practical tutorials covering PDF
-                        conversion, image optimization, Office documents
-                        and file security. These guides explain common
-                        file-processing tasks in a simple and useful way.
+                        Choosing the right file format or conversion method can make a
+                        difference to quality, compatibility, file size and how easily a
+                        document can be shared. ConvertNova's guides explain common tasks
+                        in clear steps so you can understand the process before using a tool.
                     </p>
+                </div>
 
+                <div class="row g-4 mt-1">
+
+                    <div class="col-lg-3 col-md-6">
+                        <article class="category-card h-100">
+                            <span class="section-label">PDF</span>
+                            <h3>PDF Conversion & Editing</h3>
+                            <p>
+                                Learn how to merge, split, compress, rotate, crop,
+                                number and convert PDF documents for everyday use.
+                            </p>
+                            <a href="/blogsection/pdf" class="btn btn-sm btn-outline-primary">
+                                Explore PDF Guides
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <article class="category-card h-100">
+                            <span class="section-label">IMAGE</span>
+                            <h3>Image Conversion & Optimization</h3>
+                            <p>
+                                Understand image formats, resizing, compression and
+                                PDF conversion while balancing dimensions, quality and size.
+                            </p>
+                            <a href="/blogsection/image" class="btn btn-sm btn-outline-primary">
+                                Explore Image Guides
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <article class="category-card h-100">
+                            <span class="section-label">OFFICE</span>
+                            <h3>Office Document Conversion</h3>
+                            <p>
+                                Find practical guidance for converting Word, Excel and
+                                PowerPoint documents into PDF for sharing and printing.
+                            </p>
+                            <a href="/blogsection/office" class="btn btn-sm btn-outline-primary">
+                                Explore Office Guides
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <article class="category-card h-100">
+                            <span class="section-label">SECURITY</span>
+                            <h3>PDF Security & Protection</h3>
+                            <p>
+                                Learn about PDF passwords, protection, unlocking and
+                                watermarks, including when these features are useful.
+                            </p>
+                            <a href="/blogsection/security" class="btn btn-sm btn-outline-primary">
+                                Explore Security Guides
+                            </a>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================
+             QUICK TASK NAVIGATION
+        ================================================== -->
+        <section class="blog-task-nav" aria-labelledby="popular-tasks-heading">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">POPULAR TASKS</span>
+                    <h2 id="popular-tasks-heading">Find a Guide by Task</h2>
+                    <p>
+                        Jump directly to common file-processing tasks instead of
+                        browsing the entire guide collection.
+                    </p>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2" aria-label="Popular guide topics">
+                    <a href="/blog/pdf-merger-guide" class="btn btn-outline-primary">Merge PDF</a>
+                    <a href="/blog/pdf-splitter-guide" class="btn btn-outline-primary">Split PDF</a>
+                    <a href="/blog/pdf-compressor-guide" class="btn btn-outline-primary">Compress PDF</a>
+                    <a href="/blog/pdf-to-word-guide" class="btn btn-outline-primary">PDF to Word</a>
+                    <a href="/blog/pdf-to-jpg-guide" class="btn btn-outline-primary">PDF to JPG</a>
+                    <a href="/blog/image-compressor-guide" class="btn btn-outline-primary">Compress Images</a>
+                    <a href="/blog/image-resizer-guide" class="btn btn-outline-primary">Resize Images</a>
+                    <a href="/blog/jpg-png-converter-guide" class="btn btn-outline-primary">JPG vs PNG</a>
+                    <a href="/blog/excel-to-pdf-guide" class="btn btn-outline-primary">Excel to PDF</a>
+                    <a href="/blog/powerpoint-to-pdf-guide" class="btn btn-outline-primary">PowerPoint to PDF</a>
+                    <a href="/blog/word-to-pdf-guide" class="btn btn-outline-primary">Word to PDF</a>
+                    <a href="/blog/pdf-protector-guide" class="btn btn-outline-primary">Protect PDF</a>
                 </div>
 
             </div>
-
         </section>
 
-
         <!-- =================================================
-             BLOG ARTICLES
+             ALL BLOG ARTICLES
         ================================================== -->
-
-        <section
-            class="blog-section"
-            aria-labelledby="latest-guides-heading">
+        <section class="blog-section"
+                 aria-labelledby="latest-guides-heading">
 
             <div class="container">
 
                 <div class="section-heading">
-
-                    <span class="section-label">
-                        LATEST GUIDES
-                    </span>
+                    <span class="section-label">GUIDE LIBRARY</span>
 
                     <h2 id="latest-guides-heading">
-                        PDF, Image and Office Tutorials
+                        PDF, Image, Office and Security Guides
                     </h2>
 
                     <p>
-                        Browse our collection of step-by-step guides
-                        and practical file conversion tips.
+                        Browse step-by-step tutorials, format comparisons and practical
+                        explanations for common file conversion and document tasks.
                     </p>
+                </div>
+
+                <div class="guide-library-note" role="note">
+                    <div>
+                        <strong>Looking for a specific task?</strong>
+                        Use search or filter by category to find the most relevant guide.
+                    </div>
+                    <a href="/tools" class="btn btn-sm btn-primary">Browse All Tools</a>
+                </div>
+
+                <div class="row g-4" id="blogGrid">
+
+                    <!-- ================= PDF ================= -->
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="merge pdf combine pdf files pdf merger">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-merger-guide"
+                               aria-label="Read the guide to merge PDF files">
+                                <img src="/images/blog/pdf-merger-guide.html.png"
+                                     alt="Guide showing how to merge multiple PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-merger-guide">How to Merge PDF Files</a></h3>
+                                <p>
+                                    Learn how to combine multiple PDF files into one
+                                    organized document and when merging is useful.
+                                </p>
+                                <a href="/blog/pdf-merger-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="split pdf extract pages pdf splitter">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-splitter-guide"
+                               aria-label="Read the guide to split PDF files">
+                                <img src="/images/blog/pdf-splitter-guide.html.png"
+                                     alt="Guide explaining how to split PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-splitter-guide">How to Split PDF Files</a></h3>
+                                <p>
+                                    Learn how to extract selected pages or divide a PDF
+                                    into separate documents for easier management.
+                                </p>
+                                <a href="/blog/pdf-splitter-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="compress pdf reduce pdf size pdf compressor">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-compressor-guide"
+                               aria-label="Read the guide to compress PDF files">
+                                <img src="/images/blog/pdf-compressor-guide.html.png"
+                                     alt="Guide explaining how to compress PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-compressor-guide">How to Compress PDF Files</a></h3>
+                                <p>
+                                    Reduce PDF file size for uploading, sharing and
+                                    storage while considering readability and quality.
+                                </p>
+                                <a href="/blog/pdf-compressor-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="pdf to word convert pdf word editable document">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-to-word-guide"
+                               aria-label="Read the guide to convert PDF to Word">
+                                <img src="/images/blog/pdf-to-word-guide.html.png"
+                                     alt="Guide explaining how to convert PDF files to Word"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-to-word-guide">How to Convert PDF to Word</a></h3>
+                                <p>
+                                    Understand how PDF documents can be converted into
+                                    editable Word files and what can affect the result.
+                                </p>
+                                <a href="/blog/pdf-to-word-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="pdf to jpg convert pdf image jpg">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-to-jpg-guide"
+                               aria-label="Read the guide to convert PDF to JPG">
+                                <img src="/images/blog/pdf-to-jpg-guide.html.png"
+                                     alt="Guide explaining how to convert PDF pages to JPG images"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-to-jpg-guide">How to Convert PDF to JPG</a></h3>
+                                <p>
+                                    Learn how to turn PDF pages into JPG images when
+                                    an image-based version is easier to share or use.
+                                </p>
+                                <a href="/blog/pdf-to-jpg-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="pdf to image convert pdf png jpg images">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-to-image-guide"
+                               aria-label="Read the guide to convert PDF to images">
+                                <img src="/images/blog/pdf-to-image-guide.html.png"
+                                     alt="Guide explaining how to convert PDF pages to images"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-to-image-guide">How to Convert PDF to Images</a></h3>
+                                <p>
+                                    Learn the basics of converting PDF pages into image
+                                    files and choosing an appropriate image format.
+                                </p>
+                                <a href="/blog/pdf-to-image-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="crop pdf trim pages pdf crop guide">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-crop-guide"
+                               aria-label="Read the guide to crop PDF pages">
+                                <img src="/images/blog/pdf-crop-guide.html.png"
+                                     alt="Guide explaining how to crop PDF pages"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-crop-guide">How to Crop PDF Pages</a></h3>
+                                <p>
+                                    Learn when cropping a PDF is useful and how page
+                                    boundaries can be adjusted for cleaner documents.
+                                </p>
+                                <a href="/blog/pdf-crop-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="extract text pdf pdf text extraction">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-extract-text-guide"
+                               aria-label="Read the guide to extract text from PDF">
+                                <img src="/images/blog/pdf-extract-text-guide.html.png"
+                                     alt="Guide explaining how to extract text from PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-extract-text-guide">How to Extract Text from PDF</a></h3>
+                                <p>
+                                    Understand common ways to extract selectable text
+                                    from PDF documents for reuse and editing.
+                                </p>
+                                <a href="/blog/pdf-extract-text-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="merge pdf pdf merger combine documents">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-page-numbers-guide"
+                               aria-label="Read the guide to add page numbers to PDF">
+                                <img src="/images/blog/pdf-page-numbers-guide.html.png"
+                                     alt="Guide explaining how to add page numbers to PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-page-numbers-guide">How to Add Page Numbers to PDF</a></h3>
+                                <p>
+                                    Learn why page numbering helps long documents and
+                                    how to make PDF pages easier to reference.
+                                </p>
+                                <a href="/blog/pdf-page-numbers-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="remove pdf pages delete pages pdf page remover">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-page-remover-guide"
+                               aria-label="Read the guide to remove PDF pages">
+                                <img src="/images/blog/pdf-page-remover-guide.html.png"
+                                     alt="Guide explaining how to remove pages from PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-page-remover-guide">How to Remove Pages from a PDF</a></h3>
+                                <p>
+                                    Learn how to remove unwanted pages and prepare a
+                                    cleaner PDF for sharing or archiving.
+                                </p>
+                                <a href="/blog/pdf-page-remover-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="pdf"
+                         data-search="rotate pdf pages pdf rotator">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-rotator-guide"
+                               aria-label="Read the guide to rotate PDF pages">
+                                <img src="/images/blog/pdf-rotator-guide.html.png"
+                                     alt="Guide explaining how to rotate PDF pages"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">PDF</span>
+                                <h3><a href="/blog/pdf-rotator-guide">How to Rotate PDF Pages</a></h3>
+                                <p>
+                                    Fix incorrectly oriented pages and make a PDF easier
+                                    to read on screen or on paper.
+                                </p>
+                                <a href="/blog/pdf-rotator-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- ================= SECURITY ================= -->
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="security"
+                         data-search="protect pdf password pdf protector secure pdf">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-protector-guide"
+                               aria-label="Read the guide to protect PDF files">
+                                <img src="/images/blog/pdf-protector-guide.html.png"
+                                     alt="Guide explaining how to protect PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Security</span>
+                                <h3><a href="/blog/pdf-protector-guide">How to Protect a PDF with a Password</a></h3>
+                                <p>
+                                    Learn the purpose of PDF protection and what to
+                                    consider before securing a document.
+                                </p>
+                                <a href="/blog/pdf-protector-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="security"
+                         data-search="unlock pdf remove password pdf unlocker">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-unlocker-guide"
+                               aria-label="Read the guide to unlock PDF files">
+                                <img src="/images/blog/pdf-unlocker-guide.html.png"
+                                     alt="Guide explaining how to unlock PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Security</span>
+                                <h3><a href="/blog/pdf-unlocker-guide">How to Unlock a PDF</a></h3>
+                                <p>
+                                    Understand PDF restrictions and the situations in
+                                    which removing protection may be appropriate.
+                                </p>
+                                <a href="/blog/pdf-unlocker-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="security"
+                         data-search="pdf watermark add watermark protect document">
+                        <article class="blog-card h-100">
+                            <a href="/blog/pdf-watermark-guide"
+                               aria-label="Read the guide to add a watermark to PDF">
+                                <img src="/images/blog/pdf-watermark-guide.html.png"
+                                     alt="Guide explaining how to add a watermark to PDF files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Security</span>
+                                <h3><a href="/blog/pdf-watermark-guide">How to Add a Watermark to a PDF</a></h3>
+                                <p>
+                                    Learn how watermarks can identify documents,
+                                    communicate status or discourage unwanted reuse.
+                                </p>
+                                <a href="/blog/pdf-watermark-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- ================= IMAGE ================= -->
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="image"
+                         data-search="compress images image compressor jpg png webp reduce size">
+                        <article class="blog-card h-100">
+                            <a href="/blog/image-compressor-guide"
+                               aria-label="Read the guide to compress images">
+                                <img src="/images/blog/image-compressor-guide.html.png"
+                                     alt="Guide explaining how to compress image files"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Image</span>
+                                <h3><a href="/blog/image-compressor-guide">How to Compress Images Without Losing Too Much Quality</a></h3>
+                                <p>
+                                    Learn how image dimensions, format and compression
+                                    settings affect file size and visual quality.
+                                </p>
+                                <a href="/blog/image-compressor-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="image"
+                         data-search="resize image image resizer dimensions pixels">
+                        <article class="blog-card h-100">
+                            <a href="/blog/image-resizer-guide"
+                               aria-label="Read the guide to resize images">
+                                <img src="/images/blog/image-resizer-guide.html.png"
+                                     alt="Guide explaining how to resize images"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Image</span>
+                                <h3><a href="/blog/image-resizer-guide">How to Resize Images</a></h3>
+                                <p>
+                                    Learn how changing image dimensions can help with
+                                    websites, documents, forms and social media.
+                                </p>
+                                <a href="/blog/image-resizer-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="image"
+                         data-search="jpg png jpg vs png image format comparison">
+                        <article class="blog-card h-100">
+                            <a href="/blog/jpg-png-converter-guide"
+                               aria-label="Read the JPG versus PNG guide">
+                                <img src="/images/blog/jpg-png-converter-guide.html.png"
+                                     alt="Comparison of JPG and PNG image formats"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Image</span>
+                                <h3><a href="/blog/jpg-png-converter-guide">JPG vs PNG: Which Format Should You Use?</a></h3>
+                                <p>
+                                    Compare JPG and PNG and learn when each format is
+                                    more suitable for photos, graphics and transparency.
+                                </p>
+                                <a href="/blog/jpg-png-converter-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="image"
+                         data-search="image to pdf convert image pdf jpg png">
+                        <article class="blog-card h-100">
+                            <a href="/blog/image-to-pdf-guide"
+                               aria-label="Read the guide to convert images to PDF">
+                                <img src="/images/blog/image-to-pdf-guide.html.png"
+                                     alt="Guide explaining how to convert images to PDF"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Image</span>
+                                <h3><a href="/blog/image-to-pdf-guide">How to Convert Images to PDF</a></h3>
+                                <p>
+                                    Learn when converting JPG or PNG images into a PDF
+                                    is useful for documents, forms and sharing.
+                                </p>
+                                <a href="/blog/image-to-pdf-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- ================= OFFICE ================= -->
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="office"
+                         data-search="excel to pdf spreadsheet convert excel pdf">
+                        <article class="blog-card h-100">
+                            <a href="/blog/excel-to-pdf-guide"
+                               aria-label="Read the guide to convert Excel to PDF">
+                                <img src="/images/blog/excel-to-pdf-guide.html.png"
+                                     alt="Guide explaining how to convert Excel spreadsheets to PDF"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Office</span>
+                                <h3><a href="/blog/excel-to-pdf-guide">How to Convert Excel to PDF</a></h3>
+                                <p>
+                                    Learn how to prepare spreadsheets for PDF output
+                                    when sharing, printing or preserving a layout.
+                                </p>
+                                <a href="/blog/excel-to-pdf-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="office"
+                         data-search="powerpoint to pdf presentation convert powerpoint pdf">
+                        <article class="blog-card h-100">
+                            <a href="/blog/powerpoint-to-pdf-guide"
+                               aria-label="Read the guide to convert PowerPoint to PDF">
+                                <img src="/images/blog/powerpoint-to-pdf-guide.html.png"
+                                     alt="Guide explaining how to convert PowerPoint presentations to PDF"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Office</span>
+                                <h3><a href="/blog/powerpoint-to-pdf-guide">How to Convert PowerPoint to PDF</a></h3>
+                                <p>
+                                    Learn how to turn presentations into PDF documents
+                                    for consistent sharing and convenient printing.
+                                </p>
+                                <a href="/blog/powerpoint-to-pdf-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 blog-card-item"
+                         data-category="office"
+                         data-search="word to pdf document convert word pdf">
+                        <article class="blog-card h-100">
+                            <a href="/blog/word-to-pdf-guide"
+                               aria-label="Read the guide to convert Word to PDF">
+                                <img src="/images/blog/word-to-pdf-guide.html.png"
+                                     alt="Guide explaining how to convert Word documents to PDF"
+                                     width="800" height="500"
+                                     loading="lazy" decoding="async">
+                            </a>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Office</span>
+                                <h3><a href="/blog/word-to-pdf-guide">How to Convert Word to PDF</a></h3>
+                                <p>
+                                    Learn why Word documents are commonly converted to
+                                    PDF before sharing, submitting or printing.
+                                </p>
+                                <a href="/blog/word-to-pdf-guide" class="blog-read-more">
+                                    Read Guide <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
 
                 </div>
 
+                <div id="noBlogResults" class="text-center py-5" hidden>
+                    <h3>No guides found</h3>
+                    <p class="text-muted">
+                        Try a different search term or choose another category.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================
+             HOW TO CHOOSE A TOOL
+        ================================================== -->
+        <section class="blog-help-section" aria-labelledby="choose-tool-heading">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">BEFORE YOU CONVERT</span>
+                    <h2 id="choose-tool-heading">Choose the Right File Tool</h2>
+                    <p>
+                        The best tool depends on what you are trying to achieve.
+                        Start with the task rather than the file extension alone.
+                    </p>
+                </div>
 
                 <div class="row g-4">
 
-
-                    <!-- =================================================
-                         ARTICLE 1
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/pdf-merger-guide"
-                                aria-label="Read How to Merge PDF Files">
-
-                                <img
-                                    src="/images/blog/pdf-merger-guide.html.png"
-                                    alt="Guide showing how to merge multiple PDF files"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    PDF
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/pdf-merger-guide">
-
-                                        How to Merge PDF Files
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Learn how to combine multiple PDF files
-                                    into a single document and keep your
-                                    pages organized.
-                                </p>
-
-                                <a
-                                    href="/blog/pdf-merger-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 2
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/pdf-splitter-guide"
-                                aria-label="Read How to Split PDF Files">
-
-                                <img
-                                    src="/images/blog/pdf-splitter-guide.html.png"
-                                    alt="Guide explaining how to split PDF files"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    PDF
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/pdf-splitter-guide">
-
-                                        How to Split PDF Files
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Learn how to extract selected pages
-                                    or divide a PDF into separate documents.
-                                </p>
-
-                                <a
-                                    href="/blog/pdf-splitter-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 3
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/pdf-compressor-guide"
-                                aria-label="Read How to Compress PDF Files">
-
-                                <img
-                                    src="/images/blog/pdf-compressor-guide.html.png"
-                                    alt="Guide explaining how to compress PDF files"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    PDF
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/pdf-compressor-guide">
-
-                                        How to Compress PDF Files
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Reduce PDF file size for easier uploading,
-                                    sharing and storage.
-                                </p>
-
-                                <a
-                                    href="/blog/pdf-compressor-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 4
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/pdf-to-word-guide"
-                                aria-label="Read How to Convert PDF to Word">
-
-                                <img
-                                    src="/images/blog/pdf-to-word-guide.html.png"
-                                    alt="Guide explaining how to convert PDF files to Word"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    PDF
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/pdf-to-word-guide">
-
-                                        How to Convert PDF to Word
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Learn how PDF documents can be converted
-                                    into editable Word files.
-                                </p>
-
-                                <a
-                                    href="/blog/pdf-to-word-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 5
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/pdf-to-jpg-guide"
-                                aria-label="Read How to Convert PDF to JPG">
-
-                                <img
-                                    src="/images/blog/pdf-to-jpg-guide.html.png"
-                                    alt="Guide explaining how to convert PDF pages to JPG images"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    PDF
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/pdf-to-jpg-guide">
-
-                                        How to Convert PDF to JPG
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Convert PDF pages into JPG images
-                                    for easier sharing and use.
-                                </p>
-
-                                <a
-                                    href="/blog/pdf-to-jpg-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 6
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/image-compressor-guide"
-                                aria-label="Read How to Compress Images">
-
-                                <img
-                                    src="/images/blog/image-compressor-guide.html.png"
-                                    alt="Guide explaining how to compress image files"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    Image
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/image-compressor-guide">
-
-                                        How to Compress Images
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Learn how to reduce image file size
-                                    while maintaining useful image quality.
-                                </p>
-
-                                <a
-                                    href="/blog/image-compressor-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 7
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/image-resizer-guide"
-                                aria-label="Read How to Resize Images">
-
-                                <img
-                                    src="/images/blog/image-resizer-guide.html.png"
-                                    alt="Guide explaining how to resize images"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    Image
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/image-resizer-guide">
-
-                                        How to Resize Images
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Learn how to change image dimensions
-                                    for websites, documents and social media.
-                                </p>
-
-                                <a
-                                    href="/blog/image-resizer-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 8
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/jpg-png-converter-guide"
-                                aria-label="Read JPG vs PNG guide">
-
-                                <img
-                                    src="/images/blog/jpg-png-converter-guide.html.png"
-                                    alt="Comparison of JPG and PNG image formats"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    Image
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/jpg-png-converter-guide">
-
-                                        JPG vs PNG: Which Format Should You Use?
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Understand the main differences between
-                                    JPG and PNG and when each format is useful.
-                                </p>
-
-                                <a
-                                    href="/blog/jpg-png-converter-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 9
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/excel-to-pdf-guide"
-                                aria-label="Read How to Convert Excel to PDF">
-
-                                <img
-                                    src="/images/blog/excel-to-pdf-guide.html.png"
-                                    alt="Guide explaining how to convert Excel spreadsheets to PDF"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    Office
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/excel-to-pdf-guide">
-
-                                        How to Convert Excel to PDF
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Learn how to convert Excel spreadsheets
-                                    into PDF documents for sharing and printing.
-                                </p>
-
-                                <a
-                                    href="/blog/excel-to-pdf-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         ARTICLE 10
-                    ================================================== -->
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="blog-card">
-
-                            <a
-                                href="/blog/powerpoint-to-pdf-guide"
-                                aria-label="Read How to Convert PowerPoint to PDF">
-
-                                <img
-                                    src="/images/blog/powerpoint-to-pdf-guide.html.png"
-                                    alt="Guide explaining how to convert PowerPoint presentations to PDF"
-                                    width="800"
-                                    height="500"
-                                    loading="lazy"
-                                    decoding="async">
-
-                            </a>
-
-                            <div class="blog-card-content">
-
-                                <span class="blog-category">
-                                    Office
-                                </span>
-
-                                <h3>
-
-                                    <a href="/blog/powerpoint-to-pdf-guide">
-
-                                        How to Convert PowerPoint to PDF
-
-                                    </a>
-
-                                </h3>
-
-                                <p>
-                                    Learn how to turn PowerPoint presentations
-                                    into PDF documents for convenient sharing.
-                                </p>
-
-                                <a
-                                    href="/blog/powerpoint-to-pdf-guide"
-                                    class="blog-read-more">
-
-                                    Read Article
-
-                                    <i class="bi bi-arrow-right"></i>
-
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!--
-                    =====================================================
-                    KEEP YOUR REMAINING ARTICLES HERE
-                    =====================================================
-
-                    Use exactly the same:
-
-                    <div class="col-lg-4 col-md-6">
-                        <article class="blog-card">
-                            ...
+                    <div class="col-lg-4">
+                        <article class="info-card h-100">
+                            <h3>Need a smaller file?</h3>
+                            <p>
+                                Compression can reduce the size of PDFs and images.
+                                Check the result after compression to make sure text,
+                                graphics and important details remain usable.
+                            </p>
+                            <a href="/pdf-tools">Browse PDF Tools</a>
+                            <span class="mx-1">·</span>
+                            <a href="/image-tools">Browse Image Tools</a>
                         </article>
                     </div>
 
-                    structure.
+                    <div class="col-lg-4">
+                        <article class="info-card h-100">
+                            <h3>Need a different format?</h3>
+                            <p>
+                                Conversion is useful when a file needs to work in
+                                another application, be easier to edit or be shared
+                                in a more widely supported format.
+                            </p>
+                            <a href="/tools">Explore All Tools</a>
+                        </article>
+                    </div>
 
-                    Do not delete your existing articles just because
-                    the examples above show 10 cards.
-                    -->
-
+                    <div class="col-lg-4">
+                        <article class="info-card h-100">
+                            <h3>Need document protection?</h3>
+                            <p>
+                                Security-related PDF tasks can help control access or
+                                identify a document. Always make sure you have permission
+                                to modify or remove document restrictions.
+                            </p>
+                            <a href="/security-tools">Explore Security Tools</a>
+                        </article>
+                    </div>
 
                 </div>
-
             </div>
-
         </section>
 
-
         <!-- =================================================
-             RELATED TOOLS
+             RELATED TOOL CATEGORIES
         ================================================== -->
-
-        <section
-            class="related-section"
-            aria-labelledby="related-tools-heading">
+        <section class="related-section"
+                 aria-labelledby="related-tools-heading">
 
             <div class="container">
-
                 <div class="related-card">
 
                     <div>
-
-                        <span class="section-label">
-                            EXPLORE MORE
-                        </span>
+                        <span class="section-label">EXPLORE MORE</span>
 
                         <h2 id="related-tools-heading">
                             Need a File Conversion Tool?
                         </h2>
 
                         <p>
-                            Use ConvertNova's online tools to work with
-                            PDF, image, Office and security-related files.
+                            Read a guide first, then use the relevant ConvertNova
+                            tool when you are ready to process your file.
                         </p>
-
                     </div>
 
-
-                    <nav
-                        class="related-links"
-                        aria-label="ConvertNova tool categories">
+                    <nav class="related-links"
+                          aria-label="ConvertNova tool categories">
 
                         <a href="/tools">
-
-                            <i class="bi bi-grid"></i>
-
+                            <i class="bi bi-grid" aria-hidden="true"></i>
                             All Tools
-
                         </a>
 
                         <a href="/pdf-tools">
-
-                            <i class="bi bi-file-earmark-pdf"></i>
-
+                            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
                             PDF Tools
-
                         </a>
 
                         <a href="/image-tools">
-
-                            <i class="bi bi-image"></i>
-
+                            <i class="bi bi-image" aria-hidden="true"></i>
                             Image Tools
-
                         </a>
 
                         <a href="/office-tools">
-
-                            <i class="bi bi-file-earmark-word"></i>
-
+                            <i class="bi bi-file-earmark-word" aria-hidden="true"></i>
                             Office Tools
-
                         </a>
 
                         <a href="/security-tools">
-
-                            <i class="bi bi-shield-lock"></i>
-
+                            <i class="bi bi-shield-lock" aria-hidden="true"></i>
                             Security Tools
-
                         </a>
 
                     </nav>
 
                 </div>
-
             </div>
-
         </section>
 
+        <!-- =================================================
+             FAQ / USEFUL INFORMATION
+        ================================================== -->
+        <section class="blog-faq" aria-labelledby="blog-faq-heading">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">COMMON QUESTIONS</span>
+                    <h2 id="blog-faq-heading">File Conversion Guide FAQs</h2>
+                </div>
+
+                <div class="accordion" id="blogFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeadingOne">
+                            <button class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqOne"
+                                    aria-expanded="true"
+                                    aria-controls="faqOne">
+                                Which guide should I read first?
+                            </button>
+                        </h3>
+                        <div id="faqOne"
+                             class="accordion-collapse collapse show"
+                             aria-labelledby="faqHeadingOne"
+                             data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                Start with the guide that matches your task, such as
+                                merging PDFs, compressing an image, converting Word to
+                                PDF or protecting a document. The category pages can
+                                help you narrow the collection further.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeadingTwo">
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqTwo"
+                                    aria-expanded="false"
+                                    aria-controls="faqTwo">
+                                Why can a converted file look different?
+                            </button>
+                        </h3>
+                        <div id="faqTwo"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="faqHeadingTwo"
+                             data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                File formats store content differently. Fonts, page
+                                layouts, images, transparency, document structure and
+                                other elements can affect how content appears after
+                                conversion. Reviewing the output is especially important
+                                for documents that need precise formatting.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeadingThree">
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqThree"
+                                    aria-expanded="false"
+                                    aria-controls="faqThree">
+                                Should I compress a file before converting it?
+                            </button>
+                        </h3>
+                        <div id="faqThree"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="faqHeadingThree"
+                             data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                Not always. The better order depends on the task and
+                                the desired output. For important files, keep the
+                                original and compare the converted or compressed
+                                version before replacing it.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeadingFour">
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqFour"
+                                    aria-expanded="false"
+                                    aria-controls="faqFour">
+                                Where can I find all ConvertNova tools?
+                            </button>
+                        </h3>
+                        <div id="faqFour"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="faqHeadingFour"
+                             data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                Visit the <a href="/tools">All Tools</a> page to browse
+                                ConvertNova's available file-processing tools, or use
+                                the category pages for <a href="/pdf-tools">PDF</a>,
+                                <a href="/image-tools">image</a>,
+                                <a href="/office-tools">Office</a> and
+                                <a href="/security-tools">security</a> tools.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
         <!-- =================================================
              NEWSLETTER
         ================================================== -->
-
-        <section
-            class="newsletter-section"
-            aria-labelledby="newsletter-heading">
+        <section class="newsletter-section"
+                 aria-labelledby="newsletter-heading">
 
             <div class="container text-center">
 
-                <span class="section-label">
-                    CONVERTNOVA UPDATES
-                </span>
+                <span class="section-label">CONVERTNOVA UPDATES</span>
 
-                <h2 id="newsletter-heading">
-                    Stay Updated
-                </h2>
+                <h2 id="newsletter-heading">Stay Updated With New Guides</h2>
 
                 <p>
-                    Receive updates about new guides, tutorials and
-                    useful file conversion tips.
+                    Receive updates about new tutorials, file conversion guides
+                    and practical tips when new content is published.
                 </p>
 
-                <!--
-                    Only keep this form if your application actually
-                    processes newsletter subscriptions.
-                -->
-
-                <form
-                    class="newsletter-form"
-                    method="post"
-                    action="/subscribe">
+                <form class="newsletter-form"
+                      method="post"
+                      action="/subscribe">
 
                     <div class="row justify-content-center">
-
                         <div class="col-lg-6">
 
+                            <label for="newsletterEmail" class="visually-hidden">
+                                Email address
+                            </label>
+
                             <div class="input-group">
+                                <input type="email"
+                                       id="newsletterEmail"
+                                       name="email"
+                                       class="form-control"
+                                       placeholder="Enter your email address"
+                                       autocomplete="email"
+                                       required>
 
-                                <label
-                                    for="newsletterEmail"
-                                    class="visually-hidden">
-
-                                    Email address
-
-                                </label>
-
-                                <input
-                                    type="email"
-                                    id="newsletterEmail"
-                                    name="email"
-                                    class="form-control"
-                                    placeholder="Enter your email address"
-                                    autocomplete="email"
-                                    required>
-
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary">
-
+                                <button type="submit" class="btn btn-primary">
                                     Subscribe
-
                                 </button>
-
                             </div>
 
                         </div>
-
                     </div>
 
                 </form>
 
             </div>
-
         </section>
-
 
         <!-- =================================================
              TRUST / FEATURES
         ================================================== -->
-
-        <section
-            class="feature-section"
-            aria-label="ConvertNova benefits">
+        <section class="feature-section"
+                 aria-label="ConvertNova guide and tool benefits">
 
             <div class="container">
 
                 <div class="feature-wrapper">
 
-
                     <div class="feature-box">
-
                         <div class="feature-icon blue">
-
-                            <img
-                                src="/images/icons/secure.png"
-                                alt=""
-                                width="48"
-                                height="48"
-                                loading="lazy">
-
+                            <img src="/images/icons/secure.png"
+                                 alt=""
+                                 width="48" height="48"
+                                 loading="lazy">
                         </div>
-
                         <div>
-
-                            <h3>
-                                Secure Processing
-                            </h3>
-
+                            <h3>Security in Mind</h3>
                             <p>
-                                We design our tools with privacy and
-                                secure file processing in mind.
+                                Our guides explain file-processing tasks with
+                                privacy and document handling considerations in mind.
                             </p>
-
                         </div>
-
                     </div>
 
-
-                    <div
-                        class="feature-divider"
-                        aria-hidden="true">
-                    </div>
-
+                    <div class="feature-divider" aria-hidden="true"></div>
 
                     <div class="feature-box">
-
                         <div class="feature-icon purple">
-
-                            <img
-                                src="/images/icons/fast.png"
-                                alt=""
-                                width="48"
-                                height="48"
-                                loading="lazy">
-
+                            <img src="/images/icons/fast.png"
+                                 alt=""
+                                 width="48" height="48"
+                                 loading="lazy">
                         </div>
-
                         <div>
-
-                            <h3>
-                                Fast Processing
-                            </h3>
-
+                            <h3>Practical & Simple</h3>
                             <p>
-                                Common file-processing tasks are designed
-                                to be simple and efficient.
+                                Clear explanations help you understand a file task
+                                before choosing the relevant online tool.
                             </p>
-
                         </div>
-
                     </div>
 
-
-                    <div
-                        class="feature-divider"
-                        aria-hidden="true">
-                    </div>
-
+                    <div class="feature-divider" aria-hidden="true"></div>
 
                     <div class="feature-box">
-
                         <div class="feature-icon green">
-
-                            <img
-                                src="/images/icons/mobile.png"
-                                alt=""
-                                width="48"
-                                height="48"
-                                loading="lazy">
-
+                            <img src="/images/icons/mobile.png"
+                                 alt=""
+                                 width="48" height="48"
+                                 loading="lazy">
                         </div>
-
                         <div>
-
-                            <h3>
-                                Mobile Friendly
-                            </h3>
-
+                            <h3>Useful Anywhere</h3>
                             <p>
-                                Access ConvertNova guides and tools from
-                                desktop, tablet and mobile devices.
+                                Access ConvertNova guides and tools from desktop,
+                                tablet and mobile devices.
                             </p>
-
                         </div>
-
                     </div>
-
 
                 </div>
 
             </div>
-
         </section>
 
-
     </main>
-
 
     <!-- =====================================================
          FOOTER
     ====================================================== -->
-
     <div th:replace="~{fragments/footer :: footer}"></div>
 
+    <!-- =================================================
+         BLOG SEARCH / FILTER
+    ================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-    <!-- =====================================================
-         SCRIPTS
-    ====================================================== -->
+            const searchInput = document.getElementById("blogSearch");
+            const clearButton = document.getElementById("clearBlogSearch");
+            const status = document.getElementById("blogSearchStatus");
+            const noResults = document.getElementById("noBlogResults");
+            const cards = Array.from(document.querySelectorAll(".blog-card-item"));
+            const categoryButtons =
+                Array.from(document.querySelectorAll("[data-category-filter]"));
 
+            let activeCategory = "all";
+
+            function updateResults() {
+
+                const query = searchInput.value.trim().toLowerCase();
+
+                let visibleCount = 0;
+
+                cards.forEach(function (card) {
+
+                    const category = card.dataset.category || "";
+                    const searchableText =
+                        (card.dataset.search || "") +
+                        " " +
+                        (card.textContent || "");
+
+                    const matchesCategory =
+                        activeCategory === "all" ||
+                        category === activeCategory;
+
+                    const matchesSearch =
+                        !query ||
+                        searchableText.toLowerCase().includes(query);
+
+                    const visible = matchesCategory && matchesSearch;
+
+                    card.hidden = !visible;
+
+                    if (visible) {
+                        visibleCount++;
+                    }
+                });
+
+                noResults.hidden = visibleCount !== 0;
+
+                clearButton.hidden = !query;
+
+                if (query) {
+                    status.textContent =
+                        visibleCount +
+                        (visibleCount === 1 ? " guide" : " guides") +
+                        " found for “" + searchInput.value.trim() + "”.";
+                } else if (activeCategory !== "all") {
+                    status.textContent =
+                        visibleCount +
+                        (visibleCount === 1 ? " guide" : " guides") +
+                        " available in this category.";
+                } else {
+                    status.textContent =
+                        cards.length +
+                        " guides available. Search by topic, format or task.";
+                }
+            }
+
+            categoryButtons.forEach(function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const category = button.dataset.categoryFilter;
+
+                    if (category) {
+                        activeCategory = category;
+
+                        categoryButtons.forEach(function (item) {
+                            item.classList.remove("btn-primary");
+                            item.classList.add("btn-outline-primary");
+                            item.setAttribute("aria-pressed", "false");
+                        });
+
+                        button.classList.remove("btn-outline-primary");
+                        button.classList.add("btn-primary");
+                        button.setAttribute("aria-pressed", "true");
+
+                        updateResults();
+
+                        document.getElementById("blogGrid")
+                            .scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+                    }
+                });
+            });
+
+            searchInput.addEventListener("input", updateResults);
+
+            searchInput.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    searchInput.value = "";
+                    updateResults();
+                }
+            });
+
+            clearButton.addEventListener("click", function () {
+                searchInput.value = "";
+                searchInput.focus();
+                updateResults();
+            });
+
+            updateResults();
+        });
+    </script>
+
+    <!-- =================================================
+         SITE SCRIPTS
+    ================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="/js/email-valid.js"></script>
-
     <script src="/js/navbar.js"></script>
-
     <script src="/js/homepage.js"></script>
 
-
+    
 </body>
 </html>

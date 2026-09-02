@@ -1,388 +1,658 @@
-/*==================================================
-        BLOG SECTION
-==================================================*/
+/* =========================================================
+   CONVERTNOVA — COMMON BLOG ARTICLE CSS
+   Used by all blog / guide articles
+========================================================= */
 
-.blog-section{
 
-    background:#f4f7fb;
-    padding:120px 0 80px;
+/* =========================================================
+   1. BLOG PAGE
+========================================================= */
 
+.blog-section {
+    padding: 110px 0 80px;
+    background: #f8fafc;
 }
 
-.blog-section .container{
-
-    max-width:950px;
-
+.blog-section .container {
+    max-width: 1100px;
 }
 
-/*==================================================
-        ARTICLE
-==================================================*/
 
-.blog-article{
+/* =========================================================
+   2. MAIN ARTICLE
+========================================================= */
 
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 15px 40px rgba(15,23,42,.08);
-
+.blog-article {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 50px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e8edf3;
 }
 
-/*==================================================
-        HEADER
-==================================================*/
 
-.blog-article header{
+/* =========================================================
+   3. ARTICLE HEADER
+========================================================= */
 
-    padding:45px;
-    text-align:center;
-
+.article-header {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-.blog-article h1{
-
-    font-size:2.6rem;
-    font-weight:800;
-    line-height:1.3;
-    color:#111827;
-    margin-bottom:15px;
-
+.article-header h1 {
+    max-width: 900px;
+    margin: 14px auto 20px;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #172033;
+    letter-spacing: -0.5px;
 }
 
-.blog-article .text-muted{
-
-    color:#6b7280;
-    font-size:.95rem;
-
+.article-intro {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #5d6878;
 }
 
-.blog-article header img{
 
-    width:100%;
-    border-radius:18px;
-    margin-top:30px;
-    max-height:420px;
-    object-fit:cover;
+/* =========================================================
+   4. ARTICLE META
+========================================================= */
 
+.article-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
-/*==================================================
-        BLOG CONTENT ONLY
-==================================================*/
-
-.blog-content{
-
-    padding:0 45px;
-    margin-bottom:45px;
-
+.article-meta span {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
 }
 
-.blog-content h2{
-
-    font-size:1.9rem;
-    color:#2563eb;
-    margin-bottom:18px;
-    font-weight:700;
-    position:relative;
-
+.article-meta span + span::before {
+    content: "•";
+    margin-right: 10px;
+    color: #94a3b8;
 }
 
-.blog-content h2::after{
 
-    content:"";
-    display:block;
-    width:70px;
-    height:4px;
-    background:#2563eb;
-    border-radius:20px;
-    margin-top:8px;
+/* =========================================================
+   5. ARTICLE IMAGE
+========================================================= */
 
+.article-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 30px auto 0;
+    border-radius: 14px;
+    border: 1px solid #e5eaf0;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
 }
 
-.blog-content h3{
 
-    font-size:1.2rem;
-    font-weight:700;
-    color:#1f2937;
-    margin-top:28px;
-    margin-bottom:12px;
+/* =========================================================
+   6. TABLE OF CONTENTS
+========================================================= */
 
+.toc-section {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    padding: 28px 32px;
+    background: #f8fafc;
+    border: 1px solid #e4e9ef;
+    border-left: 4px solid #0d6efd;
+    border-radius: 12px;
 }
 
-.blog-content p{
-
-    font-size:1.05rem;
-    color:#4b5563;
-    line-height:1.9;
-
+.toc-section h2 {
+    margin: 0 0 18px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #172033;
 }
 
-/*==================================================
-        LISTS
-==================================================*/
+.toc-section ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.toc-section li {
+    margin-bottom: 9px;
+    line-height: 1.6;
+}
+
+.toc-section li:last-child {
+    margin-bottom: 0;
+}
+
+.toc-section a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.toc-section a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   7. BLOG CONTENT
+========================================================= */
+
+.blog-content {
+    max-width: 850px;
+    margin: 0 auto 50px;
+}
+
+.blog-content:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   8. HEADINGS
+========================================================= */
+
+.blog-content h2,
+.related-tools h2,
+.faq-section h2 {
+    margin: 0 0 20px;
+    color: #172033;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.blog-content h2 {
+    font-size: 30px;
+}
+
+.blog-content h3 {
+    margin: 30px 0 12px;
+    color: #253044;
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   9. PARAGRAPHS
+========================================================= */
+
+.blog-content p {
+    margin: 0 0 18px;
+    color: #4b5565;
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+.blog-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   10. LISTS
+========================================================= */
 
 .blog-content ul,
-.blog-content ol{
+.blog-content ol {
+    margin: 20px 0;
+    padding-left: 28px;
+}
 
-    padding-left:0;
-    margin:25px 0;
+.blog-content li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+    color: #4b5565;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.blog-content li:last-child {
+    margin-bottom: 0;
+}
+
+.blog-content ul li::marker {
+    color: #2563eb;
+}
+
+.blog-content ol li::marker {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   11. STRONG TEXT
+========================================================= */
+
+.blog-content strong {
+    color: #273449;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   12. INTERNAL LINKS
+========================================================= */
+
+.blog-content a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.blog-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   13. ARTICLE CTA
+========================================================= */
+
+.article-cta {
+    margin-top: 35px;
+    padding: 30px;
+    text-align: center;
+    background: #f1f6ff;
+    border: 1px solid #dbe7ff;
+    border-radius: 14px;
+}
+
+.article-cta h3 {
+    margin: 0 0 10px;
+    color: #172033;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.article-cta p {
+    margin: 0 0 20px;
+    color: #5d6878;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.article-cta .btn {
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   14. RELATED TOOLS
+========================================================= */
+
+.related-tools {
+    max-width: 900px;
+    margin: 0 auto 55px;
+    padding-top: 10px;
+}
+
+.related-tools h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 30px;
+}
+
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.related-tool-card {
+    display: block;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #e4e9ef;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.related-tool-card:hover {
+    transform: translateY(-3px);
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.related-tool-card h3 {
+    margin: 0 0 9px;
+    color: #172033;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.related-tool-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   15. FAQ SECTION
+========================================================= */
+
+.faq-section {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    padding-top: 5px;
+}
+
+.faq-section > h2 {
+    margin-bottom: 28px;
+    font-size: 30px;
+}
+
+.faq-section .accordion {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-section .accordion-item {
+    border: 1px solid #e3e8ee;
+    border-bottom: 0;
+    background: #ffffff;
+}
+
+.faq-section .accordion-item:last-child {
+    border-bottom: 1px solid #e3e8ee;
+}
+
+.faq-section .accordion-button {
+    padding: 20px 22px;
+    color: #172033;
+    background: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    box-shadow: none;
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+    color: #172033;
+    background: #f8fafc;
+    box-shadow: none;
+}
+
+.faq-section .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.faq-section .accordion-body {
+    padding: 20px 22px 23px;
+    color: #596577;
+    font-size: 16px;
+    line-height: 1.75;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   16. CONCLUSION
+========================================================= */
+
+.article-conclusion {
+    padding-top: 10px;
+    margin-bottom: 0;
+}
+
+.article-conclusion h2 {
+    margin-bottom: 20px;
+}
+
+.article-conclusion p {
+    margin-bottom: 18px;
+}
+
+.article-conclusion .btn {
+    margin-top: 12px;
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   17. BUTTON
+========================================================= */
+
+.blog-article .btn {
+    text-decoration: none;
+}
+
+.blog-article .btn:hover {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   18. TEXT SELECTION / READABILITY
+========================================================= */
+
+.blog-article img {
+    max-width: 100%;
+}
+
+.blog-article hr {
+    margin: 40px 0;
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   19. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .blog-section {
+        padding: 100px 0 60px;
+    }
+
+    .blog-article {
+        padding: 38px 30px;
+    }
+
+    .article-header h1 {
+        font-size: 36px;
+    }
+
+    .article-intro {
+        font-size: 17px;
+    }
+
+    .blog-content h2,
+    .related-tools h2,
+    .faq-section > h2 {
+        font-size: 27px;
+    }
+
+    .related-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 }
 
-.blog-content li{
 
-    list-style:none;
-    margin-bottom:14px;
-    background:#f8fafc;
-    border-left:5px solid #2563eb;
-    border-radius:10px;
-    padding:16px 18px;
-    color:#374151;
-    transition:.3s;
+/* =========================================================
+   20. RESPONSIVE — MOBILE
+========================================================= */
 
-}
+@media (max-width: 767px) {
 
-.blog-content li:hover{
+    .blog-section {
+        padding: 90px 0 45px;
+    }
 
-    background:#eff6ff;
-    transform:translateX(5px);
+    .blog-section .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
-}
+    .blog-article {
+        padding: 28px 20px;
+        border-radius: 14px;
+    }
 
-/*==================================================
-        BUTTON
-==================================================*/
+    .article-header {
+        margin-bottom: 35px;
+    }
 
-.blog-content .btn{
+    .article-header h1 {
+        font-size: 30px;
+        line-height: 1.25;
+        letter-spacing: 0;
+    }
 
-    padding:15px 34px;
-    font-weight:700;
-    border-radius:10px;
-    box-shadow:0 10px 25px rgba(37,99,235,.25);
-    transition:.3s;
+    .article-intro {
+        font-size: 16px;
+        line-height: 1.7;
+    }
 
-}
+    .article-meta {
+        gap: 7px;
+    }
 
-.blog-content .btn:hover{
+    .article-meta span {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 
-    transform:translateY(-3px);
+    .article-meta span + span::before {
+        display: none;
+    }
 
-}
+    .article-image {
+        margin-top: 22px;
+        border-radius: 10px;
+    }
 
-/*==================================================
-        TABLE
-==================================================*/
+    .toc-section {
+        padding: 22px 20px;
+        margin-bottom: 38px;
+    }
 
-.blog-content table{
+    .toc-section h2 {
+        font-size: 20px;
+    }
 
-    width:100%;
-    border-collapse:collapse;
-    margin:30px 0;
+    .blog-content {
+        margin-bottom: 40px;
+    }
 
-}
+    .blog-content h2 {
+        font-size: 25px;
+    }
 
-.blog-content table th{
+    .blog-content h3 {
+        font-size: 20px;
+        margin-top: 25px;
+    }
 
-    background:#2563eb;
-    color:#fff;
-    padding:15px;
+    .blog-content p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
 
-}
+    .blog-content li {
+        font-size: 15.5px;
+        line-height: 1.7;
+    }
 
-.blog-content table td{
+    .article-cta {
+        padding: 25px 18px;
+    }
 
-    padding:15px;
-    border:1px solid #e5e7eb;
+    .article-cta h3 {
+        font-size: 21px;
+    }
 
-}
+    .related-tools {
+        margin-bottom: 45px;
+    }
 
-/*==================================================
-        BLOCKQUOTE
-==================================================*/
+    .related-tools-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
 
-.blog-content blockquote{
+    .related-tool-card {
+        padding: 20px;
+    }
 
-    background:#eff6ff;
-    border-left:5px solid #2563eb;
-    padding:22px;
-    border-radius:10px;
-    margin:25px 0;
+    .faq-section {
+        margin-bottom: 45px;
+    }
 
-}
+    .faq-section > h2 {
+        font-size: 25px;
+    }
 
-/*==================================================
-        IMAGE
-==================================================*/
+    .faq-section .accordion-button {
+        padding: 17px 18px;
+        font-size: 15px;
+    }
 
-.blog-content img{
+    .faq-section .accordion-body {
+        padding: 17px 18px 20px;
+        font-size: 15px;
+    }
 
-    max-width:100%;
-    height:auto;
-
-}
-
-/*==================================================
-        TABLET
-==================================================*/
-
-@media (max-width:991px){
-
-.blog-section{
-
-padding:100px 0 60px;
-
-}
-
-.blog-article header{
-
-padding:35px;
-
-}
-
-.blog-content{
-
-padding:0 35px;
-margin-bottom:40px;
-
-}
-
-.blog-article h1{
-
-font-size:2.2rem;
-
-}
-
-.blog-content h2{
-
-font-size:1.6rem;
-
-}
-
-}
-
-/*==================================================
-        MOBILE
-==================================================*/
-
-@media (max-width:768px){
-
-.blog-section{
-
-padding:90px 0 50px;
+    .article-conclusion .btn {
+        width: 100%;
+    }
 
 }
 
-.blog-article{
 
-border-radius:16px;
+/* =========================================================
+   21. VERY SMALL SCREENS
+========================================================= */
 
-}
+@media (max-width: 400px) {
 
-.blog-article header{
+    .blog-article {
+        padding: 24px 16px;
+    }
 
-padding:25px;
+    .article-header h1 {
+        font-size: 27px;
+    }
 
-}
+    .blog-content h2 {
+        font-size: 23px;
+    }
 
-.blog-content{
-
-padding:0 22px;
-margin-bottom:35px;
-
-}
-
-.blog-article h1{
-
-font-size:1.8rem;
-
-}
-
-.blog-content h2{
-
-font-size:1.4rem;
-
-}
-
-.blog-content h3{
-
-font-size:1.05rem;
-
-}
-
-.blog-content p{
-
-font-size:.97rem;
-
-}
-
-.blog-content li{
-
-padding:14px;
-
-}
-
-.blog-content .btn{
-
-width:100%;
-
-}
-
-}
-
-/*==================================================
-        SMALL MOBILE
-==================================================*/
-
-@media (max-width:480px){
-
-.blog-section{
-
-padding:80px 0 40px;
-
-}
-
-.blog-article header{
-
-padding:18px;
-
-}
-
-.blog-content{
-
-padding:0 18px;
-margin-bottom:30px;
-
-}
-
-.blog-article h1{
-
-font-size:1.55rem;
-
-}
-
-.blog-content h2{
-
-font-size:1.2rem;
-
-}
-
-.blog-content p{
-
-font-size:.92rem;
-line-height:1.8;
-
-}
-
-.blog-content li{
-
-font-size:.9rem;
-
-}
-
-.blog-article header img{
-
-max-height:220px;
-
-}
+    .toc-section {
+        padding: 20px 17px;
+    }
 
 }

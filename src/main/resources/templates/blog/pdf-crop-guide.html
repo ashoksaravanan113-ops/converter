@@ -1,105 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>PDF Crop Guide – Crop PDF Pages Online | ConvertNova</title>
+    <!-- =========================================
+         PRIMARY SEO
+    ========================================== -->
+
+    <title>
+        PDF Crop Guide – Crop PDF Pages Online | ConvertNova
+    </title>
 
     <meta name="description"
-        content="Learn how to crop PDF pages online with ConvertNova. Remove unwanted margins, trim white space, and focus on important content while maintaining high document quality—free, secure, and easy to use.">
+          content="Learn how to crop PDF pages online, remove unwanted margins and white space, and focus on important content with ConvertNova's PDF Crop tool.">
 
-    <meta name="keywords"
-        content="PDF Crop, Crop PDF, Trim PDF Pages, Remove PDF Margins, PDF Page Cropper, Online PDF Crop Tool, Free PDF Crop, ConvertNova">
+    <meta name="author"
+          content="ConvertNova">
 
-    <meta name="author" content="ConvertNova">
+    <meta name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <meta name="robots" content="index, follow">
+    <meta name="googlebot"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <link rel="canonical" href="https://convertnovas.com/pdf-crop-guide">
+    <!-- =========================================
+         CANONICAL
+    ========================================== -->
 
-    <!-- Open Graph -->
+    <link rel="canonical"
+          href="https://convertnovas.com/pdf-crop-guide">
 
-    <meta property="og:type" content="article">
+    <!-- =========================================
+         OPEN GRAPH
+    ========================================== -->
 
-    <meta property="og:title" content="PDF Crop Guide – Crop PDF Pages Online">
+    <meta property="og:type"
+          content="article">
+
+    <meta property="og:site_name"
+          content="ConvertNova">
+
+    <meta property="og:title"
+          content="PDF Crop Guide – Crop PDF Pages Online">
 
     <meta property="og:description"
-        content="Crop PDF pages online to remove unwanted margins and focus on important content using ConvertNova's free PDF Crop tool.">
+          content="Learn how to crop PDF pages online, remove unwanted margins and white space, and focus on important content with ConvertNova.">
 
-    <meta property="og:url" content="https://convertnovas.com/pdf-crop-guide">
+    <meta property="og:url"
+          content="https://convertnovas.com/pdf-crop-guide">
 
-    <meta property="og:image" content="https://convertnovas.com/images/blog/pdf-crop-guide.html.png">
+    <meta property="og:image"
+          content="https://convertnovas.com/images/blog/pdf-crop-guide.html.png">
 
-    <meta property="og:site_name" content="ConvertNova">
+    <meta property="og:image:alt"
+          content="PDF Crop Guide – Crop PDF Pages Online">
 
-    <!-- Twitter -->
+    <meta property="og:locale"
+          content="en_US">
 
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- =========================================
+         TWITTER / X
+    ========================================== -->
 
-    <meta name="twitter:title" content="PDF Crop Guide – Crop PDF Pages Online">
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="PDF Crop Guide – Crop PDF Pages Online">
 
     <meta name="twitter:description"
-        content="Crop PDF pages online for free with ConvertNova by removing margins and unwanted areas while preserving quality.">
+          content="Learn how to crop PDF pages online, remove unwanted margins and white space, and keep important document content focused.">
 
-    <meta name="twitter:image" content="https://convertnovas.com/images/blog/pdf-crop-guide.html.png">
+    <meta name="twitter:image"
+          content="https://convertnovas.com/images/blog/pdf-crop-guide.html.png">
 
-    <!-- Favicon -->
+    <meta name="twitter:image:alt"
+          content="PDF Crop Guide – ConvertNova">
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- =========================================
+         THEME
+    ========================================== -->
 
-    <!-- Bootstrap -->
+    <meta name="theme-color"
+          content="#0d6efd">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="color-scheme"
+          content="light">
 
-    <!-- Blog CSS -->
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
 
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="icon"
+          type="image/x-icon"
+          href="/favicon.ico">
 
-    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="apple-touch-icon"
+          href="/images/apple-touch-icon.png">
 
-    <link rel="stylesheet" th:href="@{/css/blog-articles.css}">
+    <!-- =========================================
+         BOOTSTRAP
+    ========================================== -->
 
-    <link rel="stylesheet" th:href="@{/css/faq.css}">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
+    <!-- =========================================
+         BLOG CSS
+    ========================================== -->
+
+    <link rel="stylesheet"
+          th:href="@{/css/footer.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/navbar.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/blog-articles.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/faq.css}">
+
+    <!-- =========================================
+         ARTICLE STRUCTURED DATA
+    ========================================== -->
 
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "PDF Crop Guide – Crop PDF Pages Online",
-  "description": "Learn how to crop PDF pages online while keeping your documents clean and professional.",
-  "author": {
-    "@type": "Organization",
-    "name": "ConvertNova"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ConvertNova",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://convertnovas.com/images/logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://convertnovas.com/pdf-crop-guide"
-  },
-  "image": "https://convertnovas.com/images/blog/pdf-crop-guide.html.png"
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
 
-<th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
+      "@id": "https://convertnovas.com/pdf-crop-guide#article",
+
+      "url": "https://convertnovas.com/pdf-crop-guide",
+
+      "headline": "PDF Crop Guide – Crop PDF Pages Online",
+
+      "description": "Learn how to crop PDF pages online, remove unwanted margins and white space, and focus on important document content.",
+
+      "inLanguage": "en",
+
+      "articleSection": "PDF Guides",
+
+      "keywords": [
+        "PDF crop",
+        "crop PDF",
+        "crop PDF pages",
+        "trim PDF pages",
+        "remove PDF margins",
+        "PDF page cropper",
+        "online PDF crop tool"
+      ],
+
+      "author": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com/"
+      },
+
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://convertnovas.com/images/logo.png"
+        }
+      },
+
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://convertnovas.com/pdf-crop-guide"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/blog/pdf-crop-guide.html.png"
+      }
+    }
+    </script>
+
+    <!-- =========================================
+         WEBSITE STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+
+      "@id": "https://convertnovas.com/#website",
+
+      "url": "https://convertnovas.com/",
+
+      "name": "ConvertNova",
+
+      "description": "Free online tools for converting, compressing, editing, and managing PDF, document, and image files.",
+
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization"
+      }
+    }
+    </script>
+
+    <!-- =========================================
+         ORGANIZATION STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+
+      "@id": "https://convertnovas.com/#organization",
+
+      "name": "ConvertNova",
+
+      "url": "https://convertnovas.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/logo.png"
+      }
+    }
+    </script>
+
+    <!-- =========================================
+         ANALYTICS
+    ========================================== -->
+
+    <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
 
 </head>
-
 <body>
 
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+
     <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+
+    <!-- ==========================================
+         BLOG SECTION
+    =========================================== -->
 
     <section class="blog-section">
 
@@ -107,152 +260,649 @@
 
             <article class="blog-article">
 
-                <!-- Header -->
 
-                <header>
+                <!-- ==========================================
+                     ARTICLE HEADER
+                ============================================ -->
 
-                    <h1>PDF Crop Guide: How to Crop PDF Pages Online</h1>
+                <header class="article-header">
 
-                    <p class="text-muted">
-                        Last Updated: July 2026 • 5 min read
+                    <div class="article-meta">
+
+                        <span>
+                            Last Updated: July 2026
+                        </span>
+
+                        <span>
+                            5 min read
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+                        PDF Crop Guide: How to Crop PDF Pages Online
+                    </h1>
+
+
+                    <p class="article-intro">
+
+                        Learn how to crop PDF pages online to remove
+                        unwanted margins, white space, and unnecessary
+                        areas while creating cleaner and more readable
+                        documents.
+
                     </p>
 
-                    <img src="/images/blog/pdf-crop-guide.html.png" alt="PDF Crop Guide" class="img-fluid">
+
+                    <img
+                        src="/images/blog/pdf-crop-guide.png"
+                        alt="PDF Crop Guide showing how to crop PDF pages online"
+                        class="article-image"
+                        loading="eager">
 
                 </header>
 
-                <!-- What is PDF Crop -->
 
-                <section class="blog-content">
+                <!-- ==========================================
+                     TABLE OF CONTENTS
+                ============================================ -->
 
-                    <h2>What Is a PDF Crop Tool?</h2>
+                <nav class="toc-section" aria-label="Table of contents">
+
+                    <h2>
+                        In This Guide
+                    </h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="#what-is-pdf-crop">
+                                What Is a PDF Crop Tool?
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#why-crop-pdf">
+                                Why Crop PDF Pages?
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#how-to-crop">
+                                How to Crop PDFs Using ConvertNova
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#benefits">
+                                Benefits of PDF Cropping
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#who-uses">
+                                Who Uses PDF Crop Tools?
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#cropping-tips">
+                                Tips for Better Cropping Results
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#faq">
+                                Frequently Asked Questions
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- ==========================================
+                     WHAT IS PDF CROP
+                ============================================ -->
+
+                <section
+                    class="blog-content"
+                    id="what-is-pdf-crop">
+
+                    <h2>
+                        What Is a PDF Crop Tool?
+                    </h2>
+
 
                     <p>
-                        A PDF Crop tool allows you to remove unwanted margins, white space, or unnecessary areas from
-                        PDF pages. Cropping helps improve document appearance, focus on important content, and prepare
-                        files for printing or digital sharing.
+
+                        A PDF Crop tool allows you to remove unwanted
+                        margins, white space, or unnecessary areas from
+                        PDF pages. Cropping can help improve the
+                        appearance of a document and make important
+                        content easier to focus on.
+
+                    </p>
+
+
+                    <p>
+
+                        PDF cropping can be useful when working with
+                        scanned documents, presentations, forms, or
+                        other files that contain excessive borders or
+                        empty space.
+
+                    </p>
+
+
+                    <p>
+
+                        If you need to perform other PDF operations,
+                        you can also explore ConvertNova's
+                        <a href="/pdf-tools">
+                            PDF Tools
+                        </a>
+                        for additional ways to manage and process PDF
+                        documents.
+
                     </p>
 
                 </section>
 
-                <!-- Why -->
 
-                <section class="blog-content">
+                <!-- ==========================================
+                     WHY CROP PDF
+                ============================================ -->
 
-                    <h2>Why Crop PDF Pages?</h2>
+                <section
+                    class="blog-content"
+                    id="why-crop-pdf">
+
+                    <h2>
+                        Why Crop PDF Pages?
+                    </h2>
+
+
+                    <p>
+
+                        PDF pages can sometimes contain unnecessary
+                        white space or large margins. Cropping these
+                        areas can make the document cleaner and more
+                        suitable for viewing, printing, and sharing.
+
+                    </p>
+
 
                     <ul>
 
-                        <li>Remove unnecessary white margins.</li>
+                        <li>
+                            Remove unnecessary white margins.
+                        </li>
 
-                        <li>Focus attention on important content.</li>
+                        <li>
+                            Focus attention on important content.
+                        </li>
 
-                        <li>Prepare documents for professional printing.</li>
+                        <li>
+                            Prepare documents for professional printing.
+                        </li>
 
-                        <li>Improve the appearance of scanned PDFs.</li>
+                        <li>
+                            Improve the appearance of scanned PDFs.
+                        </li>
 
-                        <li>Create cleaner and more readable documents.</li>
+                        <li>
+                            Create cleaner and more readable documents.
+                        </li>
 
                     </ul>
 
                 </section>
 
-                <!-- Steps -->
 
-                <section class="blog-content">
+                <!-- ==========================================
+                     HOW TO CROP PDF
+                ============================================ -->
 
-                    <h2>How to Crop PDFs Using ConvertNova</h2>
+                <section
+                    class="blog-content"
+                    id="how-to-crop">
+
+                    <h2>
+                        How to Crop PDFs Using ConvertNova
+                    </h2>
+
+
+                    <p>
+
+                        ConvertNova's PDF Crop tool provides a
+                        browser-based way to remove unwanted areas from
+                        PDF pages without requiring desktop PDF editing
+                        software.
+
+                    </p>
+
 
                     <ol>
 
-                        <li>Open the PDF Crop tool.</li>
+                        <li>
 
-                        <li>Upload your PDF document.</li>
+                            Open the
+                            <a href="/pdf-crop">
+                                PDF Crop
+                            </a>
+                            tool.
 
-                        <li>Select the area you want to keep.</li>
+                        </li>
 
-                        <li>Click <strong>Crop PDF</strong>.</li>
+                        <li>
 
-                        <li>Download your cropped PDF instantly.</li>
+                            Upload your PDF document.
+
+                        </li>
+
+                        <li>
+
+                            Select the area you want to keep.
+
+                        </li>
+
+                        <li>
+
+                            Click
+                            <strong>
+                                Crop PDF
+                            </strong>.
+
+                        </li>
+
+                        <li>
+
+                            Wait for the cropping process to finish.
+
+                        </li>
+
+                        <li>
+
+                            Download your cropped PDF.
+
+                        </li>
+
+                    </ol>
+
+
+                    <p>
+
+                        After downloading the cropped document, open
+                        the PDF and review the pages to make sure the
+                        required content has been preserved.
+
+                    </p>
+
+                </section>
+
+
+                <!-- ==========================================
+                     BENEFITS
+                ============================================ -->
+
+                <section
+                    class="blog-content"
+                    id="benefits">
+
+                    <h2>
+                        Benefits of PDF Cropping
+                    </h2>
+
+
+                    <p>
+
+                        Cropping PDF pages can improve the presentation
+                        and usability of documents, particularly when
+                        pages contain excessive margins or unnecessary
+                        empty areas.
+
+                    </p>
+
+
+                    <h3>
+                        Cleaner Page Layouts
+                    </h3>
+
+
+                    <p>
+
+                        Removing unnecessary borders and white space
+                        can create a cleaner page layout and make the
+                        main content easier to view.
+
+                    </p>
+
+
+                    <h3>
+                        Better Focus on Important Content
+                    </h3>
+
+
+                    <p>
+
+                        Cropping can help focus attention on the relevant
+                        portion of a page by removing areas that do not
+                        contain useful information.
+
+                    </p>
+
+
+                    <h3>
+                        Improved Printing Preparation
+                    </h3>
+
+
+                    <p>
+
+                        Cropping may help prepare PDF pages for printing
+                        when unnecessary margins or empty areas make the
+                        original layout inconvenient.
+
+                    </p>
+
+
+                    <h3>
+                        Easier Digital Sharing
+                    </h3>
+
+
+                    <p>
+
+                        A cleaner document can be easier to view and
+                        share digitally, especially when the original
+                        pages contain excessive blank space.
+
+                    </p>
+
+                </section>
+
+
+                <!-- ==========================================
+                     WHO USES PDF CROP TOOLS
+                ============================================ -->
+
+                <section
+                    class="blog-content"
+                    id="who-uses">
+
+                    <h2>
+                        Who Uses PDF Crop Tools?
+                    </h2>
+
+
+                    <p>
+
+                        PDF cropping is useful for many different types
+                        of users who need to improve document layouts
+                        or remove unnecessary areas from PDF pages.
+
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+
+                            <strong>
+                                Students
+                            </strong>
+                            preparing assignments and study materials.
+
+                        </li>
+
+                        <li>
+
+                            <strong>
+                                Teachers
+                            </strong>
+                            preparing educational documents.
+
+                        </li>
+
+                        <li>
+
+                            <strong>
+                                Designers
+                            </strong>
+                            working with PDF layouts and visual files.
+
+                        </li>
+
+                        <li>
+
+                            <strong>
+                                Publishers
+                            </strong>
+                            preparing documents for distribution.
+
+                        </li>
+
+                        <li>
+
+                            <strong>
+                                Office professionals
+                            </strong>
+                            managing business documents.
+
+                        </li>
+
+                        <li>
+
+                            <strong>
+                                Architects and engineers
+                            </strong>
+                            working with technical PDF documents.
+
+                        </li>
+
+                        <li>
+
+                            <strong>
+                                Businesses
+                            </strong>
+                            preparing documents for printing and sharing.
+
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <!-- ==========================================
+                     TIPS
+                ============================================ -->
+
+                <section
+                    class="blog-content"
+                    id="cropping-tips">
+
+                    <h2>
+                        Tips for Better Cropping Results
+                    </h2>
+
+
+                    <p>
+
+                        Taking a few precautions before saving a cropped
+                        PDF can help prevent important content from
+                        being removed accidentally.
+
+                    </p>
+
+
+                    <ol>
+
+                        <li>
+
+                            <strong>
+                                Preview the crop area.
+                            </strong>
+
+                            Check the selected area before applying the
+                            crop to make sure important content remains
+                            visible.
+
+                        </li>
+
+
+                        <li>
+
+                            <strong>
+                                Leave enough margins for printing.
+                            </strong>
+
+                            Avoid removing too much space if the document
+                            will later be printed.
+
+                        </li>
+
+
+                        <li>
+
+                            <strong>
+                                Crop pages consistently.
+                            </strong>
+
+                            When working with multiple pages, try to
+                            maintain a consistent layout where appropriate.
+
+                        </li>
+
+
+                        <li>
+
+                            <strong>
+                                Keep the original PDF.
+                            </strong>
+
+                            Save a backup copy of the original document
+                            before cropping.
+
+                        </li>
+
+
+                        <li>
+
+                            <strong>
+                                Review the final document.
+                            </strong>
+
+                            Open the cropped PDF and check each relevant
+                            page before sharing or printing it.
+
+                        </li>
 
                     </ol>
 
                 </section>
 
-                <!-- Benefits -->
 
-                <section class="blog-content">
+                <!-- ==========================================
+                     RELATED TOOLS
+                ============================================ -->
 
-                    <h2>Benefits of Our PDF Crop Tool</h2>
+                <section class="related-tools">
 
-                    <ul>
+                    <h2>
+                        Related PDF Tools
+                    </h2>
 
-                        <li>100% free to use.</li>
 
-                        <li>Quick and accurate cropping.</li>
+                    <div class="related-tools-grid">
 
-                        <li>Maintains original PDF quality.</li>
 
-                        <li>Secure online processing.</li>
+                        <a
+                            href="/pdf-crop"
+                            class="related-tool-card">
 
-                        <li>No software installation required.</li>
+                            <h3>
+                                PDF Crop
+                            </h3>
 
-                        <li>Works on Windows, macOS, Linux, Android, and iPhone.</li>
+                            <p>
+                                Remove unwanted margins and unnecessary
+                                areas from PDF pages.
+                            </p>
 
-                    </ul>
+                        </a>
+
+
+                        <a
+                            href="/pdf-compressor"
+                            class="related-tool-card">
+
+                            <h3>
+                                PDF Compressor
+                            </h3>
+
+                            <p>
+                                Reduce PDF file sizes for easier storage,
+                                sharing and uploading.
+                            </p>
+
+                        </a>
+
+
+                        <a
+                            href="/pdf-tools"
+                            class="related-tool-card">
+
+                            <h3>
+                                PDF Tools
+                            </h3>
+
+                            <p>
+                                Explore ConvertNova's collection of
+                                browser-based PDF processing tools.
+                            </p>
+
+                        </a>
+
+                    </div>
 
                 </section>
 
-                <!-- Users -->
 
-                <section class="blog-content">
+                <!-- ==========================================
+                     FAQ
+                ============================================ -->
 
-                    <h2>Who Uses PDF Crop Tools?</h2>
+                <section
+                    class="faq-section"
+                    id="faq">
 
-                    <p>
+                    <h2 class="text-center">
+                        Frequently Asked Questions
+                    </h2>
 
-                        Students, teachers, designers, publishers, office professionals, architects, engineers, and
-                        businesses use PDF crop tools to improve document layouts, remove unnecessary borders, and
-                        prepare files for sharing or printing.
 
-                    </p>
+                    <div
+                        class="accordion"
+                        id="faqAccordion">
 
-                </section>
 
-                <!-- Tips -->
-
-                <section class="blog-content">
-
-                    <h2>Tips for Better Cropping Results</h2>
-
-                    <ul>
-
-                        <li>Preview the crop area before saving.</li>
-
-                        <li>Leave enough margins for printing.</li>
-
-                        <li>Crop consistently across multiple pages.</li>
-
-                        <li>Keep a backup of the original PDF.</li>
-
-                    </ul>
-
-                </section>
-
-                <!-- FAQ -->
-
-                <section class="faq-section">
-
-                    <h2 class="text-center">Frequently Asked Questions</h2>
-
-                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
 
                         <div class="accordion-item">
 
                             <h3 class="accordion-header">
 
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq1">
+                                <button
+                                    class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq1"
+                                    aria-expanded="true"
+                                    aria-controls="faq1">
 
                                     Is the PDF Crop tool free?
 
@@ -260,11 +910,18 @@
 
                             </h3>
 
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+
+                            <div
+                                id="faq1"
+                                class="accordion-collapse collapse show"
+                                data-bs-parent="#faqAccordion">
 
                                 <div class="accordion-body">
 
-                                    Yes. ConvertNova allows you to crop PDF pages online completely free.
+                                    Yes. ConvertNova provides an online
+                                    PDF Crop tool that can be used to
+                                    crop PDF pages without installing
+                                    desktop software.
 
                                 </div>
 
@@ -272,12 +929,20 @@
 
                         </div>
 
+
+                        <!-- FAQ 2 -->
+
                         <div class="accordion-item">
 
                             <h3 class="accordion-header">
 
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq2">
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq2"
+                                    aria-expanded="false"
+                                    aria-controls="faq2">
 
                                     Will cropping reduce PDF quality?
 
@@ -285,12 +950,20 @@
 
                             </h3>
 
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                            <div
+                                id="faq2"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
 
                                 <div class="accordion-body">
 
-                                    No. Cropping removes unwanted areas while preserving the quality of the remaining
-                                    content.
+                                    Cropping removes unwanted areas of
+                                    the page. The effect on the remaining
+                                    document depends on how the PDF is
+                                    processed, so it is recommended to
+                                    review the resulting file before
+                                    sharing or printing it.
 
                                 </div>
 
@@ -298,12 +971,20 @@
 
                         </div>
 
+
+                        <!-- FAQ 3 -->
+
                         <div class="accordion-item">
 
                             <h3 class="accordion-header">
 
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq3">
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq3"
+                                    aria-expanded="false"
+                                    aria-controls="faq3">
 
                                     Can I crop multiple PDF pages?
 
@@ -311,38 +992,60 @@
 
                             </h3>
 
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                            <div
+                                id="faq3"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
 
                                 <div class="accordion-body">
 
-                                    Yes. Depending on the tool settings, you can crop one page or apply the same crop
-                                    area to multiple pages.
+                                    Multiple-page cropping depends on
+                                    the current capabilities and settings
+                                    of the ConvertNova PDF Crop tool.
 
                                 </div>
 
                             </div>
 
                         </div>
+
+
+                        <!-- FAQ 4 -->
 
                         <div class="accordion-item">
 
                             <h3 class="accordion-header">
 
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq4">
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq4"
+                                    aria-expanded="false"
+                                    aria-controls="faq4">
 
-                                    Are my files secure?
+                                    Are my PDF files secure?
 
                                 </button>
 
                             </h3>
 
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                            <div
+                                id="faq4"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
 
                                 <div class="accordion-body">
 
-                                    Yes. Your uploaded PDF files are securely processed and automatically deleted after
-                                    cropping.
+                                    PDF files are processed to perform
+                                    the requested operation. ConvertNova's
+                                    file-handling practices are described
+                                    in the
+                                    <a href="/privacy-policy">
+                                        Privacy Policy
+                                    </a>.
 
                                 </div>
 
@@ -350,31 +1053,110 @@
 
                         </div>
 
+
+                        <!-- FAQ 5 -->
+
+                        <div class="accordion-item">
+
+                            <h3 class="accordion-header">
+
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq5"
+                                    aria-expanded="false"
+                                    aria-controls="faq5">
+
+                                    Why should I crop a PDF?
+
+                                </button>
+
+                            </h3>
+
+
+                            <div
+                                id="faq5"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
+
+                                <div class="accordion-body">
+
+                                    Cropping can remove unnecessary white
+                                    space and margins, helping create a
+                                    cleaner and more focused PDF document
+                                    for viewing, printing or sharing.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
                     </div>
 
                 </section>
 
-                <!-- Conclusion -->
 
-                <section class="blog-content">
+                <!-- ==========================================
+                     CONCLUSION
+                ============================================ -->
 
-                    <h2>Conclusion</h2>
+                <section
+                    class="blog-content article-conclusion">
+
+                    <h2>
+                        Conclusion
+                    </h2>
+
 
                     <p>
 
-                        ConvertNova's PDF Crop tool helps you remove unnecessary margins and focus on the important
-                        parts of your documents. Whether you're preparing files for printing, presentations, or online
-                        sharing, our secure and free online tool makes cropping PDFs quick and effortless.
+                        Cropping PDF pages is a practical way to remove
+                        unnecessary margins, white space and unwanted
+                        areas from documents. It can make PDF files
+                        cleaner and easier to read, print and share.
 
                     </p>
 
-                    <a href="/pdf-crop" class="btn btn-primary btn-lg">
 
-                        Crop PDF Now
+                    <p>
 
-                    </a>
+                        Before saving a cropped document, review the
+                        selected area and make sure important information
+                        has not been removed. Keeping an original copy
+                        can also help if you need to restore the original
+                        page layout later.
+
+                    </p>
+
+
+                    <div class="article-cta">
+
+                        <h3>
+                            Ready to Crop Your PDF?
+                        </h3>
+
+
+                        <p>
+                            Remove unwanted areas from your PDF pages
+                            online with ConvertNova.
+                        </p>
+
+
+                        <a
+                            href="/pdf-crop"
+                            class="btn btn-primary btn-lg">
+
+                            Crop PDF Now
+
+                        </a>
+
+                    </div>
 
                 </section>
+
 
             </article>
 
@@ -382,9 +1164,21 @@
 
     </section>
 
+
+    <!-- ==========================================
+         FOOTER
+    ============================================ -->
+
     <div th:replace="~{fragments/footer :: footer}"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ==========================================
+         JAVASCRIPT
+    ============================================ -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 
