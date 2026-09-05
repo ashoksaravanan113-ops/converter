@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- ================= HOME ================= -->
-
     <url>
         <loc>https://convertnovas.com/</loc>
         <changefreq>daily</changefreq>
@@ -11,7 +9,6 @@
     </url>
 
     <!-- ================= MAIN PAGES ================= -->
-
     <url>
         <loc>https://convertnovas.com/tools</loc>
         <changefreq>weekly</changefreq>
@@ -78,7 +75,12 @@
         <priority>0.50</priority>
     </url>
 
-    <!-- ================= blogsection CATEGORIES ================= -->
+    <!-- ================= BLOG CATEGORIES ================= -->
+    <url>
+        <loc>https://convertnovas.com/blogsection/blog</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 
     <url>
         <loc>https://convertnovas.com/blogsection/pdf</loc>
@@ -105,7 +107,6 @@
     </url>
 
     <!-- ================= TOOL PAGES ================= -->
-
     <url>
         <loc>https://convertnovas.com/excel-to-pdf</loc>
         <changefreq>weekly</changefreq>
@@ -226,124 +227,123 @@
         <priority>0.90</priority>
     </url>
 
-    <!-- ================= blogsection GUIDES ================= -->
-
+    <!-- ================= BLOG GUIDES ================= -->
     <url>
-        <loc>https://convertnovas.com/excel-to-pdf-guide</loc>
+        <loc>https://convertnovas.com/blog/excel-to-pdf-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/image-compressor-guide</loc>
+        <loc>https://convertnovas.com/blog/image-compressor-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/image-resizer-guide</loc>
+        <loc>https://convertnovas.com/blog/image-resizer-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/image-to-pdf-guide</loc>
+        <loc>https://convertnovas.com/blog/image-to-pdf-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/jpg-png-converter-guide</loc>
+        <loc>https://convertnovas.com/blog/jpg-png-converter-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-compressor-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-compressor-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-crop-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-crop-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-extract-text-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-extract-text-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-merger-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-merger-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-page-numbers-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-page-numbers-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-page-remover-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-page-remover-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-protector-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-protector-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-rotator-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-rotator-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-splitter-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-splitter-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-to-image-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-to-image-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-to-word-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-to-word-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-unlocker-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-unlocker-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/pdf-watermark-guide</loc>
+        <loc>https://convertnovas.com/blog/pdf-watermark-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/powerpoint-to-pdf-guide</loc>
+        <loc>https://convertnovas.com/blog/powerpoint-to-pdf-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://convertnovas.com/word-to-pdf-guide</loc>
+        <loc>https://convertnovas.com/blog/word-to-pdf-guide</loc>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
