@@ -1,62 +1,47 @@
+/* ============================================================
+   EXCEL TO PDF CONVERTER
+   ============================================================ */
+
 /* ===========================
    ELEMENTS
 =========================== */
 
 const excelFiles =
-    document.getElementById(
-        "excelFiles"
-    );
+    document.getElementById("excelFiles");
 
 const dropZone =
-    document.getElementById(
-        "dropZone"
-    );
+    document.getElementById("dropZone");
 
 const summaryCard =
-    document.getElementById(
-        "summaryCard"
-    );
+    document.getElementById("summaryCard");
 
 const fileListContainer =
-    document.getElementById(
-        "fileListContainer"
-    );
+    document.getElementById("fileListContainer");
 
 const totalFiles =
-    document.getElementById(
-        "totalFiles"
-    );
+    document.getElementById("totalFiles");
 
 const totalSize =
-    document.getElementById(
-        "totalSize"
-    );
+    document.getElementById("totalSize");
 
 const excelToPdfForm =
-    document.getElementById(
-        "excelToPdfForm"
-    );
+    document.getElementById("excelToPdfForm");
 
 const convertBtn =
-    document.getElementById(
-        "convertBtn"
-    );
+    document.getElementById("convertBtn");
 
 const progressContainer =
-    document.getElementById(
-        "progressContainer"
-    );
+    document.getElementById("progressContainer");
 
 const progressBar =
-    document.getElementById(
-        "progressBar"
-    );
+    document.getElementById("progressBar");
 
 let selectedFiles = [];
 
-/* ===========================
+
+/* ============================================================
    FILE SELECT
-=========================== */
+============================================================ */
 
 excelFiles.addEventListener(
     "change",
@@ -64,59 +49,72 @@ excelFiles.addEventListener(
 
         let duplicateFiles = [];
 
-        Array.from(this.files)
-            .forEach(file => {
+        Array.from(this.files).forEach(file => {
 
-                const exists =
-                    selectedFiles.some(
-                        f =>
-                            f.name === file.name
-                            &&
-                            f.size === file.size
-                    );
+            const exists =
+                selectedFiles.some(
+                    f =>
+                        f.name === file.name &&
+                        f.size === file.size
+                );
 
-                if (exists) {
+            if (exists) {
 
-                    duplicateFiles.push(
-                        file.name
-                    );
+                duplicateFiles.push(
+                    file.name
+                );
 
-                    return;
-                }
+                return;
+            }
 
-                selectedFiles.push(file);
+            selectedFiles.push(file);
 
-            });
+        });
 
-        if (
-            duplicateFiles.length > 0
-        ) {
+        if (duplicateFiles.length > 0) {
 
             alert(
-                "These files already exist:\n\n"
-                +
+                "These files already exist:\n\n" +
                 [...new Set(duplicateFiles)]
                     .join("\n")
             );
-
         }
 
         renderFiles();
 
+        /*
+         * Reset input so the same file can be selected again.
+         */
         this.value = "";
 
     }
 );
 
-/* ===========================
-   DRAG DROP
-=========================== */
+
+/* ============================================================
+   DRAG & DROP
+============================================================ */
 
 dropZone.addEventListener(
     "dragover",
     function (e) {
 
         e.preventDefault();
+
+        dropZone.classList.add(
+            "drag-over"
+        );
+
+    }
+);
+
+dropZone.addEventListener(
+    "dragleave",
+    function () {
+
+        dropZone.classList.remove(
+            "drag-over"
+        );
 
     }
 );
@@ -127,45 +125,43 @@ dropZone.addEventListener(
 
         e.preventDefault();
 
+        dropZone.classList.remove(
+            "drag-over"
+        );
+
         let duplicateFiles = [];
 
         Array.from(
             e.dataTransfer.files
-        )
-            .forEach(file => {
+        ).forEach(file => {
 
-                const exists =
-                    selectedFiles.some(
-                        f =>
-                            f.name === file.name
-                            &&
-                            f.size === file.size
-                    );
+            const exists =
+                selectedFiles.some(
+                    f =>
+                        f.name === file.name &&
+                        f.size === file.size
+                );
 
-                if (exists) {
+            if (exists) {
 
-                    duplicateFiles.push(
-                        file.name
-                    );
+                duplicateFiles.push(
+                    file.name
+                );
 
-                    return;
-                }
+                return;
+            }
 
-                selectedFiles.push(file);
+            selectedFiles.push(file);
 
-            });
+        });
 
-        if (
-            duplicateFiles.length > 0
-        ) {
+        if (duplicateFiles.length > 0) {
 
             alert(
-                "These files already exist:\n\n"
-                +
+                "These files already exist:\n\n" +
                 [...new Set(duplicateFiles)]
                     .join("\n")
             );
-
         }
 
         renderFiles();
@@ -173,9 +169,10 @@ dropZone.addEventListener(
     }
 );
 
-/* ===========================
+
+/* ============================================================
    RENDER FILES
-=========================== */
+============================================================ */
 
 function renderFiles() {
 
@@ -188,7 +185,6 @@ function renderFiles() {
             "";
 
         return;
-
     }
 
     summaryCard.style.display =
@@ -200,60 +196,57 @@ function renderFiles() {
         "";
 
     selectedFiles.forEach(
+        (file, index) => {
 
-        (
-            file,
-            index
-        ) => {
-
-            totalBytes +=
-                file.size;
+            totalBytes += file.size;
 
             fileListContainer.innerHTML += `
 
-            <div class="card">
+                <div class="card">
 
-                <div class="card-body">
+                    <div class="card-body">
 
-                    <div class="row align-items-center">
+                        <div class="row align-items-center">
 
-                        <div class="col-md-5 file-row-name">
+                            <div class="col-md-5 file-row-name">
 
-                            <i class="bi bi-file-earmark-excel-fill"></i>
+                                <i class="bi bi-file-earmark-excel-fill"></i>
 
-                            ${file.name}
+                                ${escapeHtml(file.name)}
 
-                        </div>
+                            </div>
 
-                        <div class="col-md-2 text-center">
+                            <div class="col-md-2 text-center">
 
-                            ${(file.size / 1024 / 1024).toFixed(2)} MB
+                                ${(file.size / 1024 / 1024).toFixed(2)} MB
 
-                        </div>
+                            </div>
 
-                        <div class="col-md-2 text-center">
+                            <div class="col-md-2 text-center">
 
-                            <button
-                                type="button"
-                                class="btn btn-primary btn-sm"
-                                onclick="previewExcel(${index})">
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btn-sm"
+                                    onclick="previewExcel(${index})">
 
-                                Preview
+                                    Preview
 
-                            </button>
+                                </button>
 
-                        </div>
+                            </div>
 
-                        <div class="col-md-3 text-center">
+                            <div class="col-md-3 text-center">
 
-                            <button
-                                type="button"
-                                class="btn btn-danger btn-sm"
-                                onclick="deleteFile(${index})">
+                                <button
+                                    type="button"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="deleteFile(${index})">
 
-                                Delete
+                                    Delete
 
-                            </button>
+                                </button>
+
+                            </div>
 
                         </div>
 
@@ -261,12 +254,8 @@ function renderFiles() {
 
                 </div>
 
-            </div>
-
             `;
-
         }
-
     );
 
     totalFiles.innerHTML =
@@ -274,22 +263,26 @@ function renderFiles() {
 
     totalSize.innerHTML =
         (
-            totalBytes
-            /
+            totalBytes /
+            1024 /
             1024
-            /
-            1024
-        ).toFixed(2)
-        +
+        ).toFixed(2) +
         " MB";
-
 }
 
-/* ===========================
+
+/* ============================================================
    DELETE FILE
-=========================== */
+============================================================ */
 
 function deleteFile(index) {
+
+    if (
+        index < 0 ||
+        index >= selectedFiles.length
+    ) {
+        return;
+    }
 
     selectedFiles.splice(
         index,
@@ -301,85 +294,149 @@ function deleteFile(index) {
     if (
         selectedFiles.length === 0
     ) {
-        excelFiles.value = "";
-    }
 
+        excelFiles.value = "";
+
+    }
 }
 
-/* ===========================
+
+/* ============================================================
    EXCEL PREVIEW
-=========================== */
+============================================================ */
 
 function previewExcel(index) {
 
-    const file = selectedFiles[index];
+    const file =
+        selectedFiles[index];
 
-    const reader = new FileReader();
+    if (!file) {
 
-    reader.onload = function (e) {
+        return;
+    }
 
-        const data = new Uint8Array(e.target.result);
+    const reader =
+        new FileReader();
 
-        const workbook = XLSX.read(data, {
-            type: "array"
-        });
+    reader.onload =
+        function (e) {
 
-        const firstSheet =
-            workbook.SheetNames[0];
+            try {
 
-        const worksheet =
-            workbook.Sheets[firstSheet];
+                const data =
+                    new Uint8Array(
+                        e.target.result
+                    );
 
-        const html =
-            XLSX.utils.sheet_to_html(worksheet);
+                const workbook =
+                    XLSX.read(
+                        data,
+                        {
+                            type: "array"
+                        }
+                    );
 
-        document.querySelector(
-            "#pdfPreviewModal .modal-title"
-        ).innerHTML =
-            file.name;
+                if (
+                    !workbook.SheetNames ||
+                    workbook.SheetNames.length === 0
+                ) {
 
-        document.getElementById(
-            "excelPreviewContainer"
-        ).style.display = "block";
+                    throw new Error(
+                        "No worksheet was found in this Excel file."
+                    );
+                }
 
-        document.getElementById(
-            "pdfPreviewFrame"
-        ).style.display = "none";
+                const firstSheet =
+                    workbook.SheetNames[0];
 
-        document.getElementById(
-            "excelPreviewContainer"
-        ).innerHTML =
-            html;
+                const worksheet =
+                    workbook.Sheets[firstSheet];
 
-        new bootstrap.Modal(
-            document.getElementById(
-                "pdfPreviewModal"
-            )
-        ).show();
+                const html =
+                    XLSX.utils.sheet_to_html(
+                        worksheet
+                    );
 
-    };
+                document.querySelector(
+                    "#pdfPreviewModal .modal-title"
+                ).innerHTML =
+                    escapeHtml(file.name);
+
+                document.getElementById(
+                    "excelPreviewContainer"
+                ).style.display =
+                    "block";
+
+                document.getElementById(
+                    "pdfPreviewFrame"
+                ).style.display =
+                    "none";
+
+                document.getElementById(
+                    "excelPreviewContainer"
+                ).innerHTML =
+                    html;
+
+                const modal =
+                    new bootstrap.Modal(
+                        document.getElementById(
+                            "pdfPreviewModal"
+                        )
+                    );
+
+                modal.show();
+
+            } catch (error) {
+
+                console.error(
+                    "Excel preview error:",
+                    error
+                );
+
+                alert(
+                    "Unable to preview this Excel file."
+                );
+            }
+        };
+
+    reader.onerror =
+        function () {
+
+            alert(
+                "Unable to read the Excel file."
+            );
+
+        };
 
     reader.readAsArrayBuffer(file);
-
 }
-/* ===========================
-   SUBMIT
-=========================== */
+
+
+/* ============================================================
+   SUBMIT / CONVERT
+============================================================ */
 
 excelToPdfForm.addEventListener(
     "submit",
-    function (e) {
+    async function (e) {
 
         e.preventDefault();
 
-        if (selectedFiles.length === 0) {
+        /*
+         * --------------------------------------------------------
+         * BASIC VALIDATION
+         * --------------------------------------------------------
+         */
+
+        if (
+            selectedFiles.length === 0
+        ) {
 
             alert(
-                "Please select Excel files"
+                "Please select Excel files."
             );
 
             return;
-
         }
 
         if (
@@ -387,8 +444,55 @@ excelToPdfForm.addEventListener(
                 selectedFiles
             )
         ) {
+
             return;
         }
+
+        /*
+         * --------------------------------------------------------
+         * GET OPTIONS SAFELY
+         * --------------------------------------------------------
+         */
+
+        const orientation =
+            document.querySelector(
+                'input[name="orientation"]:checked'
+            );
+
+        const paperSize =
+            document.querySelector(
+                'input[name="paperSize"]:checked'
+            );
+
+        const scaling =
+            document.querySelector(
+                'input[name="scaling"]:checked'
+            );
+
+        const quality =
+            document.querySelector(
+                'input[name="quality"]:checked'
+            );
+
+        if (
+            !orientation ||
+            !paperSize ||
+            !scaling ||
+            !quality
+        ) {
+
+            alert(
+                "Please select all PDF conversion options."
+            );
+
+            return;
+        }
+
+        /*
+         * --------------------------------------------------------
+         * FORM DATA
+         * --------------------------------------------------------
+         */
 
         const formData =
             new FormData();
@@ -406,300 +510,592 @@ excelToPdfForm.addEventListener(
 
         formData.append(
             "orientation",
-            document.querySelector(
-                'input[name="orientation"]:checked'
-            ).value
+            orientation.value
         );
 
         formData.append(
             "paperSize",
-            document.querySelector(
-                'input[name="paperSize"]:checked'
-            ).value
+            paperSize.value
         );
 
         formData.append(
             "scaling",
-            document.querySelector(
-                'input[name="scaling"]:checked'
-            ).value
+            scaling.value
         );
 
         formData.append(
             "quality",
-            document.querySelector(
-                'input[name="quality"]:checked'
-            ).value
+            quality.value
         );
 
-        /* Freeze UI */
 
-        convertBtn.disabled =
-            true;
+        /*
+         * --------------------------------------------------------
+         * DISABLE UI
+         * --------------------------------------------------------
+         */
 
-        excelFiles.disabled =
-            true;
+        setConversionState(
+            true
+        );
 
-        document
-            .querySelectorAll(
-                ".btn-danger"
-            )
-            .forEach(
-                btn =>
-                    btn.disabled =
-                    true
+
+        /*
+         * --------------------------------------------------------
+         * SHOW PROGRESS
+         * --------------------------------------------------------
+         */
+
+        showProgress(
+            5,
+            "Uploading files..."
+        );
+
+
+        /*
+         * --------------------------------------------------------
+         * START REQUEST
+         *
+         * No artificial setTimeout.
+         * --------------------------------------------------------
+         */
+
+        try {
+
+            showProgress(
+                10,
+                "Sending files to server..."
             );
 
-        document
-            .querySelectorAll(
-                ".btn-primary"
-            )
-            .forEach(
-                btn =>
-                    btn.disabled =
-                    true
-            );
 
-        /* Hide upload section */
-
-        document.getElementById(
-            "uploadSection"
-        ).style.display =
-            "none";
-
-        progressContainer.style.display =
-            "block";
-        progressBar.style.width =
-            "25%";
-
-        progressBar.innerHTML =
-            "25%";
-
-        setTimeout(() => {
-            fetch(
-                "/excel-to-pdf-ajax",
-                {
-                    method: "POST",
-                    body: formData
-                }
-            )
-                .then(
-                    response => {
-
-                        if (
-                            !response.ok
-                        ) {
-                            throw new Error(
-                                "Server error"
-                            );
-                        }
-
-                        return response.json();
-
-                    }
-                )
-                .then(
-                    result => {
-
-                        progressBar.style.width =
-                            "75%";
-
-                        progressBar.innerHTML =
-                            "75%";
-
-                        if (
-                            result.success
-                        ) {
-                            progressBar.style.width =
-                                "100%";
-
-                            progressBar.innerHTML =
-                                "100%";
-
-                            setTimeout(() => {
-
-                                progressContainer.style.display =
-                                    "none";
-
-                            }, 500);
-                            buildResult(
-                                result
-                            );
-
-                        }
-                        else {
-
-                            convertBtn.disabled =
-                                false;
-
-                            excelFiles.disabled =
-                                false;
-
-                            document
-                                .querySelectorAll(
-                                    ".btn-danger"
-                                )
-                                .forEach(
-                                    btn =>
-                                        btn.disabled =
-                                        false
-                                );
-
-                            document
-                                .querySelectorAll(
-                                    ".btn-primary"
-                                )
-                                .forEach(
-                                    btn =>
-                                        btn.disabled =
-                                        false
-                                );
-
-                            document.getElementById(
-                                "uploadSection"
-                            ).style.display =
-                                "block";
-
-                            progressContainer.style.display =
-                                "none";
-
-                            progressBar.style.width =
-                                "0%";
-
-                            progressBar.innerHTML =
-                                "0%";
-
-                            alert(
-                                result.message
-                            );
-
-                        }
-
-                    }
-                )
-                .catch(
-                    error => {
-
-                        convertBtn.disabled =
-                            false;
-
-                        excelFiles.disabled =
-                            false;
-
-                        document
-                            .querySelectorAll(
-                                ".btn-danger"
-                            )
-                            .forEach(
-                                btn =>
-                                    btn.disabled =
-                                    false
-                            );
-
-                        document
-                            .querySelectorAll(
-                                ".btn-primary"
-                            )
-                            .forEach(
-                                btn =>
-                                    btn.disabled =
-                                    false
-                            );
-
-                        document.getElementById(
-                            "uploadSection"
-                        ).style.display =
-                            "block";
-                        progressContainer.style.display =
-                            "none";
-
-                        progressBar.style.width =
-                            "0%";
-
-                        progressBar.innerHTML =
-                            "0%";
-                        alert(
-                            error.message ||
-                            "Conversion failed."
-                        );
-
+            const response =
+                await fetch(
+                    "/excel-to-pdf-ajax",
+                    {
+                        method: "POST",
+                        body: formData
                     }
                 );
-        }, 100);
+
+
+            /*
+             * ----------------------------------------------------
+             * HTTP ERROR
+             * ----------------------------------------------------
+             */
+
+            if (!response.ok) {
+
+                let message =
+                    "Server error (" +
+                    response.status +
+                    ").";
+
+                try {
+
+                    const errorText =
+                        await response.text();
+
+                    if (
+                        errorText &&
+                        errorText.trim()
+                    ) {
+
+                        message =
+                            errorText;
+                    }
+
+                } catch (ignore) {
+                    // Keep default message.
+                }
+
+                throw new Error(
+                    message
+                );
+            }
+
+
+            /*
+             * ----------------------------------------------------
+             * READ JSON
+             * ----------------------------------------------------
+             */
+
+            showProgress(
+                85,
+                "Preparing converted PDF..."
+            );
+
+            const result =
+                await response.json();
+
+
+            /*
+             * ----------------------------------------------------
+             * BACKEND FAILURE
+             * ----------------------------------------------------
+             */
+
+            if (
+                !result ||
+                result.success !== true
+            ) {
+
+                throw new Error(
+                    result &&
+                    result.message
+                        ? result.message
+                        : "Excel to PDF conversion failed."
+                );
+            }
+
+
+            /*
+             * ----------------------------------------------------
+             * SUCCESS
+             * ----------------------------------------------------
+             */
+
+            showProgress(
+                100,
+                "Conversion complete!"
+            );
+
+
+            /*
+             * Give the browser a moment to
+             * display 100%.
+             */
+
+            await sleep(
+                400
+            );
+
+
+            hideProgress();
+
+            buildResult(
+                result
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Excel to PDF conversion error:",
+                error
+            );
+
+            hideProgress();
+
+            setConversionState(
+                false
+            );
+
+            document.getElementById(
+                "uploadSection"
+            ).style.display =
+                "block";
+
+            /*
+             * Show the actual backend error.
+             */
+
+            alert(
+                error &&
+                error.message
+                    ? error.message
+                    : "Conversion failed. Please try again."
+            );
+        }
 
     }
 );
 
 
+/* ============================================================
+   PROGRESS
+============================================================ */
 
-/* ===========================
-   RESULT
-=========================== */
+/*
+ * The backend conversion does not currently provide
+ * real-time percentage updates.
+ *
+ * Therefore we do NOT falsely show 25%, 75%, etc.
+ *
+ * Instead:
+ *
+ * 5%   Uploading
+ * 10%  Sending
+ * 10-85% Converting / waiting
+ * 85% Preparing
+ * 100% Complete
+ */
 
-function buildResult(result) {
+let progressTimer = null;
 
-    document.getElementById(
-        "uploadSection"
-    ).style.display =
-        "none";
+function showProgress(
+    percentage,
+    message
+) {
 
-    document.getElementById(
-        "resultCard"
-    ).style.display =
+    if (!progressContainer) {
+
+        return;
+    }
+
+    progressContainer.style.display =
         "block";
+
+    if (progressBar) {
+
+        progressBar.style.width =
+            percentage + "%";
+
+        progressBar.innerHTML =
+            percentage + "%";
+
+        progressBar.setAttribute(
+            "aria-valuenow",
+            percentage
+        );
+
+        progressBar.setAttribute(
+            "aria-valuetext",
+            message || percentage + "%"
+        );
+    }
+
+    /*
+     * Update text if your page has a
+     * progress message element.
+     */
+
+    const progressMessage =
+        document.getElementById(
+            "progressMessage"
+        );
+
+    if (progressMessage) {
+
+        progressMessage.textContent =
+            message || "Processing...";
+    }
+
+    /*
+     * When waiting for the backend,
+     * slowly move the visual bar toward 80%.
+     *
+     * It never reaches 100% until the
+     * backend actually returns success.
+     */
+
+    if (
+        percentage >= 10 &&
+        percentage < 85
+    ) {
+
+        startWaitingProgress(
+            percentage
+        );
+
+    } else {
+
+        stopWaitingProgress();
+
+    }
+}
+
+
+function startWaitingProgress(
+    startingPercentage
+) {
+
+    stopWaitingProgress();
+
+    let current =
+        Math.max(
+            10,
+            startingPercentage
+        );
+
+    progressTimer =
+        setInterval(
+            function () {
+
+                if (
+                    current >= 80
+                ) {
+
+                    return;
+                }
+
+                /*
+                 * Slow movement.
+                 *
+                 * This prevents the bar from
+                 * appearing frozen while Java
+                 * is processing the Excel file.
+                 */
+
+                current += 1;
+
+                if (
+                    progressBar
+                ) {
+
+                    progressBar.style.width =
+                        current + "%";
+
+                    progressBar.innerHTML =
+                        current + "%";
+
+                    progressBar.setAttribute(
+                        "aria-valuenow",
+                        current
+                    );
+                }
+
+            },
+            1500
+        );
+}
+
+
+function stopWaitingProgress() {
+
+    if (
+        progressTimer !== null
+    ) {
+
+        clearInterval(
+            progressTimer
+        );
+
+        progressTimer =
+            null;
+    }
+}
+
+
+function hideProgress() {
+
+    stopWaitingProgress();
+
+    if (
+        progressContainer
+    ) {
+
+        progressContainer.style.display =
+            "none";
+    }
+
+    if (
+        progressBar
+    ) {
+
+        progressBar.style.width =
+            "0%";
+
+        progressBar.innerHTML =
+            "0%";
+
+        progressBar.setAttribute(
+            "aria-valuenow",
+            "0"
+        );
+    }
+
+    const progressMessage =
+        document.getElementById(
+            "progressMessage"
+        );
+
+    if (progressMessage) {
+
+        progressMessage.textContent =
+            "";
+    }
+}
+
+
+/* ============================================================
+   UI LOCK / UNLOCK
+============================================================ */
+
+function setConversionState(
+    converting
+) {
+
+    if (
+        convertBtn
+    ) {
+
+        convertBtn.disabled =
+            converting;
+    }
+
+    if (
+        excelFiles
+    ) {
+
+        excelFiles.disabled =
+            converting;
+    }
+
+    document
+        .querySelectorAll(
+            ".btn-danger"
+        )
+        .forEach(
+            btn => {
+
+                btn.disabled =
+                    converting;
+
+            }
+        );
+
+    document
+        .querySelectorAll(
+            ".btn-primary"
+        )
+        .forEach(
+            btn => {
+
+                btn.disabled =
+                    converting;
+
+            }
+        );
+
+    const uploadSection =
+        document.getElementById(
+            "uploadSection"
+        );
+
+    if (
+        uploadSection
+    ) {
+
+        uploadSection.style.display =
+            converting
+                ? "none"
+                : "block";
+    }
+}
+
+
+/* ============================================================
+   RESULT
+============================================================ */
+
+function buildResult(
+    result
+) {
+
+    const uploadSection =
+        document.getElementById(
+            "uploadSection"
+        );
+
+    const resultCard =
+        document.getElementById(
+            "resultCard"
+        );
 
     const container =
         document.getElementById(
             "resultFilesContainer"
         );
 
+    if (
+        uploadSection
+    ) {
+
+        uploadSection.style.display =
+            "none";
+    }
+
+    if (
+        resultCard
+    ) {
+
+        resultCard.style.display =
+            "block";
+    }
+
+    if (
+        !container
+    ) {
+
+        return;
+    }
+
     container.innerHTML =
         "";
+
+    if (
+        !result.files ||
+        !Array.isArray(result.files)
+    ) {
+
+        return;
+    }
+
 
     result.files.forEach(
         file => {
 
+            const encodedFileName =
+                encodeURIComponent(
+                    file.name
+                );
+
             container.innerHTML += `
 
-            <div class="card">
+                <div class="card">
 
-                <div class="card-body">
+                    <div class="card-body">
 
-                    <div class="row text-center align-items-center">
+                        <div class="row text-center align-items-center">
 
-                        <div class="col-md-4">
+                            <div class="col-md-4">
 
-                            ${file.name}
+                                ${escapeHtml(file.name)}
 
-                        </div>
+                            </div>
 
-                        <div class="col-md-2">
+                            <div class="col-md-2">
 
-                            ${file.size}
+                                ${escapeHtml(file.size)}
 
-                        </div>
+                            </div>
 
-                        <div class="col-md-3">
+                            <div class="col-md-3">
 
-                            <button
-                                class="btn btn-primary btn-sm"
-                                onclick="previewResultPdf('${file.name}')">
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btn-sm"
+                                    onclick="previewResultPdf('${escapeJsString(file.name)}')">
 
-                                Preview
+                                    Preview
 
-                            </button>
+                                </button>
 
-                        </div>
+                            </div>
 
-                        <div class="col-md-3">
+                            <div class="col-md-3">
 
-                            <a
-                               href="/download-converted-pdf?fileName=${file.name}"
-                               class="btn btn-success btn-sm">
+                                <a
+                                   href="/download-converted-pdf?fileName=${encodedFileName}"
+                                   class="btn btn-success btn-sm">
 
-                               Download
+                                   Download
 
-                            </a>
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -707,113 +1103,199 @@ function buildResult(result) {
 
                 </div>
 
-            </div>
-
             `;
-
         }
     );
 
-    document.getElementById(
-        "resultFiles"
-    ).innerHTML =
-        result.files.length;
 
-    document.getElementById(
-        "resultSuccess"
-    ).innerHTML =
-        result.files.length;
-
-}
-
-/* ===========================
-   RESULT PREVIEW
-=========================== */
-function previewResultPdf(fileName){
-
-    document.getElementById(
-        "excelPreviewContainer"
-    ).style.display = "none";
-
-    document.getElementById(
-        "pdfPreviewFrame"
-    ).style.display = "block";
-
-    document.getElementById(
-        "pdfPreviewFrame"
-    ).src =
-        "/preview-converted-pdf?fileName="
-        +
-        encodeURIComponent(fileName);
-
-    const modal =
-        new bootstrap.Modal(
-            document.getElementById(
-                "pdfPreviewModal"
-            )
+    const resultFiles =
+        document.getElementById(
+            "resultFiles"
         );
 
-    modal.show();
+    if (
+        resultFiles
+    ) {
 
+        resultFiles.innerHTML =
+            result.files.length;
+    }
+
+
+    const resultSuccess =
+        document.getElementById(
+            "resultSuccess"
+        );
+
+    if (
+        resultSuccess
+    ) {
+
+        resultSuccess.innerHTML =
+            result.files.length;
+    }
 }
 
-/* ===========================
-   CONVERT MORE
-=========================== */
 
-document.getElementById(
-    "convertMoreBtn"
-).addEventListener(
-    "click",
-    function () {
+/* ============================================================
+   RESULT PDF PREVIEW
+============================================================ */
 
-        fetch(
-            "/delete-temp-files",
-            {
-                method: "POST"
-            }
-        )
-            .finally(
-                () => {
+function previewResultPdf(
+    fileName
+) {
 
-                    location.reload();
+    const excelPreviewContainer =
+        document.getElementById(
+            "excelPreviewContainer"
+        );
 
-                }
+    const pdfPreviewFrame =
+        document.getElementById(
+            "pdfPreviewFrame"
+        );
+
+    const modalElement =
+        document.getElementById(
+            "pdfPreviewModal"
+        );
+
+    if (
+        excelPreviewContainer
+    ) {
+
+        excelPreviewContainer.style.display =
+            "none";
+    }
+
+    if (
+        pdfPreviewFrame
+    ) {
+
+        pdfPreviewFrame.style.display =
+            "block";
+
+        pdfPreviewFrame.src =
+            "/preview-converted-pdf?fileName=" +
+            encodeURIComponent(
+                fileName
+            );
+    }
+
+    if (
+        modalElement
+    ) {
+
+        const modal =
+            new bootstrap.Modal(
+                modalElement
             );
 
+        modal.show();
     }
-);
+}
 
-/* ===========================
+
+/* ============================================================
+   CONVERT MORE
+============================================================ */
+
+const convertMoreBtn =
+    document.getElementById(
+        "convertMoreBtn"
+    );
+
+if (
+    convertMoreBtn
+) {
+
+    convertMoreBtn.addEventListener(
+        "click",
+        function () {
+
+            convertMoreBtn.disabled =
+                true;
+
+            fetch(
+                "/delete-temp-files",
+                {
+                    method: "POST"
+                }
+            )
+                .catch(
+                    error => {
+
+                        console.error(
+                            "Cleanup error:",
+                            error
+                        );
+
+                    }
+                )
+                .finally(
+                    () => {
+
+                        location.reload();
+
+                    }
+                );
+
+        }
+    );
+}
+
+
+/* ============================================================
    DARK MODE
-=========================== */
+============================================================ */
 
-document.getElementById(
-    "darkModeBtn"
-).addEventListener(
-    "click",
-    function () {
+const darkModeBtn =
+    document.getElementById(
+        "darkModeBtn"
+    );
 
-        document.body.classList.toggle(
-            "dark-mode"
-        );
+if (
+    darkModeBtn
+) {
 
-    }
-);
+    darkModeBtn.addEventListener(
+        "click",
+        function () {
+
+            document.body.classList.toggle(
+                "dark-mode"
+            );
+
+        }
+    );
+}
 
 
+/* ============================================================
+   FILE VALIDATION
+============================================================ */
 
-function validateFiles(files) {
+function validateFiles(
+    files
+) {
 
-    for (const file of files) {
+    for (
+        const file of files
+    ) {
 
         const fileName =
             file.name.toLowerCase();
+
+
+        /*
+         * Maximum 50 MB
+         */
 
         if (
             file.size >
             50 * 1024 * 1024
         ) {
+
             alert(
                 file.name +
                 " exceeds 50 MB."
@@ -822,22 +1304,38 @@ function validateFiles(files) {
             return false;
         }
 
+
+        /*
+         * MIME type
+         */
+
         const validType =
             file.type ===
-            "application/vnd.ms-excel"
+                "application/vnd.ms-excel"
             ||
             file.type ===
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+
+        /*
+         * Extension
+         */
 
         const validExtension =
-            fileName.endsWith(".xls")
+            fileName.endsWith(
+                ".xls"
+            )
             ||
-            fileName.endsWith(".xlsx");
+            fileName.endsWith(
+                ".xlsx"
+            );
+
 
         if (
             !validType &&
             !validExtension
         ) {
+
             alert(
                 file.name +
                 " is not a valid Excel file."
@@ -848,4 +1346,94 @@ function validateFiles(files) {
     }
 
     return true;
+}
+
+
+/* ============================================================
+   HELPERS
+============================================================ */
+
+function sleep(
+    milliseconds
+) {
+
+    return new Promise(
+        resolve =>
+            setTimeout(
+                resolve,
+                milliseconds
+            )
+    );
+}
+
+
+function escapeHtml(
+    value
+) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+    }
+
+    return String(value)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+}
+
+
+function escapeJsString(
+    value
+) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+    }
+
+    return String(value)
+        .replace(
+            /\\/g,
+            "\\\\"
+        )
+        .replace(
+            /'/g,
+            "\\'"
+        )
+        .replace(
+            /"/g,
+            '\\"'
+        )
+        .replace(
+            /\r/g,
+            "\\r"
+        )
+        .replace(
+            /\n/g,
+            "\\n"
+        );
 }
