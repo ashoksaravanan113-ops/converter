@@ -32,13 +32,18 @@ public class ExcelToPdfService {
     // service. Revisit this once you settle the Windows-vs-Linux
     // deployment question (see OfficeConfig).
 
-    private static final Path BASE_DIR = Paths.get("D:\\converter");
+    private static final Path BASE_DIR = Paths.get(System.getProperty("java.io.tmpdir"), "converter");
+
     private static final Path UPLOAD_DIR = BASE_DIR.resolve("uploaded-excel");
+
     private static final Path OUTPUT_DIR = BASE_DIR.resolve("converted-pdfs");
+
     private static final Path LO_PROFILE_DIR = BASE_DIR.resolve("lo-profiles");
 
     private static final String LIBREOFFICE =
-            "C:\\Program Files\\LibreOffice\\program\\soffice.com";
+        System.getProperty("os.name").toLowerCase().contains("win")
+                ? "C:\\Program Files\\LibreOffice\\program\\soffice.com"
+                : "soffice";
 
     private static final long MAX_FILE_SIZE = 50L * 1024 * 1024;
 
@@ -53,10 +58,7 @@ public class ExcelToPdfService {
             String scaling,
             String quality) throws Exception {
 
-        Path libreOfficePath = Paths.get(LIBREOFFICE);
-        if (!Files.exists(libreOfficePath)) {
-            throw new RuntimeException("LibreOffice was not found at:\n" + LIBREOFFICE);
-        }
+        
 
         Files.createDirectories(UPLOAD_DIR);
         Files.createDirectories(OUTPUT_DIR);
@@ -69,14 +71,12 @@ public class ExcelToPdfService {
 
             convertedFiles.add(Map.of(
                     "name", pdf.getFileName().toString(),
-                    "size", formatSize(Files.size(pdf))
-            ));
+                    "size", formatSize(Files.size(pdf))));
         }
 
         return Map.of(
                 "success", true,
-                "files", convertedFiles
-        );
+                "files", convertedFiles);
     }
 
     // ============================================================
@@ -111,8 +111,8 @@ public class ExcelToPdfService {
         }
 
         // 2. Apply page setup (orientation / paper size / scaling) via POI,
-        //    then re-save. This is what LibreOffice's PDF export will honor,
-        //    since the CLI convert-to filter itself has no such options.
+        // then re-save. This is what LibreOffice's PDF export will honor,
+        // since the CLI convert-to filter itself has no such options.
         Path preparedInputFile = conversionDir.resolve("input" + extension);
         applyPageSetup(rawInputFile, preparedInputFile, orientation, paperSize, scaling);
 
@@ -166,7 +166,7 @@ public class ExcelToPdfService {
             String scaling) throws Exception {
 
         try (InputStream in = Files.newInputStream(inputFile);
-             Workbook workbook = WorkbookFactory.create(in)) {
+                Workbook workbook = WorkbookFactory.create(in)) {
 
             for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
                 Sheet sheet = workbook.getSheetAt(i);
@@ -202,7 +202,8 @@ public class ExcelToPdfService {
     }
 
     private short resolvePaperSize(String paperSize) {
-        if (paperSize == null) return PrintSetup.A4_PAPERSIZE;
+        if (paperSize == null)
+            return PrintSetup.A4_PAPERSIZE;
         return switch (paperSize.toLowerCase()) {
             case "letter" -> PrintSetup.LETTER_PAPERSIZE;
             case "legal" -> PrintSetup.LEGAL_PAPERSIZE;
@@ -244,8 +245,7 @@ public class ExcelToPdfService {
                 "-env:UserInstallation=" + loProfile.toUri().toString(),
                 "--convert-to", convertTarget,
                 "--outdir", outDir.toString(),
-                inputFile.toString()
-        );
+                inputFile.toString());
 
         processBuilder.redirectErrorStream(true);
         Process process = processBuilder.start();
