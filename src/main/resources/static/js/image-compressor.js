@@ -1,330 +1,635 @@
-/* ===========================
-   ELEMENTS
-=========================== */
+/* =========================================================
+   IMAGE COMPRESSOR - CONVERTNOVA
+   ========================================================= */
 
 const imageFiles =
-    document.getElementById(
-        "imageFiles"
-    );
+    document.getElementById("imageFiles");
 
 const compressionLevel =
-    document.getElementById(
-        "compressionLevel"
-    );
+    document.getElementById("compressionLevel");
 
 const dropZone =
-    document.getElementById(
-        "dropZone"
-    );
+    document.getElementById("dropZone");
 
 const compressForm =
-    document.getElementById(
-        "compressForm"
-    );
+    document.getElementById("compressForm");
+
+const uploadSection =
+    document.getElementById("uploadSection");
+
+const resultCard =
+    document.getElementById("resultCard");
 
 const summaryCard =
-    document.getElementById(
-        "summaryCard"
-    );
+    document.getElementById("summaryCard");
 
 const fileListContainer =
-    document.getElementById(
-        "fileListContainer"
-    );
+    document.getElementById("fileListContainer");
 
 const totalFiles =
-    document.getElementById(
-        "totalFiles"
-    );
+    document.getElementById("totalFiles");
 
 const totalSize =
-    document.getElementById(
-        "totalSize"
-    );
+    document.getElementById("totalSize");
 
+
+/*
+ * IMPORTANT:
+ * HTML uses progressContainer.
+ * Do NOT use progressSection as the HTML ID.
+ */
 const progressSection =
-    document.getElementById(
-        "progressSection"
-    );
+    document.getElementById("progressContainer");
 
 const progressBar =
-    document.getElementById(
-        "progressBar"
-    );
+    document.getElementById("progressBar");
 
 const quality =
-    document.getElementById(
-        "quality"
-    );
+    document.getElementById("quality");
 
 const qualityValue =
-    document.getElementById(
-        "qualityValue"
-    );
+    document.getElementById("qualityValue");
 
-const settingsSection =
-    document.getElementById(
-        "settingsSection"
-    );
 
 let selectedFiles = [];
 
-/* ===========================
+
+/* =========================================================
    QUALITY
-=========================== */
+   ========================================================= */
 
-quality.addEventListener(
-    "input",
-    function () {
+if (quality && qualityValue) {
 
-        qualityValue.innerHTML =
-            this.value + "%";
+    quality.addEventListener(
+        "input",
+        function () {
+
+            qualityValue.textContent =
+                this.value + "%";
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function escapeHtml(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        value == null
+            ? ""
+            : String(value);
+
+    return div.innerHTML;
+}
+
+
+function formatMB(bytes) {
+
+    return (
+        bytes /
+        1024 /
+        1024
+    ).toFixed(2) + " MB";
+
+}
+
+
+/* =========================================================
+   BUTTON / UI STATE
+   ========================================================= */
+
+function setButtonProcessing(
+    processing
+) {
+
+    const submitButton =
+        compressForm
+            ? compressForm.querySelector(
+                'button[type="submit"]'
+            )
+            : null;
+
+
+    if (submitButton) {
+
+        submitButton.disabled =
+            processing;
+
+        submitButton.textContent =
+            processing
+                ? "Compressing..."
+                : "Compress Images";
 
     }
-);
 
-/* ===========================
-   FILE SELECT
-=========================== */
-imageFiles.addEventListener(
-    "change",
-    function () {
 
-        const newFiles =
-            Array.from(
-                this.files
-            );
+    if (imageFiles) {
 
-        const duplicateNames = [];
-        const invalidFiles = [];
-        const filesToAdd = [];
+        imageFiles.disabled =
+            processing;
 
-        newFiles.forEach(
-            file => {
+    }
 
-                if (
-                    !file.type.startsWith(
-                        "image/"
-                    )
-                ) {
 
-                    invalidFiles.push(
-                        file.name
-                    );
+    if (quality) {
 
-                    return;
-                }
+        quality.disabled =
+            processing;
 
-                const alreadyExists =
-                    selectedFiles.some(
-                        existingFile =>
-                            existingFile.name === file.name
-                    );
+    }
 
-                if (
-                    alreadyExists
-                ) {
 
-                    duplicateNames.push(
-                        file.name
-                    );
+    if (compressionLevel) {
 
-                }
-                else {
+        compressionLevel.disabled =
+            processing;
 
-                    filesToAdd.push(
-                        file
-                    );
+    }
 
-                }
+
+    document
+        .querySelectorAll(
+            ".btn-danger"
+        )
+        .forEach(
+            btn => {
+
+                btn.disabled =
+                    processing;
 
             }
         );
 
-        selectedFiles.push(
-            ...filesToAdd
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+function showProgress() {
+
+    if (progressSection) {
+
+        progressSection.style.display =
+            "block";
+
+        progressSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }
+
+    updateProgress(
+        0,
+        "0%"
+    );
+
+}
+
+
+function updateProgress(
+    percent,
+    text
+) {
+
+    if (!progressBar) {
+
+        return;
+
+    }
+
+
+    percent =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                percent
+            )
         );
 
-        if (
-            invalidFiles.length > 0
-        ) {
 
-            alert(
-                "Invalid files:\n\n"
-                +
-                invalidFiles.join(
-                    "\n"
+    progressBar.style.width =
+        percent + "%";
+
+
+    progressBar.textContent =
+        text ||
+        percent + "%";
+
+
+    progressBar.setAttribute(
+        "aria-valuenow",
+        String(percent)
+    );
+
+}
+
+
+function hideProgress() {
+
+    if (progressSection) {
+
+        progressSection.style.display =
+            "none";
+
+    }
+
+
+    updateProgress(
+        0,
+        "0%"
+    );
+
+}
+
+
+function resetUIAfterError() {
+
+    setButtonProcessing(
+        false
+    );
+
+
+    hideProgress();
+
+
+    if (uploadSection) {
+
+        uploadSection.style.display =
+            "block";
+
+    }
+
+
+    if (summaryCard) {
+
+        summaryCard.style.display =
+            selectedFiles.length > 0
+                ? "flex"
+                : "none";
+
+    }
+
+}
+
+
+function showError(message) {
+
+    resetUIAfterError();
+
+
+    alert(
+        message ||
+        "Compression failed. Please try again."
+    );
+
+}
+
+
+/* =========================================================
+   VALIDATION
+   ========================================================= */
+
+function validateFiles(
+    files
+) {
+
+    if (
+        !files ||
+        files.length === 0
+    ) {
+
+        alert(
+            "Please select at least one image."
+        );
+
+        return false;
+
+    }
+
+
+    const maxFileSize =
+        50 * 1024 * 1024;
+
+
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+
+    const invalidFiles = [];
+
+    const oversizedFiles = [];
+
+
+    files.forEach(
+        file => {
+
+            if (
+                !allowedTypes.includes(
+                    file.type
                 )
-            );
+            ) {
+
+                invalidFiles.push(
+                    file.name
+                );
+
+                return;
+
+            }
+
+
+            if (
+                file.size >
+                maxFileSize
+            ) {
+
+                oversizedFiles.push(
+                    file.name
+                );
+
+            }
 
         }
+    );
 
-        if (
-            duplicateNames.length > 0
-        ) {
 
-            alert(
-                "Duplicate files:\n\n"
-                +
-                duplicateNames.join(
-                    "\n"
-                )
-            );
+    if (
+        invalidFiles.length > 0
+    ) {
+
+        alert(
+            "Unsupported or invalid image files:\n\n" +
+            invalidFiles.join("\n") +
+            "\n\nSupported formats: JPG, PNG and WEBP."
+        );
+
+        return false;
+
+    }
+
+
+    if (
+        oversizedFiles.length > 0
+    ) {
+
+        alert(
+            "The following files exceed the 50 MB limit:\n\n" +
+            oversizedFiles.join("\n")
+        );
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+/* =========================================================
+   ADD FILES
+   ========================================================= */
+
+function addFiles(
+    fileList
+) {
+
+    const duplicateNames = [];
+
+    const invalidFiles = [];
+
+    const filesToAdd = [];
+
+
+    Array.from(
+        fileList || []
+    ).forEach(
+        file => {
+
+            if (
+                !file.type.startsWith(
+                    "image/"
+                ) ||
+                file.size >
+                50 * 1024 * 1024
+            ) {
+
+                invalidFiles.push(
+                    file.name
+                );
+
+                return;
+
+            }
+
+
+            const alreadyExists =
+                selectedFiles.some(
+                    existingFile =>
+
+                        existingFile.name ===
+                        file.name &&
+
+                        existingFile.size ===
+                        file.size &&
+
+                        existingFile.lastModified ===
+                        file.lastModified
+                );
+
+
+            if (
+                alreadyExists
+            ) {
+
+                duplicateNames.push(
+                    file.name
+                );
+
+            }
+            else {
+
+                filesToAdd.push(
+                    file
+                );
+
+            }
 
         }
+    );
+
+
+    selectedFiles.push(
+        ...filesToAdd
+    );
+
+
+    if (
+        invalidFiles.length > 0
+    ) {
+
+        alert(
+            "Invalid or oversized files:\n\n" +
+            invalidFiles.join("\n") +
+            "\n\nOnly JPG, PNG and WEBP images up to 50 MB are supported."
+        );
+
+    }
+
+
+    if (
+        duplicateNames.length > 0
+    ) {
+
+        alert(
+            "Duplicate files:\n\n" +
+            duplicateNames.join("\n")
+        );
+
+    }
+
+
+    if (
+        filesToAdd.length > 0
+    ) {
 
         showFiles();
 
-        this.value = "";
-
     }
-);
 
-/* ===========================
-   DRAG & DROP
-=========================== */
+}
 
-dropZone.addEventListener(
-    "dragover",
-    function (e) {
 
-        e.preventDefault();
+/* =========================================================
+   FILE SELECT
+   ========================================================= */
 
-        dropZone.classList.add(
-            "drag-active"
-        );
+if (imageFiles) {
 
-    }
-);
+    imageFiles.addEventListener(
+        "change",
+        function () {
 
-dropZone.addEventListener(
-    "dragleave",
-    function () {
-
-        dropZone.classList.remove(
-            "drag-active"
-        );
-
-    }
-);
-
-dropZone.addEventListener(
-    "drop",
-    function (e) {
-
-        e.preventDefault();
-
-        dropZone.classList.remove(
-            "drag-active"
-        );
-
-        const newFiles =
-            Array.from(
-                e.dataTransfer.files
+            addFiles(
+                this.files
             );
 
-        const duplicateNames = [];
-        const invalidFiles = [];
-        const filesToAdd = [];
 
-        newFiles.forEach(
-            file => {
+            /*
+             * Allows the same file to be
+             * selected again.
+             */
+            this.value = "";
 
-                if (
-                    !file.type.startsWith(
-                        "image/"
-                    )
-                ) {
+        }
+    );
 
-                    invalidFiles.push(
-                        file.name
-                    );
+}
 
-                    return;
-                }
 
-                const alreadyExists =
-                    selectedFiles.some(
-                        existingFile =>
-                            existingFile.name === file.name
-                    );
+/* =========================================================
+   DRAG & DROP
+   ========================================================= */
 
-                if (
-                    alreadyExists
-                ) {
+if (dropZone) {
 
-                    duplicateNames.push(
-                        file.name
-                    );
+    dropZone.addEventListener(
+        "dragover",
+        function (e) {
 
-                }
-                else {
+            e.preventDefault();
 
-                    filesToAdd.push(
-                        file
-                    );
+            dropZone.classList.add(
+                "drag-active"
+            );
 
-                }
+        }
+    );
+
+
+    dropZone.addEventListener(
+        "dragleave",
+        function () {
+
+            dropZone.classList.remove(
+                "drag-active"
+            );
+
+        }
+    );
+
+
+    dropZone.addEventListener(
+        "drop",
+        function (e) {
+
+            e.preventDefault();
+
+
+            dropZone.classList.remove(
+                "drag-active"
+            );
+
+
+            if (
+                e.dataTransfer &&
+                e.dataTransfer.files
+            ) {
+
+                addFiles(
+                    e.dataTransfer.files
+                );
 
             }
-        );
-
-        selectedFiles.push(
-            ...filesToAdd
-        );
-
-        if (
-            invalidFiles.length > 0
-        ) {
-
-            alert(
-                "Invalid files:\n\n"
-                +
-                invalidFiles.join(
-                    "\n"
-                )
-            );
 
         }
+    );
 
-        if (
-            duplicateNames.length > 0
-        ) {
+}
 
-            alert(
-                "Duplicate files:\n\n"
-                +
-                duplicateNames.join(
-                    "\n"
-                )
-            );
 
-        }
-
-        if (
-            filesToAdd.length > 0
-        ) {
-
-            showFiles();
-
-        }
-
-    }
-);
-
-/* ===========================
+/* =========================================================
    SHOW FILES
-=========================== */
+   ========================================================= */
 
 function showFiles() {
+
+    if (
+        !summaryCard ||
+        !fileListContainer
+    ) {
+
+        return;
+
+    }
+
 
     summaryCard.style.display =
         "flex";
 
+
     fileListContainer.innerHTML =
         "";
 
+
     let totalBytes = 0;
+
 
     selectedFiles.forEach(
         (
@@ -335,9 +640,18 @@ function showFiles() {
             totalBytes +=
                 file.size;
 
-            fileListContainer.innerHTML += `
 
-            <div class="card">
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "card";
+
+
+            card.innerHTML = `
 
                 <div class="card-body">
 
@@ -347,13 +661,13 @@ function showFiles() {
 
                             <i class="bi bi-image-fill"></i>
 
-                            ${file.name}
+                            ${escapeHtml(file.name)}
 
                         </div>
 
                         <div class="col-md-2 text-center file-row-size">
 
-                            ${(file.size / 1024 / 1024).toFixed(2)} MB
+                            ${formatMB(file.size)}
 
                         </div>
 
@@ -361,8 +675,7 @@ function showFiles() {
 
                             <button
                                 type="button"
-                                class="btn btn-primary btn-sm"
-                                onclick="previewImage(${index})">
+                                class="btn btn-primary btn-sm preview-original-btn">
 
                                 Preview
 
@@ -374,8 +687,7 @@ function showFiles() {
 
                             <button
                                 type="button"
-                                class="btn btn-danger btn-sm"
-                                onclick="deleteFile(${index})">
+                                class="btn btn-danger btn-sm delete-file-btn">
 
                                 Delete
 
@@ -387,425 +699,600 @@ function showFiles() {
 
                 </div>
 
-            </div>
-
             `;
+
+
+            card
+                .querySelector(
+                    ".preview-original-btn"
+                )
+                .addEventListener(
+                    "click",
+                    function () {
+
+                        previewImage(
+                            index
+                        );
+
+                    }
+                );
+
+
+            card
+                .querySelector(
+                    ".delete-file-btn"
+                )
+                .addEventListener(
+                    "click",
+                    function () {
+
+                        deleteFile(
+                            index
+                        );
+
+                    }
+                );
+
+
+            fileListContainer.appendChild(
+                card
+            );
 
         }
     );
 
-    totalFiles.innerHTML =
-        selectedFiles.length;
 
-    totalSize.innerHTML =
-        (
-            totalBytes
-            /
-            1024
-            /
-            1024
-        ).toFixed(2)
-        + " MB";
+    if (totalFiles) {
+
+        totalFiles.textContent =
+            selectedFiles.length;
+
+    }
+
+
+    if (totalSize) {
+
+        totalSize.textContent =
+            formatMB(
+                totalBytes
+            );
+
+    }
 
 }
 
-/* ===========================
-   DELETE FILE
-=========================== */
 
-function deleteFile(index) {
+/* =========================================================
+   DELETE FILE
+   ========================================================= */
+
+function deleteFile(
+    index
+) {
+
+    if (
+        index < 0 ||
+        index >= selectedFiles.length
+    ) {
+
+        return;
+
+    }
+
 
     selectedFiles.splice(
         index,
         1
     );
 
+
     if (
         selectedFiles.length === 0
     ) {
 
-        summaryCard.style.display =
-            "none";
+        if (summaryCard) {
 
-        fileListContainer.innerHTML =
-            "";
+            summaryCard.style.display =
+                "none";
 
-        imageFiles.value =
-            "";
+        }
+
+
+        if (fileListContainer) {
+
+            fileListContainer.innerHTML =
+                "";
+
+        }
+
+
+        if (imageFiles) {
+
+            imageFiles.value =
+                "";
+
+        }
+
 
         return;
 
     }
 
+
     showFiles();
 
 }
 
-/* ===========================
-   PREVIEW ORIGINAL IMAGE
-=========================== */
 
-function previewImage(index) {
+/* =========================================================
+   PREVIEW ORIGINAL IMAGE
+   ========================================================= */
+
+function previewImage(
+    index
+) {
 
     const file =
         selectedFiles[index];
+
+
+    const previewElement =
+        document.getElementById(
+            "previewImage"
+        );
+
+
+    const modalElement =
+        document.getElementById(
+            "imagePreviewModal"
+        );
+
+
+    if (
+        !file ||
+        !previewElement ||
+        !modalElement
+    ) {
+
+        return;
+
+    }
+
 
     const url =
         URL.createObjectURL(
             file
         );
 
-    document.getElementById(
-        "previewImage"
-    ).src = url;
+
+    previewElement.src =
+        url;
+
+
+    previewElement.onload =
+        function () {
+
+            URL.revokeObjectURL(
+                url
+            );
+
+        };
+
 
     const modal =
-        new bootstrap.Modal(
-            document.getElementById(
-                "imagePreviewModal"
-            )
+        bootstrap.Modal.getOrCreateInstance(
+            modalElement
         );
+
 
     modal.show();
 
 }
 
-/* ===========================
+
+/* =========================================================
    PREVIEW COMPRESSED IMAGE
-=========================== */
+   ========================================================= */
 
 function previewCompressedImage(
     fileName
 ) {
 
-    document.getElementById(
-        "previewImage"
-    ).src =
-        "/preview-compressed-image?fileName="
-        +
+    const previewElement =
+        document.getElementById(
+            "previewImage"
+        );
+
+
+    const modalElement =
+        document.getElementById(
+            "imagePreviewModal"
+        );
+
+
+    if (
+        !previewElement ||
+        !modalElement
+    ) {
+
+        return;
+
+    }
+
+
+    previewElement.src =
+        "/preview-compressed-image?fileName=" +
         encodeURIComponent(
             fileName
         );
 
+
     const modal =
-        new bootstrap.Modal(
-            document.getElementById(
-                "imagePreviewModal"
-            )
+        bootstrap.Modal.getOrCreateInstance(
+            modalElement
         );
+
 
     modal.show();
 
 }
 
-/* ===========================
+
+/* =========================================================
    COMPRESS IMAGES
-=========================== */
+   ========================================================= */
 
-compressForm.addEventListener(
-    "submit",
-    function (e) {
-        e.preventDefault();
+if (compressForm) {
 
-        if (
-            !validateFiles(selectedFiles)
-        ) {
-            return;
-        }
+    compressForm.addEventListener(
+        "submit",
+        function (e) {
 
-        if (
-            selectedFiles.length === 0
-        ) {
+            e.preventDefault();
 
-            alert(
-                "Please select images"
-            );
 
-            return;
+            if (
+                selectedFiles.length === 0
+            ) {
 
-        }
-
-        const formData =
-            new FormData();
-
-        selectedFiles.forEach(
-            file => {
-
-                formData.append(
-                    "imageFiles",
-                    file
+                alert(
+                    "Please select at least one image."
                 );
 
+                return;
+
             }
-        );
 
-        formData.append(
-            "compressionLevel",
-            document.getElementById(
-                "compressionLevel"
-            ).value
-        );
 
-        formData.append(
-            "quality",
-            quality.value
-        );
-        /* Freeze UI */
+            if (
+                !validateFiles(
+                    selectedFiles
+                )
+            ) {
 
-        imageFiles.disabled =
-            true;
+                return;
 
-        quality.disabled =
-            true;
+            }
 
-        document
-            .querySelectorAll(
-                ".btn-danger"
-            )
-            .forEach(
-                btn =>
-                    btn.disabled =
-                    true
+
+            const formData =
+                new FormData();
+
+
+            selectedFiles.forEach(
+                file => {
+
+                    formData.append(
+                        "imageFiles",
+                        file
+                    );
+
+                }
             );
 
-        document
-            .querySelectorAll(
-                ".btn-primary"
-            )
-            .forEach(
-                btn =>
-                    btn.disabled =
-                    true
+
+            formData.append(
+                "compressionLevel",
+                compressionLevel
+                    ? compressionLevel.value
+                    : "medium"
             );
 
-        document.getElementById(
-            "dropZone"
-        ).style.display =
-            "none";
 
-        document.getElementById(
-            "uploadSection"
-        ).style.display =
-            "none";
+            formData.append(
+                "quality",
+                quality
+                    ? quality.value
+                    : "80"
+            );
 
-        progressSection.style.display =
-            "block";
 
-        const xhr =
-            new XMLHttpRequest();
+            setButtonProcessing(
+                true
+            );
 
-        xhr.upload.addEventListener(
-            "progress",
-            function (event) {
 
-                if (
-                    event.lengthComputable
-                ) {
+            if (uploadSection) {
+
+                uploadSection.style.display =
+                    "none";
+
+            }
+
+            if (resultCard) {
+
+                resultCard.style.display =
+                    "none";
+
+            }
+
+            showProgress();
+
+
+            const xhr =
+                new XMLHttpRequest();
+
+
+            /* -----------------------------------------
+               UPLOAD PROGRESS
+               ----------------------------------------- */
+
+            xhr.upload.addEventListener(
+                "progress",
+                function (event) {
+
+                    if (
+                        !event.lengthComputable
+                    ) {
+
+                        return;
+
+                    }
+
 
                     const percent =
                         Math.round(
                             (
-                                event.loaded
-                                /
+                                event.loaded /
                                 event.total
                             ) * 100
                         );
 
-                    progressBar.style.width =
-                        percent + "%";
-
-                    progressBar.innerHTML =
-                        percent + "%";
-
-                }
-
-            }
-        );
-
-        xhr.onreadystatechange =
-            function () {
-
-                if (
-                    xhr.readyState === 4
-                    &&
-                    xhr.status === 200
-                ) {
-
-                    const result =
-                        JSON.parse(
-                            xhr.responseText
-                        );
 
                     if (
-                        result.success
+                        percent >= 100
                     ) {
 
-
-                        document.getElementById(
-                            "uploadSection"
-                        ).style.display =
-                            "none";
-                        progressBar.style.width =
-                            "100%";
-
-                        progressBar.innerHTML =
-                            "100%";
-
-                        setTimeout(() => {
-
-                            progressSection.style.display =
-                                "none";
-
-                            progressBar.style.width =
-                                "0%";
-
-                            progressBar.innerHTML =
-                                "0%";
-
-                            document.getElementById(
-                                "resultCard"
-                            ).style.display =
-                                "block";
-
-                        }, 500);
-
-                        buildResultTable(
-                            result
+                        /*
+                         * Upload finished.
+                         * Server may still be compressing.
+                         */
+                        updateProgress(
+                            100,
+                            "Compressing images..."
                         );
 
                     }
                     else {
 
-                        imageFiles.disabled =
-                            false;
-
-                        quality.disabled =
-                            false;
-
-                        document.getElementById(
-                            "dropZone"
-                        ).style.display =
-                            "block";
-
-                        summaryCard.style.display =
-                            "flex";
-
-                        fileListContainer.style.display =
-                            "block";
-                        settingsSection.style.display =
-                            "block";
-
-                        document
-                            .querySelectorAll(
-                                ".btn-danger"
-                            )
-                            .forEach(
-                                btn =>
-                                    btn.disabled =
-                                    false
-                            );
-
-                        document
-                            .querySelectorAll(
-                                ".btn-primary"
-                            )
-                            .forEach(
-                                btn =>
-                                    btn.disabled =
-                                    false
-                            );
-
-                        progressSection.style.display =
-                            "none";
-                        progressBar.style.width =
-                            "0%";
-
-                        progressBar.innerHTML =
-                            "0%";
-                        alert(
-                            result.message
+                        updateProgress(
+                            percent,
+                            percent + "%"
                         );
 
                     }
 
                 }
+            );
 
-            };
 
-        xhr.onerror =
-            function () {
+            /* -----------------------------------------
+               RESPONSE
+               ----------------------------------------- */
 
-                imageFiles.disabled =
-                    false;
+            xhr.onreadystatechange =
+                function () {
 
-                quality.disabled =
-                    false;
+                    if (
+                        xhr.readyState !== 4
+                    ) {
 
-                document.getElementById(
-                    "dropZone"
-                ).style.display =
-                    "block";
+                        return;
 
-                summaryCard.style.display =
-                    "flex";
+                    }
 
-                fileListContainer.style.display =
-                    "block";
-                fileListContainer.style.display =
-                    "block";
 
-                document
-                    .querySelectorAll(
-                        ".btn-danger"
-                    )
-                    .forEach(
-                        btn =>
-                            btn.disabled =
-                            false
+                    if (
+                        xhr.status < 200 ||
+                        xhr.status >= 300
+                    ) {
+
+                        let message =
+                            "Compression failed. Please try again.";
+
+
+                        if (
+                            xhr.status === 413
+                        ) {
+
+                            message =
+                                "The uploaded file is too large.";
+
+                        }
+                        else if (
+                            xhr.status === 404
+                        ) {
+
+                            message =
+                                "The image compression service was not found.";
+
+                        }
+                        else if (
+                            xhr.status === 500
+                        ) {
+
+                            message =
+                                "The server could not process the image.";
+
+                        }
+
+
+                        showError(
+                            message
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    let result;
+
+
+                    try {
+
+                        result =
+                            JSON.parse(
+                                xhr.responseText
+                            );
+
+                    }
+                    catch (error) {
+
+                        console.error(
+                            "Invalid server response:",
+                            error
+                        );
+
+
+                        showError(
+                            "The server returned an invalid response. Please try again."
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    if (
+                        !result.success
+                    ) {
+
+                        showError(
+                            result.message ||
+                            "Compression failed."
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Compression has actually completed.
+                     */
+                    updateProgress(
+                        100,
+                        "100%"
                     );
 
-                document
-                    .querySelectorAll(
-                        ".btn-primary"
-                    )
-                    .forEach(
-                        btn =>
-                            btn.disabled =
-                            false
+
+                    buildResultTable(
+                        result
                     );
 
-                progressSection.style.display =
-                    "none";
 
-                progressBar.style.width =
-                    "0%";
+                    setTimeout(
+                        function () {
 
-                progressBar.innerHTML =
-                    "0%";
+                            hideProgress();
 
-                alert(
-                    "Compression failed. Please try again."
-                );
+                            if (resultCard) {
 
-            };
+                                resultCard.style.display =
+                                    "block";
 
-        xhr.open(
-            "POST",
-            "/image-compressor-ajax"
-        );
+                                resultCard.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start"
+                                });
 
-        xhr.send(
-            formData
-        );
+                            }
 
-    }
+                            setButtonProcessing(
+                                false
+                            );
+
+                        },
+                        500
+                    );
+
+                };
 
 
-);
+            /* -----------------------------------------
+               NETWORK ERROR
+               ----------------------------------------- */
 
-/* ===========================
+            xhr.onerror =
+                function () {
+
+                    console.error(
+                        "Image compression XHR error."
+                    );
+
+
+                    showError(
+                        "Compression failed because of a network or server error. Please try again."
+                    );
+
+                };
+
+
+            /* -----------------------------------------
+               TIMEOUT
+               ----------------------------------------- */
+
+            xhr.timeout =
+                120000;
+
+
+            xhr.ontimeout =
+                function () {
+
+                    showError(
+                        "Compression is taking too long. Please try a smaller image or try again."
+                    );
+
+                };
+
+
+            /* -----------------------------------------
+               REQUEST
+               ----------------------------------------- */
+
+            xhr.open(
+                "POST",
+                "/image-compressor-ajax",
+                true
+            );
+
+
+            xhr.send(
+                formData
+            );
+
+        }
+    );
+
+}
+
+/* =========================================================
    RESULT TABLE
-=========================== */
+   ========================================================= */
 
 function buildResultTable(
     result
@@ -816,30 +1303,129 @@ function buildResultTable(
             "compressedFilesContainer"
         );
 
+
+    if (!container) {
+
+        return;
+
+    }
+
+
     container.innerHTML =
         "";
 
-    let totalOriginal = 0;
-    let totalCompressed = 0;
+
+    if (
+        !result ||
+        !Array.isArray(
+            result.files
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    let totalOriginal =
+        0;
+
+
+    let totalCompressed =
+        0;
+
+
+    let totalSaved =
+        0;
+
+
+    let weightedReduction =
+        0;
+
+
+    let reductionWeight =
+        0;
+
 
     result.files.forEach(
         file => {
-         console.log("Result file:", file.name);
 
-            totalOriginal +=
+            const original =
                 parseFloat(
                     file.originalSize
-                );
+                ) || 0;
 
-            totalCompressed +=
+
+            const compressed =
                 parseFloat(
                     file.compressedSize
+                ) || 0;
+
+
+            const saved =
+                parseFloat(
+                    file.saved
+                ) ||
+                Math.max(
+                    0,
+                    original -
+                    compressed
                 );
 
 
-            container.innerHTML += `
+            const fileReduction =
+                parseFloat(
+                    String(
+                        file.reduction ||
+                        ""
+                    ).replace(
+                        "%",
+                        ""
+                    )
+                );
 
-            <div class="card mb-2">
+
+            totalOriginal +=
+                original;
+
+
+            totalCompressed +=
+                compressed;
+
+
+            totalSaved +=
+                saved;
+
+
+            if (
+                Number.isFinite(
+                    fileReduction
+                ) &&
+                original > 0
+            ) {
+
+                weightedReduction +=
+                    fileReduction *
+                    original;
+
+
+                reductionWeight +=
+                    original;
+
+            }
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "card mb-2";
+
+
+            card.innerHTML = `
 
                 <div class="card-body">
 
@@ -847,40 +1433,44 @@ function buildResultTable(
 
                         <div class="col-md-3">
 
-                            ${file.name}
+                            ${escapeHtml(file.name)}
 
                         </div>
+
 
                         <div class="col-md-2">
 
-                            ${file.originalSize}
+                            ${escapeHtml(file.originalSize)}
 
                         </div>
+
 
                         <div class="col-md-2">
 
-                            ${file.compressedSize}
+                            ${escapeHtml(file.compressedSize)}
 
                         </div>
+
 
                         <div class="col-md-1">
 
-                            ${file.saved}
+                            ${escapeHtml(file.saved)}
 
                         </div>
+
 
                         <div class="col-md-1">
 
-                            ${file.reduction}
+                            ${escapeHtml(file.reduction)}
 
                         </div>
+
 
                         <div class="col-md-1">
 
                             <button
                                 type="button"
-                                class="btn btn-primary btn-sm"
-                                onclick="previewCompressedImage('${file.name}')">
+                                class="btn btn-primary btn-sm compressed-preview-btn">
 
                                 Preview
 
@@ -888,11 +1478,12 @@ function buildResultTable(
 
                         </div>
 
-                        <div class="col-md-2">
+
+                        <div class="col-md-1">
 
                             <a
-                                class="btn btn-success btn-sm"
-                                href="/download-compressed-image?fileName=${file.name}">
+                                class="btn btn-success btn-sm download-btn"
+                                href="/download-compressed-image?fileName=${encodeURIComponent(file.name)}">
 
                                 Download
 
@@ -904,97 +1495,306 @@ function buildResultTable(
 
                 </div>
 
-            </div>
-
             `;
+
+
+            const previewButton =
+                card.querySelector(
+                    ".compressed-preview-btn"
+                );
+
+
+            if (previewButton) {
+
+                previewButton.addEventListener(
+                    "click",
+                    function () {
+
+                        previewCompressedImage(
+                            file.name
+                        );
+
+                    }
+                );
+
+            }
+
+
+            container.appendChild(
+                card
+            );
 
         }
     );
 
-    const saved =
-        totalOriginal
-        -
-        totalCompressed;
 
-    const reduction =
+    /* =====================================================
+       RESULT SUMMARY
+       ===================================================== */
+
+
+    /*
+     * IMPORTANT:
+     * Your HTML uses resultFilesCount.
+     *
+     * Old JS incorrectly used resultFiles.
+     */
+    const resultFiles =
+        document.getElementById(
+            "resultFiles"
+        );
+
+    const resultFilesCount =
+        document.getElementById(
+            "resultFilesCount"
+        );
+
+
+    const resultOriginalSize =
+        document.getElementById(
+            "resultOriginalSize"
+        );
+
+
+    const resultCompressedSize =
+        document.getElementById(
+            "resultCompressedSize"
+        );
+
+
+    const resultSaved =
+        document.getElementById(
+            "resultSaved"
+        );
+
+
+    const resultReduction =
+        document.getElementById(
+            "resultReduction"
+        );
+
+
+    /* =====================================================
+       FILE COUNT
+       ===================================================== */
+
+    if (
+        resultFiles
+    ) {
+
+        resultFiles.textContent =
+            result.files.length;
+
+    }
+
+    if (
+        resultFilesCount
+    ) {
+
+        resultFilesCount.textContent =
+            result.files.length;
+
+    }
+
+
+    /* =====================================================
+       ORIGINAL SIZE
+       ===================================================== */
+
+    if (
+        resultOriginalSize
+    ) {
+
+        resultOriginalSize.textContent =
+            totalOriginal.toFixed(2) +
+            " MB";
+
+    }
+
+
+    /* =====================================================
+       COMPRESSED SIZE
+       ===================================================== */
+
+    if (
+        resultCompressedSize
+    ) {
+
+        resultCompressedSize.textContent =
+            totalCompressed.toFixed(2) +
+            " MB";
+
+    }
+
+
+    /* =====================================================
+       SAVED
+       ===================================================== */
+
+    if (
+        resultSaved
+    ) {
+
+        resultSaved.textContent =
+            totalSaved.toFixed(2) +
+            " MB";
+
+    }
+
+
+    /* =====================================================
+       REDUCTION
+       ===================================================== */
+
+    let reduction =
+        0;
+
+
+    /*
+     * Prefer weighted average of the backend's
+     * individual reduction percentages.
+     */
+    if (
+        reductionWeight > 0
+    ) {
+
+        reduction =
+            weightedReduction /
+            reductionWeight;
+
+    }
+    else if (
         totalOriginal > 0
-            ? (
-                saved
-                /
+    ) {
+
+        reduction =
+            (
+                totalSaved /
                 totalOriginal
-            ) * 100
-            : 0;
+            ) * 100;
 
-    document.getElementById(
-        "resultFiles"
-    ).innerHTML =
-        result.files.length;
+    }
 
-    document.getElementById(
-        "resultOriginalSize"
-    ).innerHTML =
-        totalOriginal.toFixed(2)
-        + " MB";
 
-    document.getElementById(
-        "resultCompressedSize"
-    ).innerHTML =
-        totalCompressed.toFixed(2)
-        + " MB";
+    if (
+        resultReduction
+    ) {
 
-    document.getElementById(
-        "resultSaved"
-    ).innerHTML =
-        saved.toFixed(2)
-        + " MB";
+        resultReduction.textContent =
+            reduction.toFixed(0) +
+            "%";
 
-    document.getElementById(
-        "resultReduction"
-    ).innerHTML =
-        reduction.toFixed(0)
-        + "%";
+    }
 
 }
 
-/* ===========================
+
+/* =========================================================
    COMPRESS MORE
-=========================== */
-document.getElementById(
-    "compressMoreBtn"
-).addEventListener(
-    "click",
-    function () {
+   ========================================================= */
 
-        fetch(
-            "/delete-image-temp-files",
-            {
-                method: "POST"
-            }
-        )
-            .finally(
-                () => {
+const compressMoreBtn =
+    document.getElementById(
+        "compressMoreBtn"
+    );
 
-                    location.reload();
 
+if (compressMoreBtn) {
+
+    compressMoreBtn.addEventListener(
+        "click",
+        function () {
+
+            compressMoreBtn.disabled =
+                true;
+
+
+            fetch(
+                "/delete-image-temp-files",
+                {
+                    method: "POST"
                 }
+            )
+                .catch(
+                    error => {
+
+                        console.error(
+                            "Temporary file cleanup failed:",
+                            error
+                        );
+
+                    }
+                )
+                .finally(
+                    function () {
+
+                        location.reload();
+
+                    }
+                );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   OPTIONAL DARK MODE
+   ========================================================= */
+
+const darkModeBtn =
+    document.getElementById(
+        "darkModeBtn"
+    );
+
+
+/*
+ * IMPORTANT:
+ * The Image Compressor page does not currently
+ * have darkModeBtn. Therefore we check first.
+ */
+if (darkModeBtn) {
+
+    darkModeBtn.addEventListener(
+        "click",
+        function () {
+
+            document.body.classList.toggle(
+                "dark-mode"
             );
 
-    }
-);
-/* ===========================
-   DARK MODE
-=========================== */
+        }
+    );
 
-document.getElementById(
-    "darkModeBtn"
-).addEventListener(
-    "click",
-    function () {
+}
 
-        document.body.classList.toggle(
-            "dark-mode"
-        );
 
-    }
-);
+/* =========================================================
+   INITIAL STATE
+   ========================================================= */
 
+if (progressSection) {
+
+    progressSection.style.display =
+        "none";
+
+}
+
+
+if (progressBar) {
+
+    progressBar.style.width =
+        "0%";
+
+
+    progressBar.textContent =
+        "0%";
+
+
+    progressBar.setAttribute(
+        "aria-valuenow",
+        "0"
+    );
+
+}

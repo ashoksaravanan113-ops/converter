@@ -643,7 +643,7 @@ excelToPdfForm.addEventListener(
 
                 throw new Error(
                     result &&
-                    result.message
+                        result.message
                         ? result.message
                         : "Excel to PDF conversion failed."
                 );
@@ -703,7 +703,7 @@ excelToPdfForm.addEventListener(
 
             alert(
                 error &&
-                error.message
+                    error.message
                     ? error.message
                     : "Conversion failed. Please try again."
             );
@@ -733,19 +733,22 @@ excelToPdfForm.addEventListener(
  */
 
 let progressTimer = null;
-
 function showProgress(
     percentage,
     message
 ) {
 
     if (!progressContainer) {
-
         return;
     }
 
     progressContainer.style.display =
         "block";
+
+    progressContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
 
     if (progressBar) {
 
@@ -1023,8 +1026,12 @@ function buildResult(
 
         resultCard.style.display =
             "block";
-    }
 
+        resultCard.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
     if (
         !container
     ) {
@@ -1311,10 +1318,10 @@ function validateFiles(
 
         const validType =
             file.type ===
-                "application/vnd.ms-excel"
+            "application/vnd.ms-excel"
             ||
             file.type ===
-                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
 
         /*
