@@ -7,56 +7,81 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary SEO -->
-    <title>Image Resizer | Resize JPG, PNG & WEBP Images Online Free | ConvertNova</title>
+    <!-- =========================
+         PRIMARY SEO
+    ========================== -->
+
+    <title>Free Image Resizer – Resize JPG, PNG & WEBP Online | ConvertNova</title>
 
     <meta name="description"
-        content="Resize JPG, PNG, and WEBP images online for free with ConvertNova. Change image dimensions quickly while maintaining high quality. Fast, secure, and no registration required.">
+        content="Resize JPG, PNG, and WEBP images online for free. Set custom width and height, adjust image dimensions, and download resized images quickly with ConvertNova.">
 
     <meta name="author" content="ConvertNova">
 
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Canonical -->
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- =========================
+         CANONICAL
+    ========================== -->
+
     <link rel="canonical" href="https://convertnovas.com/image-resizer">
 
-    <!-- Open Graph -->
+    <!-- =========================
+         OPEN GRAPH
+    ========================== -->
+
     <meta property="og:type" content="website">
 
     <meta property="og:site_name" content="ConvertNova">
 
-    <meta property="og:title" content="Image Resizer | Resize JPG, PNG & WEBP Images Online Free">
+    <meta property="og:title" content="Free Image Resizer – Resize JPG, PNG & WEBP Online">
 
     <meta property="og:description"
-        content="Resize images online in seconds. Change image width and height while preserving quality. Supports JPG, PNG, and WEBP.">
+        content="Resize JPG, PNG, and WEBP images online for free. Change image dimensions with custom width and height and download the resized image in seconds.">
 
     <meta property="og:url" content="https://convertnovas.com/image-resizer">
 
     <meta property="og:image" content="https://convertnovas.com/images/og-image.png">
 
-    <meta property="og:image:alt" content="Image Resizer - ConvertNova">
+    <meta property="og:image:alt" content="ConvertNova Free Image Resizer">
 
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+    <!-- =========================
+         TWITTER / X
+    ========================== -->
+
     <meta name="twitter:card" content="summary_large_image">
 
-    <meta name="twitter:title" content="Image Resizer | ConvertNova">
+    <meta name="twitter:title" content="Free Image Resizer – JPG, PNG & WEBP">
 
     <meta name="twitter:description"
-        content="Resize JPG, PNG, and WEBP images online for free. Fast, secure, and high-quality image resizing.">
+        content="Resize JPG, PNG, and WEBP images online for free. Set custom image dimensions and quickly download your resized images.">
 
     <meta name="twitter:image" content="https://convertnovas.com/images/og-image.png">
 
-    <!-- Theme -->
+    <meta name="twitter:image:alt" content="ConvertNova Image Resizer">
+
+    <!-- =========================
+         BROWSER / THEME
+    ========================== -->
+
     <meta name="theme-color" content="#0d6efd">
 
     <meta name="color-scheme" content="light">
 
-    <!-- Favicon -->
+    <!-- =========================
+         FAVICON
+    ========================== -->
+
     <link rel="icon" th:href="@{/favicon.ico}" sizes="any">
 
-    <!-- CSS -->
+    <!-- =========================
+         CSS
+    ========================== -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -67,21 +92,51 @@
 
     <link rel="stylesheet" th:href="@{/css/footer.css}">
 
-    <!-- Structured Data -->
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+    <!-- =========================
+         STRUCTURED DATA
+    ========================== -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Image Resizer",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Any",
+      "@type": "WebApplication",
+      "@id": "https://convertnovas.com/image-resizer#webapp",
+
+      "name": "ConvertNova Image Resizer",
+
       "url": "https://convertnovas.com/image-resizer",
-      "description": "Free online image resizer to resize JPG, PNG, and WEBP images while maintaining image quality.",
+
+      "description": "Free online image resizer that lets users change the width and height of JPG, PNG, and WEBP images.",
+
+      "applicationCategory": "UtilitiesApplication",
+
+      "applicationSubCategory": "Image Resizing",
+
+      "operatingSystem": "Any",
+
+      "browserRequirements": "Requires a modern web browser",
+
+      "isAccessibleForFree": true,
+
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
       },
+
+      "featureList": [
+        "Resize JPG images",
+        "Resize PNG images",
+        "Resize WEBP images",
+        "Set custom image width",
+        "Set custom image height",
+        "Change image dimensions online",
+        "Free image resizing",
+        "No registration required"
+      ],
+
       "publisher": {
         "@type": "Organization",
         "name": "ConvertNova",
@@ -90,637 +145,978 @@
     }
     </script>
 
+    <!-- =========================
+         WEBSITE STRUCTURED DATA
+    ========================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://convertnovas.com/#website",
+
+      "name": "ConvertNova",
+
+      "url": "https://convertnovas.com",
+
+      "publisher": {
+        "@type": "Organization",
+        "name": "ConvertNova",
+        "url": "https://convertnovas.com"
+      }
+    }
+    </script>
+
+    <!-- =========================
+         ANALYTICS
+    ========================== -->
+
     <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <!-- ===================================
+         NAVBAR
+    =================================== -->
 
-        <div class="container">
+    <th:block th:replace="~{fragments/navbar :: navbar}"></th:block>
 
-            <a class="navbar-brand d-flex align-items-center" href="/">
 
-                <img src="/images/logo.png" alt="ConvertNova Logo" height="50" class="me-2">
+    <!-- ===================================
+         MAIN CONTENT
+    =================================== -->
 
-            </a>
-            <button id="darkModeBtn" class="btn btn-outline-dark">
+    <main>
 
-                🌙 Dark Mode
+        <!-- ===================================
+             1. BREADCRUMB
+        =================================== -->
 
-            </button>
+        <div class="breadcrumb-wrapper">
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+
+                    <li class="breadcrumb-item">
+                        <a href="/">Home</a>
+                    </li>
+
+                    <li class="breadcrumb-item">
+                        <a href="/image-tools">Image Tools</a>
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Image Resizer
+                    </li>
+
+                </ol>
+            </nav>
+        </div>
+
+
+        <!-- ===================================
+             2. ONE H1
+             3. ORIGINAL INTRODUCTION
+        =================================== -->
+
+        <section class="converter-intro" aria-labelledby="image-resizer-title">
+
+            <h1 id="image-resizer-title">
+                Image Resizer
+            </h1>
+
+            <p>
+                Resize JPG, PNG, and WEBP images online for free with ConvertNova.
+                Quickly adjust image dimensions for websites, social media,
+                documents, and other digital uses. No software installation is required.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================
+             4. WORKING CONVERTER
+        =================================== -->
+
+        <div class="container py-4">
+
+            <section class="converter-card" aria-label="Image resizer">
+
+                <!--
+                    IMPORTANT:
+                    The H1 has intentionally been removed from here.
+                    The page contains only ONE H1 above.
+                -->
+
+                <p class="text-center text-muted mb-4">
+                    Upload your images to begin resizing them.
+                </p>
+
+
+                <!-- ============================
+                     UPLOAD SECTION
+                ============================= -->
+
+                <div id="uploadSection">
+
+                    <form id="resizeForm">
+
+                        <!-- FILE SUMMARY -->
+
+                        <div id="summaryCard" class="summary-card" style="display:none;" aria-live="polite">
+
+                            <div>
+                                <strong>Total Files:</strong>
+                                <span id="totalFiles">0</span>
+                            </div>
+
+                            <div>
+                                <strong>Total Size:</strong>
+                                <span id="totalSize">0 MB</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- FILE LIST -->
+
+                        <div id="fileListContainer"></div>
+
+
+                        <!-- DROP ZONE -->
+
+                        <div id="dropZone" class="upload-area" role="button" tabindex="0"
+                            aria-label="Upload image files">
+
+                            <i class="bi bi-images upload-icon" aria-hidden="true"></i>
+
+                            <h2>
+                                Upload Images
+                            </h2>
+
+                            <p>
+                                Drag &amp; Drop Images Here
+                            </p>
+
+                            <p>
+                                JPG / JPEG / PNG / WEBP
+                            </p>
+
+                            <input type="file" id="imageFiles" accept=".jpg,.jpeg,.png,.webp" multiple hidden>
+
+                            <p class="text-muted">
+                                Maximum file size: 50 MB
+                            </p>
+
+                            <button type="button" class="btn btn-primary btn-lg"
+                                onclick="document.getElementById('imageFiles').click()">
+
+                                Choose Images
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- ============================
+                             IMAGE SIZE SETTINGS
+                        ============================= -->
+
+                        <div class="tool-section">
+
+                            <h2>
+                                Image Dimensions
+                            </h2>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <label for="width" class="form-label">
+
+                                        Width
+
+                                    </label>
+
+                                    <input type="number" id="width" class="form-control" value="800" min="1">
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label for="height" class="form-label">
+
+                                        Height
+
+                                    </label>
+
+                                    <input type="number" id="height" class="form-control" value="600" min="1">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-check mt-3">
+
+                                <input class="form-check-input" type="checkbox" id="maintainAspectRatio" checked>
+
+                                <label class="form-check-label" for="maintainAspectRatio">
+
+                                    Maintain Aspect Ratio
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ============================
+                             CONVERT BUTTON
+                        ============================= -->
+
+                        <div class="text-center mt-4">
+
+                            <button id="resizeBtn" type="submit" class="btn btn-success btn-lg">
+
+                                Resize Images
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- ============================
+                     PROGRESS
+                ============================= -->
+
+                <div id="progressSection" class="mt-4" style="display:none;" aria-live="polite">
+
+                    <div class="progress">
+
+                        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                            role="progressbar" style="width:0%;">
+
+                            0%
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+     RESULT CARD
+============================= -->
+
+                <div id="resultCard" style="display:none;" aria-live="polite">
+
+                    <div class="mt-4">
+
+                        <h2 class="text-center text-success">
+                            Resize Successful
+                        </h2>
+
+                        <p class="text-center">
+                            Resized Files:
+                            <span id="resultFiles">0</span>
+                        </p>
+
+
+                        <!-- RESULT TABLE HEADER -->
+
+                        <div class="result-header">
+
+                            <div class="row fw-bold text-center">
+
+                                <div class="col-md-3">
+                                    File Name
+                                </div>
+
+                                <div class="col-md-2">
+                                    Original Size
+                                </div>
+
+                                <div class="col-md-2">
+                                    Resized Size
+                                </div>
+
+                                <div class="col-md-2">
+                                    New Dimensions
+                                </div>
+
+                                <div class="col-md-1">
+                                    Preview
+                                </div>
+
+                                <div class="col-md-2">
+                                    Download
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RESULT FILES -->
+
+                        <div id="resizedFilesContainer">
+                        </div>
+
+
+                        <!-- RESULT SUMMARY -->
+
+                        <div class="text-center">
+
+                            <p>
+                                Original Size:
+                                <span id="resultOriginalSize">0 MB</span>
+                            </p>
+
+                            <p>
+                                Resized Size:
+                                <span id="resultResizedSize">0 MB</span>
+                            </p>
+
+                        </div>
+
+
+                        <!-- RESIZE MORE -->
+
+                        <div class="text-center mt-4">
+
+                            <button id="resizeMoreBtn" type="button" class="btn btn-secondary">
+
+                                Resize More
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
         </div>
 
-    </nav>
+        <!-- ===================================
+             IMAGE PREVIEW MODAL
+        =================================== -->
 
-    <div class="container py-5">
+        <div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewLabel"
+            aria-hidden="true">
 
-        <div class="converter-card">
+            <div class="modal-dialog modal-xl">
 
-            <h1 class="text-center">
+                <div class="modal-content">
 
-                Image Resizer
+                    <div class="modal-header">
 
-            </h1>
+                        <h2 class="modal-title" id="imagePreviewLabel">
 
-            <p class="text-center text-muted mb-4">
+                            Image Preview
 
-                Resize JPG, PNG, and WEBP images online for free. Quickly adjust image dimensions for websites, social
-                media, and documents.
+                        </h2>
 
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body text-center">
+
+                        <img id="previewImage" class="img-fluid" alt="Resized image preview">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================================
+             5. HOW TO RESIZE
+        =================================== -->
+
+        <section class="how-to-section" aria-labelledby="how-to-resize">
+
+            <h2 id="how-to-resize">
+                How to Resize an Image
+            </h2>
+
+            <ol>
+
+                <li>
+                    <strong>Upload your image.</strong>
+                    Select a JPG, JPEG, PNG, or WEBP image from your device
+                    or drag the image into the upload area.
+                </li>
+
+                <li>
+                    <strong>Choose your dimensions.</strong>
+                    Enter the required width and height, and keep
+                    Maintain Aspect Ratio enabled if needed.
+                </li>
+
+                <li>
+                    <strong>Start resizing.</strong>
+                    Click the
+                    <strong>Resize Images</strong>
+                    button to process your image.
+                </li>
+
+                <li>
+                    <strong>Download your resized image.</strong>
+                    After resizing is complete, preview and download
+                    the generated image.
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- ===================================
+             6. FEATURES
+        =================================== -->
+
+        <section class="features-section" aria-labelledby="image-resizer-features">
+
+            <h2 id="image-resizer-features">
+                Image Resizer Features
+            </h2>
+
+            <div class="features-grid">
+
+                <article>
+
+                    <h3>
+                        Free Online Image Resizing
+                    </h3>
+
+                    <p>
+                        Resize images online without installing desktop
+                        image editing software.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        JPG, PNG and WEBP Support
+                    </h3>
+
+                    <p>
+                        Upload common image formats including JPG, JPEG,
+                        PNG, and WEBP.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Multiple Image Resizing
+                    </h3>
+
+                    <p>
+                        Select multiple supported images and process
+                        them through the resizer.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Custom Dimensions
+                    </h3>
+
+                    <p>
+                        Enter custom width and height values according
+                        to your requirements.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Aspect Ratio Control
+                    </h3>
+
+                    <p>
+                        Maintain the original image proportions while
+                        changing image dimensions when required.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Preview Before Download
+                    </h3>
+
+                    <p>
+                        Preview resized images before downloading the
+                        generated files.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             7. SUPPORTED FORMATS
+        =================================== -->
+
+        <section class="formats-section" aria-labelledby="supported-formats">
+
+            <h2 id="supported-formats">
+                Supported Image Formats
+            </h2>
+
+            <p>
+                ConvertNova supports common image formats for online
+                image resizing.
             </p>
 
-            <!-- CONVERT SECTION -->
+            <ul>
 
-            <div id="uploadSection">
+                <li>
+                    <strong>.JPG / .JPEG</strong>
+                    — Common image formats widely used for photographs
+                    and web images.
+                </li>
 
-                <form id="resizeForm">
+                <li>
+                    <strong>.PNG</strong>
+                    — Image format commonly used when transparency
+                    or lossless image quality is required.
+                </li>
 
-                    <!-- SUMMARY -->
+                <li>
+                    <strong>.WEBP</strong>
+                    — Modern web image format designed for efficient
+                    image delivery.
+                </li>
 
-                    <div id="summaryCard" class="summary-card" style="display:none;">
+            </ul>
 
-                        <div>
+            <p>
+                The maximum file size supported by this converter is
+                <strong>50 MB</strong>.
+            </p>
 
-                            <strong>Total Files:</strong>
+        </section>
 
-                            <span id="totalFiles">0</span>
 
-                        </div>
+        <!-- ===================================
+             8. PRIVACY AND SECURITY
+        =================================== -->
 
-                        <div>
+        <section class="security-section" aria-labelledby="privacy-security">
 
-                            <strong>Total Size:</strong>
+            <h2 id="privacy-security">
+                Privacy and Security
+            </h2>
 
-                            <span id="totalSize">0 MB</span>
+            <p>
+                ConvertNova is designed to process your uploaded images
+                for the requested resizing operation.
+            </p>
 
-                        </div>
+            <ul>
 
-                    </div>
+                <li>
+                    Files are transferred for the image processing operation.
+                </li>
 
-                    <!-- FILE LIST -->
+                <li>
+                    Files are processed for the requested resizing operation.
+                </li>
 
-                    <div id="fileListContainer">
+                <li>
+                    Uploaded files are automatically deleted after resizing,
+                    according to the service's file-processing policy.
+                </li>
 
-                    </div>
+                <li>
+                    No desktop software installation is required.
+                </li>
 
-                    <!-- UPLOAD AREA -->
+            </ul>
 
-                    <div id="dropZone" class="upload-area">
+            <p>
+                For important or confidential images, review the applicable
+                ConvertNova privacy and file-processing information before
+                uploading.
+            </p>
 
-                        <i class="bi bi-images upload-icon"></i>
+        </section>
 
-                        <h3>
 
-                            Drag & Drop Images Here
+        <!-- ===================================
+             9. FAQ
+        =================================== -->
+
+        <section class="faq-section" aria-labelledby="faq-title">
+
+            <div class="container">
+
+                <h2 id="faq-title" class="text-center mb-5">
+
+                    Frequently Asked Questions
+
+                </h2>
+
+
+                <div class="accordion" id="faqAccordion">
+
+
+                    <!-- FAQ 1 -->
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header" id="headingOne">
+
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                                Is the Image Resizer free?
+
+                            </button>
 
                         </h3>
 
-                        <p>
 
-                            JPG • PNG • WEBP
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
 
-                        </p>
+                            <div class="accordion-body">
 
-                        <input type="file" id="imageFiles" accept=".jpg,.jpeg,.png,.webp" multiple hidden>
-
-                        <p class="text-muted">
-
-                            Maximum file size:
-                            50 MB
-
-                        </p>
-
-                        <button type="button" class="btn btn-primary btn-lg"
-                            onclick="document.getElementById('imageFiles').click()">
-
-                            Choose Images
-
-                        </button>
-
-                    </div>
-
-                    <!-- SIZE SETTINGS -->
-
-                    <div class="settings-card">
-
-                        <div class="row">
-
-                            <div class="col-md-6">
-
-                                <label for="width" class="form-label">
-
-                                    Width
-
-                                </label>
-
-                                <input type="number" id="width" class="form-control" value="800">
-
-                            </div>
-
-                            <div class="col-md-6">
-
-                                <label for="height" class="form-label">
-
-                                    Height
-
-                                </label>
-
-                                <input type="number" id="height" class="form-control" value="600">
+                                Yes. ConvertNova allows you to resize JPG,
+                                JPEG, PNG, and WEBP images online without
+                                registration.
 
                             </div>
 
                         </div>
 
-                        <div class="form-check mt-3">
+                    </div>
 
-                            <input class="form-check-input" type="checkbox" id="maintainAspectRatio" checked>
 
-                            <label class="form-check-label" for="maintainAspectRatio">
+                    <!-- FAQ 2 -->
 
-                                Maintain Aspect Ratio
+                    <div class="accordion-item">
 
-                            </label>
+                        <h3 class="accordion-header" id="headingTwo">
+
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                                Which image formats are supported?
+
+                            </button>
+
+                        </h3>
+
+
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                You can upload JPG, JPEG, PNG, and WEBP
+                                image files for resizing.
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                    <!-- RESIZE BUTTON -->
 
-                    <div class="text-center mt-4">
+                    <!-- FAQ 3 -->
 
-                        <button id="resizeBtn" type="submit" class="btn btn-primary btn-lg">
+                    <div class="accordion-item">
 
-                            Resize Images
+                        <h3 class="accordion-header" id="headingThree">
 
-                        </button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 
-                    </div>
+                                Can I choose custom image dimensions?
 
-                </form>
+                            </button>
 
-            </div>
+                        </h3>
 
-            <!-- PROGRESS -->
 
-            <div id="progressSection" class="mt-4" style="display:none;">
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
 
-                <div class="progress">
+                            <div class="accordion-body">
 
-                    <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
-                        style="width:0%;">
+                                Yes. You can enter custom width and height
+                                values to resize your images according to
+                                your needs.
 
-                        0%
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- RESULT SECTION -->
-
-            <div id="resultCard" class="mt-5" style="display:none;">
-
-                <div class="alert alert-success">
-
-                    <h4>
-
-                        🎉 Image Resize Completed
-
-                    </h4>
-
-                </div>
-
-                <div class="result-header">
-
-                    <div class="row fw-bold text-center">
-
-                        <div class="col-md-3">
-
-                            File Name
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                            Original Size
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                            Resized Size
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                            New Dimensions
-
-                        </div>
-
-                        <div class="col-md-1">
-
-                            Preview
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                            Download
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
 
-                <div id="resizedFilesContainer">
+                    <!-- FAQ 4 -->
 
-                </div>
+                    <div class="accordion-item">
 
-                <div id="resultSummary" class="result-summary">
+                        <h3 class="accordion-header" id="headingFour">
 
-                    Files:
-                    <span id="resultFiles">0</span>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 
-                    |
+                                Are my uploaded images secure?
 
-                    Original:
-                    <span id="resultOriginalSize">0 MB</span>
+                            </button>
 
-                    |
+                        </h3>
 
-                    Resized:
-                    <span id="resultResizedSize">0 MB</span>
 
-                </div>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
 
-                <div class="text-center mt-4">
+                            <div class="accordion-body">
 
-                    <button id="resizeMoreBtn" type="button" class="btn btn-secondary btn-lg">
+                                Your files are processed for the requested
+                                resizing operation. Uploaded files are
+                                automatically deleted after resizing according
+                                to the service's file-processing policy.
 
-                        Resize More
+                            </div>
 
-                    </button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header" id="headingFive">
+
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+
+                                Do I need to install any software?
+
+                            </button>
+
+                        </h3>
+
+
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                No. ConvertNova works online, allowing you
+                                to resize supported image files from your
+                                browser without installing desktop software.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
                 </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-    <!-- PREVIEW MODAL -->
-
-    <div class="modal fade" id="imagePreviewModal">
-
-        <div class="modal-dialog modal-xl">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5>
-
-                        Image Preview
-
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-
-                </div>
-
-                <div class="modal-body text-center">
-
-                    <img id="previewImage" class="img-fluid" alt="Image preview">
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+        </section>
 
 
+        <!-- ===================================
+             10. RELATED TOOLS
+        =================================== -->
 
-    <!-- FAQ Section -->
+        <section class="related-tools-section" aria-labelledby="related-tools">
 
-    <section class="faq-section">
-
-        <div class="container">
-
-            <h2 class="text-center mb-5">
-
-                Frequently Asked Questions
-
+            <h2 id="related-tools">
+                Related Image and Conversion Tools
             </h2>
 
-            <div class="accordion" id="faqAccordion">
 
-                <!-- FAQ 1 -->
+            <div class="related-tools-grid">
 
-                <div class="accordion-item">
 
-                    <h3 class="accordion-header" id="headingOne">
+                <a href="/jpg-png-converter" aria-label="JPG PNG Converter">
 
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
-                            Is the Image Resizer free to use?
-
-                        </button>
-
+                    <h3>
+                        JPG to PNG
                     </h3>
-
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                        data-bs-parent="#faqAccordion">
-
-                        <div class="accordion-body">
-
-                            Yes. ConvertNova allows you to resize JPG, PNG, and WEBP images online for free without
-                            registration.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- FAQ 2 -->
-
-                <div class="accordion-item">
-
-                    <h3 class="accordion-header" id="headingTwo">
-
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-
-                            Which image formats are supported?
-
-                        </button>
-
-                    </h3>
-
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#faqAccordion">
-
-                        <div class="accordion-body">
-
-                            The Image Resizer supports JPG, JPEG, PNG, and WEBP image formats.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- FAQ 3 -->
-
-                <div class="accordion-item">
-
-                    <h3 class="accordion-header" id="headingThree">
-
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-
-                            Can I choose custom image dimensions?
-
-                        </button>
-
-                    </h3>
-
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-
-                        <div class="accordion-body">
-
-                            Yes. You can enter custom width and height values to resize your images according to your
-                            needs.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- FAQ 4 -->
-
-                <div class="accordion-item">
-
-                    <h3 class="accordion-header" id="headingFour">
-
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-
-                            Are my uploaded images secure?
-
-                        </button>
-
-                    </h3>
-
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#faqAccordion">
-
-                        <div class="accordion-body">
-
-                            Yes. Your images are processed securely and automatically deleted after resizing is
-                            completed.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- FAQ 5 -->
-
-                <div class="accordion-item">
-
-                    <h3 class="accordion-header" id="headingFive">
-
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-
-                            Do I need to install any software?
-
-                        </button>
-
-                    </h3>
-
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                        data-bs-parent="#faqAccordion">
-
-                        <div class="accordion-body">
-
-                            No. ConvertNova works entirely in your browser, allowing you to resize images without
-                            installing any software.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================
-     FOOTER
-=================================== -->
-
-    <footer class="footer-section">
-
-        <div class="footer-card">
-
-            <div class="row">
-
-                <!-- Logo -->
-
-                <div class="col-lg-3">
-
-                    <img src="/images/logo-white.png" class="footer-logo" alt="ConvertNova Logo">
-
-                    <p class="footer-desc">
-
-                        Your all-in-one free online file converter.
-                        Fast, secure and easy to use.
-
-                    </p>
-
-                    <div class="footer-social">
-
-                        <a href="#">
-                            <img src="/images/icons/facebook.png" alt="Facebook">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/twitter.png" alt="Twitter">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/linkedin.png" alt="LinkedIn">
-                        </a>
-
-                        <a href="#">
-                            <img src="/images/icons/youtube.png" alt="YouTube">
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- Popular Tools -->
-
-                <div class="col-lg-2">
-
-                    <h5>Popular Tools</h5>
-
-                    <ul>
-
-                        <li><a href="/pdf-merger">PDF Merge</a></li>
-                        <li><a href="/pdf-splitter">PDF Split</a></li>
-                        <li><a href="/pdf-compressor">PDF Compress</a></li>
-                        <li><a href="/image-to-pdf">Image to PDF</a></li>
-                        <li><a href="/pdf-to-word">PDF to Word</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Categories -->
-
-                <div class="col-lg-2">
-
-                    <h5>Categories</h5>
-
-                    <ul>
-
-                        <li><a href="/pdf-tools">PDF Tools</a></li>
-                        <li><a href="/image-tools">Image Tools</a></li>
-                        <li><a href="/office-tools">Office Tools</a></li>
-                        <li><a href="/security-tools">Security Tools</a></li>
-                        <li><a href="/all-tools">All Tools</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Company -->
-
-                <div class="col-lg-2">
-
-                    <h5>Company</h5>
-
-                    <ul>
-
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-and-conditions">Terms of Service</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-
-                    </ul>
-
-                </div>
-
-                <!-- Newsletter -->
-
-                <div class="col-lg-3">
-
-                    <h5>Stay Updated</h5>
 
                     <p>
-                        Subscribe to get tips and updates.
+                        Convert JPG images to PNG format online.
                     </p>
-                    <input type="email" id="footerEmail" class="form-control footer-input"
-                        placeholder="Enter your email">
 
-                    <small id="emailError" class="text-danger">
-                    </small>
+                </a>
 
-                    <button type="button" class="btn footer-btn" id="subscribeBtn">
 
-                        Subscribe
+                <a href="/image-compressor" aria-label="Image Compressor">
 
-                    </button>
+                    <h3>
+                        Image Compressor
+                    </h3>
 
-                </div>
+                    <p>
+                        Compress image files to reduce their file size.
+                    </p>
+
+                </a>
+
+
+                <a href="/image-to-pdf" aria-label="Image to PDF Converter">
+
+                    <h3>
+                        Image to PDF
+                    </h3>
+
+                    <p>
+                        Convert images into PDF documents online.
+                    </p>
+
+                </a>
+
+
+                <a href="/pdf-to-image" aria-label="PDF to Image Converter">
+
+                    <h3>
+                        PDF to Image
+                    </h3>
+
+                    <p>
+                        Convert PDF pages into image files online.
+                    </p>
+
+                </a>
+
+
+                <a href="/pdf-compressor" aria-label="PDF Compressor">
+
+                    <h3>
+                        PDF Compressor
+                    </h3>
+
+                    <p>
+                        Reduce PDF file size for easier sharing and storage.
+                    </p>
+
+                </a>
+
+
+                <a href="/pdf-tools" aria-label="PDF Tools">
+
+                    <h3>
+                        PDF Tools
+                    </h3>
+
+                    <p>
+                        Explore useful online tools for working with PDF files.
+                    </p>
+
+                </a>
+
 
             </div>
 
-        </div>
+        </section>
 
-        <!-- Bottom Bar -->
 
-        <div class="footer-bottom">
+        <!-- ===================================
+             11. INTERNAL LINKS
+        =================================== -->
 
-            <div>
-                © 2026 ConvertNova. All rights reserved.
-            </div>
+        <section class="internal-links-section" aria-labelledby="more-conversion-tools">
 
-            <div>
-                Made with ❤️ for everyone
-            </div>
+            <h2 id="more-conversion-tools">
+                Explore More Conversion Tools
+            </h2>
 
-        </div>
-    </footer>
+            <p>
 
-    <script th:src="@{/js/image-resizer.js}"></script>
+                Explore more
+                <a href="/image-tools">
+                    image tools
+                </a>,
+
+                <a href="/pdf-tools">
+                    PDF tools
+                </a>,
+
+                <a href="/office-tools">
+                    office tools
+                </a>,
+
+                and
+
+                <a href="/tools">
+                    document converters
+                </a>
+
+                on ConvertNova.
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ===================================
+         FOOTER
+    =================================== -->
+
+    <th:block th:replace="~{fragments/footer :: footer}"></th:block>
+
+
+    <!-- ===================================
+         JAVASCRIPT
+    =================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script th:src="@{/js/image-resizer.js}"></script>
+
     <script src="/js/common-validation.js"></script>
+
 
 </body>
 

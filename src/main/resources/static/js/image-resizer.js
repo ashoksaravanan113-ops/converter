@@ -717,6 +717,11 @@ resizeForm.addEventListener(
         progressSection.style.display =
             "block";
 
+        progressSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
         progressBar.style.width =
             "0%";
 
@@ -790,10 +795,20 @@ resizeForm.addEventListener(
                                 progressBar.innerHTML =
                                     "0%";
 
-                                document.getElementById(
-                                    "resultCard"
-                                ).style.display =
-                                    "block";
+                                const resultCard =
+                                    document.getElementById(
+                                        "resultCard"
+                                    );
+
+                                if (resultCard) {
+                                    resultCard.style.display =
+                                        "block";
+
+                                    resultCard.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start"
+                                    });
+                                }
 
                                 buildResultTable(
                                     result
@@ -1008,8 +1023,8 @@ function buildResultTable(
 
                         <div class="col-md-2">
 
-                            <a
-                                class="btn btn-success btn-sm"
+                           <a
+                                class="btn btn-success btn-sm download-btn"
                                 href="/download-resized-image?fileName=${file.name}">
 
                                 Download
