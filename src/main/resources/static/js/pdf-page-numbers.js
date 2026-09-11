@@ -105,6 +105,214 @@ const convertMoreBtn =
 let selectedFiles = [];
 
 /* ===========================
+   RESET / CONVERT MORE
+=========================== */
+
+function resetPageNumbersTool() {
+
+    console.log("Convert More button clicked");
+
+    /* -------------------------
+       Hide result
+    ------------------------- */
+
+    if (resultCard) {
+        resultCard.style.display = "none";
+    }
+
+
+    /* -------------------------
+       Hide progress
+    ------------------------- */
+
+    if (progressSection) {
+        progressSection.style.display = "none";
+    }
+
+
+    /* -------------------------
+       Show upload section
+    ------------------------- */
+
+    if (uploadSection) {
+        uploadSection.style.display = "block";
+    }
+
+
+    /* -------------------------
+       Clear selected files
+    ------------------------- */
+
+    selectedFiles = [];
+
+
+    /* -------------------------
+       Clear file input
+    ------------------------- */
+
+    if (pdfFiles) {
+        pdfFiles.value = "";
+    }
+
+
+    /* -------------------------
+       Clear file list
+    ------------------------- */
+
+    if (fileListContainer) {
+        fileListContainer.innerHTML = "";
+    }
+
+
+    /* -------------------------
+       Reset summary
+    ------------------------- */
+
+    if (summaryCard) {
+        summaryCard.classList.add("d-none");
+        summaryCard.style.display = "none";
+    }
+
+    if (totalFiles) {
+        totalFiles.textContent = "0";
+    }
+
+    if (totalSize) {
+        totalSize.textContent = "0 MB";
+    }
+
+
+    /* -------------------------
+       Hide Add More Files
+    ------------------------- */
+
+    if (addFilesBtn) {
+        addFilesBtn.style.display = "none";
+    }
+
+
+    /* -------------------------
+       Reset progress
+    ------------------------- */
+
+    if (progressBar) {
+
+        progressBar.style.width = "0%";
+        progressBar.textContent = "0%";
+
+        progressBar.setAttribute(
+            "aria-valuenow",
+            "0"
+        );
+    }
+
+
+    /* -------------------------
+       Reset Add Page Numbers
+    ------------------------- */
+
+    if (addPageNumbersBtn) {
+
+        addPageNumbersBtn.disabled = false;
+
+        addPageNumbersBtn.innerHTML =
+            "Add Page Numbers";
+    }
+
+
+    /* -------------------------
+       Remove processing state
+    ------------------------- */
+
+    document.body.classList.remove(
+        "conversion-active"
+    );
+
+
+    /* -------------------------
+       Reset result counters
+    ------------------------- */
+
+    const resultFiles =
+        document.getElementById("resultFiles");
+
+    const resultSuccess =
+        document.getElementById("resultSuccess");
+
+    if (resultFiles) {
+        resultFiles.textContent = "0";
+    }
+
+    if (resultSuccess) {
+        resultSuccess.textContent = "0";
+    }
+
+
+    /* -------------------------
+       Clear result files
+    ------------------------- */
+
+    const resultFilesContainer =
+        document.getElementById(
+            "resultFilesContainer"
+        );
+
+    if (resultFilesContainer) {
+        resultFilesContainer.innerHTML = "";
+    }
+
+
+    /* -------------------------
+       Clean server files
+       WITHOUT waiting
+    ------------------------- */
+
+    fetch(
+        "/delete-numbered-pdf",
+        {
+            method: "POST"
+        }
+    ).catch(function () {
+        console.log(
+            "Server cleanup failed, continuing."
+        );
+    });
+
+
+    /* -------------------------
+       Scroll to upload section
+    ------------------------- */
+
+    setTimeout(function () {
+
+        if (uploadSection) {
+
+            const navbar =
+                document.querySelector(".navbar");
+
+            const navbarHeight =
+                navbar
+                    ? navbar.offsetHeight
+                    : 0;
+
+            const position =
+                uploadSection.getBoundingClientRect().top +
+                window.pageYOffset -
+                navbarHeight -
+                15;
+
+            window.scrollTo({
+                top: Math.max(0, position),
+                behavior: "smooth"
+            });
+
+        }
+
+    }, 150);
+
+}
+
+/* ===========================
    ADD MORE
 =========================== */
 
@@ -564,6 +772,35 @@ pageNumberForm.addEventListener(
         progressSection.style.display =
             "block";
 
+        /* Scroll to progress */
+        /* Scroll to progress */
+        setTimeout(function () {
+
+            if (progressSection) {
+
+                const navbar =
+                    document.querySelector(".navbar");
+
+                const navbarHeight =
+                    navbar
+                        ? navbar.offsetHeight
+                        : 0;
+
+                const position =
+                    progressSection.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    navbarHeight -
+                    15;
+
+                window.scrollTo({
+                    top: Math.max(0, position),
+                    behavior: "smooth"
+                });
+
+            }
+
+        }, 200);
+
         progressBar.style.width =
             "0%";
 
@@ -680,6 +917,35 @@ pageNumberForm.addEventListener(
                             buildResult(
                                 result
                             );
+
+                            /* Scroll to result */
+                            /* Scroll to result */
+                            setTimeout(function () {
+
+                                if (resultCard) {
+
+                                    const navbar =
+                                        document.querySelector(".navbar");
+
+                                    const navbarHeight =
+                                        navbar
+                                            ? navbar.offsetHeight
+                                            : 0;
+
+                                    const position =
+                                        resultCard.getBoundingClientRect().top +
+                                        window.pageYOffset -
+                                        navbarHeight -
+                                        15;
+
+                                    window.scrollTo({
+                                        top: Math.max(0, position),
+                                        behavior: "smooth"
+                                    });
+
+                                }
+
+                            }, 200);
 
                         }, 500);
 
@@ -839,38 +1105,20 @@ function previewResultPdf(fileName) {
    DARK MODE
 =========================== */
 
-document.getElementById(
-    "darkModeBtn"
-).addEventListener(
-    "click",
-    function () {
+const darkModeBtn =
+    document.getElementById("darkModeBtn");
 
-        document.body.classList.toggle(
-            "dark-mode"
-        );
+if (darkModeBtn) {
 
-    }
-);
+    darkModeBtn.addEventListener(
+        "click",
+        function () {
 
-/* ===========================
-   CONVERT MORE
-=========================== */
+            document.body.classList.toggle(
+                "dark-mode"
+            );
 
-convertMoreBtn.addEventListener(
-    "click",
-    function () {
+        }
+    );
 
-        fetch(
-            "/delete-numbered-pdf",
-            {
-                method: "POST"
-            }
-        ).finally(() => {
-
-            location.reload();
-
-        });
-
-    }
-);
-
+}

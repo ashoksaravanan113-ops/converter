@@ -1,591 +1,984 @@
-/* =================================
-   PAGE
-================================= */
+/* =========================================================
+   PDF MERGER
+   ConvertNova
+   Standardized to the ConvertNova converter-page system
+   ========================================================= */
 
-body{
-    background:#f5f7fb;
-    font-family:'Segoe UI',sans-serif;
+/* =========================
+   1. GLOBAL PAGE
+========================= */
+
+:root {
+    --tool-primary: #2563eb;
+    --tool-primary-dark: #1d4ed8;
+    --tool-primary-darker: #1e40af;
+    --tool-primary-soft: #eff6ff;
+    --tool-primary-light: #93c5fd;
+    --tool-success: #198754;
+    --tool-border: #e5e7eb;
+    --tool-border-hover: #93c5fd;
+    --tool-muted: #64748b;
+    --tool-muted-dark: #475569;
+    --tool-bg: #f7f9fc;
+    --tool-card-bg: #ffffff;
+    --tool-surface: #f8fafc;
+    --tool-text: #1f2937;
+    --tool-radius: 14px;
+    --tool-card-radius: 18px;
+    --tool-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    --tool-shadow-sm: 0 5px 18px rgba(0, 0, 0, 0.04);
+    --tool-transition: 0.2s ease;
 }
 
-/* =================================
-   MAIN CARD
-================================= */
-
-.converter-card{
-    border:none;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-/* =================================
-   TITLE
-================================= */
-
-h1{
-    font-size:52px;
-    font-weight:700;
-    color:#4f46e5;
+html {
+    scroll-behavior: smooth;
 }
 
-.text-muted{
-    font-size:15px;
+body {
+    margin: 0;
+    background: var(--tool-bg);
+    color: var(--tool-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+    line-height: 1.7;
 }
 
-/* =================================
-   UPLOAD SECTION
-================================= */
-
-.upload-section{
-    transition:0.3s ease;
+main {
+    width: 100%;
+    overflow: hidden;
 }
 
-/* =================================
-   FREEZE UI
-================================= */
-
-.conversion-active{
-    pointer-events:none;
-    opacity:0.7;
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
-/* =================================
-   PROGRESS
-================================= */
-
-#progressSection{
-    text-align:center;
+a {
+    color: var(--tool-primary);
+    transition: color var(--tool-transition);
 }
 
-.progress-bar{
-    transition:width .25s linear;
+a:hover {
+    color: var(--tool-primary-dark);
 }
 
-/*================
-   COMMON WIDTH
-================================= */
+/* =========================
+   2. BREADCRUMB
+========================= */
 
-#summaryCard,
-#fileList,
-.upload-area,
-#progressSection,
-#resultCard,
-.merge-btn{
-    width:70%;
-    margin:auto;
-    
-
+.breadcrumb-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
 }
 
-/* =================================
-   SUMMARY CARD
-================================= */
-
-.summary-card{
-    border:none;
-    border-radius:15px;
-    background:#dbeafe;
+.breadcrumb {
+    margin: 0;
+    font-size: 0.92rem;
 }
 
-.summary-card .card-body{
-    padding:18px 25px;
-    font-size:18px;
-    font-weight:600;
+.breadcrumb a {
+    text-decoration: none;
 }
 
-/* =================================
-   FILE LIST
-================================= */
-
-#fileList .card{
-    border:none;
-    border-radius:12px;
-    margin-bottom:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.05);
+.breadcrumb-item.active {
+    color: var(--tool-muted);
 }
 
-#fileList .card-body{
-    padding:15px 20px;
+/* =========================
+   3. PAGE INTRODUCTION
+========================= */
+
+.page-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 18px 20px 28px;
+    text-align: center;
 }
 
-.file-row .row{
-    min-height:60px;
+.page-intro h1 {
+    margin: 0 0 12px;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.15;
+    font-weight: 750;
+    letter-spacing: -0.02em;
 }
 
-.file-row-name{
-    font-size:16px;
-    font-weight:600;
-    display:flex;
-    align-items:center;
+.page-intro p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--tool-muted);
+    font-size: 1.05rem;
 }
 
-.file-row-name i{
-    color:#dc3545;
-    font-size:22px;
-    margin-right:10px;
+/* =========================
+   4. MAIN CONVERTER CONTAINER
+========================= */
+
+.tool-section {
+    width: 100%;
 }
 
-.file-row-size{
-    font-size:16px;
-    font-weight:600;
+.converter-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--tool-card-bg);
+    border: 1px solid var(--tool-border);
+    border-radius: var(--tool-card-radius);
+    box-shadow: var(--tool-shadow);
+    overflow: hidden;
 }
 
-/* =================================
-   BUTTONS
-================================= */
-
-.btn-primary{
-    background:linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
-    border:none;
+.converter-card .card-body {
+    background: #ffffff;
 }
 
-.btn-primary:hover{
-    opacity:.9;
+.tool-intro {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: var(--tool-muted);
 }
 
-.btn-lg{
-    border-radius:10px;
+#mergeForm {
+    width: 100%;
 }
 
-.preview-btn{
-    min-width:90px;
-    height:40px;
-    font-weight:600;
+/* =========================
+   5. UPLOAD AREA
+========================= */
+
+#uploadSection {
+    width: 100%;
 }
-
-.delete-btn{
-    min-width:110px;
-    height:42px;
-    font-weight:600;
-    font-size:15px;
-}
-
-
-/* ===================================
-   UPLOAD AREA
-=================================== */
 
 .upload-area {
-
-    background: #eff6ff;
-
-    border: 2px dashed #2563eb;
-
-    border-radius: 20px;
-
-    padding: 50px 30px;
-
-    text-align: center;
-
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 42px 24px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 14px;
+    background: var(--tool-surface);
+    transition: border-color var(--tool-transition), background var(--tool-transition),
+        box-shadow var(--tool-transition), transform var(--tool-transition);
     cursor: pointer;
-
-    transition: all .3s ease;
-
 }
 
 .upload-area:hover {
+    border-color: var(--tool-border-hover);
+    background: #f8fbff;
+    box-shadow: 0 5px 18px rgba(37, 99, 235, 0.07);
+}
 
-    background: #dbeafe;
-
-    border-color: #1d4ed8;
-
+.upload-area:focus {
+    outline: none;
+    border-color: var(--tool-primary);
+    background: var(--tool-primary-soft);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 .upload-area.dragover {
-
-    background: #bfdbfe;
-
-    border-color: #1e40af;
-
-    transform: scale(1.02);
-
+    border-color: var(--tool-primary);
+    background: var(--tool-primary-soft);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.11);
 }
 
 .upload-icon {
-
-    font-size: 70px;
-
-    color: #2563eb;
-
-    margin-bottom: 20px;
-
+    display: block;
+    margin-bottom: 14px;
+    color: var(--tool-primary);
+    font-size: 3.2rem;
 }
 
 .upload-area h3 {
-
-    color: #1d4ed8;
-
-    font-size: 1.7rem;
-
+    margin: 0 0 8px;
+    font-size: 1.35rem;
     font-weight: 700;
-
-    margin-bottom: 10px;
-
 }
 
 .upload-area p {
-
-    color: #475569;
-
-    margin-bottom: 8px;
-
+    margin-bottom: 10px;
 }
 
-.upload-area .btn-primary {
+.upload-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
 
-    background: #2563eb;
+.upload-actions .ms-2 {
+    margin-left: 0 !important;
+}
 
-    border: none;
+/* =========================
+   6. FILE SUMMARY
+========================= */
 
+.summary-wrapper {
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.summary-wrapper .row {
+    margin: 0;
+}
+
+.summary-wrapper span {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.file-list-wrapper {
+    width: 100%;
+    margin: 0 auto 18px;
+}
+
+.file-list-wrapper:empty {
+    display: none;
+}
+
+/* Generic file rows produced by the merger JS */
+.file-list-wrapper .file-item,
+.file-list-wrapper .file-row,
+.file-list-wrapper .card {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid var(--tool-border);
     border-radius: 10px;
+    background: #ffffff;
+    transition: box-shadow var(--tool-transition), border-color var(--tool-transition);
+}
 
-    padding: 12px 30px;
+.file-list-wrapper .file-item:hover,
+.file-list-wrapper .file-row:hover,
+.file-list-wrapper .card:hover {
+    border-color: var(--tool-border-hover);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
 
+.file-list-wrapper .card-body {
+    padding: 13px 10px;
+}
+
+.file-list-wrapper [class*="col-"] {
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   7. FILE CONTROLS / TOOL SETTINGS
+========================= */
+
+#mergeButtonSection {
+    text-align: center;
+}
+
+.merge-btn {
+    min-width: 180px;
+}
+
+.file-list-wrapper button {
+    white-space: nowrap;
+}
+
+.file-list-wrapper .preview-btn,
+.file-list-wrapper .preview-button {
+    min-width: 90px;
+    white-space: nowrap;
+}
+
+.file-list-wrapper .delete-btn,
+.file-list-wrapper .remove-btn {
+    min-width: 90px;
+    white-space: nowrap;
+}
+
+/* =========================
+   8. BUTTONS
+   (single source of truth for .btn-primary — see also
+   PDF-MERGER-specific overrides removed from §25, they
+   were identical to these rules)
+========================= */
+
+.converter-card .btn {
+    border-radius: 9px;
     font-weight: 600;
-
+    transition: background-color var(--tool-transition), border-color var(--tool-transition),
+        box-shadow var(--tool-transition), transform var(--tool-transition);
 }
 
-.upload-area .btn-primary:hover {
-
-    background: #1d4ed8;
-
-}
-
-.upload-area .btn-outline-primary {
-
-    border: 2px solid #2563eb;
-
-    color: #2563eb;
-
-    border-radius: 10px;
-
-    padding: 12px 30px;
-
-    font-weight: 600;
-
-}
-
-.upload-area .btn-outline-primary:hover {
-
-    background: #2563eb;
-
+.converter-card .btn-primary {
     color: #ffffff;
+    background-color: var(--tool-primary);
+    border-color: var(--tool-primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.20);
+}
+
+.converter-card .btn-primary:hover,
+.converter-card .btn-primary:focus {
+    color: #ffffff;
+    background-color: var(--tool-primary-dark);
+    border-color: var(--tool-primary-dark);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+.converter-card .btn-primary:active {
+    color: #ffffff;
+    background-color: var(--tool-primary-darker);
+    border-color: var(--tool-primary-darker);
+    transform: translateY(1px);
+}
+
+.converter-card .btn-primary:disabled,
+.converter-card .btn-primary.disabled {
+    color: #ffffff;
+    background-color: var(--tool-primary-light);
+    border-color: var(--tool-primary-light);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+#downloadBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+}
+
+/* =========================
+   9. PROGRESS
+========================= */
+
+.progress-section {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.progress-label {
+    color: var(--tool-muted-dark);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.progress {
+    height: 24px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--tool-border);
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    border-radius: 999px;
+    font-weight: 650;
+    transition: width 0.3s ease;
+}
+
+/* =========================
+   10. RESULT CARD
+========================= */
+
+.result-card {
+    width: 100%;
+}
+
+.result-card .alert {
+    margin-bottom: 18px;
+}
+
+.result-success {
+    border-radius: 12px;
+}
+
+.result-success h4 {
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.result-details-card {
+    width: 100%;
+    border: 1px solid var(--tool-border);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: none;
+}
+
+.result-details-card .card-body {
+    padding: 22px;
+}
+
+.result-value {
+    margin-top: 8px;
+    color: var(--tool-muted-dark);
+    font-size: 1.05rem;
+    font-weight: 650;
+}
+
+.result-card #pdfSize {
+    min-height: 28px;
+}
+
+.result-card #pdfName {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.result-actions .me-2 {
+    margin-right: 0 !important;
+}
+
+/* =========================
+   11. HOW-TO SECTION
+========================= */
+
+.how-to-section,
+.features-section,
+.formats-section,
+.security-section,
+.related-tools-section,
+.internal-links-section {
+    padding: 70px 20px;
+}
+
+.how-to-section h2,
+.features-section h2,
+.formats-section h2,
+.security-section h2,
+.related-tools-section h2,
+.internal-links-section h2 {
+    margin-bottom: 34px;
+    text-align: center;
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 750;
+}
+
+.how-to-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.how-to-step {
+    position: relative;
+    padding: 28px 22px;
+    border: 1px solid var(--tool-border);
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: var(--tool-shadow-sm);
+    transition: transform var(--tool-transition), box-shadow var(--tool-transition);
+}
+
+.how-to-step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--tool-primary);
+    font-weight: 700;
+}
+
+.how-to-step h3 {
+    margin-bottom: 9px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.how-to-step p {
+    margin: 0;
+    color: var(--tool-muted);
+}
+
+/* =========================
+   12. FEATURES SECTION
+========================= */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    padding: 28px 22px;
+    border: 1px solid var(--tool-border);
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+    box-shadow: var(--tool-shadow-sm);
+    transition: transform var(--tool-transition), box-shadow var(--tool-transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card > i {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--tool-primary);
+    font-size: 2rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--tool-muted);
+}
+
+/* =========================
+   13. SUPPORTED FORMATS
+========================= */
+
+.section-lead {
+    max-width: 760px;
+    margin: -15px auto 30px;
+    color: var(--tool-muted);
+    text-align: center;
+}
+
+.formats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.format-card {
+    min-width: 230px;
+    padding: 22px;
+    border: 1px solid var(--tool-border);
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.format-card strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--tool-primary);
+    font-size: 1.25rem;
+}
+
+.format-card span {
+    color: var(--tool-muted);
+}
+
+/* =========================
+   14. PRIVACY / SECURITY
+========================= */
+
+.security-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid var(--tool-border);
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.security-content p {
+    margin-bottom: 24px;
+    color: var(--tool-muted-dark);
+}
+
+.security-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.security-points > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--tool-surface);
+    color: var(--tool-muted-dark);
+}
+
+.security-points i {
+    color: var(--tool-primary);
+    font-size: 1.2rem;
+}
+
+/* =========================
+   15. FAQ
+========================= */
+
+.faq-section {
+    padding: 70px 20px;
+}
+
+.faq-section .container {
+    max-width: 900px;
+}
+
+.faq-section .accordion-item {
+    border-color: var(--tool-border);
+}
+
+.faq-section .accordion-button {
+    font-weight: 650;
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+    color: var(--tool-primary-dark);
+    background: var(--tool-primary-soft);
+}
+
+.faq-section .accordion-button:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+/* =========================
+   16. RELATED TOOLS
+========================= */
+
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.related-tool-card {
+    display: block;
+    height: 100%;
+    padding: 22px 18px;
+    border: 1px solid var(--tool-border);
+    border-radius: 12px;
+    background: #ffffff;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color var(--tool-transition), box-shadow var(--tool-transition),
+        transform var(--tool-transition);
+}
+
+.related-tool-card:hover {
+    border-color: var(--tool-border-hover);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.related-tool-card > i {
+    color: var(--tool-primary);
+    font-size: 1.7rem;
+}
+
+.related-tool-card h3 {
+    margin: 10px 0 6px;
+    color: var(--tool-primary);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.related-tool-card p {
+    margin: 0;
+    color: var(--tool-muted);
+    font-size: 0.9rem;
+}
+
+/* =========================
+   17. INTERNAL LINKS
+========================= */
+
+.internal-links-section {
+    padding-top: 40px;
+}
+
+.internal-links-section p {
+    max-width: 700px;
+    margin: -18px auto 24px;
+    color: var(--tool-muted);
+    text-align: center;
+}
+
+.internal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.internal-links a {
+    color: var(--tool-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.internal-links a:hover {
+    color: var(--tool-primary-dark);
+    text-decoration: underline;
+}
+
+/* =========================
+   18. PDF PREVIEW MODAL
+========================= */
+
+#pdfPreviewModal .modal-content {
+    overflow: hidden;
+    border: 0;
+    border-radius: 14px;
+}
+
+#pdfPreviewModal .modal-header {
+    border-bottom: 1px solid var(--tool-border);
+}
+
+#previewFrame {
+    display: block;
+    width: 100%;
+    min-height: 700px;
+    background: var(--tool-surface);
+}
+
+/* =========================
+   19. FORM CONTROLS
+========================= */
+
+.form-control {
+    border-color: #cbd5e1;
+    border-radius: 9px;
+    transition: border-color var(--tool-transition), box-shadow var(--tool-transition);
+}
+
+.form-control:focus {
+    border-color: var(--tool-primary);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+}
+
+/* =========================
+   20. GENERAL ACCESSIBILITY
+========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+label:focus-visible,
+[role="button"]:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.30);
+    outline-offset: 2px;
+}
+
+.upload-area[role="button"]:focus-visible {
+    outline-offset: 4px;
+}
+
+/* =========================
+   21. TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+    .how-to-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .related-tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .security-points {
+        grid-template-columns: 1fr;
+    }
 
 }
 
-/* =================================
-   MERGE BUTTON
-================================= */
+/* =========================
+   22. MOBILE
+========================= */
 
-.merge-btn{
-    height:55px;
-    font-size:20px;
-    font-weight:600;
-    border-radius:12px;
+@media (max-width: 768px) {
+
+    .breadcrumb-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .page-intro {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .converter-card {
+        border-radius: 14px;
+    }
+
+    .converter-card .card-body {
+        padding: 24px 18px !important;
+    }
+
+    .upload-area {
+        padding: 32px 16px;
+    }
+
+    .upload-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .upload-actions .btn {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .result-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .result-actions .btn,
+    .result-actions a {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .how-to-section,
+    .features-section,
+    .formats-section,
+    .security-section,
+    .related-tools-section,
+    .faq-section {
+        padding: 55px 15px;
+    }
+
+    .how-to-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #previewFrame {
+        min-height: 65vh;
+        height: 65vh;
+    }
+
+    .result-details-card .card-body {
+        padding: 18px;
+    }
+
+    .merge-btn {
+        width: 100%;
+    }
+
 }
 
-/* =================================
-   PROGRESS BAR
-================================= */
+/* =========================
+   23. SMALL MOBILE
+========================= */
 
-.progress{
-    height:25px;
-    border-radius:50px;
+@media (max-width: 480px) {
+
+    .page-intro h1 {
+        font-size: 30px;
+    }
+
+    .page-intro p {
+        font-size: 0.98rem;
+    }
+
+    .summary-wrapper .row > div {
+        font-size: 0.9rem;
+    }
+
+    .upload-icon {
+        font-size: 2.7rem;
+    }
+
+    .upload-area h3 {
+        font-size: 1.15rem;
+    }
+
+    .how-to-section,
+    .features-section,
+    .formats-section,
+    .security-section,
+    .related-tools-section,
+    .faq-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .security-content {
+        padding: 22px 16px;
+    }
+
+    .related-tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .format-card {
+        width: 100%;
+        min-width: 0;
+    }
+
 }
 
-.progress-bar{
-    font-weight:600;
-    
-}
+/* =========================
+   24. REDUCED MOTION
+========================= */
 
-/* =================================
-   RESULT CARD
-================================= */
+@media (prefers-reduced-motion: reduce) {
 
-#resultCard .card{
-    border:none;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.05);
-}
-
-/* =================================
-   PREVIEW MODAL
-================================= */
-
-#previewFrame{
-    width:100%;
-    height:700px;
-    border:none;
-}
-
-/* =================================
-   CARD HOVER
-================================= */
-
-.card{
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-2px);
-}
-
-/* =================================
-   DARK MODE
-================================= */
-
-.dark-mode{
-    background:#111827;
-    color:white;
-}
-
-.dark-mode .converter-card,
-.dark-mode .card,
-.dark-mode .modal-content{
-    background:#1f2937;
-    color:white;
-}
-
-.dark-mode .summary-card,
-.dark-mode .upload-area{
-    background:#374151;
-}
-
-.dark-mode .upload-area{
-    border-color:#60a5fa;
-}
-
-.dark-mode .form-control{
-    background:#1f2937;
-    color:white;
-    border-color:#4b5563;
-}
-/* ===================================
-   TABLET (768px - 991px)
-=================================== */
-
-@media (max-width:991px){
-
-    .converter-card{
-        padding:30px;
-        margin-bottom:70px;
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 
-    h1{
-        font-size:40px;
-        text-align:center;
-    }
-
-    #summaryCard,
-    #fileList,
-    .upload-area,
-    #progressSection,
-    #resultCard,
-    .merge-btn{
-        width:90%;
-    }
-
-    .summary-card .card-body{
-        font-size:16px;
-        padding:16px 20px;
-    }
-
-    .upload-area{
-        padding:40px 20px;
-    }
-
-    .upload-icon{
-        font-size:55px;
-    }
-
-    .upload-area h3{
-        font-size:24px;
-    }
-
-    .preview-btn,
-    .delete-btn{
-        width:110px;
-        min-width:110px;
-        height:42px;
-    }
-
-    #previewFrame{
-        height:550px;
-    }
-}
-
-/* ===================================
-   MOBILE (576px - 767px)
-=================================== */
-
-@media (max-width:767px){
-
-    .container{
-        padding-left:15px;
-        padding-right:15px;
-    }
-
-    .converter-card{
-        padding:20px 15px;
-        border-radius:18px;
-        margin-bottom:70px;
-    }
-
-    h1{
-        font-size:30px;
-        text-align:center;
-    }
-
-    .text-muted{
-        font-size:14px;
-    }
-
-    #summaryCard,
-    #fileList,
-    .upload-area,
-    #progressSection,
-    #resultCard,
-    .merge-btn{
-        width:100%;
-    }
-
-    .summary-card .card-body{
-        text-align:center;
-        font-size:15px;
-        padding:15px;
-    }
-
-    .upload-area{
-        padding:30px 15px;
-        border-radius:16px;
-    }
-
-    .upload-icon{
-        font-size:48px;
-    }
-
-    .upload-area h3{
-        font-size:20px;
-    }
-
-    .upload-area p{
-        font-size:14px;
-    }
-
-    .upload-area .btn{
-        width:100%;
-    }
-
-    /* Upload File Card */
-
-    #fileList .card{
-        border-radius:14px;
-    }
-
-    #fileList .card-body{
-        padding:15px;
-        text-align:center;
-    }
-
-    .file-row .row{
-        display:block;
-    }
-
-    .file-row-name{
-        display:block;
-        text-align:center;
-        margin-bottom:8px;
-        font-size:15px;
-        word-break:break-word;
-    }
-
-    .file-row-size{
-        font-size:13px;
-        margin-bottom:12px;
-    }
-
-    .preview-btn,
-    .delete-btn{
-        width:110px;
-        min-width:110px;
-        height:42px;
-        margin:5px;
-    }
-
-    .merge-btn{
-        width:100%;
-        height:50px;
-        font-size:17px;
-    }
-
-    #previewFrame{
-        height:500px;
-    }
-}
-
-/* ===================================
-   SMALL MOBILE (320px - 575px)
-=================================== */
-
-@media (max-width:575px){
-
-    .converter-card{
-        padding:15px 12px;
-        margin-bottom:70px;
-    }
-
-    h1{
-        font-size:26px;
-    }
-
-    .summary-card .card-body{
-        font-size:14px;
-        padding:12px;
-    }
-
-    .upload-area{
-        padding:25px 10px;
-    }
-
-    .upload-icon{
-        font-size:42px;
-    }
-
-    .upload-area h3{
-        font-size:18px;
-    }
-
-    .upload-area p{
-        font-size:13px;
-    }
-
-    .file-row-name{
-        font-size:14px;
-    }
-
-    .file-row-size{
-        font-size:12px;
-    }
-
-    .preview-btn,
-    .delete-btn{
-        width:100px;
-        min-width:100px;
-        height:40px;
-        font-size:14px;
-        margin:5px;
-    }
-
-    .merge-btn{
-        width:100%;
-        font-size:15px;
-        height:48px;
-    }
-
-    #previewFrame{
-        height:400px;
-    }
 }
