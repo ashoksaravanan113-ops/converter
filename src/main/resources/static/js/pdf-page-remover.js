@@ -83,6 +83,26 @@ const previewFrame =
     );
 
 let selectedFiles = [];
+
+let savedScrollY = 0;
+let scrollLocked = false;
+
+function saveScrollPosition() {
+    savedScrollY = window.scrollY;
+    scrollLocked = true;
+
+    document.documentElement.style.overflowAnchor = "none";
+}
+
+function restoreScrollPosition() {
+    if (!scrollLocked) return;
+
+    window.scrollTo(0, savedScrollY);
+
+    requestAnimationFrame(() => {
+        window.scrollTo(0, savedScrollY);
+    });
+}
 /* ===========================
    ADD MORE + FILE SELECT
 =========================== */
@@ -519,6 +539,9 @@ removeForm.addEventListener(
         const formData =
             new FormData();
 
+        /* SAVE USER'S CURRENT SCROLL POSITION */
+        saveScrollPosition();
+
         selectedFiles.forEach(
             file => {
 
@@ -558,6 +581,9 @@ removeForm.addEventListener(
 
         progressBar.innerHTML =
             "0%";
+
+        /* STOP PAGE FROM JUMPING TO PROGRESS BAR */
+        restoreScrollPosition();
 
         removeBtn.disabled =
             true;
@@ -660,6 +686,9 @@ removeForm.addEventListener(
                                 result
                             );
 
+                            /* STOP PAGE FROM JUMPING TO RESULT */
+                            restoreScrollPosition();
+
                         }, 500);
 
                     } else {
@@ -712,6 +741,12 @@ removeForm.addEventListener(
                 document.body.classList.remove(
                     "conversion-active"
                 );
+
+                /* FINAL SCROLL RESTORE */
+                restoreScrollPosition();
+
+                scrollLocked = false;
+                document.documentElement.style.overflowAnchor = "";
 
             };
 
