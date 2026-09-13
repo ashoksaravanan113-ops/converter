@@ -1,665 +1,1107 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
+
 <head>
+
+    <!-- =========================================================
+         CHARACTER SET & VIEWPORT
+    ========================================================== -->
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary SEO -->
-    <title>PDF to Image Converter | Convert PDF to Images Online Free | ConvertNova</title>
+
+    <!-- =========================================================
+         PRIMARY SEO
+    ========================================================== -->
+
+    <title>
+        PDF to JPG & PNG Converter Online Free | ConvertNova
+    </title>
 
     <meta name="description"
-        content="Convert PDF pages to high-quality JPG images online for free with ConvertNova. Fast, secure PDF to JPG conversion with no registration required.">
+          content="Convert PDF pages to JPG or PNG images online for free with ConvertNova. Extract high-quality images from PDF files and download them without registration or software installation.">
 
-    <meta name="author" content="ConvertNova">
+    <meta name="author"
+          content="ConvertNova">
 
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://convertnovas.com/pdf-to-jpg">
+    <meta name="googlebot"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta name="bingbot"
+          content="index, follow">
 
-    <meta property="og:site_name" content="ConvertNova">
+    <meta name="application-name"
+          content="ConvertNova">
 
-    <meta property="og:title" content="PDF to JPG Converter | Convert PDF to Images Online Free">
+    <meta name="referrer"
+          content="strict-origin-when-cross-origin">
+
+
+    <!-- =========================================================
+         CANONICAL
+    ========================================================== -->
+
+    <link rel="canonical"
+          href="https://convertnovas.com/pdf-to-image">
+
+
+    <!-- =========================================================
+         SITE IDENTITY & THEME
+    ========================================================== -->
+
+    <meta name="theme-color"
+          content="#0d6efd">
+
+    <meta name="color-scheme"
+          content="light">
+
+    <meta name="format-detection"
+          content="telephone=no">
+
+
+    <!-- =========================================================
+         FAVICON
+    ========================================================== -->
+
+    <link
+        rel="icon"
+        th:href="@{/favicon.ico}"
+        sizes="any">
+
+    <link
+        rel="apple-touch-icon"
+        th:href="@{/images/apple-touch-icon.png}">
+
+
+    <!-- =========================================================
+         OPEN GRAPH
+    ========================================================== -->
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:site_name"
+          content="ConvertNova">
+
+    <meta property="og:title"
+          content="PDF to JPG & PNG Converter Online Free | ConvertNova">
 
     <meta property="og:description"
-        content="Convert PDF pages into high-quality JPG images quickly and securely with ConvertNova.">
+          content="Convert PDF pages to JPG or PNG images online for free. Extract images from PDF files and download them with ConvertNova.">
 
-    <meta property="og:url" content="https://convertnovas.com/pdf-to-jpg">
+    <meta property="og:url"
+          content="https://convertnovas.com/pdf-to-image">
 
-    <meta property="og:image" content="https://convertnovas.com/images/og-image.png">
+    <meta property="og:locale"
+          content="en_US">
 
-    <meta property="og:image:alt" content="PDF to JPG Converter - ConvertNova">
+    <meta property="og:image"
+          content="https://convertnovas.com/images/og-image.png">
 
-    <meta property="og:locale" content="en_US">
+    <meta property="og:image:alt"
+          content="ConvertNova Free PDF to JPG and PNG Converter">
 
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image:type"
+          content="image/png">
 
-    <meta name="twitter:title" content="PDF to JPG Converter | ConvertNova">
+    <meta property="og:image:width"
+          content="1200">
+
+    <meta property="og:image:height"
+          content="630">
+
+
+    <!-- =========================================================
+         TWITTER / X
+    ========================================================== -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="PDF to JPG & PNG Converter Online Free | ConvertNova">
 
     <meta name="twitter:description"
-        content="Convert PDF files to JPG images online for free. Fast, secure, and high-quality PDF to image conversion.">
+          content="Convert PDF pages to JPG or PNG images online for free with ConvertNova. Extract and download images from PDF documents.">
 
-    <meta name="twitter:image" content="https://convertnovas.com/images/og-image.png">
+    <meta name="twitter:image"
+          content="https://convertnovas.com/images/og-image.png">
 
-    <!-- Theme -->
-    <meta name="theme-color" content="#0d6efd">
+    <meta name="twitter:image:alt"
+          content="ConvertNova PDF to Image Converter">
 
-    <meta name="color-scheme" content="light">
 
-    <!-- Favicon -->
-    <link rel="icon" th:href="@{/favicon.ico}" sizes="any">
+    <!-- =========================================================
+         PERFORMANCE
+    ========================================================== -->
 
-    <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://cdn.jsdelivr.net"
+        crossorigin>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        rel="dns-prefetch"
+        href="//cdn.jsdelivr.net">
 
-    <link rel="stylesheet" th:href="@{/css/pdf-to-image.css}">
 
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- =========================================================
+         BOOTSTRAP CSS
+    ========================================================== -->
 
-    <link rel="stylesheet" th:href="@{/css/faq.css}">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Structured Data -->
+
+    <!-- =========================================================
+         CONVERTNOVA CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/pdf-to-image.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/faq.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/navbar.css}">
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/footer.css}">
+
+
+    <!-- =========================================================
+         WEB APPLICATION STRUCTURED DATA
+    ========================================================== -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "PDF to JPG Converter",
+      "@type": "WebApplication",
+
+      "@id": "https://convertnovas.com/pdf-to-image#webapplication",
+
+      "name": "ConvertNova PDF to Image Converter",
+
+      "alternateName": [
+        "PDF to JPG Converter",
+        "PDF to PNG Converter",
+        "PDF Page to Image Converter"
+      ],
+
+      "url": "https://convertnovas.com/pdf-to-image",
+
+      "description": "Free online converter for turning PDF pages into JPG or PNG images.",
+
       "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Any",
-      "url": "https://convertnovas.com/pdf-to-jpg",
-      "description": "Free online PDF to JPG converter that converts PDF pages into high-quality JPG images.",
+
+      "applicationSubCategory": "PDF Tools",
+
+      "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+
+      "browserRequirements": "Requires a modern web browser",
+
+      "isAccessibleForFree": true,
+
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
       },
+
+      "featureList": [
+        "Convert PDF pages to JPG images",
+        "Convert PDF pages to PNG images",
+        "Extract images from PDF documents",
+        "Free online PDF to Image conversion",
+        "Download converted images",
+        "No registration required",
+        "No software installation required"
+      ],
+
       "publisher": {
         "@type": "Organization",
+        "@id": "https://convertnovas.com/#organization",
         "name": "ConvertNova",
-        "url": "https://convertnovas.com"
+        "url": "https://convertnovas.com/"
       }
     }
     </script>
 
-    <th:block th:replace="~{fragments/analytics :: analytics}"></th:block>
+
+    <!-- =========================================================
+         ORGANIZATION STRUCTURED DATA
+    ========================================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+
+      "@id": "https://convertnovas.com/#organization",
+
+      "name": "ConvertNova",
+
+      "url": "https://convertnovas.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://convertnovas.com/images/logo.png"
+      }
+    }
+    </script>
+
+
+    <!-- =========================================================
+         WEBSITE STRUCTURED DATA
+    ========================================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+
+      "@id": "https://convertnovas.com/#website",
+
+      "name": "ConvertNova",
+
+      "url": "https://convertnovas.com/",
+
+      "publisher": {
+        "@id": "https://convertnovas.com/#organization"
+      }
+    }
+    </script>
+
+
+    <!-- =========================================================
+         BREADCRUMB STRUCTURED DATA
+    ========================================================== -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+
+      "@id": "https://convertnovas.com/pdf-to-image#breadcrumb",
+
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://convertnovas.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF to Image Converter",
+          "item": "https://convertnovas.com/pdf-to-image"
+        }
+      ]
+    }
+    </script>
+
+
+    <!-- =========================================================
+         ANALYTICS
+    ========================================================== -->
+
+    <th:block
+        th:replace="~{fragments/analytics :: analytics}">
+    </th:block>
 
 </head>
 
+
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+    <!-- ===================================
+         NAVBAR
+    =================================== -->
 
-        <div class="container">
+    <th:block th:replace="~{fragments/navbar :: navbar}"></th:block>
 
-            <a class="navbar-brand d-flex align-items-center" href="/">
 
-                <img src="/images/logo.png" alt="ConvertNova Logo" height="50" class="me-2">
+    <!-- ===================================
+         MAIN CONTENT
+    =================================== -->
 
-            </a>
+    <main>
 
-            <div class="ms-auto">
+        <!-- ===================================
+             1. BREADCRUMB
+        =================================== -->
 
-                <button id="darkModeBtn" class="btn btn-outline-dark">
+        <div class="breadcrumb-wrapper">
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
 
-                    🌙 Dark Mode
+                    <li class="breadcrumb-item">
+                        <a href="/">Home</a>
+                    </li>
 
-                </button>
+                    <li class="breadcrumb-item">
+                        <a href="/pdf-tools">PDF Tools</a>
+                    </li>
+
+                    <li class="breadcrumb-item active"
+                        aria-current="page">
+                        PDF to Image Converter
+                    </li>
+
+                </ol>
+            </nav>
+        </div>
+
+
+        <!-- ===================================
+             2. ONE H1
+             3. ORIGINAL INTRODUCTION
+        =================================== -->
+
+        <section class="converter-intro"
+                 aria-labelledby="pdf-to-image-title">
+
+            <h1 id="pdf-to-image-title">
+                PDF to Image Converter
+            </h1>
+
+            <p>
+                Convert PDF pages into high-quality JPG or PNG images online
+                with ConvertNova. Upload one or more PDF files, choose your
+                output format and quality, and download images that are
+                ready to view, print, or share. No desktop software is
+                required.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================
+             4. WORKING CONVERTER
+        =================================== -->
+
+        <div class="container py-4">
+
+            <section class="converter-card"
+                     aria-label="PDF to Image converter">
+
+                <!--
+                    IMPORTANT:
+                    The H1 has intentionally been removed from here.
+                    The page contains only ONE H1 above.
+                -->
+
+                <p class="text-center text-muted mb-4">
+                    Upload your PDF files to begin converting them to
+                    images.
+                </p>
+
+
+                <form id="convertForm"
+                      enctype="multipart/form-data">
+
+                    <!-- FILE SUMMARY -->
+
+                    <div id="summaryCard"
+                         class="summary-card"
+                         style="display:none;"
+                         aria-live="polite">
+
+                        <div>
+                            <strong>Total Files:</strong>
+                            <span id="totalFiles">0</span>
+                        </div>
+
+                        <div>
+                            <strong>Total Size:</strong>
+                            <span id="totalSize">0 MB</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FILE LIST -->
+
+                    <div id="fileList"></div>
+
+
+                    <!-- DROP ZONE -->
+
+                    <div id="uploadAreaWrapper">
+
+                        <div id="dropZone"
+                             class="upload-area"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Upload PDF files">
+
+                            <i class="bi bi-cloud-arrow-up upload-icon"
+                               aria-hidden="true"></i>
+
+                            <h2>
+                                Upload PDF Files
+                            </h2>
+
+                            <p>
+                                Drag &amp; Drop PDF Files Here
+                            </p>
+
+                            <p>
+                                PDF Files Only
+                            </p>
+
+                            <label for="pdfFile"
+                                   class="visually-hidden">
+                                Select PDF files
+                            </label>
+
+                            <input type="file"
+                                   id="pdfFile"
+                                   name="pdfFiles"
+                                   accept=".pdf"
+                                   multiple
+                                   hidden>
+
+                            <p class="text-muted">
+                                Maximum file size: 50 MB
+                            </p>
+
+                            <button type="button"
+                                    class="btn btn-primary btn-lg"
+                                    onclick="document.getElementById('pdfFile').click()">
+
+                                Choose Files
+
+                            </button>
+
+                            <button type="button"
+                                    id="addMoreBtn"
+                                    class="btn btn-outline-primary btn-lg ms-2">
+
+                                + Add More Files
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ============================
+                         IMAGE SETTINGS
+                    ============================= -->
+
+                    <div id="settingsCard"
+                         class="tool-section mt-4">
+
+                        <h2>Image Settings</h2>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <label for="outputFormat"
+                                       class="form-label fw-bold">
+                                    Output Format
+                                </label>
+
+                                <select id="outputFormat"
+                                        name="outputFormat"
+                                        class="form-select"
+                                        title="Select output image format">
+
+                                    <option value="jpg">JPG</option>
+                                    <option value="png">PNG</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label for="quality"
+                                       class="form-label fw-bold">
+                                    Image Quality
+                                </label>
+
+                                <select id="quality"
+                                        name="quality"
+                                        class="form-select"
+                                        title="Select image quality">
+
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ============================
+                         CONVERT BUTTON
+                    ============================= -->
+
+                    <div class="text-center mt-4">
+
+                        <button id="convertBtn"
+                                type="submit"
+                                class="btn btn-success btn-lg">
+
+                            <i class="bi bi-file-earmark-pdf"
+                               aria-hidden="true"></i>
+
+                            Convert to Image
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- ============================
+                     PROGRESS
+                ============================= -->
+
+                <div id="progressSection"
+                     class="mt-4"
+                     style="display:none;"
+                     aria-live="polite">
+
+                    <h2 class="h5 mb-3">
+                        Processing Files...
+                    </h2>
+
+                    <div class="progress">
+
+                        <div id="progressBar"
+                             class="progress-bar progress-bar-striped progress-bar-animated"
+                             role="progressbar"
+                             style="width:0%;">
+
+                            0%
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     RESULT CARD
+                ============================= -->
+
+                <div id="resultCard"
+                     style="display:none;"
+                     aria-live="polite">
+
+                    <div class="mt-4">
+
+                        <h2 class="text-center text-success">
+                            Images Created Successfully
+                        </h2>
+
+                        <div class="result-header mb-3">
+
+                            <div class="row">
+
+                                <div class="col-md-5 text-start">
+                                    <strong>File Name</strong>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <strong>File Size</strong>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <strong>Preview</strong>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <strong>Download</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="imageDownloads"></div>
+
+                        <div class="text-center mt-4">
+
+                            <button id="convertMoreBtn"
+                                    type="button"
+                                    class="btn btn-secondary">
+
+                                <i class="bi bi-arrow-repeat"
+                                   aria-hidden="true"></i>
+
+                                Convert More
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ===================================
+             IMAGE PREVIEW MODAL (source PDF page)
+        =================================== -->
+
+        <div class="modal fade"
+             id="imagePreviewModal"
+             tabindex="-1"
+             aria-labelledby="imagePreviewLabel"
+             aria-hidden="true">
+
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h2 class="modal-title"
+                            id="imagePreviewLabel">
+
+                            Image Preview
+
+                        </h2>
+
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close">
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body text-center">
+
+                        <img id="previewModalImage"
+                             class="img-fluid rounded"
+                             alt="PDF page preview">
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-    </nav>
 
-    <!-- ===========================
-     MAIN CONTAINER
-=========================== -->
+        <!-- ===================================
+             IMAGE RESULT PREVIEW MODAL
+        =================================== -->
 
-    <div class="container py-5">
+        <div class="modal fade"
+             id="imageResultPreviewModal"
+             tabindex="-1"
+             aria-labelledby="imageResultPreviewLabel"
+             aria-hidden="true">
 
-        <div class="row justify-content-center">
+            <div class="modal-dialog modal-xl">
 
-            <div class="col-lg-10">
+                <div class="modal-content">
 
-                <div class="card converter-card">
+                    <div class="modal-header">
 
-                    <div class="card-body p-5">
+                        <h2 class="modal-title"
+                            id="imageResultPreviewLabel">
 
-                        <h1 class="text-center mb-3">
-
-                            PDF To Image Converter
-
-                        </h1>
-
-                        <p class="text-center text-muted mb-5">
-                            Convert PDF pages into high-quality JPG images online for free. Fast, secure PDF to Image
-                            conversion directly in your browser.
-
-                        </p>
-
-                        <form id="convertForm" enctype="multipart/form-data">
-
-                            <!-- ===========================
-                             FILE SUMMARY
-                        ============================ -->
-
-                            <div id="summaryCard" class="alert alert-primary d-none">
-
-                                <div class="row">
-
-                                    <div class="col-md-6">
-
-                                        <strong>Total Files:</strong>
-
-                                        <span id="totalFiles">
-
-                                            0
-
-                                        </span>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <strong>Total Size:</strong>
-
-                                        <span id="totalSize">
-
-                                            0 MB
-
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <!-- ===========================
-                             FILE PREVIEW LIST
-                        ============================ -->
-
-                            <div id="fileList">
-
-                            </div>
-
-                            <!-- ===========================
-                             DRAG & DROP AREA
-                        ============================ -->
-
-                            <div id="uploadAreaWrapper">
-
-                                <div id="dropZone" class="upload-area">
-
-                                    <i class="bi bi-cloud-arrow-up upload-icon"></i>
-
-                                    <h3>
-
-                                        Drag & Drop PDF Files Here
-
-                                    </h3>
-
-                                    <p>
-
-                                        Or click below to browse
-
-                                    </p>
-
-                                    <label for="pdfFile" class="visually-hidden">
-                                        Select PDF file
-                                    </label>
-
-                                    <input type="file" id="pdfFile" name="pdfFiles" class="d-none" accept=".pdf"
-                                        multiple>
-                                    <p class="text-muted">
-
-                                        Maximum file size:
-                                        50 MB
-
-                                    </p>
-
-                                    <button type="button" class="btn btn-primary btn-lg mt-3"
-                                        onclick="document.getElementById('pdfFile').click()">
-
-                                        Choose Files
-
-                                    </button>
-                                    <button type="button" id="addMoreBtn"
-                                        class="btn btn-outline-primary btn-lg mt-3 ms-2">
-
-                                        + Add More Files
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                            <!-- ===========================
-                             SETTINGS
-                        ============================ -->
-
-                            <div id="settingsCard" class="settings-card mt-5">
-
-                                <h4 class="mb-4">
-
-                                    Image Settings
-
-                                </h4>
-
-                                <div class="row">
-
-                                    <div class="col-md-6">
-
-                                        <label for="outputFormat" class="form-label fw-bold">
-                                            Output Format
-                                        </label>
-
-                                        <select id="outputFormat" name="outputFormat" class="form-select"
-                                            title="Select output image format">
-
-                                            <option value="jpg">JPG</option>
-                                            <option value="png">PNG</option>
-
-                                        </select>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <label for="quality" class="form-label fw-bold">
-                                            Image Quality
-                                        </label>
-
-                                        <select id="quality" name="quality" class="form-select"
-                                            title="Select image quality">
-
-                                            <option value="high">High</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="low">Low</option>
-
-                                        </select>
-
-                                    </div>
-
-                                </div>
-
-                                <!-- ===========================
-                             CONVERT BUTTON
-                        ============================ -->
-
-                                <div class="d-grid mt-5">
-
-                                    <button id="convertBtn" type="submit" class="btn btn-primary btn-lg">
-
-                                        <i class="bi bi-file-earmark-pdf"></i>
-
-                                        Convert To JPG
-
-                                    </button>
-
-                                </div>
-                            </div>
-
-                        </form>
-
-                        <!-- ===========================
-                             PROGRESS BAR
-                        ============================ -->
-
-                        <div id="progressSection" class="mt-5" style="display:none;">
-
-                            <h5 class="mb-3">
-
-                                Processing Files...
-
-                            </h5>
-
-                            <div class="progress">
-
-                                <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
-                                    role="progressbar" style="width:0%;">
-
-                                    0%
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- ===========================
-                         PDF RESULT CARD
-                    ============================ -->
-
-
-                        <div id="resultCard" style="display:none;">
-
-                            <div class="alert alert-success">
-
-                                <h4>
-                                    🎉 Images Created Successfully
-                                </h4>
-
-                            </div>
-
-                            <div class="card mb-2">
-
-                                <div class="card-body">
-
-                                    <div class="row fw-bold text-center">
-
-                                        <div class="col-md-5 text-start">
-
-                                            File Name
-
-                                        </div>
-
-                                        <div class="col-md-2">
-
-                                            File Size
-
-                                        </div>
-
-                                        <div class="col-md-2">
-
-                                            Preview
-
-                                        </div>
-
-                                        <div class="col-md-3">
-
-                                            Download
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div id="imageDownloads" class="mt-2">
-                            </div>
-
-
-                            <!-- DOWNLOAD BUTTONS -->
-
-                            <div class="text-center mt-4">
-
-                                <button id="convertMoreBtn" type="button" class="btn btn-secondary btn-lg">
-
-                                    <i class="bi bi-arrow-repeat"></i>
-
-                                    Convert More
-
-                                </button>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- IMAGE PREVIEW MODAL -->
-
-                <div class="modal fade" id="imagePreviewModal" tabindex="-1">
-
-                    <div class="modal-dialog modal-xl modal-dialog-centered">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-
-                                <h5 class="modal-title">
-
-                                    Image Preview
-
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                    title="Close">
-                                </button>
-
-                            </div>
-
-                            <div class="modal-body text-center">
-
-                                <img id="previewModalImage" class="img-fluid rounded" alt="previewModalImage">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="modal fade" id="imageResultPreviewModal">
-
-                    <div class="modal-dialog modal-xl">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-
-                                <h5>
-
-                                    Image Preview
-
-                                </h5>
-
-                            </div>
-
-                            <div class="modal-body text-center">
-
-                                <img id="resultPreviewImage" class="img-fluid rounded" alt="resultPreviewImage">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="modal fade" id="pdfPreviewModal">
-
-                    <div class="modal-dialog modal-xl">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-
-                                <h5>PDF Preview</h5>
-
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                    title="Close">
-                                </button>
-
-                            </div>
-
-                            <div class="modal-body">
-
-                                <iframe id="pdfPreviewFrame" width="100%" height="600">
-                                </iframe>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- FAQ Section -->
-
-                <section class="faq-section">
-
-                    <div class="container">
-
-                        <h2 class="text-center mb-5">
-
-                            Frequently Asked Questions
+                            Image Preview
 
                         </h2>
 
-                        <div class="accordion" id="faqAccordion">
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close">
+                        </button>
 
-                            <!-- FAQ 1 -->
+                    </div>
 
-                            <div class="accordion-item">
+                    <div class="modal-body text-center">
 
-                                <h3 class="accordion-header" id="headingOne">
+                        <img id="resultPreviewImage"
+                             class="img-fluid rounded"
+                             alt="Converted image preview">
 
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    </div>
 
-                                        Is the PDF to Image Converter free to use?
+                </div>
 
-                                    </button>
+            </div>
 
-                                </h3>
+        </div>
 
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
 
-                                    <div class="accordion-body">
+        <!-- ===================================
+             PDF PREVIEW MODAL (source file)
+        =================================== -->
 
-                                        Yes. ConvertNova allows you to convert PDF pages into high-quality images online
-                                        completely free without registration.
+        <div class="modal fade"
+             id="pdfPreviewModal"
+             tabindex="-1"
+             aria-labelledby="pdfPreviewLabel"
+             aria-hidden="true">
 
-                                    </div>
+            <div class="modal-dialog modal-xl">
 
-                                </div>
+                <div class="modal-content">
 
-                            </div>
+                    <div class="modal-header">
 
-                            <!-- FAQ 2 -->
+                        <h2 class="modal-title"
+                            id="pdfPreviewLabel">
 
-                            <div class="accordion-item">
+                            PDF Preview
 
-                                <h3 class="accordion-header" id="headingTwo">
+                        </h2>
 
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close">
+                        </button>
 
-                                        Which image format will my PDF be converted to?
+                    </div>
 
-                                    </button>
+                    <div class="modal-body p-0">
 
-                                </h3>
+                        <iframe id="pdfPreviewFrame"
+                                title="PDF Preview"
+                                style="
+                                    width:100%;
+                                    height:600px;
+                                    border:none;
+                                ">
+                        </iframe>
 
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#faqAccordion">
+                    </div>
 
-                                    <div class="accordion-body">
+                </div>
 
-                                        ConvertNova converts each PDF page into a high-quality JPG image for easy
-                                        viewing and sharing.
+            </div>
 
-                                    </div>
+        </div>
 
-                                </div>
 
-                            </div>
+        <!-- ===================================
+             5. HOW TO CONVERT
+        =================================== -->
 
-                            <!-- FAQ 3 -->
+        <section class="how-to-section"
+                 aria-labelledby="how-to-convert">
 
-                            <div class="accordion-item">
+            <h2 id="how-to-convert">
+                How to Convert PDF to Image
+            </h2>
 
-                                <h3 class="accordion-header" id="headingThree">
+            <ol>
 
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
+                <li>
+                    <strong>Upload your PDF files.</strong>
+                    Select one or more PDF files from your device or
+                    drag them into the upload area.
+                </li>
 
-                                        Will the image quality be preserved?
+                <li>
+                    <strong>Choose your image settings.</strong>
+                    Select JPG or PNG as the output format and pick a
+                    quality level.
+                </li>
 
-                                    </button>
+                <li>
+                    <strong>Start the conversion.</strong>
+                    Click the
+                    <strong>Convert to Image</strong>
+                    button to process your files.
+                </li>
 
-                                </h3>
+                <li>
+                    <strong>Download your images.</strong>
+                    After the conversion finishes, preview and download
+                    the generated images.
+                </li>
 
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+            </ol>
 
-                                    <div class="accordion-body">
+        </section>
 
-                                        Yes. ConvertNova generates high-quality images from your PDF while preserving
-                                        the original page clarity and layout.
 
-                                    </div>
+        <!-- ===================================
+             6. FEATURES
+        =================================== -->
 
-                                </div>
+        <section class="features-section"
+                 aria-labelledby="pdf-image-features">
 
-                            </div>
+            <h2 id="pdf-image-features">
+                PDF to Image Converter Features
+            </h2>
 
-                            <!-- FAQ 4 -->
+            <div class="features-grid">
 
-                            <div class="accordion-item">
 
-                                <h3 class="accordion-header" id="headingFour">
+                <article>
 
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">
+                    <h3>
+                        Free Online Conversion
+                    </h3>
 
-                                        Are my PDF files secure?
+                    <p>
+                        Convert PDF pages to images without installing
+                        desktop conversion software.
+                    </p>
 
-                                    </button>
+                </article>
 
-                                </h3>
 
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                    data-bs-parent="#faqAccordion">
+                <article>
 
-                                    <div class="accordion-body">
+                    <h3>
+                        JPG and PNG Output
+                    </h3>
 
-                                        Yes. Your uploaded PDF files are processed securely and automatically deleted
-                                        after the conversion is completed.
+                    <p>
+                        Choose between JPG and PNG image formats for
+                        your converted PDF pages.
+                    </p>
 
-                                    </div>
+                </article>
 
-                                </div>
 
-                            </div>
+                <article>
 
-                            <!-- FAQ 5 -->
+                    <h3>
+                        Multiple File Support
+                    </h3>
 
-                            <div class="accordion-item">
+                    <p>
+                        Select multiple PDF files and add more at any
+                        time before converting.
+                    </p>
 
-                                <h3 class="accordion-header" id="headingFive">
+                </article>
 
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false"
-                                        aria-controls="collapseFive">
 
-                                        Do I need to install any software?
+                <article>
 
-                                    </button>
+                    <h3>
+                        Adjustable Quality
+                    </h3>
 
-                                </h3>
+                    <p>
+                        Pick high, medium, or low output quality to
+                        balance clarity and file size.
+                    </p>
 
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                    data-bs-parent="#faqAccordion">
+                </article>
 
-                                    <div class="accordion-body">
 
-                                        No. ConvertNova works entirely in your web browser, allowing you to convert PDF
-                                        files to images without installing any software.
+                <article>
 
-                                    </div>
+                    <h3>
+                        Instant Preview
+                    </h3>
 
-                                </div>
+                    <p>
+                        Preview your source PDF and the resulting images
+                        before downloading.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Secure Handling
+                    </h3>
+
+                    <p>
+                        Uploaded files are processed for conversion and
+                        automatically deleted afterward.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             7. SUPPORTED FORMATS
+        =================================== -->
+
+        <section class="formats-section"
+                 aria-labelledby="supported-formats">
+
+            <h2 id="supported-formats">
+                Supported Formats
+            </h2>
+
+            <p>
+                ConvertNova converts PDF documents into common image
+                formats.
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>Input:</strong>
+                    .PDF — Portable Document Format.
+                </li>
+
+                <li>
+                    <strong>Output:</strong>
+                    .JPG or .PNG image files.
+                </li>
+
+            </ul>
+
+            <p>
+                The maximum file size supported by this converter is
+                <strong>50 MB</strong>
+                per file.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================
+             8. PRIVACY AND SECURITY
+        =================================== -->
+
+        <section class="security-section"
+                 aria-labelledby="privacy-security">
+
+            <h2 id="privacy-security">
+                Privacy and Security
+            </h2>
+
+            <p>
+                ConvertNova is designed to process your uploaded PDF files
+                for the requested image conversion.
+            </p>
+
+            <ul>
+
+                <li>
+                    Files are transferred for the conversion process.
+                </li>
+
+                <li>
+                    Files are processed for the requested image output.
+                </li>
+
+                <li>
+                    Uploaded files are automatically deleted after
+                    conversion, according to the service's file-processing
+                    policy.
+                </li>
+
+                <li>
+                    No desktop software installation is required.
+                </li>
+
+            </ul>
+
+            <p>
+                For important or confidential documents, review the
+                applicable ConvertNova privacy and file-processing
+                information before uploading.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================
+             9. FAQ
+        =================================== -->
+
+        <section class="faq-section"
+                 aria-labelledby="faq-title">
+
+            <div class="container">
+
+                <h2 id="faq-title"
+                    class="text-center mb-5">
+
+                    Frequently Asked Questions
+
+                </h2>
+
+
+                <div class="accordion"
+                     id="faqAccordion">
+
+
+                    <!-- FAQ 1 -->
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header"
+                            id="headingOne">
+
+                            <button class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne">
+
+                                Is the PDF to Image Converter free to use?
+
+                            </button>
+
+                        </h3>
+
+
+                        <div id="collapseOne"
+                             class="accordion-collapse collapse show"
+                             aria-labelledby="headingOne"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Yes. ConvertNova allows you to convert PDF
+                                pages into high-quality images online
+                                completely free without registration.
 
                             </div>
 
@@ -667,128 +1109,39 @@
 
                     </div>
 
-                </section>
+
+                    <!-- FAQ 2 -->
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header"
+                            id="headingTwo">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="collapseTwo">
+
+                                Which image format will my PDF be
+                                converted to?
+
+                            </button>
+
+                        </h3>
 
 
-                <!-- ===================================
-     FOOTER
-=================================== -->
+                        <div id="collapseTwo"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingTwo"
+                             data-bs-parent="#faqAccordion">
 
-                <footer class="footer-section">
+                            <div class="accordion-body">
 
-                    <div class="footer-card">
-
-                        <div class="row">
-
-                            <!-- Logo -->
-
-                            <div class="col-lg-3">
-
-                                <img src="/images/logo-white.png" class="footer-logo" alt="ConvertNova Logo">
-
-                                <p class="footer-desc">
-
-                                    Your all-in-one free online file converter.
-                                    Fast, secure and easy to use.
-
-                                </p>
-
-                                <div class="footer-social">
-
-                                    <a href="#">
-                                        <img src="/images/icons/facebook.png" alt="Facebook">
-                                    </a>
-
-                                    <a href="#">
-                                        <img src="/images/icons/twitter.png" alt="Twitter">
-                                    </a>
-
-                                    <a href="#">
-                                        <img src="/images/icons/linkedin.png" alt="LinkedIn">
-                                    </a>
-
-                                    <a href="#">
-                                        <img src="/images/icons/youtube.png" alt="YouTube">
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                            <!-- Popular Tools -->
-
-                            <div class="col-lg-2">
-
-                                <h5>Popular Tools</h5>
-
-                                <ul>
-
-                                    <li><a href="/pdf-merger">PDF Merge</a></li>
-                                    <li><a href="/pdf-splitter">PDF Split</a></li>
-                                    <li><a href="/pdf-compressor">PDF Compress</a></li>
-                                    <li><a href="/image-to-pdf">Image to PDF</a></li>
-                                    <li><a href="/pdf-to-word">PDF to Word</a></li>
-
-                                </ul>
-
-                            </div>
-
-                            <!-- Categories -->
-
-                            <div class="col-lg-2">
-
-                                <h5>Categories</h5>
-
-                                <ul>
-
-                                    <li><a href="/pdf-tools">PDF Tools</a></li>
-                                    <li><a href="/image-tools">Image Tools</a></li>
-                                    <li><a href="/office-tools">Office Tools</a></li>
-                                    <li><a href="/security-tools">Security Tools</a></li>
-                                    <li><a href="/all-tools">All Tools</a></li>
-
-                                </ul>
-
-                            </div>
-
-                            <!-- Company -->
-
-                            <div class="col-lg-2">
-
-                                <h5>Company</h5>
-
-                                <ul>
-
-                                    <li><a href="/about-us">About Us</a></li>
-                                    <li><a href="/contact-us">Contact Us</a></li>
-                                    <li><a href="/privacy-policy">Privacy Policy</a></li>
-                                    <li><a href="/terms-and-conditions">Terms of Service</a></li>
-                                    <li><a href="/disclaimer">Disclaimer</a></li>
-
-                                </ul>
-
-                            </div>
-
-                            <!-- Newsletter -->
-
-                            <div class="col-lg-3">
-
-                                <h5>Stay Updated</h5>
-
-                                <p>
-                                    Subscribe to get tips and updates.
-                                </p>
-                                <input type="email" id="footerEmail" class="form-control footer-input"
-                                    placeholder="Enter your email">
-
-                                <small id="emailError" class="text-danger">
-                                </small>
-
-                                <button type="button" class="btn footer-btn" id="subscribeBtn">
-
-                                    Subscribe
-
-                                </button>
+                                ConvertNova converts each PDF page into
+                                a high-quality JPG or PNG image for easy
+                                viewing and sharing.
 
                             </div>
 
@@ -796,27 +1149,294 @@
 
                     </div>
 
-                    <!-- Bottom Bar -->
 
-                    <div class="footer-bottom">
+                    <!-- FAQ 3 -->
 
-                        <div>
-                            © 2026 ConvertNova. All rights reserved.
-                        </div>
+                    <div class="accordion-item">
 
-                        <div>
-                            Made with ❤️ for everyone
+                        <h3 class="accordion-header"
+                            id="headingThree">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="collapseThree">
+
+                                Will the image quality be preserved?
+
+                            </button>
+
+                        </h3>
+
+
+                        <div id="collapseThree"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingThree"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Yes. ConvertNova generates high-quality
+                                images from your PDF while preserving the
+                                original page clarity and layout.
+
+                            </div>
+
                         </div>
 
                     </div>
-                </footer>
 
-                <script src="/js/common-validation.js"></script>
 
-                <script th:src="@{/js/pdf-to-image.js}"></script>
+                    <!-- FAQ 4 -->
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header"
+                            id="headingFour">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour"
+                                    aria-expanded="false"
+                                    aria-controls="collapseFour">
+
+                                Are my PDF files secure?
+
+                            </button>
+
+                        </h3>
+
+
+                        <div id="collapseFour"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingFour"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Yes. Your uploaded PDF files are processed
+                                securely and automatically deleted after
+                                the conversion is completed.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header"
+                            id="headingFive">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive"
+                                    aria-expanded="false"
+                                    aria-controls="collapseFive">
+
+                                Do I need to install any software?
+
+                            </button>
+
+                        </h3>
+
+
+                        <div id="collapseFive"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingFive"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                No. ConvertNova works entirely in your web
+                                browser, allowing you to convert PDF files
+                                to images without installing any software.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             10. RELATED TOOLS
+        =================================== -->
+
+        <section class="related-tools-section"
+                 aria-labelledby="related-tools">
+
+            <h2 id="related-tools">
+                Related PDF and Image Tools
+            </h2>
+
+
+            <div class="related-tools-grid">
+
+
+                <a href="/jpg-png-converter"
+                   aria-label="JPG to PDF Converter">
+
+                    <h3>
+                        JPG to PDF
+                    </h3>
+
+                    <p>
+                        Convert JPG or PNG images into PDF documents.
+                    </p>
+
+                </a>
+
+
+                <a href="/pdf-splitter"
+                   aria-label="PDF Splitter">
+
+                    <h3>
+                        PDF Split
+                    </h3>
+
+                    <p>
+                        Split PDF files into separate documents or pages.
+                    </p>
+
+                </a>
+
+
+                <a href="/pdf-merger"
+                   aria-label="PDF Merger">
+
+                    <h3>
+                        PDF Merge
+                    </h3>
+
+                    <p>
+                        Combine multiple PDF files into a single document.
+                    </p>
+
+                </a>
+
+
+                <a href="/pdf-compressor"
+                   aria-label="PDF Compressor">
+
+                    <h3>
+                        PDF Compress
+                    </h3>
+
+                    <p>
+                        Reduce PDF file size for easier sharing and storage.
+                    </p>
+
+                </a>
+
+
+                <a href="/pdf-to-word"
+                   aria-label="PDF to Word Converter">
+
+                    <h3>
+                        PDF to Word
+                    </h3>
+
+                    <p>
+                        Convert PDF documents into editable Word files.
+                    </p>
+
+                </a>
+
+
+                <a href="/excel-to-pdf"
+                   aria-label="Excel to PDF Converter">
+
+                    <h3>
+                        Excel to PDF
+                    </h3>
+
+                    <p>
+                        Convert Excel spreadsheets into PDF documents.
+                    </p>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             11. INTERNAL LINKS
+        =================================== -->
+
+        <section class="internal-links-section"
+                 aria-labelledby="more-conversion-tools">
+
+            <h2 id="more-conversion-tools">
+                Explore More Conversion Tools
+            </h2>
+
+            <p>
+
+                Explore more
+                <a href="/pdf-tools">
+                    PDF tools
+                </a>,
+
+                <a href="/image-tools">
+                    image tools
+                </a>,
+
+                <a href="/office-tools">
+                    Excel tools
+                </a>,
+
+                and
+
+                <a href="/office-tools">
+                    document converters
+                </a>
+
+                on ConvertNova.
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ===================================
+         FOOTER
+    =================================== -->
+
+    <th:block th:replace="~{fragments/footer :: footer}"></th:block>
+
+
+    <!-- ===================================
+         JAVASCRIPT
+    =================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script th:src="@{/js/pdf-to-image.js}"></script>
+
+    <script src="/js/common-validation.js"></script>
+
 
 </body>
-
 </html>
