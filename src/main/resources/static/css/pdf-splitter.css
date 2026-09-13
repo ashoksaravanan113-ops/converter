@@ -1,606 +1,1225 @@
-/* ===========================
-   PAGE
-=========================== */
+/* =========================================================
+   ConvertNova PDF Splitter CSS
+   Responsive stylesheet for pdf-splitter.html
+   ========================================================= */
+
+:root {
+    --cn-primary: #2563eb;
+    --cn-primary-dark: #1d4ed8;
+    --cn-primary-soft: #eff6ff;
+    --cn-success: #16a34a;
+    --cn-success-dark: #15803d;
+    --cn-danger: #dc2626;
+    --cn-secondary: #64748b;
+    --cn-text: #0f172a;
+    --cn-heading: #111827;
+    --cn-muted: #64748b;
+    --cn-border: #e2e8f0;
+    --cn-background: #f8fafc;
+    --cn-surface: #ffffff;
+    --cn-radius-sm: 8px;
+    --cn-radius-md: 12px;
+    --cn-radius-lg: 16px;
+    --cn-radius-xl: 22px;
+    --cn-shadow-sm: 0 2px 8px rgba(15, 23, 42, .05);
+    --cn-shadow-md: 0 8px 25px rgba(15, 23, 42, .08);
+    --cn-shadow-lg: 0 18px 50px rgba(15, 23, 42, .14);
+    --cn-transition: .2s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    background: #f5f7fb;
-    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    color: var(--cn-text);
+    background: var(--cn-background);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ===========================
-   MAIN CARD
-=========================== */
-
-.converter-card {
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+main {
+    width: 100%;
+    overflow: hidden;
 }
 
-/* ===========================
-   TITLE
-=========================== */
-
-h1 {
-    font-size: 42px;
-    font-weight: 700;
-    color: #4f46e5;
-}
-
-/* ===========================
-   COMMON WIDTH
-=========================== */
-
-.upload-area,
-#selectedFileCard,
-#resultCard,
-#splitBtn,
-#progressSection {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ===========================
-   FILE CARD
-=========================== */
-
-#selectedFileCard {
-    margin-bottom: 20px;
-}
-
-#selectedFileCard .card {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-}
-
-#selectedFileCard .card-body {
-    padding: 18px 25px;
-}
-
-.file-name-link {
-    font-size: 20px;
-    font-weight: 700;
-    color: #2563eb;
+a {
+    color: var(--cn-primary);
     text-decoration: none;
-    word-break: break-word;
+    transition: color var(--cn-transition);
 }
 
-.file-name-link:hover {
-    text-decoration: underline;
+a:hover {
+    color: var(--cn-primary-dark);
 }
 
-.file-size {
-    font-size: 18px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: var(--cn-heading);
     font-weight: 700;
+    line-height: 1.25;
 }
 
-/* ===================================
-   UPLOAD AREA
-=================================== */
+p {
+    margin-top: 0;
+}
 
-.upload-area {
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
 
-    background: #eff6ff;
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-    border: 2px dashed #2563eb;
+.text-center {
+    text-align: center !important;
+}
 
-    border-radius: 20px;
+.text-start {
+    text-align: left !important;
+}
 
-    padding: 50px 30px;
+.text-muted {
+    color: var(--cn-muted) !important;
+}
 
-    text-align: center;
+.text-success {
+    color: var(--cn-success) !important;
+}
 
+.text-danger {
+    color: var(--cn-danger) !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Bootstrap-compatible helpers */
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.me-2 {
+    margin-right: .5rem !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -10px;
+}
+
+.row > [class*="col-"] {
+    padding-inline: 10px;
+}
+
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6 {
+    width: 100%;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: var(--cn-radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
     cursor: pointer;
-
-    transition: all .3s ease;
-
+    transition:
+        background-color var(--cn-transition),
+        border-color var(--cn-transition),
+        color var(--cn-transition),
+        box-shadow var(--cn-transition),
+        transform var(--cn-transition);
 }
 
-.upload-area:hover {
-
-    background: #dbeafe;
-
-    border-color: #1d4ed8;
-
+.btn:hover {
+    transform: translateY(-1px);
 }
 
-.upload-area.dragover {
-
-    background: #bfdbfe;
-
-    border-color: #1e40af;
-
-    transform: scale(1.02);
-
+.btn:active {
+    transform: translateY(0);
 }
 
-.upload-icon {
-
-    font-size: 70px;
-
-    color: #2563eb;
-
-    margin-bottom: 20px;
-
+.btn:focus-visible,
+.upload-area:focus-visible,
+.accordion-button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, .35);
+    outline-offset: 3px;
 }
-
-.upload-area h3 {
-
-    color: #1d4ed8;
-
-    font-size: 1.7rem;
-
-    font-weight: 700;
-
-    margin-bottom: 10px;
-
-}
-
-.upload-area p {
-
-    color: #475569;
-
-    margin-bottom: 8px;
-
-}
-
-.upload-area .btn-primary {
-
-    background: #2563eb;
-
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 12px 30px;
-
-    font-weight: 600;
-
-}
-
-.upload-area .btn-primary:hover {
-
-    background: #1d4ed8;
-
-}
-
-.upload-area .btn-outline-primary {
-
-    border: 2px solid #2563eb;
-
-    color: #2563eb;
-
-    border-radius: 10px;
-
-    padding: 12px 30px;
-
-    font-weight: 600;
-
-}
-
-.upload-area .btn-outline-primary:hover {
-
-    background: #2563eb;
-
-    color: #ffffff;
-
-}
-
-/* ===========================
-   CHOOSE PDF BUTTON
-=========================== */
-
-.upload-area .btn-primary {
-    min-width: 220px;
-    height: 55px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-/* ===========================
-   PREVIEW / DELETE BUTTONS
-=========================== */
-
-#previewSourceBtn,
-#deleteSourceBtn {
-    width: 110px;
-    height: 40px;
-    font-weight: 600;
-}
-
-/* ===========================
-   SPLIT BUTTON
-=========================== */
-
-#splitBtn {
-    height: 55px;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 12px;
-}
-
-/* ===========================
-   RESULT SECTION
-=========================== */
-
-.result-header {
-    background: #f8fafc;
-    border-radius: 12px;
-    padding: 15px;
-    font-weight: 600;
-}
-
-#pdfDownloads .card {
-    border: none;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-}
-
-#pdfDownloads .card-body {
-    padding: 15px 20px;
-}
-
-#pdfDownloads .btn {
-    min-width: 100px;
-}
-
-/* ===========================
-   BUTTONS
-=========================== */
 
 .btn-primary {
-    background: linear-gradient(90deg,
-            #2563eb,
-            #7c3aed);
-    border: none;
+    color: #fff;
+    background: var(--cn-primary);
+    border-color: var(--cn-primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, .18);
 }
 
 .btn-primary:hover {
-    opacity: .9;
+    color: #fff;
+    background: var(--cn-primary-dark);
+    border-color: var(--cn-primary-dark);
 }
 
 .btn-success {
-    font-weight: 600;
+    color: #fff;
+    background: var(--cn-success);
+    border-color: var(--cn-success);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, .18);
+}
+
+.btn-success:hover {
+    color: #fff;
+    background: var(--cn-success-dark);
+    border-color: var(--cn-success-dark);
+}
+
+.btn-danger {
+    color: #fff;
+    background: var(--cn-danger);
+    border-color: var(--cn-danger);
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background: #b91c1c;
+    border-color: #b91c1c;
+}
+
+.btn-secondary {
+    color: #fff;
+    background: var(--cn-secondary);
+    border-color: var(--cn-secondary);
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background: #475569;
+    border-color: #475569;
+}
+
+.btn-sm {
+    min-height: 34px;
+    padding: 7px 13px;
+    font-size: 13px;
 }
 
 .btn-lg {
-    border-radius: 10px;
+    min-height: 50px;
+    padding: 13px 26px;
+    font-size: 16px;
 }
 
-/* ===========================
-   DISABLED BUTTON
-=========================== */
+/* Breadcrumb */
 
-#splitBtn:disabled {
-
-    opacity: .7;
-
-    cursor: not-allowed;
-
+.breadcrumb-wrapper {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 22px 20px 8px;
 }
 
-/* ===========================
-   PROGRESS BAR
-=========================== */
-
-.progress {
-    height: 25px;
-    border-radius: 50px;
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--cn-muted);
+    font-size: 14px;
 }
 
-.progress-bar {
+.breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    margin-right: 8px;
+    color: #94a3b8;
+}
+
+.breadcrumb-item.active {
+    color: var(--cn-muted);
+}
+
+/* Introduction */
+
+.converter-intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 38px 20px 22px;
+    text-align: center;
+}
+
+.converter-intro h1 {
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -.04em;
+}
+
+.converter-intro p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--cn-muted);
+    font-size: 17px;
+}
+
+/* Converter */
+
+.converter-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 34px;
+    background: var(--cn-surface);
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-xl);
+    box-shadow: var(--cn-shadow-md);
+}
+
+.converter-card > p {
+    font-size: 15px;
+}
+
+/* Generic cards */
+
+.card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-md);
+    box-shadow: var(--cn-shadow-sm);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Selected source file */
+
+#selectedFileCard {
+    margin-bottom: 22px;
+}
+
+.file-name-link {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--cn-text);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.file-name-link:hover {
+    color: var(--cn-primary);
+}
+
+.file-size {
+    color: var(--cn-muted);
+    font-size: 14px;
+}
+
+/* Upload area */
+
+.upload-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 42px 25px;
+    text-align: center;
+    background: #fbfdff;
+    border: 2px dashed #bfdbfe;
+    border-radius: var(--cn-radius-lg);
+    cursor: pointer;
+    transition:
+        background-color var(--cn-transition),
+        border-color var(--cn-transition),
+        transform var(--cn-transition);
+}
+
+.upload-area:hover,
+.upload-area.dragover {
+    background: var(--cn-primary-soft);
+    border-color: var(--cn-primary);
+}
+
+.upload-area.dragover {
+    transform: scale(1.01);
+}
+
+.upload-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 18px;
+    color: var(--cn-danger);
+    font-size: 48px;
+}
+
+.upload-area h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.upload-area p {
+    margin-bottom: 6px;
+    color: var(--cn-muted);
+}
+
+.upload-area p:nth-of-type(1) {
+    color: var(--cn-text);
     font-weight: 600;
 }
 
-/* ===========================
-   CONVERSION MODE
-=========================== */
-
-.converting {
-
-    pointer-events: none;
-
-    opacity: .65;
-
+.upload-area p:nth-of-type(2) {
+    font-size: 14px;
 }
+
+.upload-area .text-muted {
+    margin-top: 14px;
+    font-size: 13px;
+}
+
+.upload-area .btn {
+    position: relative;
+    z-index: 2;
+    margin-top: 12px;
+}
+
+/* Split button */
+
+#splitBtn {
+    min-width: 180px;
+}
+
+#splitBtn:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Progress */
 
 #progressSection {
-
-    margin-top: 30px;
-
+    margin-top: 26px !important;
 }
 
-/* ===========================
-   PDF PREVIEW
-=========================== */
-
-#previewFrame {
+.progress {
     width: 100%;
-    height: 700px;
-    border: none;
+    height: 24px;
+    overflow: hidden;
+    background: #e2e8f0;
+    border-radius: 999px;
 }
 
-/* ===========================
-   CARD HOVER
-=========================== */
-
-.card {
-    transition: .2s;
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(90deg, var(--cn-primary), #60a5fa);
+    border-radius: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    transition: width .35s ease;
 }
 
-.card:hover {
-    transform: translateY(-2px);
+.progress-bar-striped {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, .18) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, .18) 50%,
+        rgba(255, 255, 255, .18) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
 }
 
-/* ===========================
-   DARK MODE
-=========================== */
-
-.dark-mode {
-    background: #111827;
-    color: white;
+.progress-bar-animated {
+    animation: cn-progress-stripes 1s linear infinite;
 }
 
-.dark-mode .converter-card {
-    background: #1f2937;
-    color: white;
+@keyframes cn-progress-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
 }
 
-.dark-mode .upload-area {
-    background: #374151;
-    border-color: #60a5fa;
+/* Results */
+
+#resultCard {
+    margin-top: 28px;
 }
 
-.dark-mode .card {
-    background: #374151;
-    color: white;
+#resultCard h2 {
+    margin-bottom: 22px;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
 }
 
-.dark-mode .form-control {
-    background: #1f2937;
-    color: white;
-    border-color: #4b5563;
+.result-header {
+    padding: 16px 12px;
+    color: var(--cn-text);
+    background: #f1f5f9;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-md);
 }
 
-.dark-mode .modal-content {
-    background: #1f2937;
-    color: white;
+.result-header .row {
+    align-items: center;
+    margin: 0;
 }
 
-/* ===================================
-   TABLET (768px - 991px)
-=================================== */
+.result-header [class*="col-"] {
+    padding: 0 8px;
+    font-size: 13px;
+}
 
-@media (max-width:991px) {
+#pdfDownloads {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
+.result-row,
+.result-item,
+.download-item,
+.pdf-download-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-md);
+    box-shadow: var(--cn-shadow-sm);
+}
+
+.result-row .file-name,
+.result-item .file-name,
+.download-item .file-name,
+.pdf-download-item .file-name {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--cn-text);
+    font-size: 14px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.result-row .file-size,
+.result-item .file-size,
+.download-item .file-size,
+.pdf-download-item .file-size {
+    color: var(--cn-muted);
+    font-size: 13px;
+}
+
+.result-row .btn,
+.result-item .btn,
+.download-item .btn,
+.pdf-download-item .btn {
+    min-height: 36px;
+    padding: 7px 12px;
+    font-size: 13px;
+}
+
+/* Common dynamically-created controls */
+
+.preview-btn,
+.download-btn,
+.preview-source-btn {
+    white-space: nowrap;
+}
+
+.delete-btn,
+.remove-btn,
+.remove-file {
+    color: #fff;
+    background: var(--cn-danger);
+    border: 1px solid var(--cn-danger);
+}
+
+/* Modal */
+
+.modal-content {
+    overflow: hidden;
+    background: #fff;
+    border: 0;
+    border-radius: var(--cn-radius-lg);
+    box-shadow: var(--cn-shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--cn-border);
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.btn-close {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: var(--cn-text);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.modal-body iframe {
+    display: block;
+    width: 100%;
+    min-height: 520px;
+    border: 0;
+    background: #f1f5f9;
+}
+
+/* Content sections */
+
+.how-to-section,
+.features-section,
+.formats-section,
+.security-section,
+.related-tools-section,
+.internal-links-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 45px auto 0;
+    padding: 38px 25px;
+}
+
+.how-to-section h2,
+.features-section h2,
+.formats-section h2,
+.security-section h2,
+.related-tools-section h2,
+.internal-links-section h2 {
+    margin-bottom: 18px;
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    letter-spacing: -.02em;
+}
+
+.how-to-section {
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-lg);
+}
+
+.how-to-section ol {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.how-to-section li {
+    margin-bottom: 13px;
+    padding-left: 6px;
+    color: var(--cn-muted);
+}
+
+.how-to-section li:last-child {
+    margin-bottom: 0;
+}
+
+.how-to-section strong {
+    color: var(--cn-text);
+}
+
+/* Features */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.features-grid article {
+    height: 100%;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-md);
+    box-shadow: var(--cn-shadow-sm);
+    transition:
+        transform var(--cn-transition),
+        box-shadow var(--cn-transition),
+        border-color var(--cn-transition);
+}
+
+.features-grid article:hover {
+    border-color: #bfdbfe;
+    box-shadow: var(--cn-shadow-md);
+    transform: translateY(-3px);
+}
+
+.features-grid h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.features-grid p {
+    margin-bottom: 0;
+    color: var(--cn-muted);
+    font-size: 14px;
+}
+
+/* Formats and security */
+
+.formats-section,
+.security-section {
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-lg);
+}
+
+.formats-section p,
+.security-section p {
+    color: var(--cn-muted);
+}
+
+.formats-section ul,
+.security-section ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+}
+
+.formats-section li,
+.security-section li {
+    margin-bottom: 8px;
+    color: var(--cn-muted);
+}
+
+.formats-section strong,
+.security-section strong {
+    color: var(--cn-text);
+}
+
+/* FAQ */
+
+.faq-section {
+    width: 100%;
+    margin-top: 45px;
+    padding: 55px 20px;
+    background: #f1f5f9;
+}
+
+.faq-section .container {
+    max-width: 900px;
+}
+
+.faq-section h2 {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.accordion-item {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-md);
+}
+
+.accordion-header {
+    margin: 0;
+}
+
+.accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    padding: 19px 22px;
+    color: var(--cn-heading);
+    background: #fff;
+    border: 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.accordion-button::after {
+    content: "+";
+    flex: 0 0 auto;
+    color: var(--cn-primary);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.accordion-button:not(.collapsed)::after {
+    content: "−";
+}
+
+.accordion-button:hover {
+    background: #f8fbff;
+}
+
+.accordion-collapse {
+    border-top: 1px solid var(--cn-border);
+}
+
+.accordion-body {
+    padding: 18px 22px 21px;
+    color: var(--cn-muted);
+    font-size: 15px;
+}
+
+/* Related tools */
+
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.related-tools-grid a {
+    display: block;
+    height: 100%;
+    padding: 22px;
+    color: inherit;
+    background: #fff;
+    border: 1px solid var(--cn-border);
+    border-radius: var(--cn-radius-md);
+    box-shadow: var(--cn-shadow-sm);
+    transition:
+        transform var(--cn-transition),
+        border-color var(--cn-transition),
+        box-shadow var(--cn-transition);
+}
+
+.related-tools-grid a:hover {
+    color: inherit;
+    border-color: #93c5fd;
+    box-shadow: var(--cn-shadow-md);
+    transform: translateY(-3px);
+}
+
+.related-tools-grid h3 {
+    margin-bottom: 8px;
+    color: var(--cn-primary);
+    font-size: 18px;
+}
+
+.related-tools-grid p {
+    margin-bottom: 0;
+    color: var(--cn-muted);
+    font-size: 14px;
+}
+
+/* Internal links */
+
+.internal-links-section {
+    padding-top: 10px;
+    padding-bottom: 55px;
+    text-align: center;
+}
+
+.internal-links-section h2 {
+    font-size: 24px;
+}
+
+.internal-links-section p {
+    margin-bottom: 0;
+    color: var(--cn-muted);
+}
+
+.internal-links-section a {
+    font-weight: 600;
+}
+
+/* Alerts/status */
+
+.alert,
+.error-message,
+.success-message,
+.status-message {
+    margin-top: 15px;
+    padding: 13px 16px;
+    border-radius: var(--cn-radius-sm);
+    font-size: 14px;
+}
+
+.alert-danger,
+.error-message {
+    color: #991b1b;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.alert-success,
+.success-message {
+    color: #166534;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+/* Desktop column widths */
+
+@media (min-width: 768px) {
+    .col-md-2 {
+        width: 16.666667%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.333333%;
+    }
+
+    .col-md-5 {
+        width: 41.666667%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 991.98px) {
     .converter-card {
-        padding: 30px;
-        margin-bottom: 100px;
+        padding: 28px;
     }
 
-    h1 {
-        font-size: 36px;
-        text-align: center;
+    .features-grid,
+    .related-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .upload-area,
-    #selectedFileCard,
-    #resultCard,
-    #splitBtn,
-    #progressSection {
-        width: 90%;
-    }
-
-    .upload-area {
-        padding: 30px 20px;
-    }
-
-    .upload-icon {
-        font-size: 45px;
-    }
-
-    .file-name-link {
-        font-size: 18px;
-    }
-
-    .file-size {
-        font-size: 16px;
-    }
-
-    #previewFrame {
-        height: 550px;
+    .how-to-section,
+    .features-section,
+    .formats-section,
+    .security-section,
+    .related-tools-section,
+    .internal-links-section {
+        max-width: 100%;
+        margin-top: 35px;
     }
 }
 
-/* ===================================
-   MOBILE (576px - 767px)
-=================================== */
+/* Mobile */
 
-@media (max-width:767px) {
+@media (max-width: 767.98px) {
+    body {
+        font-size: 15px;
+    }
 
     .container {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-inline: 15px;
+    }
+
+    .breadcrumb-wrapper {
+        padding: 17px 15px 5px;
+    }
+
+    .converter-intro {
+        padding: 30px 18px 18px;
+    }
+
+    .converter-intro h1 {
+        font-size: 2rem;
+    }
+
+    .converter-intro p {
+        font-size: 15px;
     }
 
     .converter-card {
         padding: 20px 15px;
-        border-radius: 18px;
-        margin-bottom: 100px;
+        border-radius: var(--cn-radius-lg);
     }
 
-    h1 {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    .upload-area,
-    #selectedFileCard,
-    #resultCard,
-    #splitBtn,
-    #progressSection {
-        width: 100%;
+    .card-body {
+        padding: 15px;
     }
 
     .upload-area {
-        padding: 25px 15px;
-        border-radius: 16px;
-        min-height: auto;
+        min-height: 270px;
+        padding: 30px 15px;
     }
 
-    .upload-icon {
-        font-size: 40px;
+    .upload-area h2 {
+        font-size: 21px;
     }
 
-    .upload-area h3 {
-        font-size: 18px;
-    }
-
-    .upload-area p {
-        font-size: 13px;
-    }
-
-    .upload-area .btn-primary {
+    .upload-area .btn {
         width: 100%;
-        min-width: auto;
-        height: 50px;
-        font-size: 16px;
+        max-width: 290px;
+        margin: 8px 0 0;
     }
 
-    /* Upload File Card */
-
-    #selectedFileCard .card {
-        border-radius: 14px;
+    .selected-file-row {
+        gap: 12px;
     }
-
-    #selectedFileCard .card-body {
-        padding: 15px;
-        text-align: center;
-    }
-
-    .file-name-link {
-        font-size: 16px;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .file-size {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    #previewSourceBtn,
-    #deleteSourceBtn {
-        width: 100%;
-        height: 45px;
-        margin-bottom: 10px;
-    }
-
-    #splitBtn {
-        width: 100%;
-        height: 50px;
-        font-size: 17px;
-    }
-
-    /* Result Cards */
 
     .result-header {
         display: none;
     }
 
-    #pdfDownloads .card {
-        border-radius: 14px;
-        margin-bottom: 15px;
-    }
-
-    #pdfDownloads .card-body {
+    .result-row,
+    .result-item,
+    .download-item,
+    .pdf-download-item {
+        flex-wrap: wrap;
         padding: 15px;
-        text-align: center;
     }
 
-    #pdfDownloads .btn {
+    .result-row > *,
+    .result-item > *,
+    .download-item > *,
+    .pdf-download-item > * {
         width: 100%;
-        margin-top: 10px;
+        flex: 1 1 100%;
     }
 
-    #previewFrame {
-        height: 500px;
-    }
-
-    .modal-dialog {
-        max-width: 98%;
-        margin: 10px auto;
-    }
-}
-
-/* ===================================
-   SMALL MOBILE (320px - 575px)
-=================================== */
-
-@media (max-width:575px) {
-
-    .converter-card {
-        padding: 15px 12px;
-        margin-bottom: 100px;
-    }
-
-    h1 {
-        font-size: 26px;
-    }
-
-    .upload-area {
-        padding: 20px 10px;
-    }
-
-    .upload-icon {
-        font-size: 35px;
-    }
-
-    .upload-area h3 {
-        font-size: 17px;
-    }
-
-    .upload-area p {
-        font-size: 12px;
-    }
-
-    .file-name-link {
-        font-size: 15px;
-    }
-
-    .file-size {
-        font-size: 13px;
-    }
-
-    #previewSourceBtn,
-    #deleteSourceBtn {
-        height: 42px;
-        font-size: 14px;
+    .result-row .btn,
+    .result-item .btn,
+    .download-item .btn,
+    .pdf-download-item .btn {
+        width: 100%;
     }
 
     #splitBtn {
-        height: 48px;
-        font-size: 16px;
+        width: 100%;
+        max-width: 320px;
     }
 
-    #pdfDownloads .btn {
-        font-size: 14px;
+    .how-to-section,
+    .features-section,
+    .formats-section,
+    .security-section,
+    .related-tools-section,
+    .internal-links-section {
+        padding: 28px 18px;
     }
 
-    #previewFrame {
-        height: 400px;
+    .features-grid,
+    .related-tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid article,
+    .related-tools-grid a {
+        padding: 20px;
+    }
+
+    .faq-section {
+        padding: 40px 15px;
+    }
+
+    .faq-section .container {
+        padding-inline: 0;
+    }
+
+    .accordion-button {
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    .accordion-body {
+        padding: 15px 16px 18px;
+    }
+
+    .modal-body iframe {
+        min-height: 420px;
     }
 }
 
-/* ===========================
-   HIDE DURING CONVERSION
-=========================== */
+/* Small mobile */
 
-.hide-during-conversion {
+@media (max-width: 420px) {
+    .converter-intro h1 {
+        font-size: 1.75rem;
+    }
 
-    display: none !important;
+    .upload-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 40px;
+    }
 
+    .upload-area {
+        min-height: 250px;
+    }
+
+    .upload-area p {
+        font-size: 14px;
+    }
+
+    .btn-lg {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 17px;
+    }
+
+    .modal-body iframe {
+        min-height: 350px;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* Print */
+
+@media print {
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    .converter-card,
+    .how-to-section,
+    .features-grid article,
+    .formats-section,
+    .security-section,
+    .related-tools-grid a {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .upload-area,
+    #progressSection,
+    #splitBtn,
+    .btn,
+    .faq-section,
+    .related-tools-section,
+    .internal-links-section {
+        display: none !important;
+    }
 }
