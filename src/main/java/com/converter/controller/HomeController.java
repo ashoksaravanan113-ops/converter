@@ -147,7 +147,7 @@ public class HomeController {
 
     @GetMapping("/test404")
     public String test404() {
-        return "404";
+        return "error/404";
     }
 
 }
